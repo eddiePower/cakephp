@@ -14,7 +14,7 @@
             <th><?= $this->Paginator->sort('email') ?></th>
             <th><?= $this->Paginator->sort('password') ?></th>
             <th><?= $this->Paginator->sort('created') ?></th>
-            <th><?= $this->Paginator->sort('updated') ?></th>
+            <th><?= $this->Paginator->sort('Role') ?></th>
             <th class="actions"><?= __('Actions') ?></th>
         </tr>
     </thead>
@@ -29,7 +29,7 @@
             -->
             <td><?= substr(h($user->password), 0, 15) . ' ......'; ?></td>
             <td><?= h($user->created) ?></td>
-            <td><?= h($user->updated) ?></td>
+            <td><?= h($user->role) ?></td>
             <td class="actions">
                 <?= $this->Html->link(__('View'), ['action' => 'view', $user->id]) ?>
                 <?= $this->Html->link(__('Edit'), ['action' => 'edit', $user->id]) ?>
