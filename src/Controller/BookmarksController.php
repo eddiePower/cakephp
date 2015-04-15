@@ -37,7 +37,9 @@ class BookmarksController extends AppController
         
         $bookmark = $this->Bookmarks->get($id);
         
-        if($bookmark->user_id == $user['id']) //posible entry point to check user['role']???
+        //May be add a if statment here to check if admin then show all bookmarks somehow??
+        
+        if($bookmark->user_id == $user['id'])
         {
             return true;
         }
@@ -191,6 +193,5 @@ class BookmarksController extends AppController
             'tags' => $tags]);
         $this->set(compact('bookmarks', 'tags'));
     }
-    
-    
+       
 }

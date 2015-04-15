@@ -6,7 +6,7 @@
         <li><?= $this->Html->link(__('New Bookmark'), ['controller' => 'Bookmarks', 'action' => 'add']) ?> </li>
     </ul>
 </div>
-<div class="users form large-10 medium-9 columns">
+<div class="users form large-7 medium-9 columns" align="center">
     <?= $this->Form->create($user); ?>
     <fieldset>
         <legend><?= __('Add User') ?></legend>
