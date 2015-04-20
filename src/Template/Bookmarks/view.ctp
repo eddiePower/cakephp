@@ -29,8 +29,8 @@
         <div class="large-2 columns dates end">
             <h6 class="subheader"><?= __('Created') ?></h6>
             <p><?= h($bookmark->created) ?></p>
-            <h6 class="subheader"><?= __('Updated') ?></h6>
-            <p><?= h($bookmark->updated) ?></p>
+            <h6 class="subheader"><?= __('Modified') ?></h6>
+            <p><?= h($bookmark->modified) ?></p>
         </div>
     </div>
     <div class="row texts">
