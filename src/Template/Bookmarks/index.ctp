@@ -23,6 +23,7 @@
             <th><?= $this->Paginator->sort('title') ?></th>
             <th><?= $this->Paginator->sort('created') ?></th>
             <th><?= $this->Paginator->sort('url') ?></th>
+            <th><?= $this->Paginator->sort('modified') ?></th>
             <th class="actions"><?= __('Actions') ?></th>
         </tr>
     </thead>
@@ -32,10 +33,11 @@
             <td><?= h($bookmark->title) ?></td>
             <td><?= h($bookmark->created) ?></td>
             <td><?= substr(h($bookmark->url), 0, 25) . '....'; ?></td>
+            <td><?= h($bookmark->modified) ?></td>
             <td class="actions">
                 <?= $this->Html->link(__('View'), ['action' => 'view', $bookmark->id]) ?>
                 <?= $this->Html->link(__('Edit'), ['action' => 'edit', $bookmark->id]) ?>
-                <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $bookmark->id], ['confirm' => __('Are you sure you want to delete # {0}?', $bookmark->id)]) ?>
+                <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $bookmark->id], ['confirm' => __('Are you sure you want to delete bookmark: {0}?', $bookmark->title)]) ?>
             </td>
         </tr>
 

@@ -1666,3 +1666,153 @@ Stack Trace:
 #21 {main}
 
 
+2015-04-20 10:07:38 Error: [InvalidArgumentException] Tags is not associated with BookmarksTags
+Request URL: /development/tags/view/1
+Stack Trace:
+#0 /Users/edster2007/Sites/development/vendor/cakephp/cakephp/src/ORM/EagerLoader.php(233): Cake\ORM\EagerLoader->_normalizeContain(Object(App\Model\Table\TagsTable), 'BookmarksTags', Array, Array)
+#1 /Users/edster2007/Sites/development/vendor/cakephp/cakephp/src/ORM/EagerLoader.php(338): Cake\ORM\EagerLoader->normalized(Object(App\Model\Table\TagsTable))
+#2 /Users/edster2007/Sites/development/vendor/cakephp/cakephp/src/ORM/EagerLoader.php(317): Cake\ORM\EagerLoader->attachableAssociations(Object(App\Model\Table\TagsTable))
+#3 /Users/edster2007/Sites/development/vendor/cakephp/cakephp/src/ORM/Query.php(670): Cake\ORM\EagerLoader->attachAssociations(Object(Cake\ORM\Query), Object(App\Model\Table\TagsTable), true)
+#4 /Users/edster2007/Sites/development/vendor/cakephp/cakephp/src/ORM/Query.php(626): Cake\ORM\Query->_transformQuery()
+#5 /Users/edster2007/Sites/development/vendor/cakephp/cakephp/src/Database/Driver/Mysql.php(120): Cake\ORM\Query->sql()
+#6 /Users/edster2007/Sites/development/vendor/cakephp/cakephp/src/Database/Connection.php(220): Cake\Database\Driver\Mysql->prepare(Object(Cake\ORM\Query))
+#7 /Users/edster2007/Sites/development/vendor/cakephp/cakephp/src/Database/Connection.php(272): Cake\Database\Connection->prepare(Object(Cake\ORM\Query))
+#8 /Users/edster2007/Sites/development/vendor/cakephp/cakephp/src/Database/Query.php(175): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#9 /Users/edster2007/Sites/development/vendor/cakephp/cakephp/src/ORM/Query.php(645): Cake\Database\Query->execute()
+#10 /Users/edster2007/Sites/development/vendor/cakephp/cakephp/src/Datasource/QueryTrait.php(218): Cake\ORM\Query->_execute()
+#11 /Users/edster2007/Sites/development/vendor/cakephp/cakephp/src/ORM/Query.php(596): Cake\ORM\Query->_all()
+#12 /Users/edster2007/Sites/development/vendor/cakephp/cakephp/src/Datasource/QueryTrait.php(341): Cake\ORM\Query->all()
+#13 /Users/edster2007/Sites/development/vendor/cakephp/cakephp/src/Datasource/QueryTrait.php(352): Cake\ORM\Query->first()
+#14 /Users/edster2007/Sites/development/vendor/cakephp/cakephp/src/ORM/Table.php(1110): Cake\ORM\Query->firstOrFail()
+#15 /Users/edster2007/Sites/development/src/Controller/TagsController.php(36): Cake\ORM\Table->get('1', Array)
+#16 [internal function]: App\Controller\TagsController->view('1')
+#17 /Users/edster2007/Sites/development/vendor/cakephp/cakephp/src/Controller/Controller.php(412): call_user_func_array(Array, Array)
+#18 /Users/edster2007/Sites/development/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#19 /Users/edster2007/Sites/development/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TagsController))
+#20 /Users/edster2007/Sites/development/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#21 {main}
+
+
+2015-04-20 10:08:25 Error: [InvalidArgumentException] Tags is not associated with Tags
+Request URL: /development/tags/view/1
+Stack Trace:
+#0 /Users/edster2007/Sites/development/vendor/cakephp/cakephp/src/ORM/EagerLoader.php(233): Cake\ORM\EagerLoader->_normalizeContain(Object(App\Model\Table\TagsTable), 'Tags', Array, Array)
+#1 /Users/edster2007/Sites/development/vendor/cakephp/cakephp/src/ORM/EagerLoader.php(338): Cake\ORM\EagerLoader->normalized(Object(App\Model\Table\TagsTable))
+#2 /Users/edster2007/Sites/development/vendor/cakephp/cakephp/src/ORM/EagerLoader.php(317): Cake\ORM\EagerLoader->attachableAssociations(Object(App\Model\Table\TagsTable))
+#3 /Users/edster2007/Sites/development/vendor/cakephp/cakephp/src/ORM/Query.php(670): Cake\ORM\EagerLoader->attachAssociations(Object(Cake\ORM\Query), Object(App\Model\Table\TagsTable), true)
+#4 /Users/edster2007/Sites/development/vendor/cakephp/cakephp/src/ORM/Query.php(626): Cake\ORM\Query->_transformQuery()
+#5 /Users/edster2007/Sites/development/vendor/cakephp/cakephp/src/Database/Driver/Mysql.php(120): Cake\ORM\Query->sql()
+#6 /Users/edster2007/Sites/development/vendor/cakephp/cakephp/src/Database/Connection.php(220): Cake\Database\Driver\Mysql->prepare(Object(Cake\ORM\Query))
+#7 /Users/edster2007/Sites/development/vendor/cakephp/cakephp/src/Database/Connection.php(272): Cake\Database\Connection->prepare(Object(Cake\ORM\Query))
+#8 /Users/edster2007/Sites/development/vendor/cakephp/cakephp/src/Database/Query.php(175): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#9 /Users/edster2007/Sites/development/vendor/cakephp/cakephp/src/ORM/Query.php(645): Cake\Database\Query->execute()
+#10 /Users/edster2007/Sites/development/vendor/cakephp/cakephp/src/Datasource/QueryTrait.php(218): Cake\ORM\Query->_execute()
+#11 /Users/edster2007/Sites/development/vendor/cakephp/cakephp/src/ORM/Query.php(596): Cake\ORM\Query->_all()
+#12 /Users/edster2007/Sites/development/vendor/cakephp/cakephp/src/Datasource/QueryTrait.php(341): Cake\ORM\Query->all()
+#13 /Users/edster2007/Sites/development/vendor/cakephp/cakephp/src/Datasource/QueryTrait.php(352): Cake\ORM\Query->first()
+#14 /Users/edster2007/Sites/development/vendor/cakephp/cakephp/src/ORM/Table.php(1110): Cake\ORM\Query->firstOrFail()
+#15 /Users/edster2007/Sites/development/src/Controller/TagsController.php(36): Cake\ORM\Table->get('1', Array)
+#16 [internal function]: App\Controller\TagsController->view('1')
+#17 /Users/edster2007/Sites/development/vendor/cakephp/cakephp/src/Controller/Controller.php(412): call_user_func_array(Array, Array)
+#18 /Users/edster2007/Sites/development/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#19 /Users/edster2007/Sites/development/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TagsController))
+#20 /Users/edster2007/Sites/development/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#21 {main}
+
+
+2015-04-20 10:08:58 Error: [Cake\Datasource\Exception\InvalidPrimaryKeyException] Record not found in table "bookmarks_tags" with primary key ['1']
+Request URL: /development/bookmarks_tags/view/1
+Stack Trace:
+#0 /Users/edster2007/Sites/development/src/Controller/BookmarksTagsController.php(39): Cake\ORM\Table->get('1', Array)
+#1 [internal function]: App\Controller\BookmarksTagsController->view('1')
+#2 /Users/edster2007/Sites/development/vendor/cakephp/cakephp/src/Controller/Controller.php(412): call_user_func_array(Array, Array)
+#3 /Users/edster2007/Sites/development/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#4 /Users/edster2007/Sites/development/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\BookmarksTagsController))
+#5 /Users/edster2007/Sites/development/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#6 {main}
+
+
+2015-04-20 10:12:01 Error: [Cake\Datasource\Exception\InvalidPrimaryKeyException] Record not found in table "bookmarks_tags" with primary key [NULL]
+Request URL: /development/bookmarks_tags/view/1
+Stack Trace:
+#0 /Users/edster2007/Sites/development/src/Controller/BookmarksTagsController.php(39): Cake\ORM\Table->get(NULL, Array)
+#1 [internal function]: App\Controller\BookmarksTagsController->view('1')
+#2 /Users/edster2007/Sites/development/vendor/cakephp/cakephp/src/Controller/Controller.php(412): call_user_func_array(Array, Array)
+#3 /Users/edster2007/Sites/development/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#4 /Users/edster2007/Sites/development/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\BookmarksTagsController))
+#5 /Users/edster2007/Sites/development/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#6 {main}
+
+
+2015-04-20 10:12:15 Error: [Cake\Datasource\Exception\InvalidPrimaryKeyException] Record not found in table "bookmarks_tags" with primary key ['1']
+Request URL: /development/bookmarks_tags/view/1
+Stack Trace:
+#0 /Users/edster2007/Sites/development/src/Controller/BookmarksTagsController.php(39): Cake\ORM\Table->get('1', Array)
+#1 [internal function]: App\Controller\BookmarksTagsController->view('1')
+#2 /Users/edster2007/Sites/development/vendor/cakephp/cakephp/src/Controller/Controller.php(412): call_user_func_array(Array, Array)
+#3 /Users/edster2007/Sites/development/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#4 /Users/edster2007/Sites/development/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\BookmarksTagsController))
+#5 /Users/edster2007/Sites/development/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#6 {main}
+
+
+2015-04-20 10:14:20 Error: [Cake\Datasource\Exception\InvalidPrimaryKeyException] Record not found in table "bookmarks_tags" with primary key ['1']
+Request URL: /development/bookmarks_tags/view/1
+Stack Trace:
+#0 /Users/edster2007/Sites/development/src/Controller/BookmarksTagsController.php(39): Cake\ORM\Table->get('1', Array)
+#1 [internal function]: App\Controller\BookmarksTagsController->view('1')
+#2 /Users/edster2007/Sites/development/vendor/cakephp/cakephp/src/Controller/Controller.php(412): call_user_func_array(Array, Array)
+#3 /Users/edster2007/Sites/development/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#4 /Users/edster2007/Sites/development/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\BookmarksTagsController))
+#5 /Users/edster2007/Sites/development/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#6 {main}
+
+
+2015-04-20 10:14:24 Error: [Cake\Datasource\Exception\InvalidPrimaryKeyException] Record not found in table "bookmarks_tags" with primary key ['1']
+Request URL: /development/bookmarks_tags/view/1
+Stack Trace:
+#0 /Users/edster2007/Sites/development/src/Controller/BookmarksTagsController.php(39): Cake\ORM\Table->get('1', Array)
+#1 [internal function]: App\Controller\BookmarksTagsController->view('1')
+#2 /Users/edster2007/Sites/development/vendor/cakephp/cakephp/src/Controller/Controller.php(412): call_user_func_array(Array, Array)
+#3 /Users/edster2007/Sites/development/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#4 /Users/edster2007/Sites/development/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\BookmarksTagsController))
+#5 /Users/edster2007/Sites/development/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#6 {main}
+
+
+2015-04-20 10:14:53 Error: [Cake\Datasource\Exception\InvalidPrimaryKeyException] Record not found in table "bookmarks_tags" with primary key ['1']
+Request URL: /development/bookmarks_tags/view/1
+Stack Trace:
+#0 /Users/edster2007/Sites/development/src/Controller/BookmarksTagsController.php(39): Cake\ORM\Table->get('1', Array)
+#1 [internal function]: App\Controller\BookmarksTagsController->view('1')
+#2 /Users/edster2007/Sites/development/vendor/cakephp/cakephp/src/Controller/Controller.php(412): call_user_func_array(Array, Array)
+#3 /Users/edster2007/Sites/development/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#4 /Users/edster2007/Sites/development/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\BookmarksTagsController))
+#5 /Users/edster2007/Sites/development/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#6 {main}
+
+
+2015-04-20 10:15:11 Error: [Cake\Datasource\Exception\InvalidPrimaryKeyException] Record not found in table "bookmarks_tags" with primary key ['1']
+Request URL: /development/bookmarks_tags/view/1
+Stack Trace:
+#0 /Users/edster2007/Sites/development/src/Controller/BookmarksTagsController.php(39): Cake\ORM\Table->get('1', Array)
+#1 [internal function]: App\Controller\BookmarksTagsController->view('1')
+#2 /Users/edster2007/Sites/development/vendor/cakephp/cakephp/src/Controller/Controller.php(412): call_user_func_array(Array, Array)
+#3 /Users/edster2007/Sites/development/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#4 /Users/edster2007/Sites/development/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\BookmarksTagsController))
+#5 /Users/edster2007/Sites/development/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#6 {main}
+
+
+2015-04-20 10:27:31 Error: [Cake\Datasource\Exception\InvalidPrimaryKeyException] Record not found in table "bookmarks_tags" with primary key ['2']
+Request URL: /development/bookmarks_tags/delete/2
+Stack Trace:
+#0 /Users/edster2007/Sites/development/src/Controller/BookmarksTagsController.php(104): Cake\ORM\Table->get('2')
+#1 [internal function]: App\Controller\BookmarksTagsController->delete('2')
+#2 /Users/edster2007/Sites/development/vendor/cakephp/cakephp/src/Controller/Controller.php(412): call_user_func_array(Array, Array)
+#3 /Users/edster2007/Sites/development/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#4 /Users/edster2007/Sites/development/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\BookmarksTagsController))
+#5 /Users/edster2007/Sites/development/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#6 {main}
+
+

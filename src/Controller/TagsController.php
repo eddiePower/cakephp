@@ -32,7 +32,7 @@ class TagsController extends AppController
     public function view($id = null)
     {
         $tag = $this->Tags->get($id, [
-            'contain' => ['Bookmarks', 'BookmarksTags']
+            'contain' => ['Bookmarks']
         ]);
         $this->set('tag', $tag);
         $this->set('_serialize', ['tag']);

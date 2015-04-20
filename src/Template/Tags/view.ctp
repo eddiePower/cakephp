@@ -2,7 +2,7 @@
     <h3><?= __('Actions') ?></h3>
     <ul class="side-nav">
         <li><?= $this->Html->link(__('Edit Tag'), ['action' => 'edit', $tag->id]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete Tag'), ['action' => 'delete', $tag->id], ['confirm' => __('Are you sure you want to delete # {0}?', $tag->id)]) ?> </li>
+        <li><?= $this->Form->postLink(__('Delete Tag'), ['action' => 'delete', $tag->id], ['confirm' => __('Are you sure you want to delete tag name:  {0}?', $tag->title)]) ?> </li>
         <li><?= $this->Html->link(__('List Tags'), ['action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Tag'), ['action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Bookmarks Tags'), ['controller' => 'BookmarksTags', 'action' => 'index']) ?> </li>

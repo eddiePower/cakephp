@@ -15,7 +15,7 @@
             <th><?= $this->Paginator->sort('id') ?></th>
             <th><?= $this->Paginator->sort('title') ?></th>
             <th><?= $this->Paginator->sort('created') ?></th>
-            <th><?= $this->Paginator->sort('updated') ?></th>
+            <th><?= $this->Paginator->sort('modified') ?></th>
             <th class="actions"><?= __('Actions') ?></th>
         </tr>
     </thead>
@@ -25,11 +25,11 @@
             <td><?= $this->Number->format($tag->id) ?></td>
             <td><?= h($tag->title) ?></td>
             <td><?= h($tag->created) ?></td>
-            <td><?= h($tag->updated) ?></td>
+            <td><?= h($tag->modified) ?></td>
             <td class="actions">
                 <?= $this->Html->link(__('View'), ['action' => 'view', $tag->id]) ?>
                 <?= $this->Html->link(__('Edit'), ['action' => 'edit', $tag->id]) ?>
-                <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $tag->id], ['confirm' => __('Are you sure you want to delete # {0}?', $tag->id)]) ?>
+                <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $tag->id], ['confirm' => __('Are you sure you want to delete tag named: {0}?', $tag->title)]) ?>
             </td>
         </tr>
 

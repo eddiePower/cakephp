@@ -4,7 +4,7 @@
         <li><?= $this->Form->postLink(
                 __('Delete'),
                 ['action' => 'delete', $bookmark->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $bookmark->title)]
+                ['confirm' => __('Are you sure you want to delete bookmark: {0}?', $bookmark->title)]
             )
         ?></li>
         <li><?= $this->Html->link(__('List Bookmarks'), ['action' => 'index']) ?></li>
@@ -24,8 +24,7 @@
             <?= $this->Form->input('title') ?>
             <?= $this->Form->input('description') ?>
             <?= $this->Form->input('url') ?>
-            <?= $this->Form->input('tags_string', ['type' => 'text']) ?>
-        
+            <?= $this->Form->input('tags_string', ['type' => 'text']) ?>       
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
     <?= $this->Form->end() ?>
