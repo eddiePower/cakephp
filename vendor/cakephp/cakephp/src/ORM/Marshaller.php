@@ -223,6 +223,9 @@ class Marshaller
         if ($assoc->type() === Association::MANY_TO_MANY) {
             return $marshaller->_belongsToMany($assoc, $value, (array)$options);
         }
+        if ($assoc->type() === Association::ONE_TO_MANY && array_key_exists('_ids', $value) && is_array($value['_ids'])) {
+            return $this->_loadAssociatedByIds($assoc, $value['_ids']);
+        }
         return $marshaller->many($value, (array)$options);
     }
 
@@ -234,6 +237,7 @@ class Marshaller
      * * associated: Associations listed here will be marshalled as well.
      * * fieldList: A whitelist of fields to be assigned to the entity. If not present,
      *   the accessible fields list in the entity will be used.
+     * * accessibleFields: A list of fields to allow or deny in entity accessible fields.
      *
      * @param array $data The data to hydrate.
      * @param array $options List of options
@@ -266,27 +270,33 @@ class Marshaller
         $associated = isset($options['associated']) ? $options['associated'] : [];
         $hasIds = array_key_exists('_ids', $data);
         if ($hasIds && is_array($data['_ids'])) {
-            return $this->_loadBelongsToMany($assoc, $data['_ids']);
+            return $this->_loadAssociatedByIds($assoc, $data['_ids']);
         }
         if ($hasIds) {
             return [];
         }
         $data = array_values($data);
 
-        // Accept [ [id => 1], [id = 2] ] style.
         $primaryKey = array_flip($assoc->target()->schema()->primaryKey());
-        if (array_intersect_key($primaryKey, current($data)) === $primaryKey) {
-            $primaryCount = count($primaryKey);
-            $query = $assoc->find();
-            foreach ($data as $row) {
+        $records = [];
+
+        foreach ($data as $row) {
+            if (array_intersect_key($primaryKey, $row) === $primaryKey) {
+                if (!isset($query)) {
+                    $primaryCount = count($primaryKey);
+                    $query = $assoc->find();
+                }
                 $keys = array_intersect_key($row, $primaryKey);
                 if (count($keys) === $primaryCount) {
                     $query->orWhere($keys);
                 }
+            } else {
+                $records[] = $this->one($row, $options);
             }
-            $records = $query->toArray();
-        } else {
-            $records = $this->many($data, $options);
+        }
+
+        if (isset($query)) {
+            $records = array_merge($records, $query->toArray());
         }
 
         $joint = $assoc->junction();
@@ -313,7 +323,7 @@ class Marshaller
      * @param array $ids The list of ids to load.
      * @return array An array of entities.
      */
-    protected function _loadBelongsToMany($assoc, $ids)
+    protected function _loadAssociatedByIds($assoc, $ids)
     {
         $target = $assoc->target();
         $primaryKey = (array)$target->primaryKey();
@@ -332,6 +342,19 @@ class Marshaller
         }
 
         return $target->find()->where($filter)->toArray();
+    }
+
+    /**
+     * Loads a list of belongs to many from ids.
+     *
+     * @param Association $assoc The association class for the belongsToMany association.
+     * @param array $ids The list of ids to load.
+     * @return array An array of entities.
+     * @deprecated Use _loadAssociatedByIds()
+     */
+    protected function _loadBelongsToMany($assoc, $ids)
+    {
+        return $this->_loadAssociatedByIds($assoc, $ids);
     }
 
     /**
@@ -557,7 +580,7 @@ class Marshaller
         $hasIds = array_key_exists('_ids', $value);
         $associated = isset($options['associated']) ? $options['associated'] : [];
         if ($hasIds && is_array($value['_ids'])) {
-            return $this->_loadBelongsToMany($assoc, $value['_ids']);
+            return $this->_loadAssociatedByIds($assoc, $value['_ids']);
         }
         if ($hasIds) {
             return [];

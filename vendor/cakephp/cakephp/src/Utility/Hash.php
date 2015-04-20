@@ -13,6 +13,9 @@
  */
 namespace Cake\Utility;
 
+use InvalidArgumentException;
+use RuntimeException;
+
 /**
  * Library of array functions for manipulating and extracting data
  * from arrays or 'sets' of data.
@@ -42,7 +45,7 @@ class Hash
      */
     public static function get(array $data, $path, $default = null)
     {
-        if (empty($data)) {
+        if (empty($data) || $path === null || $path === '') {
             return $default;
         }
 
@@ -50,7 +53,7 @@ class Hash
             $parts = explode('.', $path);
         } else {
             if (!is_array($path)) {
-                throw new \InvalidArgumentException(sprintf(
+                throw new InvalidArgumentException(sprintf(
                     'Invalid Parameter %s, should be dot separated path or array.',
                     $path
                 ));
@@ -444,7 +447,7 @@ class Hash
         }
 
         if (count($keys) !== count($vals)) {
-            throw new \RuntimeException(
+            throw new RuntimeException(
                 'Hash::combine() needs an equal number of keys + values.'
             );
         }
@@ -798,10 +801,14 @@ class Hash
         $depth = [];
         if (is_array($data) && reset($data) !== false) {
             foreach ($data as $value) {
-                $depth[] = static::dimensions((array)$value) + 1;
+                if (is_array($value)) {
+                    $depth[] = static::dimensions($value) + 1;
+                } else {
+                    $depth[] = 1;
+                }
             }
         }
-        return max($depth);
+        return empty($depth) ? 0 : max($depth);
     }
 
     /**
@@ -844,11 +851,15 @@ class Hash
      * You can easily count the results of an extract using apply().
      * For example to count the comments on an Article:
      *
-     * `$count = Hash::apply($data, 'Article.Comment.{n}', 'count');`
+     * ```
+     * $count = Hash::apply($data, 'Article.Comment.{n}', 'count');
+     * ```
      *
      * You could also use a function like `array_sum` to sum the results.
      *
-     * `$total = Hash::apply($data, '{n}.Item.price', 'array_sum');`
+     * ```
+     * $total = Hash::apply($data, '{n}.Item.price', 'array_sum');
+     * ```
      *
      * @param array $data The data to reduce.
      * @param string $path The path to extract from $data.
@@ -875,7 +886,7 @@ class Hash
      * - `numeric` Compare values numerically
      * - `string` Compare values as strings
      * - `natural` Compare items as strings using "natural ordering" in a human friendly way.
-     *   Will sort foo10 below foo2 as an example. Requires PHP 5.4 or greater or it will fallback to 'regular'
+     *   Will sort foo10 below foo2 as an example.
      *
      * @param array $data An array of data to sort
      * @param string $path A Set-compatible path to the array value
@@ -1119,7 +1130,7 @@ class Hash
         }
 
         if (!$return) {
-            throw new \InvalidArgumentException('Invalid data array to nest.');
+            throw new InvalidArgumentException('Invalid data array to nest.');
         }
 
         if ($options['root']) {

@@ -44,9 +44,9 @@ $cakeDescription = 'Bookmarks - Team 18 Heisenburg build';
             <?= $this->Html->image('http://cakephp.org/img/cake-logo.png') ?>
             <h1>Heisenburg's Bookmark App - Build 0</h1>
                       
-      <a href="/team18/build0/development/users/login" class="myButton">Login</a>
-            <a href="/team18/build0/development/users/add" class="myButton">Sign Up</a>
-            <a href="/team18/build0/development/bookmarks/" class="myButton">Bookmarks list</a>
+      <a href="/development/users/login" class="myButton">Login</a>
+            <a href="/development/users/add" class="myButton">Sign Up</a>
+            <a href="/development/bookmarks/" class="myButton">Bookmarks list</a>
         </div>
     </header>
     </div>

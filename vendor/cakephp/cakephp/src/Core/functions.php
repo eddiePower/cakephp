@@ -75,7 +75,10 @@ if (!function_exists('pluginSplit')) {
      * Splits a dot syntax plugin name into its plugin and class name.
      * If $name does not have a dot, then index 0 will be null.
      *
-     * Commonly used like `list($plugin, $name) = pluginSplit($name);`
+     * Commonly used like
+     * ```
+     * list($plugin, $name) = pluginSplit($name);
+     * ```
      *
      * @param string $name The name you want to plugin split.
      * @param bool $dotAppend Set to true if you want the plugin to have a '.' appended to it.
@@ -131,10 +134,12 @@ if (!function_exists('pr')) {
      */
     function pr($var)
     {
-        if (Configure::read('debug')) {
-            $template = php_sapi_name() !== 'cli' ? '<pre class="pr">%s</pre>' : "\n%s\n\n";
-            printf($template, trim(print_r($var, true)));
+        if (!Configure::read('debug')) {
+            return;
         }
+
+        $template = PHP_SAPI !== 'cli' ? '<pre class="pr">%s</pre>' : "\n%s\n\n";
+        printf($template, trim(print_r($var, true)));
     }
 
 }
@@ -156,11 +161,9 @@ if (!function_exists('pj')) {
         if (!Configure::read('debug')) {
             return;
         }
-        if (php_sapi_name() === 'cli') {
-            printf("\n%s\n\n", trim(json_encode($var, JSON_PRETTY_PRINT)));
-        } elseif (Configure::read('debug')) {
-            printf('<pre class="pj">%s</pre>', trim(json_encode($var, JSON_PRETTY_PRINT)));
-        }
+
+        $template = PHP_SAPI !== 'cli' ? '<pre class="pj">%s</pre>' : "\n%s\n\n";
+        printf($template, trim(json_encode($var, JSON_PRETTY_PRINT)));
     }
 
 }

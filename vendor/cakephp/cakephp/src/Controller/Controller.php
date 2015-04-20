@@ -22,15 +22,14 @@ use Cake\Event\EventManagerTrait;
 use Cake\Log\LogTrait;
 use Cake\Network\Request;
 use Cake\Network\Response;
-use Cake\ORM\TableRegistry;
 use Cake\Routing\RequestActionTrait;
 use Cake\Routing\Router;
-use Cake\Utility\Inflector;
 use Cake\Utility\MergeVariablesTrait;
 use Cake\View\ViewVarsTrait;
 use LogicException;
 use ReflectionException;
 use ReflectionMethod;
+use RuntimeException;
 
 /**
  * Application controller class for organization of business logic.
@@ -104,7 +103,10 @@ class Controller implements EventListenerInterface
      * An array containing the names of helpers this controller uses. The array elements should
      * not contain the "Helper" part of the class name.
      *
-     * Example: `public $helpers = ['Form', 'Html', 'Time'];`
+     * Example:
+     * ```
+     * public $helpers = ['Form', 'Html', 'Time'];
+     * ```
      *
      * @var mixed
      * @link http://book.cakephp.org/3.0/en/controllers.html#configuring-helpers-to-load
@@ -166,7 +168,10 @@ class Controller implements EventListenerInterface
      * Array containing the names of components this controller uses. Component names
      * should not contain the "Component" portion of the class name.
      *
-     * Example: `public $components = ['Session', 'RequestHandler', 'Acl'];`
+     * Example:
+     * ```
+     * public $components = ['RequestHandler', 'Acl'];
+     * ```
      *
      * @var array
      * @link http://book.cakephp.org/3.0/en/controllers/components.html
@@ -321,7 +326,9 @@ class Controller implements EventListenerInterface
      * This method will also set the component to a property.
      * For example:
      *
-     * `$this->loadComponent('Acl.Acl');`
+     * ```
+     * $this->loadComponent('Acl.Acl');
+     * ```
      *
      * Will result in a `Toolbar` property being set.
      *
@@ -630,7 +637,7 @@ class Controller implements EventListenerInterface
 
         $this->loadComponent('Paginator');
         if (empty($table)) {
-            throw new \RuntimeException('Unable to locate an object compatible with paginate.');
+            throw new RuntimeException('Unable to locate an object compatible with paginate.');
         }
         return $this->Paginator->paginate($table, $this->paginate);
     }
@@ -649,7 +656,7 @@ class Controller implements EventListenerInterface
     {
         try {
             $method = new ReflectionMethod($this, $action);
-        } catch (\ReflectionException $e) {
+        } catch (ReflectionException $e) {
             return false;
         }
         if (!$method->isPublic()) {

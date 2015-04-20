@@ -14,8 +14,11 @@
  */
 namespace Cake\Validation;
 
+use ArrayAccess;
 use Cake\Validation\RulesProvider;
 use Cake\Validation\ValidationSet;
+use Countable;
+use IteratorAggregate;
 
 /**
  * Validator object encapsulates all methods related to data validations for a model
@@ -25,7 +28,7 @@ use Cake\Validation\ValidationSet;
  *
  * @link http://book.cakephp.org/3.0/en/core-libraries/validation.html
  */
-class Validator implements \ArrayAccess, \IteratorAggregate, \Countable
+class Validator implements ArrayAccess, IteratorAggregate, Countable
 {
 
     /**
@@ -275,7 +278,7 @@ class Validator implements \ArrayAccess, \IteratorAggregate, \Countable
      *          ->add('user_id', 'valid', ['rule' => 'numeric', 'message' => 'Invalid User'])
      *
      *      $validator->add('password', [
-     *          'size' => ['rule' => ['between', 8, 20]],
+     *          'size' => ['rule' => ['lengthBetween', 8, 20]],
      *          'hasSpecialCharacter' => ['rule' => 'validateSpecialchar', 'message' => 'not valid']
      *      ]);
      * ```

@@ -4,18 +4,22 @@ DebugKit provides a debugging toolbar and enhanced debugging tools for CakePHP a
 
 ## Requirements
 
-The 3.0 branch has the following requirements:
+The `master` branch has the following requirements:
 
 * CakePHP 3.0.0 or greater.
 * PHP 5.4.16 or greater.
 * SQLite or another database driver that CakePHP can talk to. By default DebugKit will use SQLite, if you
   need to use a different database see the Database Configuration section below.
 
+## DebugKit for CakePHP 2.x
+
+If you want DebugKit for your 2.x application, you can use the latest `2.2.y` tag or the 2.2 branch.
+
 ## Installation
 
 * Install the plugin with composer from your CakePHP Project's ROOT directory (where composer.json file is located)
 ```sh
-php composer.phar require cakephp/debug_kit "3.0.*-dev"
+php composer.phar require cakephp/debug_kit "~3.0"
 ```
 
 * Load the plugin
@@ -137,7 +141,7 @@ You should refer to the built-in panels for some examples on how you can build p
 Each Panel is expected to have a view element that renders the content from the
 panel. The element name must be the underscored inflection of the class name.
 For example `SessionPanel` has an element named `session_panel.ctp`, and
-SqllogPanel has an element named `sqllog_panel.ctp`. These elements should be
+`SqllogPanel` has an element named `sqllog_panel.ctp`. These elements should be
 located in the root of your `View/Elements` directory.
 
 #### Custom Titles and Elements
