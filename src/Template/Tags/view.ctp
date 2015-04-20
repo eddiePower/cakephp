@@ -83,7 +83,7 @@
             <td><?= h($bookmarks->description) ?></td>
             <td><?= h($bookmarks->url) ?></td>
             <td><?= h($bookmarks->created) ?></td>
-            <td><?= h($bookmarks->updated) ?></td>
+            <td><?= h($bookmarks->modified) ?></td>
 
             <td class="actions">
                 <?= $this->Html->link(__('View'), ['controller' => 'Bookmarks', 'action' => 'view', $bookmarks->id]) ?>

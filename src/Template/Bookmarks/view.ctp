@@ -95,7 +95,7 @@
             <td><?= h($tags->id) ?></td>
             <td><?= h($tags->title) ?></td>
             <td><?= h($tags->created) ?></td>
-            <td><?= h($tags->updated) ?></td>
+            <td><?= h($tags->modified) ?></td>
 
             <td class="actions">
                 <?= $this->Html->link(__('View'), ['controller' => 'Tags', 'action' => 'view', $tags->id]) ?>
