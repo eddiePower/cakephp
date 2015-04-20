@@ -1487,6 +1487,7 @@ Stack Trace:
 #1 {main}
 
 
+<<<<<<< HEAD
 2015-04-20 08:45:21 Error: [PDOException] SQLSTATE[HY000] [2003] Can't connect to MySQL server on '130.194.7.82' (61)
 Request URL: /development/users/login
 Stack Trace:
@@ -1538,6 +1539,130 @@ Stack Trace:
 #18 /Users/edster2007/Sites/development/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
 #19 /Users/edster2007/Sites/development/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\BookmarksController))
 #20 /Users/edster2007/Sites/development/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+=======
+2015-04-15 15:14:31 Error: [InvalidArgumentException] Bookmarks is not associated with BookmarksTags
+Request URL: /team18/build0/development/bookmarks/view/1
+Stack Trace:
+#0 D:\websites\ie\team18\build0\development\vendor\cakephp\cakephp\src\ORM\EagerLoader.php(232): Cake\ORM\EagerLoader->_normalizeContain(Object(App\Model\Table\BookmarksTable), 'BookmarksTags', Array, Array)
+#1 D:\websites\ie\team18\build0\development\vendor\cakephp\cakephp\src\ORM\EagerLoader.php(337): Cake\ORM\EagerLoader->normalized(Object(App\Model\Table\BookmarksTable))
+#2 D:\websites\ie\team18\build0\development\vendor\cakephp\cakephp\src\ORM\EagerLoader.php(316): Cake\ORM\EagerLoader->attachableAssociations(Object(App\Model\Table\BookmarksTable))
+#3 D:\websites\ie\team18\build0\development\vendor\cakephp\cakephp\src\ORM\Query.php(669): Cake\ORM\EagerLoader->attachAssociations(Object(Cake\ORM\Query), Object(App\Model\Table\BookmarksTable), true)
+#4 D:\websites\ie\team18\build0\development\vendor\cakephp\cakephp\src\ORM\Query.php(625): Cake\ORM\Query->_transformQuery()
+#5 D:\websites\ie\team18\build0\development\vendor\cakephp\cakephp\src\Database\Driver\Mysql.php(116): Cake\ORM\Query->sql()
+#6 D:\websites\ie\team18\build0\development\vendor\cakephp\cakephp\src\Database\Connection.php(220): Cake\Database\Driver\Mysql->prepare(Object(Cake\ORM\Query))
+#7 D:\websites\ie\team18\build0\development\vendor\cakephp\cakephp\src\Database\Connection.php(272): Cake\Database\Connection->prepare(Object(Cake\ORM\Query))
+#8 D:\websites\ie\team18\build0\development\vendor\cakephp\cakephp\src\Database\Query.php(174): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#9 D:\websites\ie\team18\build0\development\vendor\cakephp\cakephp\src\ORM\Query.php(644): Cake\Database\Query->execute()
+#10 D:\websites\ie\team18\build0\development\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(218): Cake\ORM\Query->_execute()
+#11 D:\websites\ie\team18\build0\development\vendor\cakephp\cakephp\src\ORM\Query.php(595): Cake\ORM\Query->_all()
+#12 D:\websites\ie\team18\build0\development\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(340): Cake\ORM\Query->all()
+#13 D:\websites\ie\team18\build0\development\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(351): Cake\ORM\Query->first()
+#14 D:\websites\ie\team18\build0\development\vendor\cakephp\cakephp\src\ORM\Table.php(1108): Cake\ORM\Query->firstOrFail()
+#15 D:\websites\ie\team18\build0\development\src\Controller\BookmarksController.php(98): Cake\ORM\Table->get('1', Array)
+#16 [internal function]: App\Controller\BookmarksController->view('1')
+#17 D:\websites\ie\team18\build0\development\vendor\cakephp\cakephp\src\Controller\Controller.php(405): call_user_func_array(Array, Array)
+#18 D:\websites\ie\team18\build0\development\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#19 D:\websites\ie\team18\build0\development\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\BookmarksController))
+#20 D:\websites\ie\team18\build0\development\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#21 {main}
+
+
+2015-04-15 15:16:13 Error: [Cake\Controller\Exception\MissingActionException] Action TagsController::CakePHP() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'TagsController',
+  'action' => 'CakePHP',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /team18/build0/development/tags/CakePHP
+Stack Trace:
+#0 D:\websites\ie\team18\build0\development\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 D:\websites\ie\team18\build0\development\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TagsController))
+#2 D:\websites\ie\team18\build0\development\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2015-04-15 15:16:28 Error: [Cake\Controller\Exception\MissingActionException] Action TagsController::funny() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'TagsController',
+  'action' => 'funny',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /team18/build0/development/tags/funny
+Stack Trace:
+#0 D:\websites\ie\team18\build0\development\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 D:\websites\ie\team18\build0\development\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TagsController))
+#2 D:\websites\ie\team18\build0\development\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2015-04-15 15:16:39 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Tagged could not be found.
+Exception Attributes: array (
+  'class' => 'Tagged',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /team18/build0/development/tagged/funny
+Stack Trace:
+#0 D:\websites\ie\team18\build0\development\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2015-04-15 15:16:39 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Tagged could not be found.
+Exception Attributes: array (
+  'class' => 'Tagged',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /team18/build0/development/tagged/funny
+Stack Trace:
+#0 D:\websites\ie\team18\build0\development\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2015-04-15 15:17:00 Error: [Cake\Controller\Exception\MissingActionException] Action TagsController::funny() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'TagsController',
+  'action' => 'funny',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /team18/build0/development/tags/funny
+Stack Trace:
+#0 D:\websites\ie\team18\build0\development\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 D:\websites\ie\team18\build0\development\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TagsController))
+#2 D:\websites\ie\team18\build0\development\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2015-04-15 15:27:12 Error: [InvalidArgumentException] Bookmarks is not associated with BookmarksTags
+Request URL: /team18/build0/development/bookmarks/view/1
+Stack Trace:
+#0 D:\websites\ie\team18\build0\development\vendor\cakephp\cakephp\src\ORM\EagerLoader.php(232): Cake\ORM\EagerLoader->_normalizeContain(Object(App\Model\Table\BookmarksTable), 'BookmarksTags', Array, Array)
+#1 D:\websites\ie\team18\build0\development\vendor\cakephp\cakephp\src\ORM\EagerLoader.php(337): Cake\ORM\EagerLoader->normalized(Object(App\Model\Table\BookmarksTable))
+#2 D:\websites\ie\team18\build0\development\vendor\cakephp\cakephp\src\ORM\EagerLoader.php(316): Cake\ORM\EagerLoader->attachableAssociations(Object(App\Model\Table\BookmarksTable))
+#3 D:\websites\ie\team18\build0\development\vendor\cakephp\cakephp\src\ORM\Query.php(669): Cake\ORM\EagerLoader->attachAssociations(Object(Cake\ORM\Query), Object(App\Model\Table\BookmarksTable), true)
+#4 D:\websites\ie\team18\build0\development\vendor\cakephp\cakephp\src\ORM\Query.php(625): Cake\ORM\Query->_transformQuery()
+#5 D:\websites\ie\team18\build0\development\vendor\cakephp\cakephp\src\Database\Driver\Mysql.php(116): Cake\ORM\Query->sql()
+#6 D:\websites\ie\team18\build0\development\vendor\cakephp\cakephp\src\Database\Connection.php(220): Cake\Database\Driver\Mysql->prepare(Object(Cake\ORM\Query))
+#7 D:\websites\ie\team18\build0\development\vendor\cakephp\cakephp\src\Database\Connection.php(272): Cake\Database\Connection->prepare(Object(Cake\ORM\Query))
+#8 D:\websites\ie\team18\build0\development\vendor\cakephp\cakephp\src\Database\Query.php(174): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#9 D:\websites\ie\team18\build0\development\vendor\cakephp\cakephp\src\ORM\Query.php(644): Cake\Database\Query->execute()
+#10 D:\websites\ie\team18\build0\development\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(218): Cake\ORM\Query->_execute()
+#11 D:\websites\ie\team18\build0\development\vendor\cakephp\cakephp\src\ORM\Query.php(595): Cake\ORM\Query->_all()
+#12 D:\websites\ie\team18\build0\development\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(340): Cake\ORM\Query->all()
+#13 D:\websites\ie\team18\build0\development\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(351): Cake\ORM\Query->first()
+#14 D:\websites\ie\team18\build0\development\vendor\cakephp\cakephp\src\ORM\Table.php(1108): Cake\ORM\Query->firstOrFail()
+#15 D:\websites\ie\team18\build0\development\src\Controller\BookmarksController.php(98): Cake\ORM\Table->get('1', Array)
+#16 [internal function]: App\Controller\BookmarksController->view('1')
+#17 D:\websites\ie\team18\build0\development\vendor\cakephp\cakephp\src\Controller\Controller.php(405): call_user_func_array(Array, Array)
+#18 D:\websites\ie\team18\build0\development\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#19 D:\websites\ie\team18\build0\development\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\BookmarksController))
+#20 D:\websites\ie\team18\build0\development\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+>>>>>>> 8c2aa2871d609a59de93dc07aee965a0f83848f4
 #21 {main}
 
 
