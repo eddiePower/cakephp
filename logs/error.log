@@ -1,0 +1,140 @@
+2015-05-04 17:06:43 Error: [Cake\Network\Exception\SocketException] Operation timed out
+Request URL: /build1/development/customers/buildEmails
+Stack Trace:
+#0 /Users/edster2007/Sites/build1/development/vendor/cakephp/cakephp/src/Network/Email/SmtpTransport.php(204): Cake\Network\Socket->connect()
+#1 /Users/edster2007/Sites/build1/development/vendor/cakephp/cakephp/src/Network/Email/SmtpTransport.php(159): Cake\Network\Email\SmtpTransport->_connect()
+#2 /Users/edster2007/Sites/build1/development/vendor/cakephp/cakephp/src/Network/Email/Email.php(1301): Cake\Network\Email\SmtpTransport->send(Object(Cake\Network\Email\Email))
+#3 /Users/edster2007/Sites/build1/development/src/Controller/CustomersController.php(203): Cake\Network\Email\Email->send('Yes we can may ...')
+#4 [internal function]: App\Controller\CustomersController->buildEmails()
+#5 /Users/edster2007/Sites/build1/development/vendor/cakephp/cakephp/src/Controller/Controller.php(410): call_user_func_array(Array, Array)
+#6 /Users/edster2007/Sites/build1/development/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#7 /Users/edster2007/Sites/build1/development/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\CustomersController))
+#8 /Users/edster2007/Sites/build1/development/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 {main}
+
+
+2015-05-04 17:08:16 Error: [Cake\Network\Exception\SocketException] Operation timed out
+Request URL: /build1/development/customers/buildEmails
+Stack Trace:
+#0 /Users/edster2007/Sites/build1/development/vendor/cakephp/cakephp/src/Network/Email/SmtpTransport.php(204): Cake\Network\Socket->connect()
+#1 /Users/edster2007/Sites/build1/development/vendor/cakephp/cakephp/src/Network/Email/SmtpTransport.php(159): Cake\Network\Email\SmtpTransport->_connect()
+#2 /Users/edster2007/Sites/build1/development/vendor/cakephp/cakephp/src/Network/Email/Email.php(1301): Cake\Network\Email\SmtpTransport->send(Object(Cake\Network\Email\Email))
+#3 /Users/edster2007/Sites/build1/development/src/Controller/CustomersController.php(203): Cake\Network\Email\Email->send('Testering. And ...')
+#4 [internal function]: App\Controller\CustomersController->buildEmails()
+#5 /Users/edster2007/Sites/build1/development/vendor/cakephp/cakephp/src/Controller/Controller.php(410): call_user_func_array(Array, Array)
+#6 /Users/edster2007/Sites/build1/development/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#7 /Users/edster2007/Sites/build1/development/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\CustomersController))
+#8 /Users/edster2007/Sites/build1/development/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 {main}
+
+
+2015-05-05 05:45:10 Warning: Warning (512): Method Cake\View\Helper\FlashHelper::sucess does not exist in [/Users/edster2007/Sites/build1/development/vendor/cakephp/cakephp/src/View/Helper.php, line 138]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+Cake\View\Helper::__call() - CORE/src/View/Helper.php, line 138
+Cake\View\Helper\FlashHelper::sucess() - APP/Template/Users/view.ctp, line 81
+include - APP/Template/Users/view.ctp, line 81
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 815
+Cake\View\View::_render() - CORE/src/View/View.php, line 775
+Cake\View\View::render() - CORE/src/View/View.php, line 463
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 581
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-05-05 05:45:19 Warning: Warning (512): Method Cake\View\Helper\FlashHelper::success does not exist in [/Users/edster2007/Sites/build1/development/vendor/cakephp/cakephp/src/View/Helper.php, line 138]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+Cake\View\Helper::__call() - CORE/src/View/Helper.php, line 138
+Cake\View\Helper\FlashHelper::success() - APP/Template/Users/view.ctp, line 81
+include - APP/Template/Users/view.ctp, line 81
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 815
+Cake\View\View::_render() - CORE/src/View/View.php, line 775
+Cake\View\View::render() - CORE/src/View/View.php, line 463
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 581
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-05-05 05:47:06 Warning: Warning (512): Method Cake\View\Helper\FlashHelper::success does not exist in [/Users/edster2007/Sites/build1/development/vendor/cakephp/cakephp/src/View/Helper.php, line 138]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+Cake\View\Helper::__call() - CORE/src/View/Helper.php, line 138
+Cake\View\Helper\FlashHelper::success() - APP/Template/Users/view.ctp, line 81
+include - APP/Template/Users/view.ctp, line 81
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 815
+Cake\View\View::_render() - CORE/src/View/View.php, line 775
+Cake\View\View::render() - CORE/src/View/View.php, line 463
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 581
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-05-05 05:47:13 Warning: Warning (512): Method Cake\View\Helper\FlashHelper::success does not exist in [/Users/edster2007/Sites/build1/development/vendor/cakephp/cakephp/src/View/Helper.php, line 138]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+Cake\View\Helper::__call() - CORE/src/View/Helper.php, line 138
+Cake\View\Helper\FlashHelper::success() - APP/Template/Users/view.ctp, line 81
+include - APP/Template/Users/view.ctp, line 81
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 815
+Cake\View\View::_render() - CORE/src/View/View.php, line 775
+Cake\View\View::render() - CORE/src/View/View.php, line 463
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 581
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-05-05 05:47:26 Warning: Warning (512): Method Cake\View\Helper\FlashHelper::set does not exist in [/Users/edster2007/Sites/build1/development/vendor/cakephp/cakephp/src/View/Helper.php, line 138]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+Cake\View\Helper::__call() - CORE/src/View/Helper.php, line 138
+Cake\View\Helper\FlashHelper::set() - APP/Template/Users/view.ctp, line 81
+include - APP/Template/Users/view.ctp, line 81
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 815
+Cake\View\View::_render() - CORE/src/View/View.php, line 775
+Cake\View\View::render() - CORE/src/View/View.php, line 463
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 581
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-05-05 07:48:24 Error: [Cake\Network\Exception\SocketException] Operation timed out
+Request URL: /build1/development/customers/buildEmails
+Stack Trace:
+#0 /Users/edster2007/Sites/build1/development/vendor/cakephp/cakephp/src/Network/Email/SmtpTransport.php(204): Cake\Network\Socket->connect()
+#1 /Users/edster2007/Sites/build1/development/vendor/cakephp/cakephp/src/Network/Email/SmtpTransport.php(159): Cake\Network\Email\SmtpTransport->_connect()
+#2 /Users/edster2007/Sites/build1/development/vendor/cakephp/cakephp/src/Network/Email/Email.php(1301): Cake\Network\Email\SmtpTransport->send(Object(Cake\Network\Email\Email))
+#3 /Users/edster2007/Sites/build1/development/src/Controller/CustomersController.php(201): Cake\Network\Email\Email->send('yet another ema...')
+#4 [internal function]: App\Controller\CustomersController->buildEmails()
+#5 /Users/edster2007/Sites/build1/development/vendor/cakephp/cakephp/src/Controller/Controller.php(410): call_user_func_array(Array, Array)
+#6 /Users/edster2007/Sites/build1/development/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#7 /Users/edster2007/Sites/build1/development/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\CustomersController))
+#8 /Users/edster2007/Sites/build1/development/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 {main}
+
+
+2015-05-05 07:50:45 Error: [Cake\Network\Exception\SocketException] Operation timed out
+Request URL: /build1/development/customers/buildEmails
+Stack Trace:
+#0 /Users/edster2007/Sites/build1/development/vendor/cakephp/cakephp/src/Network/Email/SmtpTransport.php(204): Cake\Network\Socket->connect()
+#1 /Users/edster2007/Sites/build1/development/vendor/cakephp/cakephp/src/Network/Email/SmtpTransport.php(159): Cake\Network\Email\SmtpTransport->_connect()
+#2 /Users/edster2007/Sites/build1/development/vendor/cakephp/cakephp/src/Network/Email/Email.php(1301): Cake\Network\Email\SmtpTransport->send(Object(Cake\Network\Email\Email))
+#3 /Users/edster2007/Sites/build1/development/src/Controller/CustomersController.php(201): Cake\Network\Email\Email->send('this is a test ...')
+#4 [internal function]: App\Controller\CustomersController->buildEmails()
+#5 /Users/edster2007/Sites/build1/development/vendor/cakephp/cakephp/src/Controller/Controller.php(410): call_user_func_array(Array, Array)
+#6 /Users/edster2007/Sites/build1/development/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#7 /Users/edster2007/Sites/build1/development/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\CustomersController))
+#8 /Users/edster2007/Sites/build1/development/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 {main}
+
+
