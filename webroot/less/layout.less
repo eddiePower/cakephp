@@ -1,0 +1,104 @@
+// main: lightgrid.less
+
+/* ----------------------------------------------------------------
+ * layout.less
+ * ---------------------------------------------------------------- */
+
+
+@import 'config.less';
+
+
+/* ----------------------------------------------------------------
+ * $header
+ * ---------------------------------------------------------------- */
+.site-header {
+	height:64px;
+}
+
+.header-nav {
+	width: @row-width;
+	margin: 0 auto;
+}
+
+.header-nav-title {
+	float: left;
+	height:56px;
+	margin: 4px 0;
+	
+	line-height: 1.6em;
+}
+
+.header-nav-title > img {
+	height: 100%;
+}
+
+.header-nav-item {
+	display: inline-block;
+	float: right;
+	height:32px;
+	margin: 16px 0;
+	margin-right: 8px;
+	padding: 0 16px;
+	
+	font-weight: 500;
+	line-height: 2em;
+}
+
+.header-nav-item:last-child {
+	margin-right: 0;
+}
+
+
+/* ----------------------------------------------------------------
+ * $main
+ * ---------------------------------------------------------------- */
+.site-main {
+	padding: 32px 0;
+	background-color: @background1;
+	
+	box-shadow: inset 0 1px 2px 1px rgba(0, 0, 0, 0.08);
+}
+
+.main-inner > h1,
+.main-inner > h2 {
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+	margin-bottom: 16px;
+}
+
+.panel {
+	padding: 16px;
+	margin-bottom: 16px;
+	
+	background-color: #FFF;
+	box-sizing: border-box;
+	box-shadow: 0 1px 2px 1px rgba(0,0,0,0.1);
+}
+
+.nav-title {
+	margin-bottom: 8px;
+}
+
+
+/* ----------------------------------------------------------------
+ * $footer
+ * ---------------------------------------------------------------- */
+.site-footer {
+	padding: 32px 0;
+	background-color: @background2;
+	color:#EEE;
+	
+	box-shadow: inset 0 1px 2px 1px rgba(0, 0, 0, 0.08);
+}
+
+.site-footer h3 {
+	padding: 4px 0;
+	margin: 4px 0;
+	
+	color:#EEE;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.footer-inner a {
+	color:#DDD;
+	text-decoration: underline;
+}

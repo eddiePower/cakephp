@@ -1,6 +1,11 @@
 
-<div class="users index large-10 medium-9 columns">
-<h4>Hi there <?= $username . ',<br />Role: ' . $userRole; ?> </h4>
+<div class="col-12 last panel">
+	<h3>
+	Logged in as <?= $username; ?>
+	</h3>
+	<h3>
+	Role: <?= $userRole; ?>
+   </h3>
     <table class="table table-bordered table-striped">
     <thead>
         <tr>
@@ -20,9 +25,9 @@
             <td><?= h($user->created) ?></td>
             <td><?= h($user->role) ?></td>
             <td class="actions">
-                <?= $this->Html->link(__('View'), ['action' => 'view', $user->id],['class' => 'btn btn-sm btn-default']) ?>
-                <?= $this->Html->link(__('Edit'), ['action' => 'edit', $user->id],['class' => 'btn btn-sm btn-default']) ?>
-                <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $user->id], ['confirm' => __('Are you sure you want to delete user {0}?', $user->email), 'class' => 'btn btn-sm btn-danger']) ?>
+                <?= $this->Html->link(__('View'), ['action' => 'view', $user->id],['class' => 'label']) ?>
+                <?= $this->Html->link(__('Edit'), ['action' => 'edit', $user->id],['class' => 'label']) ?>
+                <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $user->id], ['confirm' => __('Are you sure you want to delete user {0}?', $user->email), 'class' => 'label danger']) ?>
             </td>
         </tr>
 

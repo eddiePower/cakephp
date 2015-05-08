@@ -21,7 +21,7 @@ use Cake\Network\Exception\NotFoundException;
 $this->layout = false;
 
 if (!Configure::read('debug')):
-    throw new NotFoundException();
+	throw new NotFoundException();
 endif;
 
 $cakeDescription = 'SoleMate DoorMats built on CakePHP v3';
@@ -34,29 +34,38 @@ $cakeDescription = 'SoleMate DoorMats built on CakePHP v3';
     <title>
         <?= $cakeDescription ?>
     </title>
-    <?= $this->Html->meta('icon') ?>
-    <?= $this->Html->css('base.css') ?>
-    <?= $this->Html->css('cake.css') ?>
-<!--     <?= $this->Html->css('bootstrap.css') ?> -->
-<?= $this->Html->css('layout.css') ?>
-</head>
-<body class="home">
-    <div id="content">
-          <div class="menu-panel">
-         	<div class="center">
-           <?= $this->Html->image('http://www.ibaustralia.com/ibaustralia/custom/logo_custom.gif') ?>
-           <h1>Solemate Doormats</h1>
-           </div>
-            <h3><?= __('Menu') ?></h3>
-    <ul class="side-nav">
-        <li><?= $this->Html->link(__('Sign Up'), ['controller' => 'Users', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('Login'), ['controller' => 'Users', 'action' => 'login']) ?> </li>
-        <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('List Customers'), ['controller' => 'Customers', 'action' => 'index']) ?> </li>
-    </ul>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'>
 
-    <p class=''>Welcome to IBAustralia's Solemate Doormats this is your B2B one stop shop for all things doormats.  Feel free to contact us for details on how your business can get the best deals in town on your new exciting doormat range.</p>
-   </div>
-    </div>
+<?= $this->Html->css('lightgrid.css') ?>
+</head>
+<body>
+	<header class="site-header">
+   <nav class="header-nav">
+		 <h1 class="header-nav-title center">
+		 <?= $this->Html->image('http://www.ibaustralia.com/ibaustralia/custom/logo_custom.gif') ?>
+		 </h1>
+		</nav>
+	</header>
+  <main class="site-main">
+  	<div class="main-inner row">
+  		<div class="col-8">
+  			<h1>
+  				Solemate doormats
+  			</h1>
+  			<p class=''>Welcome to IBAustralia's Solemate Doormats this is your B2B one stop shop for all things doormats.  Feel free to contact us for details on how your business can get the best deals in town on your new exciting doormat range.</p>
+  		</div>
+  		
+  	 	<div class="col-4 last panel">
+    		<h2 class="nav-title"><?= __('Menu') ?></h2>
+				<nav>
+					<?= $this->Html->link(__('Sign Up'), ['controller' => 'Users', 'action' => 'add'], array('class' => 'button')) ?>
+					<?= $this->Html->link(__('Login'), ['controller' => 'Users', 'action' => 'login'], array('class' => 'button')) ?>
+					<?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index'], array('class' => 'button')) ?>
+					<?= $this->Html->link(__('List Customers'), ['controller' => 'Customers', 'action' => 'index'], array('class' => 'button')) ?>
+				</nav>
+			</div>
+    
+  	</div>
+	</main>
 </body>
 </html>

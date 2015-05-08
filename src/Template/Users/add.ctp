@@ -1,5 +1,7 @@
-
-<div class="users form large-10 medium-9 columns">
+<h1 class="center">
+	Signup
+</h1>
+<div class="panel col-4 offset-4">
         <?= $this->Form->create($user, [
     'horizontal' => true,
     'cols' => [ // Total is 12, default is 2 / 6 / 4
@@ -8,8 +10,7 @@
         'error' => 5  //at end of inline
     ]
 ]) ?>
-    <fieldset>
-        <legend><?= __('Add User') ?></legend>
+        
         <?php
             echo $this->Form->input('email');
             echo $this->Form->input('password');
@@ -17,7 +18,6 @@
             'options' => ['admin' => 'Admin', 'user' => 'User']
         ]);
         ?>
-    </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
+    <?= $this->Form->button(__('Submit'), ['class' => 'positive']) ?>
     <?= $this->Form->end() ?>
 </div>

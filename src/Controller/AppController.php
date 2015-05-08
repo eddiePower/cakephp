@@ -48,7 +48,7 @@ class AppController extends Controller
                                    ]
                       ];
 
-    public $theme = 'Twit';
+    //public $theme = 'Twit';
     
     /**
      * Initialization hook method.

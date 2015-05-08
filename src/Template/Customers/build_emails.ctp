@@ -1,6 +1,6 @@
 
-<div class="users form large-10 medium-7 columns">
-<h1 align='center'>Compose email Page!!</h1>
+<h1 class="center">Compose email</h1>
+<div class="col-8 offset-2 panel">
 <p> Hello your email to Me welcome back myself and I are glad your talking to us ;)</p>
 <p>This has been a debugging email sent to you by team Heisenburg.</p>
 <br />
@@ -44,8 +44,8 @@
 <?= $this->Form->input('message', ['type' => 'textarea']) ?>
 <?= $this->Form->File('attachment') ?>
 <br />
-<?= $this->Form->submit(__('Send Email')) ?>
+<?= $this->Form->submit(__('Send Email'), ['class' => 'positive']) ?>
 <?= $this->Form->end() ?>
 
- <?= $this->Html->link(__(' Back'), ['controller' => 'Customers', 'action' => 'index'], ['class' => 'btn btn-sm btn-default']) ?>
+ <?= $this->Html->link(__(' Back'), ['controller' => 'Customers', 'action' => 'index'], ['class' => 'button auto']) ?>
 </div>
