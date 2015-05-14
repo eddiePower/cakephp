@@ -1,0 +1,104 @@
+// main: lightgrid.less
+
+/* ----------------------------------------------------------------
+ * components.less
+ * ---------------------------------------------------------------- */
+
+
+@import 'config.less';
+
+/* ----------------------------------------------------------------
+ * pagination
+ * ---------------------------------------------------------------- */
+
+.paginator {
+	margin: 16px 0;
+}
+
+.pagination {
+	padding: 0;
+	
+	text-align: center;
+}
+
+.pagination > li {
+	display: inline-block;
+	background-color: #FFF;
+}
+
+.pagination > li > a {
+	display: inline-block;
+	padding: 6px 12px;
+	
+	font-weight: 500;
+	color: @body-color;
+	
+	box-shadow: 0 1px 2px 1px rgba(0,0,0,0.1);
+}
+
+.pagination > li > a:hover {
+	text-decoration: none;
+}
+
+.paginator > p {
+	margin: 0;
+	text-align: center;
+	color:#AAA;
+}
+
+
+/* ----------------------------------------------------------------
+ * table
+ * ---------------------------------------------------------------- */
+table {
+	width: 100%;
+	margin: 16px 0;
+	
+	border: #DDD solid 1px;
+	
+	box-shadow: 0 1px 1px 0 rgba(0,0,0,0.1); 
+}
+
+thead td,
+thead th,
+thead a {
+	font-weight: 500;
+	color:@header-color;
+}
+
+thead a {
+	display: inline-block;
+	padding: 12px;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+th > a.asc,
+th > a.desc {
+	background-color: #fff1af;
+}
+
+th {
+	font-weight: 500;
+}
+
+tr > td:first-child {
+	font-weight: 500;
+}
+
+td {
+	padding: 8px;
+	text-align: center;
+}
+
+tbody tr {
+	background-color: #FEFFF0;
+}
+
+tbody tr:nth-child(2n) {
+	background-color: #FBFCDE;
+}
+
+tbody tr:hover {
+	background-color: #fff1af;
+}

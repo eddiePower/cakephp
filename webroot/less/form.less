@@ -1,0 +1,123 @@
+// main: lightgrid.less
+
+/* ----------------------------------------------------------------
+ * form.less
+ * 
+ * Basic form elements styling is defined here
+ * ---------------------------------------------------------------- */
+
+
+@import 'config.less';
+
+// General input styles
+input, textarea, select, button, .button {
+	width: 100%;
+	margin: 4px 0;
+	padding: 8px;
+	display: inline-block;
+	
+	font-family: @body-font;
+	
+	box-sizing: border-box;
+	
+	border: #DDD solid 1px;
+	border-radius: 3px;
+}
+
+// Styles for all things resembling an input element
+input[type="text"], input[type="email"], input[type="password"], textarea {
+}
+
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="password"]:hover,
+textarea:hover {	
+}
+
+input[type="text"]:active,
+input[type="email"]:active,
+input[type="password"]:active,
+textarea:active {
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+textarea:focus {	
+}
+
+// Styles for all things resembling a button
+input[type="button"], input[type="submit"], select, button, .button {
+	padding: 9px 12px;
+	
+	font-weight: 500;
+	
+	background-color: #EEE;
+	border:none;
+	
+	color:#666;
+	
+	box-sizing: border-box;
+	border-radius: 3px;
+	background-color: #FFF;
+	box-shadow: 0 1px 2px 1px rgba(0,0,0,0.1);
+}
+
+input[type="button"]:hover,
+input[type="submit"]:hover,
+select:hover,
+button:hover,
+.button:hover {
+	text-decoration: none;
+}
+
+input[type="button"]:active,
+input[type="submit"]:active,
+select:active,
+button:active,
+.button:active {
+	color:#777;
+	box-shadow: 0 1px 1px 0 rgba(0,0,0,0.1);
+}
+
+input[type="button"]:focus,
+input[type="submit"]:focus,
+select:focus,
+button:focus,
+.button:focus {
+}
+
+.label {
+	display: inline-block;
+	padding: 4px 12px;
+	
+	font-weight: 500;
+	font-size: 0.8em;
+	color:#FFF;
+	background-color: @positive;
+	border-radius: 24px;
+}
+
+.label.danger {
+	background-color: @negative;
+}
+
+.label:hover,
+.label:active {
+	text-decoration: none;
+	background-color: darken(@positive, 10%);
+}
+
+.label.danger:hover,
+.label.danger:active {
+	background-color: darken(@negative, 10%);
+}
+
+input[type="button"].positive,
+input[type="submit"].positive,
+select.positive,
+button.positive,
+.button.positive {
+	color:#FFF;
+	background-color: @positive;
+}
