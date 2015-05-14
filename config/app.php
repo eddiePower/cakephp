@@ -261,7 +261,7 @@ return [
             'driver' => 'Cake\Database\Driver\Mysql',
             'persistent' => false,
             'host' => 'localhost',
-            'port' => '8889',
+            //'port' => '8889',
             'username' => 'IEMySQL18',
             'password' => 'vi5zo7hie3',
             'database' => 'fitie2015t18dev',
