@@ -62,7 +62,7 @@ return [
      *   You should treat it as extremely sensitive data.
      */
     'Security' => [
-        'salt' => '25d2a61d70991844e116cc422306d6645eaeb60a7d141618e54bb985f65d4b0c',
+        'salt' => '703cde40d10284b3a8a8731f7f34bacd1612c76acdc137ff141b10315ede41ae',
     ],
 
     /**
@@ -178,20 +178,34 @@ return [
      * easier. Each profile accepts a number of keys. See `Cake\Network\Email\Email`
      * for more information.
      */
-     
-     'EmailTransport' => [
+        
+'EmailTransport' => [
         'default' => [
             'className' => 'Smtp',
             // The following keys are used in SMTP transports
             'host' => 'ssl://smtp.gmail.com',
             'port' =>  465,
-            'timeout' => 30,
+            'timeout' => 60,
             'username' => 'solemate.doormats@gmail.com',
             'password' => 'solematedoormats',
             'client' => null,
             'tls' => null,
         ],
     ],
+/*
+    'EmailTransport' => [
+        'default' => [
+            'className' => 'Mail',
+            // The following keys are used in SMTP transports
+            'host' => 'localhost',
+            'port' =>  25,
+            'timeout' => 60,
+            'username' => 'test',
+            'password' => 'secret',
+            'client' => null,
+            'tls' => null,
+        ],
+    ],*/
     'Email' => [
         'default' => [
             'transport' => 'default',
@@ -199,25 +213,19 @@ return [
             //'charset' => 'utf-8',
             //'headerCharset' => 'utf-8',
         ],
-    ],
-    /**
+    ],    /**
      * Connection information used by the ORM to connect
      * to your application's datastores.
      * Drivers include Mysql Postgres Sqlite Sqlserver
      * See vendor\cakephp\cakephp\src\Database\Driver for complete list
      */
-     'Datasources' => [
+    'Datasources' => [
         'default' => [
             'className' => 'Cake\Database\Connection',
             'driver' => 'Cake\Database\Driver\Mysql',
             'persistent' => false,
-            'host' => '130.194.7.82',
-            /**
-             * CakePHP will use the default DB port based on the driver selected
-             * MySQL on MAMP uses port 8889, MAMP users will want to uncomment
-             * the following line and set the port accordingly
-             */
-            //'port' => 'nonstandard_port_number',
+            'host' => 'localhost',
+            'port' => '8889',
             'username' => 'IEMySQL18',
             'password' => 'vi5zo7hie3',
             'database' => 'fitie2015t18dev',
@@ -252,8 +260,8 @@ return [
             'className' => 'Cake\Database\Connection',
             'driver' => 'Cake\Database\Driver\Mysql',
             'persistent' => false,
-            'host' => '130.194.7.82',
-            //'port' => 'nonstandard_port_number',
+            'host' => 'localhost',
+            'port' => '8889',
             'username' => 'IEMySQL18',
             'password' => 'vi5zo7hie3',
             'database' => 'fitie2015t18dev',
