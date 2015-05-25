@@ -59,7 +59,7 @@ trait ValidatorAwareTrait
      * {
      *  return $validator
      *  ->add('email', 'valid-email', ['rule' => 'email'])
-     *  ->add('password', 'valid', ['rule' => 'notEmpty'])
+     *  ->add('password', 'valid', ['rule' => 'notBlank'])
      *  ->requirePresence('username');
      * }
      * ```
@@ -70,7 +70,7 @@ trait ValidatorAwareTrait
      * $validator = new \Cake\Validation\Validator($table);
      * $validator
      *  ->add('email', 'valid-email', ['rule' => 'email'])
-     *  ->add('password', 'valid', ['rule' => 'notEmpty'])
+     *  ->add('password', 'valid', ['rule' => 'notBlank'])
      *  ->allowEmpty('bio');
      * $table->validator('forSubscription', $validator);
      * ```
@@ -84,8 +84,11 @@ trait ValidatorAwareTrait
      *   use null to get a validator.
      * @return \Cake\Validation\Validator
      */
-    public function validator($name = self::DEFAULT_VALIDATOR, Validator $validator = null)
+    public function validator($name = null, Validator $validator = null)
     {
+        if ($name === null) {
+            $name = self::DEFAULT_VALIDATOR;
+        }
         if ($validator === null && isset($this->_validators[$name])) {
             return $this->_validators[$name];
         }

@@ -746,6 +746,26 @@ tbody tr:hover {
   background-color: #fff1af;
 }
 /* ----------------------------------------------------------------
+ * navigation
+ * ---------------------------------------------------------------- */
+.nav-container {
+  display: inline-block;
+  margin: 0 auto 16px auto;
+  background-color: #FFF;
+  box-sizing: border-box;
+  box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.1);
+}
+.nav-item {
+  display: inline-block;
+  padding: 8px 16px;
+  font-weight: 500;
+  background-color: #FEFFF0;
+}
+.nav-item:hover {
+  background-color: #fff1af;
+  text-decoration: none;
+}
+/* ----------------------------------------------------------------
  * layout.less
  * ---------------------------------------------------------------- */
 /* ----------------------------------------------------------------
@@ -800,6 +820,11 @@ tbody tr:hover {
   box-sizing: border-box;
   box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.1);
 }
+.panel-img {
+  display: block;
+  margin: 0 auto;
+  max-height: 128px;
+}
 .nav-title {
   margin-bottom: 8px;
 }
@@ -846,6 +871,9 @@ tbody tr:hover {
     margin: 0;
     width: 100%!important;
   }
+  .panel {
+    margin-bottom: 16px;
+  }
 }
 @media only screen and (min-width: 481px) and (max-width: 767px) {
   .col-1,
@@ -862,5 +890,8 @@ tbody tr:hover {
   .col-12 {
     margin: 0;
     width: 100%!important;
+  }
+  .panel {
+    margin-bottom: 16px;
   }
 }

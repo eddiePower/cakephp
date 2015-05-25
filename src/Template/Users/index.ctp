@@ -1,3 +1,4 @@
+<h1 class="center">Users</h1>
 
 <div class="col-12 last panel">
 	<h3>
@@ -9,6 +10,7 @@
     <table class="table table-bordered table-striped">
     <thead>
         <tr>
+            <th><?= $this->Paginator->sort('username') ?></th>
             <th><?= $this->Paginator->sort('email') ?></th>
             <th><?= $this->Paginator->sort('password') ?></th>
             <th><?= $this->Paginator->sort('created') ?></th>
@@ -19,6 +21,7 @@
     <tbody>
     <?php foreach ($users as $user): ?>
         <tr>
+            <td><?= h($user->username) ?></td>
             <td><?= h($user->email) ?></td>
             <!-- Used a cake truncate method for somthing different, can also use tail for end of string -->
             <td><?= h($this->Text->truncate($user->password, 20, ['ellipsis' => '...', 'exact' => true])) ?></td>
@@ -27,7 +30,7 @@
             <td class="actions">
                 <?= $this->Html->link(__('View'), ['action' => 'view', $user->id],['class' => 'label']) ?>
                 <?= $this->Html->link(__('Edit'), ['action' => 'edit', $user->id],['class' => 'label']) ?>
-                <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $user->id], ['confirm' => __('Are you sure you want to delete user {0}?', $user->email), 'class' => 'label danger']) ?>
+                <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $user->username], ['confirm' => __('Are you sure you want to delete user {0}?', $user->email), 'class' => 'label danger']) ?>
             </td>
         </tr>
 

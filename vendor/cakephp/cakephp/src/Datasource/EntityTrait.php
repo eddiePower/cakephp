@@ -116,6 +116,13 @@ trait EntityTrait
     protected $_registryAlias;
 
     /**
+     * Holds a list of properties that were mutated using the get accessor
+     *
+     * @var array
+     */
+    protected $_mutated = [];
+
+    /**
      * Magic getter to access properties that have been set in this entity
      *
      * @param string $property Name of the property to access
@@ -255,6 +262,8 @@ trait EntityTrait
             }
             $this->_properties[$p] = $value;
         }
+
+        $this->_mutated = [];
         return $this;
     }
 
@@ -271,6 +280,10 @@ trait EntityTrait
             throw new InvalidArgumentException('Cannot get an empty property');
         }
 
+        if (array_key_exists($property, $this->_mutated)) {
+            return $this->_mutated[$property];
+        }
+
         $value = null;
         $method = '_get' . Inflector::camelize($property);
 
@@ -280,6 +293,7 @@ trait EntityTrait
 
         if ($this->_methodExists($method)) {
             $result = $this->{$method}($value);
+            $this->_mutated[$property] = $result;
             return $result;
         }
         return $value;
@@ -353,6 +367,7 @@ trait EntityTrait
             unset($this->_dirty[$p]);
         }
 
+        $this->_mutated = [];
         return $this;
     }
 
@@ -526,12 +541,37 @@ trait EntityTrait
 
     /**
      * Returns an array with the requested original properties
-     * stored in this entity, indexed by property name
+     * stored in this entity, indexed by property name.
+     *
+     * Properties that are unchanged from their original value will be included in the
+     * return of this method.
      *
      * @param array $properties List of properties to be returned
      * @return array
      */
     public function extractOriginal(array $properties)
+    {
+        $result = [];
+        foreach ($properties as $property) {
+            $original = $this->getOriginal($property);
+            if ($original !== null) {
+                $result[$property] = $original;
+            }
+        }
+        return $result;
+    }
+
+    /**
+     * Returns an array with only the original properties
+     * stored in this entity, indexed by property name.
+     *
+     * This method will only return properties that have been modified since
+     * the entity was built. Unchanged properties will be omitted.
+     *
+     * @param array $properties List of properties to be returned
+     * @return array
+     */
+    public function extractOriginalChanged(array $properties)
     {
         $result = [];
         foreach ($properties as $property) {
@@ -845,15 +885,14 @@ trait EntityTrait
      */
     public function __debugInfo()
     {
-        return [
-            'new' => $this->isNew(),
-            'accessible' => array_filter($this->_accessible),
-            'properties' => $this->_properties,
-            'dirty' => $this->_dirty,
-            'original' => $this->_original,
-            'virtual' => $this->_virtual,
-            'errors' => $this->_errors,
-            'repository' => $this->_registryAlias
+        return $this->_properties + [
+            '[new]' => $this->isNew(),
+            '[accessible]' => array_filter($this->_accessible),
+            '[dirty]' => $this->_dirty,
+            '[original]' => $this->_original,
+            '[virtual]' => $this->_virtual,
+            '[errors]' => $this->_errors,
+            '[repository]' => $this->_registryAlias
         ];
     }
 }

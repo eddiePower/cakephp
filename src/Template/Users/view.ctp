@@ -57,26 +57,30 @@
 	<table>
 		<thead>
 			<tr>
-				<th><?= __('Id') ?></th>
-				<th><?= __('Name') ?></th>
-				<th><?= __('Cardnum') ?></th>
+				<th><?= __('First Name') ?></th>
+				<th><?= __('Surname') ?></th>
+				<th><?= __('Address') ?></th>
+				<th><?= __('Postcode') ?></th>
 				<th><?= __('Phone') ?></th>
-				<th><?= __('Balance') ?></th>
-				<th><?= __('Type') ?></th>
-				<!-- <th><?= __('User Id') ?></th> -->
+				<th><?= __('Notes') ?></th>
+				<th><?= __('Customer Type') ?></th>
+<!-- 				<th><?= __('User ID') ?></th> -->
+				
 				<th class="actions"><?= __('Actions') ?></th>
 			</tr>
 		</thead>
 		<tbody>
 		<?php foreach ($user->customers as $customers): ?>
 			<tr>
-				<td><?= h($customers->id) ?></td>
-				<td><?= h($customers->name) ?></td>
-				<td><?= h($customers->cardnum) ?></td>
+				<td><?= h($customers->first_name) ?></td>
+				<td><?= h($customers->last_name) ?></td>
+				<td><?= h($customers->address) ?></td>
+				<td><?= h($customers->postcode) ?></td>
 				<td><?= h($customers->phone) ?></td>
-				<td><?= h($customers->balance) ?></td>
-				<td><?= h($customers->type) ?></td>
-				<!-- <td><?= h($customers->user_id) ?></td> -->
+				<td><?= h($customers->notes) ?></td>
+				<td><?= h($customers->customer_type) ?></td>
+<!-- 				<td><?= h($customers->user_email) ?></td> -->
+
 
 				<td class="actions">
 				<?= $this->Html->link(__('View'), ['controller' => 'Customers', 'action' => 'view', $customers->id],['class' => 'label']) ?>

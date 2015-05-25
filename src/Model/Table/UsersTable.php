@@ -22,7 +22,7 @@ class UsersTable extends Table
     public function initialize(array $config)
     {
         $this->table('users');
-        $this->displayField('id');
+        $this->displayField('email');
         $this->primaryKey('id');
         $this->addBehavior('Timestamp');
         $this->hasMany('Customers', [
@@ -41,6 +41,8 @@ class UsersTable extends Table
         $validator
             ->add('id', 'valid', ['rule' => 'numeric'])
             ->allowEmpty('id', 'create')
+            ->requirePresence('username', 'create')
+            ->notEmpty('username')
             ->add('email', 'valid', ['rule' => 'email'])
             ->requirePresence('email', 'create')
             ->notEmpty('email', 'A valid email is needed')

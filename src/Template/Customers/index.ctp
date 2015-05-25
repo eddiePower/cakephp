@@ -1,70 +1,56 @@
+<h1 class="center">Customers</h1>
 
-<h1 class="center">
-	Customer list
-</h1>
-
+<!--<h3><?= __('Actions') ?></h3>-->
+<nav class="nav-container">
+	<?= $this->Html->link(__('New Customer'), ['action' => 'add'], ['class' => 'nav-item']) ?>
+	<?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index'], ['class' => 'nav-item']) ?>
+	<?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add'], ['class' => 'nav-item']) ?>
+</nav>
 <div class="col-12 last panel">
-	<h3>
-	Logged in as <?= $username ?>
-	</h3>
-	
-	<h3>
-	Role : <?= $userRole; ?>	
-	</h3>
-	
-	<hr>
-	
 	<!--  Begin the form creation for each customers email address.  -->
 	<?= $this->Form->Create(null, ['action' => 'buildEmails']) ?>
-	<table class="table table-bordered table-striped">
+	<table cellpadding="0" cellspacing="0">
 		<thead>
 			<tr>
-				<th><?= $this->Paginator->sort('name') ?></th>
-				<th><?= $this->Paginator->sort('cardnum') ?></th>
+				<th><?= $this->Paginator->sort('first_name') ?></th>
+				<th><?= $this->Paginator->sort('last_name') ?></th>
+				<th><?= $this->Paginator->sort('postcode') ?></th>
 				<th><?= $this->Paginator->sort('phone') ?></th>
-				<th><?= $this->Paginator->sort('balance') ?></th>
-				<th><?= $this->Paginator->sort('type') ?></th>
-				<th><?= $this->Paginator->sort('user_id') ?></th>
-				<th><?= $this->Paginator->sort('Email Customer') ?></th>
+				<th><?= $this->Paginator->sort('customer_type') ?></th>
+				<th><?= $this->Paginator->sort('email customer') ?></th>
 				<th class="actions"><?= __('Actions') ?></th>
 			</tr>
 		</thead>
-		<tbody>    
-		<?php foreach ($customers as $customer): ?>
+		<tbody>
+			<?php foreach ($customers as $customer): ?>
 			<tr>
-				<td><?= h($customer->name) ?></td>
-				<td><?= $this->Number->format($customer->cardnum) ?></td>
+				<td><?= h($customer->first_name) ?></td>
+				<td><?= h($customer->last_name) ?></td>
+				<td><?= $this->Number->format($customer->postcode) ?></td>
 				<td><?= h($customer->phone) ?></td>
-				<td><?= "$". $this->Number->format($customer->balance) ?></td>
-				<td><?= h($customer->type) ?></td>
-				<td>
-				<!--  if the customer has a user Id assigned with it then look up the user email -->
-				<?= $customer->has('user') ? $this->Html->link($customer->user->email, ['controller' => 'Users', 'action' => 'view', $customer->user->id]) : '' ?>
-				</td>
-				<td>
-				<!-- This is the email entry point for adding a email selection Form/checkbox for multiple emails to begin i have made a link to email users the customer details for that row. 
-				Check and see if email exsists if so then assign it to the array named email, if not add in my email for debuging untill db is updated to ensure all customers have an email
-				-->
-				<?= $this->Form->checkbox('emails[]', ['hiddenField' => false, 'value' => $customer->has('user') ? $customer->user->email : 'edster2007@gmail.com']) ?>
+				<td><?= h($customer->customer_type) ?></td>
 
-
-				<!-- <?= $this->Html->link(__('Send Email'), array('action' => 'sendEmail', $customer->id)) ?> -->
+				<!--  Entry point for email checkbox and array builder / form.   -->
+				<td><?= h($customer->email) ?>
+				<?= $this->Form->checkbox('emails[]', ['hiddenField' => false, 'value' => $customer->email]) ?>
 				</td>
+
 				<td class="actions">
-				<?= $this->Html->link(__('View'), ['action' => 'view', $customer->id],['class' => 'label']) ?>
-				<?= $this->Html->link(__('Edit'), ['action' => 'edit', $customer->id],['class' => 'label']) ?>
-				<?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $customer->id], ['confirm' => __('Are you sure you want to delete customer {0}?', $customer->name), 'class' => 'label danger']) ?>
+				<?= $this->Html->link(__('View'), ['action' => 'view', $customer->id], ['class' => 'label']) ?>
+				<?= $this->Html->link(__('Edit'), ['action' => 'edit', $customer->id], ['class' => 'label']) ?>
+				<?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $customer->id], ['confirm' => __('Are you sure you want to delete customer {0}?', $customer->first_name . ' ' . $customer->last_name), 'class' => 'label danger']) ?>
 				</td>
 			</tr>
-		<?php endforeach; ?>        
+			<?php endforeach; ?>
+			
 		</tbody>
 	</table>
-	
+
 	<!--  **********END OF EMAIL CHECKBOXES FORM    -->
 	<?= $this->Form->submit(__('Compose Email'),['class' => 'positive auto']) ?>
 	<?= $this->Form->end() ?>
 	<!--  **********END OF EMAIL CHECKBOXES FORM    -->
-	
+
 	<div class="paginator">
 		<ul class="pagination">
 		<?= $this->Paginator->prev('< ' . __('previous')) ?>
@@ -75,5 +61,4 @@
 		<?= $this->Paginator->counter() ?>
 		</p>
 	</div>
-
 </div>

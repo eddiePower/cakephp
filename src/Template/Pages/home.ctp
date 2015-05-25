@@ -53,6 +53,35 @@ $cakeDescription = 'SoleMate DoorMats built on CakePHP v3';
   				Solemate doormats
   			</h1>
   			<p class=''>Welcome to IBAustralia's Solemate Doormats this is your B2B one stop shop for all things doormats.  Feel free to contact us for details on how your business can get the best deals in town on your new exciting doormat range.</p>
+  			<div class="clearfix">
+					<div class="col-4 panel">
+						<?php echo $this->Html->image('mat1.jpg', ['class' => 'panel-img']); ?>
+						<h4 class="center">Sample1</h4>
+					</div>
+					<div class="col-4 panel">
+						<?php echo $this->Html->image('mat2.jpg', ['class' => 'panel-img']); ?>
+						<h4 class="center">"Grandchildren spoiled here"</h4>
+					</div>
+					<div class="col-4 last panel">
+						<?php echo $this->Html->image('mat3.jpg', ['class' => 'panel-img']); ?>
+						<h4 class="center">"This is not a joke"</h4>
+					</div>
+  			</div>
+  			<div class="clearfix">
+					<div class="col-4 panel">
+						<?php echo $this->Html->image('mat4.jpg', ['class' => 'panel-img']); ?>
+						<h4 class="center">Fisherman</h4>
+					</div>
+					<div class="col-4 panel">
+						<?php echo $this->Html->image('mat5.jpg', ['class' => 'panel-img']); ?>
+						<h4 class="center">Warning1</h4>
+					</div>
+					<div class="col-4 last panel">
+						<?php echo $this->Html->image('mat6.jpg', ['class' => 'panel-img']); ?>
+						<h4 class="center">Warning2</h4>
+					</div>
+  			</div>
+  			
   		</div>
   		
   	 	<div class="col-4 last panel">

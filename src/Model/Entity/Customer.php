@@ -15,11 +15,14 @@ class Customer extends Entity
      * @var array
      */
     protected $_accessible = [
-        'name' => true,
-        'cardnum' => true,
+        'email' => true,
+        'first_name' => true,
+        'last_name' => true,
+        'address' => true,
+        'postcode' => true,
         'phone' => true,
-        'balance' => true,
-        'type' => true,
+        'notes' => true,
+        'customer_type' => true,
         'user_id' => true,
         'user' => true,
     ];

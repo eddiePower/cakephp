@@ -28,28 +28,7 @@ use Cake\Event\Event;
  * @link http://book.cakephp.org/3.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller
-{
-
-
-    public $helpers = [
-                        //swap out the normal helper's with ones styled by bootstrap.
-                        'Html' => [
-                                    'className' => 'Bootstrap3.BootstrapHtml',
-                                    'useFontAwesome' => true // Add this line to set font awesome as default
-                                  ],
-                        'Form' => [
-                                    'className' => 'Bootstrap3.BootstrapForm'
-                                  ],
-                        'Paginator' => [
-                                         'className' => 'Bootstrap3.BootstrapPaginator'
-                                  ],
-                        'Modal' => [
-                                      'className' => 'Bootstrap3.BootstrapModal'
-                                   ]
-                      ];
-
-    //public $theme = 'Twit';
-    
+{    
     /**
      * Initialization hook method.
      *
@@ -62,7 +41,7 @@ class AppController extends Controller
         parent::initialize();
         
         
-        // Time::$defaultLocale = 'en-AU';
+        //configure the date to australian format globally .
         Time::setToStringFormat('dd/MM/YYYY');
         
         
@@ -96,12 +75,14 @@ class AppController extends Controller
         $this->Auth->allow(['display']);
         
         
+        //this loads the nice tooltip messages for errors, confirms etc.
         $this->loadComponent('Flash');
     }
     
+    //this method allows the display method through to keep 
+    // the Pages controller working
     public function beforeFilter(Event $event)
     {
         $this->Auth->allow(['display']);
-    }
-    
+    }  
 }

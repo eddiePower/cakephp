@@ -367,11 +367,16 @@ class FormHelper extends Helper
         }
         unset($options['templates']);
 
-        $url = $this->_formUrl($context, $options);
-        $action = $this->Url->build($url);
-        unset($options['url'], $options['action'], $options['idPrefix']);
+        if ($options['action'] === false || $options['url'] === false) {
+            $url = $this->request->here(false);
+            $action = null;
+        } else {
+            $url = $this->_formUrl($context, $options);
+            $action = $this->Url->build($url);
+        }
 
         $this->_lastAction($url);
+        unset($options['url'], $options['action'], $options['idPrefix']);
 
         $htmlAttributes = [];
         switch (strtolower($options['type'])) {
@@ -545,7 +550,7 @@ class FormHelper extends Helper
      */
     public function secure(array $fields = [], array $secureAttributes = [])
     {
-        if (!isset($this->request['_Token']) || empty($this->request['_Token'])) {
+        if (empty($this->request['_Token'])) {
             return;
         }
         $locked = [];
@@ -1425,7 +1430,7 @@ class FormHelper extends Helper
      *
      * @param string $fieldName Name of a field, like this "modelname.fieldname"
      * @param array|\Traversable $options Radio button options array.
-     * @param array $attributes Array of HTML attributes, and special attributes above.
+     * @param array $attributes Array of attributes.
      * @return string Completed radio widget set.
      * @link http://book.cakephp.org/3.0/en/views/helpers/form.html#creating-radio-buttons
      */
@@ -2207,7 +2212,6 @@ class FormHelper extends Helper
                 $options[$type]['empty'] = $options['empty'][$type];
             }
         }
-        unset($options['empty']);
 
         $hasYear = is_array($options['year']);
         if ($hasYear && isset($options['minYear'])) {
@@ -2237,7 +2241,7 @@ class FormHelper extends Helper
         }
         unset($options['interval'], $options['round']);
 
-        if (!isset($options['val'])) {
+        if ($options['val'] === true || $options['val'] === null && isset($options['empty']) && $options['empty'] === false) {
             $val = new DateTime();
             $currentYear = $val->format('Y');
             if (isset($options['year']['end']) && $options['year']['end'] < $currentYear) {
@@ -2245,6 +2249,8 @@ class FormHelper extends Helper
             }
             $options['val'] = $val;
         }
+
+        unset($options['empty']);
 
         return $options;
     }

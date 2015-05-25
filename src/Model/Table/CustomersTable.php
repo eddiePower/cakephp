@@ -22,10 +22,13 @@ class CustomersTable extends Table
     public function initialize(array $config)
     {
         $this->table('customers');
-        $this->displayField('name');
+        $this->displayField('first_name');
         $this->primaryKey('id');
         $this->belongsTo('Users', [
             'foreignKey' => 'user_id'
+        ]);
+        $this->hasMany('Orders', [
+            'foreignKey' => 'customer_id'
         ]);
     }
 
@@ -39,17 +42,39 @@ class CustomersTable extends Table
     {
         $validator
             ->add('id', 'valid', ['rule' => 'numeric'])
-            ->allowEmpty('id', 'create')
-            ->requirePresence('name', 'create')
-            ->notEmpty('name')
-            ->add('cardnum', 'valid', ['rule' => 'numeric'])
-            ->requirePresence('cardnum', 'create')
-            ->notEmpty('cardnum')
-            ->allowEmpty('phone')
-            ->add('balance', 'valid', ['rule' => 'decimal'])
-            ->allowEmpty('balance')
-            ->requirePresence('type', 'create')
-            ->notEmpty('type');
+            ->allowEmpty('id', 'create');
+            
+        $validator
+            ->add('email', 'valid', ['rule' => 'email'])
+            ->requirePresence('email', 'create')
+            ->notEmpty('email');
+            
+        $validator
+            ->requirePresence('first_name', 'create')
+            ->notEmpty('first_name');
+            
+        $validator
+            ->requirePresence('last_name', 'create')
+            ->notEmpty('last_name');
+            
+        $validator
+            ->requirePresence('address', 'create')
+            ->notEmpty('address');
+            
+        $validator
+            ->add('postcode', 'valid', ['rule' => 'numeric'])
+            ->requirePresence('postcode', 'create')
+            ->notEmpty('postcode');
+            
+        $validator
+            ->allowEmpty('phone');
+            
+        $validator
+            ->allowEmpty('notes');
+            
+        $validator
+            ->requirePresence('customer_type', 'create')
+            ->notEmpty('customer_type');
 
         return $validator;
     }
@@ -63,6 +88,7 @@ class CustomersTable extends Table
      */
     public function buildRules(RulesChecker $rules)
     {
+        $rules->add($rules->isUnique(['email']));
         $rules->add($rules->existsIn(['user_id'], 'Users'));
         return $rules;
     }

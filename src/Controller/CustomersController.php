@@ -27,7 +27,6 @@ class CustomersController extends AppController
         $this->set('customers', $this->paginate($this->Customers));
         $this->set('_serialize', ['customers']);
         
-        
         //Set a variable for use on the index view to show user name / email.
         $this->set('username', $this->Auth->user('email'));
         
@@ -42,7 +41,6 @@ class CustomersController extends AppController
             //set a variable to dispaly user role - users
            $this->set('userRole', $this->Auth->user('role'));
         }
-        
     }
 
     /**
@@ -69,21 +67,15 @@ class CustomersController extends AppController
     public function add()
     {
         $customer = $this->Customers->newEntity();
-        if ($this->request->is('post')) 
-        {
+        if ($this->request->is('post')) {
             $customer = $this->Customers->patchEntity($customer, $this->request->data);
-            
-            if ($this->Customers->save($customer)) 
-            {
+            if ($this->Customers->save($customer)) {
                 $this->Flash->success('The customer has been saved.');
                 return $this->redirect(['action' => 'index']);
-            } 
-            else 
-            {
+            } else {
                 $this->Flash->error('The customer could not be saved. Please, try again.');
             }
         }
-        
         $users = $this->Customers->Users->find('list', ['limit' => 200]);
         $this->set(compact('customer', 'users'));
         $this->set('_serialize', ['customer']);
@@ -101,20 +93,15 @@ class CustomersController extends AppController
         $customer = $this->Customers->get($id, [
             'contain' => []
         ]);
-        if ($this->request->is(['patch', 'post', 'put'])) 
-        {
+        if ($this->request->is(['patch', 'post', 'put'])) {
             $customer = $this->Customers->patchEntity($customer, $this->request->data);
-            if ($this->Customers->save($customer)) 
-            {
+            if ($this->Customers->save($customer)) {
                 $this->Flash->success('The customer has been saved.');
                 return $this->redirect(['action' => 'index']);
-            } 
-            else 
-            {
+            } else {
                 $this->Flash->error('The customer could not be saved. Please, try again.');
             }
         }
-        
         $users = $this->Customers->Users->find('list', ['limit' => 200]);
         $this->set(compact('customer', 'users'));
         $this->set('_serialize', ['customer']);
@@ -123,30 +110,23 @@ class CustomersController extends AppController
     /**
      * Delete method
      *
-     *
-     * @return void and redirects back to index with a message of.
-     *          email sent printed to the page if email sending was
-     *          successfull.
-     *  @author Eddie Power.
-     *
+     * @param string|null $id Customer id.
+     * @return void Redirects to index.
+     * @throws \Cake\Network\Exception\NotFoundException When record not found.
      */
     public function delete($id = null)
     {
         $this->request->allowMethod(['post', 'delete']);
         $customer = $this->Customers->get($id);
-        
-        if ($this->Customers->delete($customer)) 
-        {
+        if ($this->Customers->delete($customer)) {
             $this->Flash->success('The customer has been deleted.');
-        } 
-        else 
-        {
+        } else {
             $this->Flash->error('The customer could not be deleted. Please, try again.');
         }
-        
         return $this->redirect(['action' => 'index']);
     }
-    
+
+
     /**
      * sendEmail method
      *
@@ -202,6 +182,5 @@ class CustomersController extends AppController
         }        
         
     }
-    
-    
+
 }
