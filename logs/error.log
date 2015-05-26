@@ -2581,3 +2581,30 @@ Stack Trace:
 #1 {main}
 
 
+2015-05-26 04:35:46 Error: [PDOException] SQLSTATE[HY000] [2003] Can't connect to MySQL server on '130.194.7.82' (61)
+Request URL: /testBuild/users/login
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Database/Driver/PDODriverTrait.php(48): PDO->__construct('mysql:host=130....', 'IEMySQL18', 'vi5zo7hie3', Array)
+#1 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Database/Driver/Mysql.php(89): Cake\Database\Driver\Mysql->_connect('mysql:host=130....', Array)
+#2 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Database/Schema/BaseSchema.php(46): Cake\Database\Driver\Mysql->connect()
+#3 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Database/Dialect/MysqlDialectTrait.php(62): Cake\Database\Schema\BaseSchema->__construct(Object(Cake\Database\Driver\Mysql))
+#4 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Database/Schema/Collection.php(52): Cake\Database\Driver\Mysql->schemaDialect()
+#5 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Database/Schema/CachedCollection.php(44): Cake\Database\Schema\Collection->__construct(Object(Cake\Database\Connection))
+#6 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Database/Connection.php(319): Cake\Database\Schema\CachedCollection->__construct(Object(Cake\Database\Connection), true)
+#7 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/ORM/Table.php(425): Cake\Database\Connection->schemaCollection()
+#8 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/ORM/Query.php(141): Cake\ORM\Table->schema()
+#9 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/ORM/Query.php(123): Cake\ORM\Query->addDefaultTypes(Object(App\Model\Table\UsersTable))
+#10 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/ORM/Table.php(1164): Cake\ORM\Query->__construct(Object(Cake\Database\Connection), Object(App\Model\Table\UsersTable))
+#11 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/ORM/Table.php(883): Cake\ORM\Table->query()
+#12 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Auth/BaseAuthenticate.php(116): Cake\ORM\Table->find('all')
+#13 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Auth/FormAuthenticate.php(77): Cake\Auth\BaseAuthenticate->_findUser('edster2007@gmai...', 'Password')
+#14 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Component/AuthComponent.php(751): Cake\Auth\FormAuthenticate->authenticate(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#15 /Users/edster2007/Sites/testBuild/src/Controller/UsersController.php(138): Cake\Controller\Component\AuthComponent->identify()
+#16 [internal function]: App\Controller\UsersController->login()
+#17 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(410): call_user_func_array(Array, Array)
+#18 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#19 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\UsersController))
+#20 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#21 {main}
+
+
