@@ -30,7 +30,7 @@
             <td class="actions">
                 <?= $this->Html->link(__('View'), ['action' => 'view', $user->id],['class' => 'label']) ?>
                 <?= $this->Html->link(__('Edit'), ['action' => 'edit', $user->id],['class' => 'label']) ?>
-                <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $user->username], ['confirm' => __('Are you sure you want to delete user {0}?', $user->email), 'class' => 'label danger']) ?>
+                <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $user->id], ['confirm' => __('Are you sure you want to delete user {0}?', $user->username), 'class' => 'label danger']) ?>
             </td>
         </tr>
 

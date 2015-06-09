@@ -49,12 +49,16 @@ class OrdersController extends AppController
     public function add()
     {
         $order = $this->Orders->newEntity();
-        if ($this->request->is('post')) {
+        if ($this->request->is('post')) 
+        {
             $order = $this->Orders->patchEntity($order, $this->request->data);
-            if ($this->Orders->save($order)) {
+            if ($this->Orders->save($order)) 
+            {
                 $this->Flash->success('The order has been saved.');
                 return $this->redirect(['action' => 'index']);
-            } else {
+            } 
+            else 
+            {
                 $this->Flash->error('The order could not be saved. Please, try again.');
             }
         }
@@ -102,11 +106,16 @@ class OrdersController extends AppController
     {
         $this->request->allowMethod(['post', 'delete']);
         $order = $this->Orders->get($id);
-        if ($this->Orders->delete($order)) {
+        
+        if ($this->Orders->delete($order)) 
+        {
             $this->Flash->success('The order has been deleted.');
-        } else {
+        } 
+        else 
+        {
             $this->Flash->error('The order could not be deleted. Please, try again.');
         }
+        
         return $this->redirect(['action' => 'index']);
     }
 }

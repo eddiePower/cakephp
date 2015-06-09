@@ -7,8 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'XdgBaseDir\\' => array($vendorDir . '/dnoegel/php-xdg-base-dir/src'),
-    'Twit\\Test\\' => array($baseDir . '/plugins/Twit/tests'),
-    'Twit\\' => array($baseDir . '/plugins/Twit/src'),
+    'Symfony\\Component\\Filesystem\\' => array($vendorDir . '/symfony/filesystem'),
     'Phinx\\' => array($vendorDir . '/robmorgan/phinx/src/Phinx'),
     'Migrations\\' => array($vendorDir . '/cakephp/migrations/src'),
     'Less\\' => array($vendorDir . '/elboletaire/less-cake-plugin/src'),
@@ -19,7 +18,6 @@ return array(
     'Cake\\' => array($vendorDir . '/cakephp/cakephp/src'),
     'Bootstrap\\' => array($vendorDir . '/elboletaire/twbs-cake-plugin/src'),
     'BootstrapUI\\' => array($vendorDir . '/friendsofcake/bootstrap-ui/src'),
-    'Bootstrap3\\' => array($vendorDir . '/holt59/cakephp3-bootstrap3-helpers/src'),
     'Bake\\' => array($vendorDir . '/cakephp/bake/src'),
     'Aura\\Intl\\_Config\\' => array($vendorDir . '/aura/intl/config'),
     'App\\Test\\' => array($baseDir . '/tests'),

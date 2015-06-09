@@ -26,7 +26,7 @@ $cakeDescription = 'SoleMate Doormats - Built on CakePHP v3';
 		</title>
 		<link href='http://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'>
 		<?= $this->Html->meta('icon') ?>
-		<?= $this->Html->css('lightgrid.css') ?>
+		<?= $this->Html->css(['lightgrid']) ?>
 
 		<?= $this->fetch('meta') ?>
 		<?= $this->fetch('script') ?>
@@ -38,12 +38,15 @@ $cakeDescription = 'SoleMate Doormats - Built on CakePHP v3';
 			<nav class="header-nav">
 				<h1 class="header-nav-title center">
 				<?= $this->Html->image('http://www.ibaustralia.com/ibaustralia/custom/logo_custom.gif') ?>
-				</h1>
+				</h1>				
+				<?= $this->Html->link(__('Log Out'), ['controller' => 'Users', 'action' => 'logout'], array('class' => 'header-nav-item')) ?>
 				<?= $this->Html->link(__('Orders'), ['controller' => 'Orders', 'action' => 'index'], array('class' => 'header-nav-item')) ?>
 				<?= $this->Html->link(__('Customers'), ['controller' => 'Customers', 'action' => 'index'], array('class' => 'header-nav-item')) ?>
 				<?= $this->Html->link(__('Couriers'), ['controller' => 'Couriers', 'action' => 'index'], array('class' => 'header-nav-item')) ?>
 				<?= $this->Html->link(__('Purchases'), ['controller' => 'Purchases', 'action' => 'index'], array('class' => 'header-nav-item')) ?>
+				<?= $this->Html->link(__('Items'), ['controller' => 'Items', 'action' => 'index'], array('class' => 'header-nav-item')) ?>
 				<?= $this->Html->link(__('Users'), ['controller' => 'Users', 'action' => 'index'], array('class' => 'header-nav-item')) ?>
+				<?= $this->Html->link(__('Ricks News'), ['controller' => 'articles', 'action' => 'index'], array('class' => 'header-nav-item')) ?>
 			</nav>
 			
 		</header>

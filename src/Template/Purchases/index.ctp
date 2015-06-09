@@ -26,9 +26,9 @@
                 <?= $purchase->has('supplier') ? $this->Html->link($purchase->supplier->supplier_name, ['controller' => 'Suppliers', 'action' => 'view', $purchase->supplier->id]) : '' ?>
             </td>
             <td class="actions">
-                <?= $this->Html->link(__('View'), ['action' => 'view', $purchase->id]) ?>
-                <?= $this->Html->link(__('Edit'), ['action' => 'edit', $purchase->id]) ?>
-                <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $purchase->id], ['confirm' => __('Are you sure you want to delete the purchase record from {0} from supplier: {1}?', $purchase->purchase_date, $purchase->supplier->supplier_name)]) ?>
+                <?= $this->Html->link(__('View'), ['action' => 'view', $purchase->id], ['class' => 'label']) ?>
+                <?= $this->Html->link(__('Edit'), ['action' => 'edit', $purchase->id], ['class' => 'label']) ?>
+                <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $purchase->id], ['confirm' => __('Are you sure you want to delete the purchase record from {0} from supplier: {1}?', $purchase->purchase_date, $purchase->supplier->supplier_name), 'class' => 'label danger']) ?>
             </td>
         </tr>
 

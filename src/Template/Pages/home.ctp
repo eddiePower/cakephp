@@ -36,7 +36,7 @@ $cakeDescription = 'SoleMate DoorMats built on CakePHP v3';
     </title>
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'>
 
-<?= $this->Html->css('lightgrid.css') ?>
+<?= $this->Html->css(['lightgrid']) ?>
 </head>
 <body>
 	<header class="site-header">

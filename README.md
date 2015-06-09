@@ -1,4 +1,33 @@
-Team Heisenburg Build 2 ------> Order system / Managment backend.
+# Team Heisenburg Build 3 ------> News System / Better Email system / more ???.
+
+We have added a section of the admin site where rick can set some news for his customers to view similar to a simple blog system that only rick or admin's can edit or add too.  We will also be finishing off the email system to send out html emails customised to each individual customers name, better selection system for users to email, begin the customer types grouping for email sending and a send to all checkbox on selection page,
+Things we finished already are: Username as login for quicker login in development, Started news system and some user role checks for editing, 
+
+** URGENT STUFF & NOTES FROM MID YEAR EXPO TALKS:
+
+**  Other stuff is:
+
+* Get the cakePHP Flash CSS put back in by Shash the CSS man!!!! ---> shows error messages, success messages is vital for users.
+
+
+
+* jQuery data table with search on tables
+
+* TinyMCE editor with javascript.
+
+* Add quantity of items using positive or negative numbers for Qty on hand. i.e. QTY: -10 will = 290-10 = 280 total
+
+* Add action to allow order status to be marked as complete or shipped, etc. 
+
+* Make sure suppliers are tied to only their products!!
+
+* Make items the landing page or page most important to ricks business 
+
+* Make a forget password that creates a new password only as all passwords are hashed...
+
+----------------------------------------------------------------------------------
+
+# Team Heisenburg Build 2 ------> Order system / Managment backend.
 
 Our second build is all the scafolding and logic needed for the backend of our order processing system, this sub system will have a shopping cart front end on it that will allow users to place and monitor new orders, view and re order from older orders, and generally purchase Ricks goods via an online GUI we design in a later build cycle.
 

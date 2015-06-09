@@ -4,9 +4,10 @@ User Login
 
 <div class="col-4 offset-4 panel">
 
+<label style="background: yellow; color: black">@Heisenburg team mates:<br />Now Using Username as login ID for easier development</label>
 
-
-    <?= $this->Form->create(null, [
+    <?= $this->Form->create(null, 
+    [
     'horizontal' => true,
     'cols' => [ // Total is 12, default is 2 / 6 / 4
         'label' => 2,
@@ -14,7 +15,7 @@ User Login
         'error' => 5  //at end of inline
     ]
 ]) ?>
-    <?= $this->Form->input('email', ['type' => 'text']) ?>
+    <?= $this->Form->input('username', ['type' => 'text']) ?>
     <?= $this->Form->input('password', ['type' => 'password']) ?>
     <?= $this->Form->input('remember me', ['type' => 'checkbox']) ?>
     <?= $this->Form->submit(__('Log In'), ['class' => 'positive']) ?>

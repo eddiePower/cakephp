@@ -142,6 +142,7 @@ class UsersController extends AppController
            {
               //set the user for the AUTH componant
               $this->Auth->setUser($user);
+              $this->Flash->success('You are now being logged in.');
               
               return $this->redirect($this->Auth->redirectUrl());
            }
