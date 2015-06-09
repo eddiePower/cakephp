@@ -4,7 +4,7 @@ User Login
 
 <div class="col-4 offset-4 panel">
 
-<label style="background: yellow; color: black">@Heisenburg team mates:<br />Now Using Username as login ID for easier development</label>
+<label style="background: yellow; color: black">@Heisenburg team mates:<br />Now Using Username as login ID for easier development.<br />linc, jus, tester1 are some for development Password i think is the pw. will remove this label soon</label>
 
     <?= $this->Form->create(null, 
     [

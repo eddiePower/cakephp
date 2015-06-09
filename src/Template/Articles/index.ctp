@@ -1,3 +1,4 @@
+
 <h1>IBAustralia - Rick's News Portal</h1>
         <p>        
         <!-- Check to see if user has admin priviliges if so then show edit / delete controles -->
@@ -6,7 +7,7 @@
         ?>
         </p>
     
-
+<div class="col-12 last panel">
     <table class="table table-bordered table-striped">
     <thead>
     <tr>
@@ -51,3 +52,4 @@
         </ul>
         <p><?= $this->Paginator->counter() ?></p>
     </div>
+</div>
