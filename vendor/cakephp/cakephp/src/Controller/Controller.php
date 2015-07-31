@@ -17,8 +17,9 @@ namespace Cake\Controller;
 use Cake\Controller\Exception\MissingActionException;
 use Cake\Datasource\ModelAwareTrait;
 use Cake\Event\Event;
+use Cake\Event\EventDispatcherInterface;
 use Cake\Event\EventListenerInterface;
-use Cake\Event\EventManagerTrait;
+use Cake\Event\EventDispatcherTrait;
 use Cake\Log\LogTrait;
 use Cake\Network\Request;
 use Cake\Network\Response;
@@ -80,10 +81,10 @@ use RuntimeException;
  * @property      \Cake\Controller\Component\SecurityComponent $Security
  * @link          http://book.cakephp.org/3.0/en/controllers.html
  */
-class Controller implements EventListenerInterface
+class Controller implements EventListenerInterface, EventDispatcherInterface
 {
 
-    use EventManagerTrait;
+    use EventDispatcherTrait;
     use LogTrait;
     use MergeVariablesTrait;
     use ModelAwareTrait;
@@ -523,7 +524,7 @@ class Controller implements EventListenerInterface
             return;
         }
 
-        if ($url !== null && !$response->location()) {
+        if (!$response->location()) {
             $response->location(Router::url($url, true));
         }
 

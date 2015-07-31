@@ -11,7 +11,12 @@
     <table class="table table-bordered table-striped">
     <thead>
     <tr>
-        <!-- <th>Id</th> -->
+        <!-- 
+            JAVASCRIPT BLOCKS VIA CAKEPHP: 
+            $this->Html->scriptStart(['block' => true]);
+            echo "alert('I am in the JavaScript');"
+            $this->Html->scriptEnd(); 
+        -->
         <th><?= $this->Paginator->sort('Title') ?></th>
         <th><?= $this->Paginator->sort('Created') ?></th>
         <th><?= $this->Paginator->sort('Category') ?></th>

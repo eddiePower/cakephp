@@ -38,7 +38,7 @@
 		<tbody>
 			<tr>
 				<td>
-					<?= $orderDetail->has('item') ? $this->Html->link($orderDetail->item->id, ['controller' => 'Items', 'action' => 'view', $orderDetail->item->id]) : '' ?>
+					<?= $orderDetail->has('item') ? $this->Html->link($orderDetail->item->item_name, ['controller' => 'Items', 'action' => 'view', $orderDetail->item->id]) : '' ?>
 				</td>
 				<td>
 					<?= $orderDetail->has('order') ? $this->Html->link($orderDetail->order->id, ['controller' => 'Orders', 'action' => 'view', $orderDetail->order->id]) : '' ?>

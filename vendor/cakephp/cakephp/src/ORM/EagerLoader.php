@@ -281,7 +281,10 @@ class EagerLoader
                 $options = isset($options['config']) ?
                     $options['config'] + $options['associations'] :
                     $options;
-                $options = $this->_reformatContain($options, []);
+                $options = $this->_reformatContain(
+                    $options,
+                    isset($pointer[$table]) ? $pointer[$table] : []
+                );
             }
 
             if ($options instanceof Closure) {
@@ -633,7 +636,7 @@ class EagerLoader
             $source = $instance->source();
             $keys = $instance->type() === Association::MANY_TO_ONE ?
                 (array)$instance->foreignKey() :
-                (array)$source->primaryKey();
+                (array)$instance->bindingKey();
 
             $alias = $source->alias();
             $pkFields = [];

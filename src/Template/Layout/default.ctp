@@ -27,6 +27,7 @@ $cakeDescription = 'SoleMate Doormats - Built on CakePHP v3';
 		<link href='http://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'>
 		<?= $this->Html->meta('icon') ?>
 		<?= $this->Html->css(['lightgrid']) ?>
+		<!-- Add in jQuery links here using cakePHP -->
 
 		<?= $this->fetch('meta') ?>
 		<?= $this->fetch('script') ?>
