@@ -33,7 +33,7 @@ class CustomersController extends AppController
         //If the user is a admin then we will allow all bookmarks to show up
         if($this->Auth->user('role') == 'admin')
         {  
-           //set a variable to dispaly user role admin in this case
+           //set a variable to display user role admin in this case
            $this->set('userRole', $this->Auth->user('role'));
         }
         else
@@ -137,50 +137,63 @@ class CustomersController extends AppController
     
     public function buildEmails()
     {
-        $testEmail = $this->Auth->user('email');
-
-     
-        //validate the email composition form for sending, make sure the emails are seperated by commas.
-        if(isset($_POST['message']) && isset($_POST['emails']))
+        $this->set("customers", $this->Customers->find("all", ['order' => 'last_name ASC']));
+        $toList = array();
+        $custTo="<br />";
+        $lstCustomers = array();
+        
+        $email = new Email('default');
+        $email->transport('default');
+        
+        if ($this->request->is('post') || $this->request->is('put'))
         {
-           //set some local variables to build and send the email
-           $myMessage = $_POST['message'];
-           $mySubject = $_POST['subject'];
-           $aEmail = $_POST['emails'];
-/*            $aBCC = $_POST['bcc']; */
-           
-           //debug($aEmail);
-           
-           //set the passed customer id in view variable called customer
-           $this->set('testMessage', $myMessage);
-           
-           $emailArray = array();
-           $emailList = array();
-           
-           //set the array emailArray by the string passed from the post info above.
-           $emailArray = explode(" ", $aEmail);
-           
-           //loop through the email list passed and create for sending to cake Mail object below.
-           foreach($emailArray as $email)
-           { 
+            $list=0;
+            foreach($this->request->data['Email']['checkbox'] as $id=>$checked)
+            {
+                if ($checked)
+                {
+                    $list++;
+                    $cust = $this->Customers->get($id, ['contain' => []]);
+                    $lstCustomers[$list] = $cust->first_name.' '.$cust->last_name;
+                    $email->addTo($cust->email);
+                    $email->viewVars(array('cust'=>$cust));
+                    
+                    //maybe change this to shashs template if no html.
+                    $email->emailFormat('html');
+                    $email->template('sendEmail');
+                }//end of if checkbox is checked loop
+            }//end foreach checkbox loop
+            
+            $email->from(['solemateDoormats@doNotReply.com' => 'Solemate Doormats inc']);
+            $email->sender(['solemate.doormats@gmail.com' => 'Solemate Doormats inc']);
+            $email->replyTo('solemate.doormats@gmail.com');
+            
+            $email->subject($this->request->data['subject']);
+            
+            try
+            {
+                $email->send($this->request->data['message']);
+                
+                foreach ($lstCustomers as $customer)
+                {
+                    $custTo .= $customer."<br />";
 
-              $emailList[] = $email;
-           }
-           
-           //debug($emailList);
-                   
-           //now set the viewVar for the email array passed from the index page of customers.
-           $this->set('emails', implode(", ", $emailList));
-         
-           //now send an email as we know the form was filled out.
-           $email = new Email('default');
-           // Use a named transport already configured using Email::configTransport()
-           $email->from(['solemateDoormats@doNotReply.com' => 'Solemate Debuger'])
-                 ->to($emailList)
-                 ->subject($mySubject)
-                 ->send($myMessage . ' And the list of customer emails to send was ' . $aEmail . " And was sent by the user " . $testEmail);
-        }        
+                }
+                
+                $this->Flash->success('Your email was successfully sent.');
+
+            }
+            catch(Exception $e)
+            {
+                $this->Flash->error('Error sending email. ' . $e->getMessage());
+            }
+
+            
+            
+        }//end request is post / put checking if loop
+        
         
     }
+        
 
 }

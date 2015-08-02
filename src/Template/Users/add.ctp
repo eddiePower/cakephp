@@ -2,7 +2,8 @@
 	Signup
 </h1>
 <div class="panel col-4 offset-4">
-        <?= $this->Form->create($user, [
+       <?= $this->Flash->render(); ?>
+       <?= $this->Form->create($user, [
     'horizontal' => true,
     'cols' => [ // Total is 12, default is 2 / 6 / 4
         'label' => 2,

@@ -1,13 +1,14 @@
-<div class="actions columns large-2 medium-3">
-    <h3><?= __('Actions') ?></h3>
-    <ul class="side-nav">
-        <li><?= $this->Html->link(__('New Supplier'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Purchases'), ['controller' => 'Purchases', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Purchase'), ['controller' => 'Purchases', 'action' => 'add']) ?> </li>
-    </ul>
-</div>
-<div class="suppliers index large-10 medium-9 columns">
-    <table cellpadding="0" cellspacing="0">
+
+<h1 class="center">Suppliers</h1>
+
+<nav class="nav-container">
+	<?= $this->Html->link(__('New Supplier'), ['action' => 'add'], ['class' => 'nav-item']) ?>
+	<?= $this->Html->link(__('List Purchases'), ['controller' => 'Purchases', 'action' => 'index'], ['class' => 'nav-item']) ?>
+	<?= $this->Html->link(__('New Purchase'), ['controller' => 'Purchases', 'action' => 'add'], ['class' => 'nav-item']) ?>
+</nav>
+
+<div class="suppliers index col-12 last panel">
+    <table>
     <thead>
         <tr>
             <th><?= $this->Paginator->sort('supplier_name') ?></th>
@@ -21,9 +22,9 @@
             <td><?= h($supplier->supplier_name) ?></td>
             <td><?= h($supplier->supplier_description) ?></td>
             <td class="actions">
-                <?= $this->Html->link(__('View'), ['action' => 'view', $supplier->id]) ?>
-                <?= $this->Html->link(__('Edit'), ['action' => 'edit', $supplier->id]) ?>
-                <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $supplier->id], ['confirm' => __('Are you sure you want to delete supplier: {0}?', $supplier->supplier_name)]) ?>
+                <?= $this->Html->link(__('View'), ['action' => 'view', $supplier->id], ['class' => 'label']) ?>
+                <?= $this->Html->link(__('Edit'), ['action' => 'edit', $supplier->id], ['class' => 'label']) ?>
+                <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $supplier->id], ['class' => 'label danger'], ['confirm' => __('Are you sure you want to delete supplier: {0}?', $supplier->supplier_name)]) ?>
             </td>
         </tr>
 

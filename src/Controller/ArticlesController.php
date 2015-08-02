@@ -16,7 +16,9 @@ class ArticlesController extends AppController
 
     public function index()
     {
-        $this->set('articles', $this->paginate($this->Articles));
+        $this->set('articles', $this->Articles->find('all', array(
+    'order' => array('created' => 'DESC') // Sorts by putting the latest post on the top
+)), $this->paginate($this->Articles));
 
         $this->set('_serialize', ['articles']);     
         
@@ -24,7 +26,7 @@ class ArticlesController extends AppController
         //Set a variable for use on the index view to show user name / email.
         $this->set('username', $this->Auth->user('username')); 
         
-        //set a variable to dispaly user role admin in this case
+        //set a variable to display user role admin in this case
         $this->set('userRole', $this->Auth->user('role'));
     }
 

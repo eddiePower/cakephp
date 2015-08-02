@@ -1,51 +1,69 @@
 
-<h1 class="center">Compose email</h1>
-<div class="col-8 offset-2 panel">
-<p> Hello your email to Me welcome back myself and I are glad your talking to us ;)</p>
-<p>This has been a debugging email sent to you by team Heisenburg.</p>
-<br />
-<?php 
-        if(isset($testMessage))
-        {
-          echo "A test message to be sent is now: " . $testMessage . "<br />";
-        }
-        
-        if(isset($emails))
-        {
-        
-           $emailList[] = array();
-           $emailString = "";
-           
-           //debug($emails);
-           
-           $emailList = explode(" ", $emails);
-           $emailString = implode(", ", $emailList);
-           
-           
-          // debug("The email list is now: " . $emails);
-           
-        }
+<h1 class="center">Solemate Doormat's Customer Contact system.</h1>
+
+<?php
+
+echo "<p />";
+
+  echo $this->Form->create('CustomerEmail');
+
+  $CustCount = 0;
+  echo "<table border='0' width='90%'>";
+
+  foreach ($customers as $customer)
+  {
+    //if customer count is equally divisable by 2 then 
+    if($CustCount % 2 == 0)
+  {
 ?>
-<br />
 
+<tr>
+    <?php
+      }
+    ?>
+    
+    <td width="35%">
+        <?php echo $customer->first_name . " " . $customer->last_name;?> <br />
+        <?php echo $customer->email; ?>
+    </td>
+    <td>
+        <?php
+        $id = $customer->id;
+        echo $this->Form->checkbox("Email.checkbox.$id", [
+            'label'=>'',
+            'legend'=>false,
+            'type'=>'checkbox',
+        ]);
+        ?>
+        
+      
 
-    <?= $this->Form->create(null, [
-    'horizontal' => true,
-    'cols' => [ // Total is 12, default is 2 / 6 / 4
-        'label' => 2,
-        'input' => 5,
-        'error' => 5  //at end of inline
-    ]
-]) ?>
-<p>** No need to enter the , in between email addresses just use spaces (usr@mail.com user2@mail.com) soon it will look more like an email client with email icons when entered like in gMail on google.</p>
-<?= $this->Form->input('emails', ['type' => 'text', 'label' => 'Customers to email: ']) ?>
-<?= $this->Form->input('subject', ['label' => 'Subject: ']) ?>
-<!-- <?= $this->Form->input('bcc', ['label' => 'BCC: ']) ?> -->
-<?= $this->Form->input('message', ['type' => 'textarea']) ?>
-<?= $this->Form->File('attachment') ?>
-<br />
-<?= $this->Form->submit(__('Send Email'), ['class' => 'positive']) ?>
-<?= $this->Form->end() ?>
+    </td>
+    <?php
+      $CustCount++;
+      }
+    ?>
+</tr>
+</table>
+<br /><br />
 
+<table border="0" width="90%">
+    <tr>
+        <td class="heading"><p align="right">subject : </p></td>
+        <td class="data">
+            <?php echo $this->Form->input('subject', ['label' =>'','size'=>'80']);?>
+        </td>
+    </tr>
+    <tr>
+        <td class="heading"><p align="right">message : </p></td>
+        <td class="data">
+            <?= $this->Form->input('message', ['rows' => '15', 'cols' => '95', 'label'=>'']) ?>
+        </td>
+    </tr>
+</table>
+<table border="0" width="90">
+    <tr>
+        <td><?php echo $this->Form->submit(__('Send Email', true), ['name' => 'Send Email', 'div' => false]); ?></td>
+    </tr>
+</table>
  <?= $this->Html->link(__(' Back'), ['controller' => 'Customers', 'action' => 'index'], ['class' => 'button auto']) ?>
-</div>

@@ -5,10 +5,13 @@
 	<?= $this->Html->link(__('New Customer'), ['action' => 'add'], ['class' => 'nav-item']) ?>
 	<?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index'], ['class' => 'nav-item']) ?>
 	<?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add'], ['class' => 'nav-item']) ?>
+	
+<!-- Send user to email listing and create email page.	 -->
+	<?= $this->Html->link(__('Send Email'), ['controller' => 'Customers', 'action' => 'buildEmails'], ['class' => 'nav-item']) ?>
+	
+	
 </nav>
 <div class="col-12 last panel">
-	<!--  Begin the form creation for each customers email address.  -->
-	<?= $this->Form->Create(null, ['action' => 'buildEmails']) ?>
 	<table cellpadding="0" cellspacing="0">
 		<thead>
 			<tr>
@@ -32,7 +35,6 @@
 
 				<!--  Entry point for email checkbox and array builder / form.   -->
 				<td><?= h($customer->email) ?>
-				<?= $this->Form->checkbox('emails[]', ['hiddenField' => false, 'value' => $customer->email]) ?>
 				</td>
 
 				<td class="actions">
@@ -45,12 +47,6 @@
 			
 		</tbody>
 	</table>
-
-	<!--  **********END OF EMAIL CHECKBOXES FORM    -->
-	<?= $this->Form->submit(__('Compose Email'),['class' => 'positive auto']) ?>
-	<?= $this->Form->end() ?>
-	<!--  **********END OF EMAIL CHECKBOXES FORM    -->
-
 	<div class="paginator">
 		<ul class="pagination">
 		<?= $this->Paginator->prev('< ' . __('previous')) ?>

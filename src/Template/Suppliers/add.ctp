@@ -1,20 +1,18 @@
-<div class="actions columns large-2 medium-3">
-    <h3><?= __('Actions') ?></h3>
-    <ul class="side-nav">
-        <li><?= $this->Html->link(__('List Suppliers'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('List Purchases'), ['controller' => 'Purchases', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Purchase'), ['controller' => 'Purchases', 'action' => 'add']) ?> </li>
-    </ul>
-</div>
-<div class="suppliers form large-10 medium-9 columns">
-    <?= $this->Form->create($supplier); ?>
-    <fieldset>
-        <legend><?= __('Add Supplier') ?></legend>
-        <?php
-            echo $this->Form->input('supplier_name');
-            echo $this->Form->input('supplier_description');
-        ?>
-    </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
-    <?= $this->Form->end() ?>
+<h1 class="center">Add Supplier</h1>
+
+<nav class="nav-container">
+	<?= $this->Html->link(__('List Suppliers'), ['action' => 'index'], ['class' => 'nav-item']) ?></li>
+	<?= $this->Html->link(__('List Purchases'), ['controller' => 'Purchases', 'action' => 'index'], ['class' => 'nav-item']) ?>
+	<?= $this->Html->link(__('New Purchase'), ['controller' => 'Purchases', 'action' => 'add'], ['class' => 'nav-item']) ?>
+</nav>
+
+<div class="col-12 last panel">
+	<?= $this->Form->create($supplier); ?>
+	<h3>Add Supplier</h3>
+	<?php
+	echo $this->Form->input('supplier_name');
+	echo $this->Form->input('supplier_description');
+	?>
+	<?= $this->Form->button(__('Submit'), ['class' => 'positive']) ?>
+	<?= $this->Form->end() ?>
 </div>

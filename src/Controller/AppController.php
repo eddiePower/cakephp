@@ -45,6 +45,7 @@ class AppController extends Controller
         Time::setToStringFormat('dd/MM/YYYY');
         
         
+        
         //set up the AUTH componant to facilitate login.
         $this->loadComponent('Auth', [
             'authenticate' => [
@@ -73,10 +74,11 @@ class AppController extends Controller
         // Allow the display action so our pages controller
         // continues to work.
         $this->Auth->allow(['display']);
-        
-        
+       
         //this loads the nice tooltip messages for errors, confirms etc.
         $this->loadComponent('Flash');
+        
+
     }
     
     //this method allows the display method through to keep 

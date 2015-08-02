@@ -9,8 +9,11 @@
  *
  * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  * @link          http://cakephp.org CakePHP(tm) Project
- * @since         0.1.0
+ * @since         0.10.0
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 ?>
-<?= $this->fetch('content');
+<h1><?= __('We rock u') ?></h1>
+<?php
+echo '<h4>'.$message.'</h4>';
+?>

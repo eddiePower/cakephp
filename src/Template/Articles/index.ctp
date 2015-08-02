@@ -1,10 +1,11 @@
 
-<h1>IBAustralia - Rick's News Portal</h1>
+<h1 class="center">IBAustralia - Rick's News Portal</h1>
         <p>        
         <!-- Check to see if user has admin priviliges if so then show edit / delete controles -->
-        <?= $userRole == 'admin' ? __('Welcome ' . $username . " your role is an " . $userRole . " position.<br /><br />Available actions:<br />" .
-            $this->Html->link("Add Article", ['action' => 'add'], array('class' => 'label'))) : '' 
+        <?= $userRole == 'admin' ? __('Welcome ' . $username . " your role is an " . $userRole . " position.<br><nav class='nav-container'>" .
+            $this->Html->link("Add Article", ['action' => 'add'], ['class' => 'nav-item'])) : '' 
         ?>
+	</nav>
         </p>
     
 <div class="col-12 last panel">
@@ -19,7 +20,6 @@
         -->
         <th><?= $this->Paginator->sort('Title') ?></th>
         <th><?= $this->Paginator->sort('Created') ?></th>
-        <th><?= $this->Paginator->sort('Category') ?></th>
         <!-- Check to see if user has admin priviliges if so then show edit / delete controles -->
         <?= $userRole == 'admin' ? __('<th class="actions">Action</th>') : '' ?>
     </tr>
@@ -34,10 +34,6 @@
         </td>
         <td>
             <?= h($article->created) ?>
-        </td>
-        <td>
-            <!-- ADD IN DYNAMIC CATAGORY SUPPORT IN CONTROLLER. -->
-            <?= h("category XX") ?>
         </td>
         <!-- Check to see if user has admin priviliges if so then show edit / delete controles -->
         <?= $userRole == 'admin' ? __('<td class="actions">') : '' ?>
