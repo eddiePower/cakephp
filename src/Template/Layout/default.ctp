@@ -61,10 +61,7 @@ $cakeDescription = 'SoleMate Doormats - Built on CakePHP v3';
 		<footer class="site-footer">
 			<div class="footer-inner row">
 				<div class="col-4">
-					<h3>
-					Contact
-					</h3>
-					<a href="#">
+					<a href="#" class="footer-link">
 					Contact info
 					</a>
 				</div>
@@ -72,15 +69,28 @@ $cakeDescription = 'SoleMate Doormats - Built on CakePHP v3';
 					<h3>
 					Faqs
 					</h3>
+					<a href="#" class="footer-link">
+					About us
+					</a><br />
+					<a href="#" class="footer-link">
+					Manifacturing process
+					</a>
 				</div>
 				<div class="col-4 last">
 					<h3>
-						Branding
+						Connect with us
 					</h3>
+					<a href="#" class="footer-link">
+					Find us on Facebook
+					</a><br />
+					<a href="#" class="footer-link">
+					Find us on Twitter
+					</a>
 				</div>
 				<div class="col-12 last">
+					<br>
 					<p class="center">
-						Copyright
+						2015 IbAustralia
 					</p>
 				</div>
 			</div>

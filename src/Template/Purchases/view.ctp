@@ -49,7 +49,7 @@
             <td><?= h($purchaseDetails->purchase_id) ?></td>
             <td><?= h($purchaseDetails->item_id) ?></td>
             <td><?= h($purchaseDetails->quantity_purchased) ?></td>
-            <td><?= h($purchaseDetails->price_of_item) ?></td>
+            <td><?= h($this->Number->currency($purchaseDetails->price_of_item)) ?></td>
 
             <td class="actions">
                 <?= $this->Html->link(__('View'), ['controller' => 'PurchaseDetails', 'action' => 'view', $purchaseDetails->id]) ?>

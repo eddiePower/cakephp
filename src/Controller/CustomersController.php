@@ -67,15 +67,20 @@ class CustomersController extends AppController
     public function add()
     {
         $customer = $this->Customers->newEntity();
-        if ($this->request->is('post')) {
+        if ($this->request->is('post')) 
+        {
             $customer = $this->Customers->patchEntity($customer, $this->request->data);
-            if ($this->Customers->save($customer)) {
+            if ($this->Customers->save($customer)) 
+            {
                 $this->Flash->success('The customer has been saved.');
                 return $this->redirect(['action' => 'index']);
-            } else {
+            } 
+            else 
+            {
                 $this->Flash->error('The customer could not be saved. Please, try again.');
             }
         }
+        
         $users = $this->Customers->Users->find('list', ['limit' => 200]);
         $this->set(compact('customer', 'users'));
         $this->set('_serialize', ['customer']);
@@ -93,15 +98,20 @@ class CustomersController extends AppController
         $customer = $this->Customers->get($id, [
             'contain' => []
         ]);
-        if ($this->request->is(['patch', 'post', 'put'])) {
+        if ($this->request->is(['patch', 'post', 'put'])) 
+        {
             $customer = $this->Customers->patchEntity($customer, $this->request->data);
-            if ($this->Customers->save($customer)) {
+            if ($this->Customers->save($customer)) 
+            {
                 $this->Flash->success('The customer has been saved.');
                 return $this->redirect(['action' => 'index']);
-            } else {
+            } 
+            else 
+            {
                 $this->Flash->error('The customer could not be saved. Please, try again.');
             }
         }
+        
         $users = $this->Customers->Users->find('list', ['limit' => 200]);
         $this->set(compact('customer', 'users'));
         $this->set('_serialize', ['customer']);
@@ -118,11 +128,15 @@ class CustomersController extends AppController
     {
         $this->request->allowMethod(['post', 'delete']);
         $customer = $this->Customers->get($id);
-        if ($this->Customers->delete($customer)) {
+        if ($this->Customers->delete($customer)) 
+        {
             $this->Flash->success('The customer has been deleted.');
-        } else {
+        } 
+        else 
+        {
             $this->Flash->error('The customer could not be deleted. Please, try again.');
         }
+        
         return $this->redirect(['action' => 'index']);
     }
 
@@ -133,67 +147,76 @@ class CustomersController extends AppController
      * @param string|null $id Customer id.
      * @return void Redirects to index.
      * @throws \Cake\Network\Exception\NotFoundException When record not found.
+     *
+     * This function is built from Janet Fraiser's example site "Buckemoff Horses" on 
+     *  the monash IE development server, it is used to build an email to one or many
+     * customers in the Solemate Doormat's database.
      */
     
     public function buildEmails()
     {
         $this->set("customers", $this->Customers->find("all", ['order' => 'last_name ASC']));
-        $toList = array();
-        $custTo="<br />";
-        $lstCustomers = array();
         
+        //$toList = array();
+        
+        $custTo = "<br />";
+        $customerList = array();
+        
+        //create email object and set email config settings
         $email = new Email('default');
         $email->transport('default');
         
         if ($this->request->is('post') || $this->request->is('put'))
         {
+            
             $list=0;
+            
             foreach($this->request->data['Email']['checkbox'] as $id=>$checked)
             {
                 if ($checked)
                 {
                     $list++;
                     $cust = $this->Customers->get($id, ['contain' => []]);
-                    $lstCustomers[$list] = $cust->first_name.' '.$cust->last_name;
+                    $customerList[$list] = $cust->first_name.' '.$cust->last_name;
                     $email->addTo($cust->email);
                     $email->viewVars(array('cust'=>$cust));
                     
-                    //maybe change this to shashs template if no html.
+                    //set the type of email format and use our custom template.
                     $email->emailFormat('html');
                     $email->template('sendEmail');
                 }//end of if checkbox is checked loop
             }//end foreach checkbox loop
             
+            //Set the email headers.
             $email->from(['solemateDoormats@doNotReply.com' => 'Solemate Doormats inc']);
             $email->sender(['solemate.doormats@gmail.com' => 'Solemate Doormats inc']);
             $email->replyTo('solemate.doormats@gmail.com');
             
+            //Begin the email building from the data provided in the form.
             $email->subject($this->request->data['subject']);
             
             try
             {
+                //Grab the main body of the email to be sent in the form.
                 $email->send($this->request->data['message']);
                 
-                foreach ($lstCustomers as $customer)
+                foreach ($customerList as $customer)
                 {
-                    $custTo .= $customer."<br />";
+                    $custTo .= $customer . "<br />";
 
                 }
                 
+                //!!!!!NEEDS TO BE LOOKED AT POSSIBLY NOT WORKING STILL.!!!!!!!!!
                 $this->Flash->success('Your email was successfully sent.');
+                
+                //If the email is sent succesfully redirect back to the main customer page.
+                return $this->redirect(['controller' => 'Customers', 'action' => 'index']);
 
             }
             catch(Exception $e)
             {
                 $this->Flash->error('Error sending email. ' . $e->getMessage());
-            }
-
-            
-            
-        }//end request is post / put checking if loop
-        
-        
+            }           
+        }//end request is post / put checking if loop        
     }
-        
-
 }

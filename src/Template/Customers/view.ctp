@@ -63,7 +63,7 @@
 	<p><?= $this->Number->format($customer->id) ?></p>
 	-->
 	<h4 class="subheader"><?= __('Postcode') ?></h4>
-	<p><?= $this->Number->format($customer->postcode) ?></p>
+	<p><?= $this->Number->format($customer->postcode, ['pattern' => '####']) ?></p>
 
 	<h4 class="subheader"><?= __('Address') ?></h4>
 	<?= $this->Text->autoParagraph(h($customer->address)); ?>

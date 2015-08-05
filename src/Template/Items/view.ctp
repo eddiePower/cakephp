@@ -11,7 +11,7 @@
 </nav>
 
 <div class="col-12 last panel">
-	<h3><?= h($item->id) ?> (Item ID)</h3>
+	<h3><?= h($item->item_name) ?> (Item Details)</h3>
 	<table>
 		<thead>
 			<tr>
@@ -19,13 +19,10 @@
 					<?= __('Item Name') ?>
 				</td>
 				<td>
-					<?= __('Id') ?>
-				</td>
-				<td>
 					<?= __('Quantity On Hand') ?>
 				</td>
 				<td>
-					<?= __('Item Number') ?>
+					<?= __('Item Number / ID') ?>
 				</td>
 			</tr>
 		</thead>
@@ -35,13 +32,10 @@
 					<?= h($item->item_name) ?>
 				</td>
 				<td>
-					<?= $this->Number->format($item->id) ?>
-				</td>
-				<td>
 					<?= $this->Number->format($item->quantity_on_hand) ?>
 				</td>
 				<td>
-					<?= $this->Number->format($item->item_number) ?>
+					<?= $this->Number->format($item->item_number, ['pattern' => '########']) ?>
 				</td>
 			</tr>
 		</tbody>
@@ -52,8 +46,7 @@
 	<table cellpadding="0" cellspacing="0">
 		<thead>
 			<tr>
-				<th><?= __('Id') ?></th>
-				<th><?= __('Item Id') ?></th>
+				<th><?= __('Details Id') ?></th>
 				<th><?= __('Order Id') ?></th>
 				<th><?= __('Quantity Ordered') ?></th>
 				<th><?= __('Per Unit') ?></th>
@@ -65,11 +58,11 @@
 	<tbody>
 		<tr>
 			<td><?= h($orderDetails->id) ?></td>
-			<td><?= h($orderDetails->item_id) ?></td>
-			<td><?= h($orderDetails->order_id) ?></td>
+		<td><?= h($orderDetails->order_id) ?></td>
+        
 			<td><?= h($orderDetails->quantity_ordered) ?></td>
-			<td><?= h($orderDetails->per_unit) ?></td>
-			<td><?= h($orderDetails->discount) ?></td>
+			<td><?= h($this->Number->currency($orderDetails->per_unit)) ?></td>
+			<td><?= h($this->Number->toPercentage($orderDetails->discount)) ?></td>
 
 			<td class="actions">
 			<?= $this->Html->link(__('View'), ['controller' => 'OrderDetails', 'action' => 'view', $orderDetails->id]) ?>
@@ -103,7 +96,7 @@
 	<td><?= h($purchaseDetails->purchase_id) ?></td>
 	<td><?= h($purchaseDetails->item_id) ?></td>
 	<td><?= h($purchaseDetails->quantity_purchased) ?></td>
-	<td><?= h($purchaseDetails->price_of_item) ?></td>
+	<td><?= h($this->Number->currency($purchaseDetails->price_of_item)) ?></td>
 
 	<td class="actions">
 	<?= $this->Html->link(__('View'), ['controller' => 'PurchaseDetails', 'action' => 'view', $purchaseDetails->id]) ?>

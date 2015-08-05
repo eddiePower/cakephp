@@ -39,6 +39,7 @@ class OrderDetailsController extends AppController
         ]);
         $this->set('orderDetail', $orderDetail);
         $this->set('_serialize', ['orderDetail']);
+
     }
 
     /**

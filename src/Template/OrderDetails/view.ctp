@@ -50,10 +50,10 @@
 					<?= $this->Number->format($orderDetail->quantity_ordered) ?>
 				</td>
 				<td>
-					<?= $this->Number->format($orderDetail->per_unit) ?>
+					<?= $this->Number->currency($orderDetail->per_unit) ?>
 				</td>
 				<td>
-					<?= $this->Number->format($orderDetail->per_unit) ?>
+					<?= $this->Number->toPercentage($orderDetail->per_unit) ?>
 				</td>
 			</tr>
 		</tbody>

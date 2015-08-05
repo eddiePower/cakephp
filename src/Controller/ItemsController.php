@@ -34,8 +34,10 @@ class ItemsController extends AppController
         $item = $this->Items->get($id, [
             'contain' => ['OrderDetails', 'PurchaseDetails']
         ]);
+        
         $this->set('item', $item);
         $this->set('_serialize', ['item']);
+
     }
 
     /**
@@ -46,12 +48,17 @@ class ItemsController extends AppController
     public function add()
     {
         $item = $this->Items->newEntity();
-        if ($this->request->is('post')) {
+        
+        if ($this->request->is('post')) 
+        {
             $item = $this->Items->patchEntity($item, $this->request->data);
-            if ($this->Items->save($item)) {
+            if ($this->Items->save($item)) 
+            {
                 $this->Flash->success('The item has been saved.');
                 return $this->redirect(['action' => 'index']);
-            } else {
+            } 
+            else 
+            {
                 $this->Flash->error('The item could not be saved. Please, try again.');
             }
         }

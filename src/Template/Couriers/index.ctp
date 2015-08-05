@@ -19,7 +19,7 @@
 		<?php foreach ($couriers as $courier): ?>
 		<tr>
 		<td><?= h($courier->courier_name) ?></td>
-		<td><?= '$' . $this->Number->format($courier->courier_charge) ?></td>
+		<td><?= $this->Number->currency($courier->courier_charge) ?></td>
 		<td class="actions">
 		<?= $this->Html->link(__('View'), ['action' => 'view', $courier->id], ['class' => 'label']) ?>
 		<?= $this->Html->link(__('Edit'), ['action' => 'edit', $courier->id], ['class' => 'label']) ?>

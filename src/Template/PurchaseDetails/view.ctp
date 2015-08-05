@@ -48,7 +48,7 @@
 					<?= $this->Number->format($purchaseDetail->quantity_purchased) ?>
 				</td>
 				<td>
-					<?= $this->Number->format($purchaseDetail->price_of_item) ?>
+					<?= $this->Number->currency($purchaseDetail->price_of_item) ?>
 				</td>
 			</tr>
 		</tbody>

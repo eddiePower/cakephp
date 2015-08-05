@@ -16,6 +16,7 @@ Orders
 	<table cellpadding="0" cellspacing="0">
 		<thead>
 		<tr>
+		    <th><?= $this->Paginator->sort('id') ?></th>
 			<th><?= $this->Paginator->sort('shipped_date') ?></th>
 			<th><?= $this->Paginator->sort('required_date') ?></th>
 			<th><?= $this->Paginator->sort('status') ?></th>
@@ -27,6 +28,7 @@ Orders
 	<tbody>
 	<?php foreach ($orders as $order): ?>
 			<tr>
+			        <td><?= h($order->id) ?></td>
 					<td><?= h($order->shipped_date) ?></td>
 					<td><?= h($order->required_date) ?></td>
 					<td><?= h($order->status) ?></td>

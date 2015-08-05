@@ -1262,3 +1262,714 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
+2015-08-03 09:13:39 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Tinymce could not be found.
+Exception Attributes: array (
+  'class' => 'Tinymce',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /testBuild/tinymce/tinymce.min.js
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2015-08-03 09:14:47 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Tinymce could not be found.
+Exception Attributes: array (
+  'class' => 'Tinymce',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /testBuild/tinymce/tinymce.min.js
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2015-08-03 09:14:58 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Tinymce could not be found.
+Exception Attributes: array (
+  'class' => 'Tinymce',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /testBuild/tinymce/tinymce.min.js
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2015-08-03 09:17:58 Error: Fatal Error (4): syntax error, unexpected 'echo' (T_ECHO), expecting ',' or ';' in [/Users/edster2007/Sites/testBuild/src/Template/Customers/build_emails.ctp, line 15]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2015-08-03 09:17:58 Error: [Cake\Error\FatalErrorException] syntax error, unexpected 'echo' (T_ECHO), expecting ',' or ';'
+Request URL: /testBuild/customers/buildEmails
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/Users/edster20...', 15)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-08-03 09:23:07 Error: Fatal Error (4): syntax error, unexpected '__' (T_STRING), expecting ',' or ';' in [/Users/edster2007/Sites/testBuild/src/Template/Customers/build_emails.ctp, line 75]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2015-08-03 09:23:08 Error: [Cake\Error\FatalErrorException] syntax error, unexpected '__' (T_STRING), expecting ',' or ';'
+Request URL: /testBuild/customers/buildEmails
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/Users/edster20...', 75)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-08-03 09:23:25 Error: Fatal Error (4): syntax error, unexpected '__' (T_STRING), expecting ',' or ';' in [/Users/edster2007/Sites/testBuild/src/Template/Customers/build_emails.ctp, line 75]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2015-08-03 09:23:25 Error: [Cake\Error\FatalErrorException] syntax error, unexpected '__' (T_STRING), expecting ',' or ';'
+Request URL: /testBuild/customers/buildEmails
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/Users/edster20...', 75)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-08-03 09:23:27 Error: Fatal Error (4): syntax error, unexpected '__' (T_STRING), expecting ',' or ';' in [/Users/edster2007/Sites/testBuild/src/Template/Customers/build_emails.ctp, line 75]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2015-08-03 09:23:27 Error: [Cake\Error\FatalErrorException] syntax error, unexpected '__' (T_STRING), expecting ',' or ';'
+Request URL: /testBuild/customers/buildEmails
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/Users/edster20...', 75)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-08-03 09:23:38 Error: Fatal Error (4): syntax error, unexpected '__' (T_STRING), expecting ',' or ';' in [/Users/edster2007/Sites/testBuild/src/Template/Customers/build_emails.ctp, line 75]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2015-08-03 09:23:38 Error: [Cake\Error\FatalErrorException] syntax error, unexpected '__' (T_STRING), expecting ',' or ';'
+Request URL: /testBuild/customers/buildEmails
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/Users/edster20...', 75)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-08-03 09:23:40 Error: Fatal Error (4): syntax error, unexpected '__' (T_STRING), expecting ',' or ';' in [/Users/edster2007/Sites/testBuild/src/Template/Customers/build_emails.ctp, line 75]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2015-08-03 09:23:40 Error: [Cake\Error\FatalErrorException] syntax error, unexpected '__' (T_STRING), expecting ',' or ';'
+Request URL: /testBuild/customers/buildEmails
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/Users/edster20...', 75)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-08-03 09:24:07 Error: Fatal Error (4): syntax error, unexpected '__' (T_STRING), expecting ',' or ';' in [/Users/edster2007/Sites/testBuild/src/Template/Customers/build_emails.ctp, line 75]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2015-08-03 09:24:07 Error: [Cake\Error\FatalErrorException] syntax error, unexpected '__' (T_STRING), expecting ',' or ';'
+Request URL: /testBuild/customers/buildEmails
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/Users/edster20...', 75)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-08-03 09:24:09 Error: Fatal Error (4): syntax error, unexpected '__' (T_STRING), expecting ',' or ';' in [/Users/edster2007/Sites/testBuild/src/Template/Customers/build_emails.ctp, line 75]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2015-08-03 09:24:09 Error: [Cake\Error\FatalErrorException] syntax error, unexpected '__' (T_STRING), expecting ',' or ';'
+Request URL: /testBuild/customers/buildEmails
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/Users/edster20...', 75)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-08-03 09:25:05 Error: Fatal Error (4): syntax error, unexpected '$this' (T_VARIABLE), expecting ',' or ';' in [/Users/edster2007/Sites/testBuild/src/Template/Customers/build_emails.ctp, line 7]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2015-08-03 09:25:05 Error: [Cake\Error\FatalErrorException] syntax error, unexpected '$this' (T_VARIABLE), expecting ',' or ';'
+Request URL: /testBuild/customers/buildEmails
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/Users/edster20...', 7)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-08-03 09:25:20 Error: Fatal Error (4): syntax error, unexpected '$this' (T_VARIABLE), expecting ',' or ';' in [/Users/edster2007/Sites/testBuild/src/Template/Customers/build_emails.ctp, line 7]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2015-08-03 09:25:20 Error: [Cake\Error\FatalErrorException] syntax error, unexpected '$this' (T_VARIABLE), expecting ',' or ';'
+Request URL: /testBuild/customers/buildEmails
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/Users/edster20...', 7)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-08-03 09:25:22 Error: Fatal Error (4): syntax error, unexpected '$this' (T_VARIABLE), expecting ',' or ';' in [/Users/edster2007/Sites/testBuild/src/Template/Customers/build_emails.ctp, line 7]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2015-08-03 09:25:22 Error: [Cake\Error\FatalErrorException] syntax error, unexpected '$this' (T_VARIABLE), expecting ',' or ';'
+Request URL: /testBuild/customers/buildEmails
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/Users/edster20...', 7)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-08-03 09:25:42 Error: Fatal Error (4): syntax error, unexpected 'echo' (T_ECHO), expecting ',' or ';' in [/Users/edster2007/Sites/testBuild/src/Template/Customers/build_emails.ctp, line 7]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2015-08-03 09:25:42 Error: [Cake\Error\FatalErrorException] syntax error, unexpected 'echo' (T_ECHO), expecting ',' or ';'
+Request URL: /testBuild/customers/buildEmails
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/Users/edster20...', 7)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-08-03 09:25:50 Error: Fatal Error (4): syntax error, unexpected 'echo' (T_ECHO), expecting ',' or ';' in [/Users/edster2007/Sites/testBuild/src/Template/Customers/build_emails.ctp, line 7]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2015-08-03 09:25:50 Error: [Cake\Error\FatalErrorException] syntax error, unexpected 'echo' (T_ECHO), expecting ',' or ';'
+Request URL: /testBuild/customers/buildEmails
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/Users/edster20...', 7)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-08-03 09:26:01 Error: Fatal Error (4): syntax error, unexpected 'echo' (T_ECHO) in [/Users/edster2007/Sites/testBuild/src/Template/Customers/build_emails.ctp, line 5]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2015-08-03 09:26:01 Error: [Cake\Error\FatalErrorException] syntax error, unexpected 'echo' (T_ECHO)
+Request URL: /testBuild/customers/buildEmails
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/Users/edster20...', 5)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-08-03 14:02:02 Error: Fatal Error (4): syntax error, unexpected '=>' (T_DOUBLE_ARROW) in [/Users/edster2007/Sites/testBuild/src/Template/Items/index.ctp, line 25]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2015-08-03 14:02:02 Error: [Cake\Error\FatalErrorException] syntax error, unexpected '=>' (T_DOUBLE_ARROW)
+Request URL: /testBuild/Items
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/Users/edster20...', 25)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-08-03 14:02:19 Warning: Warning (4096): Argument 2 passed to Cake\View\Helper\NumberHelper::format() must be of the type array, string given, called in /Users/edster2007/Sites/testBuild/src/Template/Items/index.ctp on line 25 and defined in [/Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/Helper/NumberHelper.php, line 150]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+Cake\View\Helper\NumberHelper::format() - CORE/src/View/Helper/NumberHelper.php, line 150
+include - APP/Template/Items/index.ctp, line 25
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 834
+Cake\View\View::_render() - CORE/src/View/View.php, line 794
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 582
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-08-03 14:02:19 Warning: Warning (4096): Argument 2 passed to Cake\I18n\Number::format() must be of the type array, string given, called in /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/Helper/NumberHelper.php on line 152 and defined in [/Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/I18n/Number.php, line 124]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+Cake\I18n\Number::format() - CORE/src/I18n/Number.php, line 124
+Cake\View\Helper\NumberHelper::format() - CORE/src/View/Helper/NumberHelper.php, line 152
+include - APP/Template/Items/index.ctp, line 25
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 834
+Cake\View\View::_render() - CORE/src/View/View.php, line 794
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 582
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-08-03 14:02:19 Error: Fatal Error (1): Unsupported operand types in [/Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/I18n/Number.php, line 127]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2015-08-03 14:02:19 Error: [Cake\Error\FatalErrorException] Unsupported operand types
+Request URL: /testBuild/Items
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Unsupported ope...', '/Users/edster20...', 127)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-08-03 14:02:27 Error: Fatal Error (4): syntax error, unexpected '?>' in [/Users/edster2007/Sites/testBuild/src/Template/Items/index.ctp, line 25]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2015-08-03 14:02:27 Error: [Cake\Error\FatalErrorException] syntax error, unexpected '?>'
+Request URL: /testBuild/Items
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/Users/edster20...', 25)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-08-03 14:12:26 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/edster2007/Sites/testBuild/src/Controller/ItemsController.php, line 40]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\ItemsController::view() - APP/Controller/ItemsController.php, line 40
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 411
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-08-03 14:12:55 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/edster2007/Sites/testBuild/src/Controller/ItemsController.php, line 40]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\ItemsController::view() - APP/Controller/ItemsController.php, line 40
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 411
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-08-03 14:30:00 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "order_details"
+Request URL: /testBuild/order_details/view/1
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/ORM/Table.php(1176): Cake\ORM\Query->firstOrFail()
+#1 /Users/edster2007/Sites/testBuild/src/Controller/OrderDetailsController.php(39): Cake\ORM\Table->get('1', Array)
+#2 [internal function]: App\Controller\OrderDetailsController->view('1')
+#3 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(411): call_user_func_array(Array, Array)
+#4 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#5 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\OrderDetailsController))
+#6 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#7 {main}
+
+
+2015-08-03 14:30:47 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "orders"
+Request URL: /testBuild/orders/view/1
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/ORM/Table.php(1176): Cake\ORM\Query->firstOrFail()
+#1 /Users/edster2007/Sites/testBuild/src/Controller/OrdersController.php(39): Cake\ORM\Table->get('1', Array)
+#2 [internal function]: App\Controller\OrdersController->view('1')
+#3 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(411): call_user_func_array(Array, Array)
+#4 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#5 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\OrdersController))
+#6 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#7 {main}
+
+
+2015-08-03 14:31:29 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "orders"
+Request URL: /testBuild/orders/view/1
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/ORM/Table.php(1176): Cake\ORM\Query->firstOrFail()
+#1 /Users/edster2007/Sites/testBuild/src/Controller/OrdersController.php(39): Cake\ORM\Table->get('1', Array)
+#2 [internal function]: App\Controller\OrdersController->view('1')
+#3 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(411): call_user_func_array(Array, Array)
+#4 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#5 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\OrdersController))
+#6 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#7 {main}
+
+
+2015-08-03 14:35:37 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "orders"
+Request URL: /testBuild/orders/view/1
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/ORM/Table.php(1176): Cake\ORM\Query->firstOrFail()
+#1 /Users/edster2007/Sites/testBuild/src/Controller/OrdersController.php(39): Cake\ORM\Table->get('1', Array)
+#2 [internal function]: App\Controller\OrdersController->view('1')
+#3 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(411): call_user_func_array(Array, Array)
+#4 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#5 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\OrdersController))
+#6 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#7 {main}
+
+
+2015-08-03 14:37:45 Error: [Cake\View\Exception\MissingHelperException] Helper class OrderDetailsHelper could not be found.
+Exception Attributes: array (
+  'class' => 'OrderDetailsHelper',
+  'plugin' => NULL,
+)
+Request URL: /testBuild/items/view/1
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Core/ObjectRegistry.php(91): Cake\View\HelperRegistry->_throwMissingClassError('OrderDetails', NULL)
+#1 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/HelperRegistry.php(67): Cake\Core\ObjectRegistry->load('OrderDetails')
+#2 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/View.php(751): Cake\View\HelperRegistry->__isset('OrderDetails')
+#3 /Users/edster2007/Sites/testBuild/src/Template/Items/view.ctp(67): Cake\View\View->__get('OrderDetails')
+#4 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/View.php(834): include('/Users/edster20...')
+#5 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/View.php(794): Cake\View\View->_evaluate('/Users/edster20...', Array)
+#6 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/View.php(465): Cake\View\View->_render('/Users/edster20...')
+#7 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(582): Cake\View\View->render(NULL, NULL)
+#8 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(120): Cake\Controller\Controller->render()
+#9 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\ItemsController))
+#10 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#11 {main}
+
+
+2015-08-03 14:38:00 Error: [Cake\View\Exception\MissingHelperException] Helper class OrdersHelper could not be found.
+Exception Attributes: array (
+  'class' => 'OrdersHelper',
+  'plugin' => NULL,
+)
+Request URL: /testBuild/items/view/1
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Core/ObjectRegistry.php(91): Cake\View\HelperRegistry->_throwMissingClassError('Orders', NULL)
+#1 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/HelperRegistry.php(67): Cake\Core\ObjectRegistry->load('Orders')
+#2 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/View.php(751): Cake\View\HelperRegistry->__isset('Orders')
+#3 /Users/edster2007/Sites/testBuild/src/Template/Items/view.ctp(67): Cake\View\View->__get('Orders')
+#4 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/View.php(834): include('/Users/edster20...')
+#5 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/View.php(794): Cake\View\View->_evaluate('/Users/edster20...', Array)
+#6 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/View.php(465): Cake\View\View->_render('/Users/edster20...')
+#7 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(582): Cake\View\View->render(NULL, NULL)
+#8 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(120): Cake\Controller\Controller->render()
+#9 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\ItemsController))
+#10 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#11 {main}
+
+
+2015-08-03 14:41:01 Error: Fatal Error (1): Call to a member function get() on boolean in [/Users/edster2007/Sites/testBuild/src/Controller/ItemsController.php, line 42]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2015-08-03 14:41:01 Error: [Cake\Error\FatalErrorException] Call to a member function get() on boolean
+Request URL: /testBuild/items/view/1
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', '/Users/edster20...', 42)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-08-03 14:47:35 Error: [Cake\View\Exception\MissingHelperException] Helper class OrdersHelper could not be found.
+Exception Attributes: array (
+  'class' => 'OrdersHelper',
+  'plugin' => NULL,
+)
+Request URL: /testBuild/items/view/1
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Core/ObjectRegistry.php(91): Cake\View\HelperRegistry->_throwMissingClassError('Orders', NULL)
+#1 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/HelperRegistry.php(67): Cake\Core\ObjectRegistry->load('Orders')
+#2 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/View.php(751): Cake\View\HelperRegistry->__isset('Orders')
+#3 /Users/edster2007/Sites/testBuild/src/Template/Items/view.ctp(67): Cake\View\View->__get('Orders')
+#4 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/View.php(834): include('/Users/edster20...')
+#5 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/View.php(794): Cake\View\View->_evaluate('/Users/edster20...', Array)
+#6 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/View.php(465): Cake\View\View->_render('/Users/edster20...')
+#7 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(582): Cake\View\View->render(NULL, NULL)
+#8 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(120): Cake\Controller\Controller->render()
+#9 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\ItemsController))
+#10 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#11 {main}
+
+
+2015-08-03 14:47:51 Error: [Cake\View\Exception\MissingHelperException] Helper class OrdersHelper could not be found.
+Exception Attributes: array (
+  'class' => 'OrdersHelper',
+  'plugin' => NULL,
+)
+Request URL: /testBuild/items/view/1
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Core/ObjectRegistry.php(91): Cake\View\HelperRegistry->_throwMissingClassError('Orders', NULL)
+#1 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/HelperRegistry.php(67): Cake\Core\ObjectRegistry->load('Orders')
+#2 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/View.php(751): Cake\View\HelperRegistry->__isset('Orders')
+#3 /Users/edster2007/Sites/testBuild/src/Template/Items/view.ctp(67): Cake\View\View->__get('Orders')
+#4 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/View.php(834): include('/Users/edster20...')
+#5 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/View.php(794): Cake\View\View->_evaluate('/Users/edster20...', Array)
+#6 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/View.php(465): Cake\View\View->_render('/Users/edster20...')
+#7 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(582): Cake\View\View->render(NULL, NULL)
+#8 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(120): Cake\Controller\Controller->render()
+#9 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\ItemsController))
+#10 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#11 {main}
+
+
+2015-08-03 14:48:04 Error: [Cake\View\Exception\MissingHelperException] Helper class OrdersHelper could not be found.
+Exception Attributes: array (
+  'class' => 'OrdersHelper',
+  'plugin' => NULL,
+)
+Request URL: /testBuild/items/view/1
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Core/ObjectRegistry.php(91): Cake\View\HelperRegistry->_throwMissingClassError('Orders', NULL)
+#1 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/HelperRegistry.php(67): Cake\Core\ObjectRegistry->load('Orders')
+#2 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/View.php(751): Cake\View\HelperRegistry->__isset('Orders')
+#3 /Users/edster2007/Sites/testBuild/src/Template/Items/view.ctp(67): Cake\View\View->__get('Orders')
+#4 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/View.php(834): include('/Users/edster20...')
+#5 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/View.php(794): Cake\View\View->_evaluate('/Users/edster20...', Array)
+#6 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/View.php(465): Cake\View\View->_render('/Users/edster20...')
+#7 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(582): Cake\View\View->render(NULL, NULL)
+#8 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(120): Cake\Controller\Controller->render()
+#9 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\ItemsController))
+#10 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#11 {main}
+
+
+2015-08-03 14:52:07 Error: Fatal Error (4): syntax error, unexpected ')' in [/Users/edster2007/Sites/testBuild/src/Controller/ItemsController.php, line 51]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2015-08-03 14:52:07 Error: [Cake\Error\FatalErrorException] syntax error, unexpected ')'
+Request URL: /testBuild/items/view/1
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/Users/edster20...', 51)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-08-03 14:53:28 Error: Fatal Error (4): syntax error, unexpected ':', expecting ',' or ';' in [/Users/edster2007/Sites/testBuild/src/Template/Items/view.ctp, line 61]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2015-08-03 14:53:28 Error: [Cake\Error\FatalErrorException] syntax error, unexpected ':', expecting ',' or ';'
+Request URL: /testBuild/items/view/1
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/Users/edster20...', 61)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-08-03 14:53:40 Error: Fatal Error (4): syntax error, unexpected ')' in [/Users/edster2007/Sites/testBuild/src/Template/Items/view.ctp, line 61]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2015-08-03 14:53:40 Error: [Cake\Error\FatalErrorException] syntax error, unexpected ')'
+Request URL: /testBuild/items/view/1
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/Users/edster20...', 61)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-08-03 14:53:47 Error: Fatal Error (4): syntax error, unexpected ':', expecting ',' or ';' in [/Users/edster2007/Sites/testBuild/src/Template/Items/view.ctp, line 61]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2015-08-03 14:53:47 Error: [Cake\Error\FatalErrorException] syntax error, unexpected ':', expecting ',' or ';'
+Request URL: /testBuild/items/view/1
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/Users/edster20...', 61)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-08-03 14:53:56 Error: Fatal Error (4): syntax error, unexpected ':' in [/Users/edster2007/Sites/testBuild/src/Template/Items/view.ctp, line 61]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2015-08-03 14:53:56 Error: [Cake\Error\FatalErrorException] syntax error, unexpected ':'
+Request URL: /testBuild/items/view/1
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/Users/edster20...', 61)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-08-03 14:54:06 Error: Fatal Error (4): syntax error, unexpected ':', expecting ',' or ';' in [/Users/edster2007/Sites/testBuild/src/Template/Items/view.ctp, line 61]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2015-08-03 14:54:07 Error: [Cake\Error\FatalErrorException] syntax error, unexpected ':', expecting ',' or ';'
+Request URL: /testBuild/items/view/1
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/Users/edster20...', 61)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-08-03 14:54:29 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "order_details"
+Request URL: /testBuild/order_details/view/1
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/ORM/Table.php(1176): Cake\ORM\Query->firstOrFail()
+#1 /Users/edster2007/Sites/testBuild/src/Controller/OrderDetailsController.php(39): Cake\ORM\Table->get('1', Array)
+#2 [internal function]: App\Controller\OrderDetailsController->view('1')
+#3 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(411): call_user_func_array(Array, Array)
+#4 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#5 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\OrderDetailsController))
+#6 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#7 {main}
+
+
+2015-08-03 14:55:08 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "order_details"
+Request URL: /testBuild/order_details/view/2
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/ORM/Table.php(1176): Cake\ORM\Query->firstOrFail()
+#1 /Users/edster2007/Sites/testBuild/src/Controller/OrderDetailsController.php(39): Cake\ORM\Table->get('2', Array)
+#2 [internal function]: App\Controller\OrderDetailsController->view('2')
+#3 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(411): call_user_func_array(Array, Array)
+#4 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#5 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\OrderDetailsController))
+#6 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#7 {main}
+
+
+2015-08-04 01:51:46 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Apple-touch-icon-precomposed.png could not be found.
+Exception Attributes: array (
+  'class' => 'Apple-touch-icon-precomposed.png',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /testBuild/apple-touch-icon-precomposed.png
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2015-08-04 01:51:46 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Apple-touch-icon.png could not be found.
+Exception Attributes: array (
+  'class' => 'Apple-touch-icon.png',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /testBuild/apple-touch-icon.png
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2015-08-05 09:16:38 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Apple-touch-icon-precomposed.png could not be found.
+Exception Attributes: array (
+  'class' => 'Apple-touch-icon-precomposed.png',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /testBuild/apple-touch-icon-precomposed.png
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2015-08-05 09:16:38 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Apple-touch-icon.png could not be found.
+Exception Attributes: array (
+  'class' => 'Apple-touch-icon.png',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /testBuild/apple-touch-icon.png
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+

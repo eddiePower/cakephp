@@ -19,7 +19,7 @@
 	<p><?= $this->Number->format($courier->id) ?></p>
 	-->
 	<h3 class="subheader"><?= __('Courier Charge') ?></h3>
-	<p><?= '$' . $this->Number->format($courier->courier_charge) ?></p>
+	<p><?= $this->Number->currency($courier->courier_charge) ?></p>
 
 
 	<h4 class="subheader"><?= __('Related Orders shipped with ' . $courier->courier_name) ?></h4>

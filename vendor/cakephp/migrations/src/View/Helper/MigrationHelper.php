@@ -33,6 +33,8 @@ class MigrationHelper extends Helper
      */
     protected $schemas = [];
 
+    public $tableStatements = [];
+
     /**
      * Constructor
      *
@@ -168,8 +170,12 @@ class MigrationHelper extends Helper
     {
         $tableSchema = $this->schema($table);
 
-        $tableConstraints = $tableSchema->constraints();
         $constraints = [];
+        $tableConstraints = $tableSchema->constraints();
+        if (empty($tableConstraints)) {
+            return $constraints;
+        }
+
         if ($tableConstraints[0] === 'primary') {
             unset($tableConstraints[0]);
         }
@@ -224,7 +230,7 @@ class MigrationHelper extends Helper
     /**
      * Returns an array of column data for a single column
      *
-     * @param Cake\Database\Schema\Table $tableSchema Name of the table to retrieve columns for
+     * @param \Cake\Database\Schema\Table $tableSchema Name of the table to retrieve columns for
      * @param string $column A column to retrieve data for
      * @return array
      */
@@ -353,5 +359,21 @@ class MigrationHelper extends Helper
         }
 
         return $start . implode($join, $list) . ',' . $end;
+    }
+
+    /**
+     * Returns a $this->table() statement only if it was not issued already
+     *
+     * @param string $table Table for which the statement is needed
+     * @return string
+     */
+    public function tableStatement($table)
+    {
+        if (!isset($this->tableStatements[$table])) {
+            $this->tableStatements[$table] = true;
+            return '$this->table(\'' . $table . '\')';
+        }
+
+        return '';
     }
 }

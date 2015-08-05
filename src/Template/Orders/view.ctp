@@ -76,8 +76,8 @@
 	<td><?= h($orderDetails->item_id) ?></td>
 	<td><?= h($orderDetails->order_id) ?></td>
 	<td><?= h($orderDetails->quantity_ordered) ?></td>
-	<td><?= h('$' . $orderDetails->per_unit) ?></td>
-	<td><?= h($orderDetails->discount . '%') ?></td>
+	<td><?= h($this->Number->currency($orderDetails->per_unit)) ?></td>
+	<td><?= h($this->Number->toPercentage($orderDetails->discount)) ?></td>
 
 	<td class="actions">
 	<?= $this->Html->link(__('View'), ['controller' => 'OrderDetails', 'action' => 'view', $orderDetails->id]) ?>

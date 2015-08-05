@@ -22,7 +22,7 @@
         <tr>
             <td><?= h($item->item_name) ?></td>
             <td><?= $this->Number->format($item->quantity_on_hand) ?></td>
-            <td><?= $this->Number->format($item->item_number) ?></td>
+            <td><?= $this->Number->format($item->item_number, ['pattern' => '########']) ?></td>
             <td class="actions">
                 <?= $this->Html->link(__('View'), ['action' => 'view', $item->id], ['class' => 'label']) ?>
                 <?= $this->Html->link(__('Edit'), ['action' => 'edit', $item->id], ['class' => 'label']) ?>

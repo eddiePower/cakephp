@@ -29,7 +29,7 @@
 			<tr>
 				<td><?= h($customer->first_name) ?></td>
 				<td><?= h($customer->last_name) ?></td>
-				<td><?= $this->Number->format($customer->postcode) ?></td>
+				<td><?= $this->Number->format($customer->postcode, ['pattern' => '####']) ?></td>
 				<td><?= h($customer->phone) ?></td>
 				<td><?= h($customer->customer_type) ?></td>
 

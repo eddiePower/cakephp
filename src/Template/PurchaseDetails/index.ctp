@@ -28,7 +28,7 @@
 			<?= $purchaseDetail->has('item') ? $this->Html->link($purchaseDetail->item->item_name, ['controller' => 'Items', 'action' => 'view', $purchaseDetail->item->id]) : '' ?>
 			</td>
 			<td><?= $this->Number->format($purchaseDetail->quantity_purchased) ?></td>
-			<td><?= '$' . $this->Number->format($purchaseDetail->price_of_item) ?></td>
+			<td><?= $this->Number->currency($purchaseDetail->price_of_item) ?></td>
 			<td class="actions">
 			<?= $this->Html->link(__('View'), ['action' => 'view', $purchaseDetail->id], ['class' => 'label']) ?>
 			<?= $this->Html->link(__('Edit'), ['action' => 'edit', $purchaseDetail->id], ['class' => 'label']) ?>
