@@ -14,7 +14,7 @@
         depending on the users role a edit this news post button will appear or 
         nothing as users only have read only access.
   -->
-  <?= $userRole == 'admin' ? $this->Html->link(__('Edit'), ['action' => 'edit', $article->id], ['class' => 'label danger']) : '' ?>				
+  <?= $userRole == 'admin' ? $this->Html->link(__('Edit'), ['action' => 'edit', $article->id], ['class' => 'label danger']) : '' ?>	
 
 </small></p>
 </div>

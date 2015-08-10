@@ -41,54 +41,74 @@ class ArticlesController extends AppController
 
     public function add()
     {
-        $article = $this->Articles->newEntity();
-        
-        if ($this->request->is('post')) 
+        //check the user type is allowed to post news articles (Admin Only!!)
+        if($this->Auth->user('role') == 'admin')
         {
-            $article = $this->Articles->patchEntity($article, $this->request->data);
-            
-            if ($this->Articles->save($article)) 
+            $article = $this->Articles->newEntity();
+        
+            if ($this->request->is('post')) 
             {
-                $this->Flash->success(__('Your article has been saved.'));
-                return $this->redirect(['action' => 'index']);
+                $article = $this->Articles->patchEntity($article, $this->request->data);
+                
+                if ($this->Articles->save($article)) 
+                {
+                    $this->Flash->success(__('Your article has been saved.'));
+                    return $this->redirect(['action' => 'index']);
+                }
+                $this->Flash->error(__('Unable to add your article.'));
             }
-            $this->Flash->error(__('Unable to add your article.'));
+            
+            $this->set('article', $article);
+            
+            //Addded the categories list for choosing one category for each article
+            $categories = $this->Articles->Categories->find('treeList');
+            $this->set(compact('categories'));
+        }
+        else  // else redirect them with error message telling them NO!
+        {
+            $this->Flash->error(__('Your not allowed to post news'));
+            return $this->redirect(['action' => 'index']);
         }
         
-        $this->set('article', $article);
-        
-        //Addded the categories list for choosing one category for each article
-        $categories = $this->Articles->Categories->find('treeList');
-        $this->set(compact('categories'));
     }
     
     public function edit($id = null)
     {
-       $article = $this->Articles->get($id);
-       
-       if ($this->request->is(['post', 'put'])) 
-       {
-          $this->Articles->patchEntity($article, $this->request->data);
-          if ($this->Articles->save($article)) 
-          {
-             $this->Flash->success(__('Your article has been updated.'));
-             
-             return $this->redirect(['action' => 'index']);
-         }
-        
-         $this->Flash->error(__('Unable to update your article.'));
-       }
-
-       $this->set('article', $article);
-       
-       //Addded the categories list for choosing one category for each article
-       $categories = $this->Articles->Categories->find('treeList');
-       $this->set(compact('categories'));
+        //check the authorised user type is allowed to post news articles (Admin Only!!)
+        if($this->Auth->user('role') == 'admin')
+        {
+           $article = $this->Articles->get($id);
+           
+           if ($this->request->is(['post', 'put'])) 
+           {
+              $this->Articles->patchEntity($article, $this->request->data);
+              if ($this->Articles->save($article)) 
+              {
+                 $this->Flash->success(__('Your article has been updated.'));
+                 
+                 return $this->redirect(['action' => 'index']);
+             }
+            
+             $this->Flash->error(__('Unable to update your article.'));
+           }
+           
+           $this->set('article', $article);
+           
+           //Addded the categories list for choosing one category for each article
+           $categories = $this->Articles->Categories->find('treeList');
+           $this->set(compact('categories'));
+        }
+        else  // else redirect them with error message telling them NO!
+        {
+            $this->Flash->error(__('Your not allowed to edit the news'));
+            return $this->redirect(['action' => 'index']);
+        }
        
     }
     
     public function delete($id)
     {
+        //this means we must use the Form helper to get the data via post
        $this->request->allowMethod(['post', 'delete']);
 
        $article = $this->Articles->get($id);

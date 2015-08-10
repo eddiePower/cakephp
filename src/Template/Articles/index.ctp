@@ -19,6 +19,7 @@
             $this->Html->scriptEnd(); 
         -->
         <th><?= $this->Paginator->sort('Title') ?></th>
+        <th><?= $this->Paginator->sort('Body') ?></th>
         <th><?= $this->Paginator->sort('Created') ?></th>
         <!-- Check to see if user has admin priviliges if so then show edit / delete controles -->
         <?= $userRole == 'admin' ? __('<th class="actions">Action</th>') : '' ?>
@@ -26,11 +27,14 @@
     </thead>
 <!-- Here's where we iterate through our $articles query object, printing out article info -->
 <tbody>
-<?php foreach ($articles as $article): ?>
+  <?php foreach ($articles as $article): ?>
     <tr>
-        <!-- <td><?= $article->id ?></td> -->
         <td>
             <?= $this->Html->link($article->title, ['action' => 'view', $article->id], ['class' => 'btn normal']) ?>
+        </td>
+        <td>
+            <?= $this->Html->link($this->Text->truncate($article->body, 60), ['action' => 'view', $article->id], ['class' => 'btn normal']) ?>
+            
         </td>
         <td>
             <?= h($article->created) ?>
@@ -42,14 +46,14 @@
         <?= $userRole == 'admin' ? __('</td>') : '' ?>
         <!--  End of if user has admin support check all done via cake code.  -->
     </tr>
-<?php endforeach; ?>
+  <?php endforeach; ?>
 </tbody>
 </table>
     <div class="paginator">
         <ul class="pagination">
-            <?= $this->Paginator->prev('☜ ' . __('previous')) ?>
+            <?= $this->Paginator->prev('< ' . __('previous')) ?>
             <?= $this->Paginator->numbers() ?>
-            <?= $this->Paginator->next(__('next') . ' ☞') ?>
+            <?= $this->Paginator->next(__('next') . ' >') ?>
         </ul>
         <p><?= $this->Paginator->counter() ?></p>
     </div>

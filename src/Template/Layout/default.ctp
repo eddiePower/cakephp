@@ -28,6 +28,9 @@ $cakeDescription = 'SoleMate Doormats - Built on CakePHP v3';
 		<?= $this->Html->meta('icon') ?>
 		<?= $this->Html->css(['lightgrid']) ?>
 		<!-- Add in jQuery links here using cakePHP -->
+		
+		<?= $this->Html->script('tinymce/tinymce.min.js') ?>
+
 
 		<?= $this->fetch('meta') ?>
 		<?= $this->fetch('script') ?>

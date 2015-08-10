@@ -1380,8 +1380,8 @@ class Query implements ExpressionInterface, IteratorAggregate
      *
      * ```
      *
-     * $expression = $query->newExpression(); // Returns an empty expression object
-     * $expression = $query->newExpression('Table.column = Table2.column'); // Return a raw SQL expression
+     * $expression = $query->newExpr(); // Returns an empty expression object
+     * $expression = $query->newExpr('Table.column = Table2.column'); // Return a raw SQL expression
      * ```
      *
      * @param mixed $rawExpression A string, array or anything you want wrapped in an expression object
@@ -1643,12 +1643,13 @@ class Query implements ExpressionInterface, IteratorAggregate
      */
     protected function _conjugate($part, $append, $conjunction, $types)
     {
+        $expression = $this->_parts[$part] ?: $this->newExpr();
         if (empty($append)) {
+            $this->_parts[$part] = $expression;
             return;
         }
-        $expression = $this->_parts[$part] ?: $this->newExpr();
 
-        if (!is_string($append) && is_callable($append)) {
+        if ($expression->isCallable($append)) {
             $append = $append($this->newExpr(), $this);
         }
 
