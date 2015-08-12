@@ -2935,3 +2935,1046 @@ Stack Trace:
 #2 {main}
 
 
+2015-08-11 03:18:40 Warning: Warning (4096): Argument 2 passed to Cake\ORM\Table::patchEntity() must be of the type array, string given, called in /Users/edster2007/Sites/testBuild/src/Controller/UsersController.php on line 242 and defined in [/Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/ORM/Table.php, line 2026]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+Cake\ORM\Table::patchEntity() - CORE/src/ORM/Table.php, line 2026
+App\Controller\UsersController::resetPassword() - APP/Controller/UsersController.php, line 242
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 411
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-08-11 03:18:40 Warning: Warning (4096): Argument 2 passed to Cake\ORM\Marshaller::merge() must be of the type array, string given, called in /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/ORM/Table.php on line 2032 and defined in [/Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/ORM/Marshaller.php, line 419]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+Cake\ORM\Marshaller::merge() - CORE/src/ORM/Marshaller.php, line 419
+Cake\ORM\Table::patchEntity() - CORE/src/ORM/Table.php, line 2032
+App\Controller\UsersController::resetPassword() - APP/Controller/UsersController.php, line 242
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 411
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-08-11 03:18:40 Error: [InvalidArgumentException] Passed variable is not an array or object, using empty array instead
+Request URL: /testBuild/users/resetPassword
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/ORM/Marshaller.php(200): ArrayObject->__construct('f9f33d0401cb675...')
+#1 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/ORM/Marshaller.php(421): Cake\ORM\Marshaller->_prepareDataAndOptions('f9f33d0401cb675...', Array)
+#2 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/ORM/Table.php(2032): Cake\ORM\Marshaller->merge(Object(App\Model\Entity\User), 'f9f33d0401cb675...', Array)
+#3 /Users/edster2007/Sites/testBuild/src/Controller/UsersController.php(242): Cake\ORM\Table->patchEntity(Object(App\Model\Entity\User), 'f9f33d0401cb675...')
+#4 [internal function]: App\Controller\UsersController->resetPassword()
+#5 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(411): call_user_func_array(Array, Array)
+#6 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#7 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\UsersController))
+#8 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 {main}
+
+
+2015-08-11 03:21:46 Warning: Warning (4096): Argument 2 passed to Cake\ORM\Table::patchEntity() must be of the type array, object given, called in /Users/edster2007/Sites/testBuild/src/Controller/UsersController.php on line 244 and defined in [/Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/ORM/Table.php, line 2026]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+Cake\ORM\Table::patchEntity() - CORE/src/ORM/Table.php, line 2026
+App\Controller\UsersController::resetPassword() - APP/Controller/UsersController.php, line 244
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 411
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-08-11 03:21:46 Warning: Warning (4096): Argument 2 passed to Cake\ORM\Marshaller::merge() must be of the type array, object given, called in /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/ORM/Table.php on line 2032 and defined in [/Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/ORM/Marshaller.php, line 419]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+Cake\ORM\Marshaller::merge() - CORE/src/ORM/Marshaller.php, line 419
+Cake\ORM\Table::patchEntity() - CORE/src/ORM/Table.php, line 2032
+App\Controller\UsersController::resetPassword() - APP/Controller/UsersController.php, line 244
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 411
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-08-11 03:23:10 Warning: Warning (4096): Argument 2 passed to Cake\ORM\Table::patchEntity() must be of the type array, object given, called in /Users/edster2007/Sites/testBuild/src/Controller/UsersController.php on line 246 and defined in [/Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/ORM/Table.php, line 2026]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+Cake\ORM\Table::patchEntity() - CORE/src/ORM/Table.php, line 2026
+App\Controller\UsersController::resetPassword() - APP/Controller/UsersController.php, line 246
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 411
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-08-11 03:23:10 Warning: Warning (4096): Argument 2 passed to Cake\ORM\Marshaller::merge() must be of the type array, object given, called in /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/ORM/Table.php on line 2032 and defined in [/Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/ORM/Marshaller.php, line 419]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+Cake\ORM\Marshaller::merge() - CORE/src/ORM/Marshaller.php, line 419
+Cake\ORM\Table::patchEntity() - CORE/src/ORM/Table.php, line 2032
+App\Controller\UsersController::resetPassword() - APP/Controller/UsersController.php, line 246
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 411
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-08-11 03:26:43 Error: Fatal Error (1): Call to a member function newQuery() on null in [/Users/edster2007/Sites/testBuild/src/Controller/UsersController.php, line 242]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2015-08-11 03:26:43 Error: [Cake\Error\FatalErrorException] Call to a member function newQuery() on null
+Request URL: /testBuild/users/resetPassword
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', '/Users/edster20...', 242)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-08-11 03:42:12 Error: [BadMethodCallException] Cannot send email, transport was not defined. Did you call transport() or define  a transport in the set profile?
+Request URL: /testBuild/users/resetPassword
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Network/Email/Email.php(1373): Cake\Network\Email\Email->send('You requested a...')
+#1 /Users/edster2007/Sites/testBuild/src/Controller/UsersController.php(266): Cake\Network\Email\Email::deliver('eddie.power@icl...', 'Solemate Doorma...', 'You requested a...', Array)
+#2 [internal function]: App\Controller\UsersController->resetPassword()
+#3 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(411): call_user_func_array(Array, Array)
+#4 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#5 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\UsersController))
+#6 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#7 {main}
+
+
+2015-08-11 03:42:32 Error: [BadMethodCallException] Cannot send email, transport was not defined. Did you call transport() or define  a transport in the set profile?
+Request URL: /testBuild/users/resetPassword
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Network/Email/Email.php(1373): Cake\Network\Email\Email->send('You requested a...')
+#1 /Users/edster2007/Sites/testBuild/src/Controller/UsersController.php(266): Cake\Network\Email\Email::deliver('eddie.power@icl...', 'Solemate Doorma...', 'You requested a...', Array)
+#2 [internal function]: App\Controller\UsersController->resetPassword()
+#3 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(411): call_user_func_array(Array, Array)
+#4 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#5 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\UsersController))
+#6 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#7 {main}
+
+
+2015-08-11 03:43:48 Error: [BadMethodCallException] Cannot send email, transport was not defined. Did you call transport() or define  a transport in the set profile?
+Request URL: /testBuild/users/resetPassword
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Network/Email/Email.php(1373): Cake\Network\Email\Email->send('You requested a...')
+#1 /Users/edster2007/Sites/testBuild/src/Controller/UsersController.php(267): Cake\Network\Email\Email::deliver('eddie.power@icl...', 'Solemate Doorma...', 'You requested a...', Array)
+#2 [internal function]: App\Controller\UsersController->resetPassword()
+#3 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(411): call_user_func_array(Array, Array)
+#4 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#5 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\UsersController))
+#6 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#7 {main}
+
+
+2015-08-11 03:44:12 Error: [BadMethodCallException] You need specify one destination on to, cc or bcc.
+Request URL: /testBuild/users/resetPassword
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/src/Controller/UsersController.php(266): Cake\Network\Email\Email->send('eddie.power@icl...', 'Solemate Doorma...', 'You requested a...', Array)
+#1 [internal function]: App\Controller\UsersController->resetPassword()
+#2 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(411): call_user_func_array(Array, Array)
+#3 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#4 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\UsersController))
+#5 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#6 {main}
+
+
+2015-08-11 03:46:57 Error: [BadMethodCallException] You need specify one destination on to, cc or bcc.
+Request URL: /testBuild/users/resetPassword
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/src/Controller/UsersController.php(276): Cake\Network\Email\Email->send('Solemate Doorma...', 'You requested a...')
+#1 [internal function]: App\Controller\UsersController->resetPassword()
+#2 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(411): call_user_func_array(Array, Array)
+#3 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#4 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\UsersController))
+#5 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#6 {main}
+
+
+2015-08-12 00:03:54 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Apple-touch-icon-precomposed.png could not be found.
+Exception Attributes: array (
+  'class' => 'Apple-touch-icon-precomposed.png',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /testBuild/apple-touch-icon-precomposed.png
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2015-08-12 00:03:54 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Apple-touch-icon.png could not be found.
+Exception Attributes: array (
+  'class' => 'Apple-touch-icon.png',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /testBuild/apple-touch-icon.png
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2015-08-12 00:09:38 Error: [Cake\Network\Exception\MethodNotAllowedException] Method Not Allowed
+Request URL: /testBuild/users/resetPassword?test=c6a25978ab975272f13e88c4fd8d2a1d59a0f1fcb08b0956847caee2d72e7cab
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/src/Controller/UsersController.php(200): Cake\Network\Request->allowMethod(Array)
+#1 [internal function]: App\Controller\UsersController->resetPassword()
+#2 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(411): call_user_func_array(Array, Array)
+#3 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#4 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\UsersController))
+#5 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#6 {main}
+
+
+2015-08-12 01:21:50 Error: Fatal Error (1): Call to a member function postLink() on boolean in [/Users/edster2007/Sites/testBuild/src/Controller/UsersController.php, line 280]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2015-08-12 01:21:50 Error: [Cake\Error\FatalErrorException] Call to a member function postLink() on boolean
+Request URL: /testBuild/users/resetPassword
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', '/Users/edster20...', 280)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-08-12 01:22:23 Error: Fatal Error (1): Call to a member function postLink() on boolean in [/Users/edster2007/Sites/testBuild/src/Controller/UsersController.php, line 280]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2015-08-12 01:22:23 Error: [Cake\Error\FatalErrorException] Call to a member function postLink() on boolean
+Request URL: /testBuild/users/resetPassword
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', '/Users/edster20...', 280)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-08-12 01:22:45 Error: Fatal Error (1): Call to a member function postLink() on boolean in [/Users/edster2007/Sites/testBuild/src/Controller/UsersController.php, line 280]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2015-08-12 01:22:45 Error: [Cake\Error\FatalErrorException] Call to a member function postLink() on boolean
+Request URL: /testBuild/users/resetPassword
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', '/Users/edster20...', 280)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-08-12 01:23:46 Error: Fatal Error (1): Call to a member function postLink() on boolean in [/Users/edster2007/Sites/testBuild/src/Controller/UsersController.php, line 280]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2015-08-12 01:23:46 Error: [Cake\Error\FatalErrorException] Call to a member function postLink() on boolean
+Request URL: /testBuild/users/resetPassword
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', '/Users/edster20...', 280)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-08-12 01:24:03 Error: Fatal Error (1): Call to a member function postLink() on boolean in [/Users/edster2007/Sites/testBuild/src/Controller/UsersController.php, line 280]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2015-08-12 01:24:03 Error: [Cake\Error\FatalErrorException] Call to a member function postLink() on boolean
+Request URL: /testBuild/users/resetPassword
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', '/Users/edster20...', 280)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-08-12 01:31:21 Error: Fatal Error (4): syntax error, unexpected ';' in [/Users/edster2007/Sites/testBuild/src/Controller/UsersController.php, line 287]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2015-08-12 01:31:21 Error: [Cake\Error\FatalErrorException] syntax error, unexpected ';'
+Request URL: /testBuild/users/resetPassword
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/Users/edster20...', 287)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-08-12 06:32:35 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Apple-touch-icon-precomposed.png could not be found.
+Exception Attributes: array (
+  'class' => 'Apple-touch-icon-precomposed.png',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /testBuild/apple-touch-icon-precomposed.png
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2015-08-12 06:32:35 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Apple-touch-icon.png could not be found.
+Exception Attributes: array (
+  'class' => 'Apple-touch-icon.png',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /testBuild/apple-touch-icon.png
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2015-08-12 09:37:16 Warning: Warning (2): Creating default object from empty value in [/Users/edster2007/Sites/testBuild/src/Controller/UsersController.php, line 243]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\UsersController::resetPassword() - APP/Controller/UsersController.php, line 243
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 411
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-08-12 09:37:16 Error: [InvalidArgumentException] Invalid email: ""
+Request URL: /testBuild/users/resetPassword
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Network/Email/Email.php(697): Cake\Network\Email\Email->_validateEmail(NULL)
+#1 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Network/Email/Email.php(501): Cake\Network\Email\Email->_addEmail('_to', NULL, NULL)
+#2 /Users/edster2007/Sites/testBuild/src/Controller/UsersController.php(268): Cake\Network\Email\Email->addTo(NULL)
+#3 [internal function]: App\Controller\UsersController->resetPassword()
+#4 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(411): call_user_func_array(Array, Array)
+#5 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#6 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\UsersController))
+#7 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#8 {main}
+
+
+2015-08-12 09:38:46 Error: Fatal Error (4): syntax error, unexpected '$tempEmail' (T_VARIABLE) in [/Users/edster2007/Sites/testBuild/src/Controller/UsersController.php, line 262]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2015-08-12 09:38:46 Error: [Cake\Error\FatalErrorException] syntax error, unexpected '$tempEmail' (T_VARIABLE)
+Request URL: /testBuild/users/resetPassword
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/Users/edster20...', 262)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-08-12 09:39:32 Error: Fatal Error (4): syntax error, unexpected '$tempEmail' (T_VARIABLE) in [/Users/edster2007/Sites/testBuild/src/Controller/UsersController.php, line 262]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2015-08-12 09:39:32 Error: [Cake\Error\FatalErrorException] syntax error, unexpected '$tempEmail' (T_VARIABLE)
+Request URL: /testBuild/users/resetPassword
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/Users/edster20...', 262)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-08-12 09:40:00 Warning: Warning (2): Creating default object from empty value in [/Users/edster2007/Sites/testBuild/src/Controller/UsersController.php, line 243]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\UsersController::resetPassword() - APP/Controller/UsersController.php, line 243
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 411
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-08-12 09:40:01 Error: [InvalidArgumentException] Invalid email: ""
+Request URL: /testBuild/users/resetPassword
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Network/Email/Email.php(697): Cake\Network\Email\Email->_validateEmail(NULL)
+#1 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Network/Email/Email.php(501): Cake\Network\Email\Email->_addEmail('_to', NULL, NULL)
+#2 /Users/edster2007/Sites/testBuild/src/Controller/UsersController.php(269): Cake\Network\Email\Email->addTo(NULL)
+#3 [internal function]: App\Controller\UsersController->resetPassword()
+#4 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(411): call_user_func_array(Array, Array)
+#5 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#6 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\UsersController))
+#7 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#8 {main}
+
+
+2015-08-12 09:42:00 Warning: Warning (2): Creating default object from empty value in [/Users/edster2007/Sites/testBuild/src/Controller/UsersController.php, line 243]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\UsersController::resetPassword() - APP/Controller/UsersController.php, line 243
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 411
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-08-12 09:42:00 Error: [InvalidArgumentException] Invalid email: ""
+Request URL: /testBuild/users/resetPassword
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Network/Email/Email.php(697): Cake\Network\Email\Email->_validateEmail(NULL)
+#1 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Network/Email/Email.php(501): Cake\Network\Email\Email->_addEmail('_to', NULL, NULL)
+#2 /Users/edster2007/Sites/testBuild/src/Controller/UsersController.php(266): Cake\Network\Email\Email->addTo(NULL)
+#3 [internal function]: App\Controller\UsersController->resetPassword()
+#4 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(411): call_user_func_array(Array, Array)
+#5 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#6 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\UsersController))
+#7 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#8 {main}
+
+
+2015-08-12 09:42:04 Warning: Warning (2): Creating default object from empty value in [/Users/edster2007/Sites/testBuild/src/Controller/UsersController.php, line 243]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\UsersController::resetPassword() - APP/Controller/UsersController.php, line 243
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 411
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-08-12 09:42:04 Error: [InvalidArgumentException] Invalid email: ""
+Request URL: /testBuild/users/resetPassword
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Network/Email/Email.php(697): Cake\Network\Email\Email->_validateEmail(NULL)
+#1 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Network/Email/Email.php(501): Cake\Network\Email\Email->_addEmail('_to', NULL, NULL)
+#2 /Users/edster2007/Sites/testBuild/src/Controller/UsersController.php(266): Cake\Network\Email\Email->addTo(NULL)
+#3 [internal function]: App\Controller\UsersController->resetPassword()
+#4 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(411): call_user_func_array(Array, Array)
+#5 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#6 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\UsersController))
+#7 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#8 {main}
+
+
+2015-08-12 09:43:12 Error: [InvalidArgumentException] Invalid email: ""
+Request URL: /testBuild/users/resetPassword
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Network/Email/Email.php(697): Cake\Network\Email\Email->_validateEmail(NULL)
+#1 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Network/Email/Email.php(501): Cake\Network\Email\Email->_addEmail('_to', NULL, NULL)
+#2 /Users/edster2007/Sites/testBuild/src/Controller/UsersController.php(266): Cake\Network\Email\Email->addTo(NULL)
+#3 [internal function]: App\Controller\UsersController->resetPassword()
+#4 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(411): call_user_func_array(Array, Array)
+#5 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#6 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\UsersController))
+#7 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#8 {main}
+
+
+2015-08-12 09:47:32 Error: Fatal Error (4): syntax error, unexpected 'return' (T_RETURN) in [/Users/edster2007/Sites/testBuild/src/Controller/UsersController.php, line 264]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2015-08-12 09:47:32 Error: [Cake\Error\FatalErrorException] syntax error, unexpected 'return' (T_RETURN)
+Request URL: /testBuild/users/resetPassword
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/Users/edster20...', 264)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-08-12 09:48:17 Error: [BadMethodCallException] You need specify one destination on to, cc or bcc.
+Request URL: /testBuild/users/resetPassword
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/src/Controller/UsersController.php(275): Cake\Network\Email\Email->send('Solemate Doorma...')
+#1 [internal function]: App\Controller\UsersController->resetPassword()
+#2 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(411): call_user_func_array(Array, Array)
+#3 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#4 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\UsersController))
+#5 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#6 {main}
+
+
+2015-08-12 12:07:11 Error: Fatal Error (4): syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ']' in [/Users/edster2007/Sites/testBuild/src/Controller/UsersController.php, line 287]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2015-08-12 12:07:11 Error: [Cake\Error\FatalErrorException] syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ']'
+Request URL: /testBuild/users/resetPassword
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/Users/edster20...', 287)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-08-12 12:07:53 Error: Fatal Error (1): Call to a member function build() on boolean in [/Users/edster2007/Sites/testBuild/src/Controller/UsersController.php, line 283]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2015-08-12 12:07:53 Error: [Cake\Error\FatalErrorException] Call to a member function build() on boolean
+Request URL: /testBuild/users/resetPassword
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', '/Users/edster20...', 283)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-08-12 12:08:22 Error: Fatal Error (1): Call to a member function build() on boolean in [/Users/edster2007/Sites/testBuild/src/Controller/UsersController.php, line 283]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2015-08-12 12:08:22 Error: [Cake\Error\FatalErrorException] Call to a member function build() on boolean
+Request URL: /testBuild/users/resetPassword
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', '/Users/edster20...', 283)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-08-12 12:08:25 Error: Fatal Error (1): Call to a member function build() on boolean in [/Users/edster2007/Sites/testBuild/src/Controller/UsersController.php, line 283]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2015-08-12 12:08:25 Error: [Cake\Error\FatalErrorException] Call to a member function build() on boolean
+Request URL: /testBuild/users/resetPassword
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', '/Users/edster20...', 283)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-08-12 12:08:42 Error: Fatal Error (1): Call to a member function build() on boolean in [/Users/edster2007/Sites/testBuild/src/Controller/UsersController.php, line 283]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2015-08-12 12:08:42 Error: [Cake\Error\FatalErrorException] Call to a member function build() on boolean
+Request URL: /testBuild/users/resetPassword
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', '/Users/edster20...', 283)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-08-12 12:09:18 Error: Fatal Error (1): Call to a member function build() on boolean in [/Users/edster2007/Sites/testBuild/src/Controller/UsersController.php, line 283]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2015-08-12 12:09:18 Error: [Cake\Error\FatalErrorException] Call to a member function build() on boolean
+Request URL: /testBuild/users/resetPassword
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', '/Users/edster20...', 283)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-08-12 12:13:33 Error: [Cake\View\Exception\MissingHelperException] Helper class webrootHelper could not be found.
+Exception Attributes: array (
+  'class' => 'webrootHelper',
+  'plugin' => NULL,
+)
+Request URL: /testBuild/users/resetPassword
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Core/ObjectRegistry.php(91): Cake\View\HelperRegistry->_throwMissingClassError('webroot', NULL)
+#1 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/HelperRegistry.php(67): Cake\Core\ObjectRegistry->load('webroot')
+#2 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/View.php(745): Cake\View\HelperRegistry->__isset('webroot')
+#3 /Users/edster2007/Sites/testBuild/src/Template/Users/reset_password.ctp(21): Cake\View\View->__get('webroot')
+#4 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/View.php(828): include('/Users/edster20...')
+#5 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/View.php(788): Cake\View\View->_evaluate('/Users/edster20...', Array)
+#6 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/View.php(465): Cake\View\View->_render('/Users/edster20...')
+#7 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(582): Cake\View\View->render(NULL, NULL)
+#8 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(120): Cake\Controller\Controller->render()
+#9 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\UsersController))
+#10 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#11 {main}
+
+
+2015-08-12 12:17:39 Error: Fatal Error (1): Call to a member function url() on boolean in [/Users/edster2007/Sites/testBuild/src/Controller/UsersController.php, line 284]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2015-08-12 12:17:40 Error: [Cake\Error\FatalErrorException] Call to a member function url() on boolean
+Request URL: /testBuild/users/resetPassword
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', '/Users/edster20...', 284)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-08-12 12:23:31 Error: [Cake\View\Exception\MissingHelperException] Helper class hereHelper could not be found.
+Exception Attributes: array (
+  'class' => 'hereHelper',
+  'plugin' => NULL,
+)
+Request URL: /testBuild/users/resetPassword
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Core/ObjectRegistry.php(91): Cake\View\HelperRegistry->_throwMissingClassError('here', NULL)
+#1 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/HelperRegistry.php(67): Cake\Core\ObjectRegistry->load('here')
+#2 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/View.php(745): Cake\View\HelperRegistry->__isset('here')
+#3 /Users/edster2007/Sites/testBuild/src/Template/Users/reset_password.ctp(21): Cake\View\View->__get('here')
+#4 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/View.php(828): include('/Users/edster20...')
+#5 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/View.php(788): Cake\View\View->_evaluate('/Users/edster20...', Array)
+#6 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/View.php(465): Cake\View\View->_render('/Users/edster20...')
+#7 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(582): Cake\View\View->render(NULL, NULL)
+#8 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(120): Cake\Controller\Controller->render()
+#9 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\UsersController))
+#10 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#11 {main}
+
+
+2015-08-12 12:24:38 Error: Fatal Error (1): Class 'Router' not found in [/Users/edster2007/Sites/testBuild/src/Template/Users/reset_password.ctp, line 21]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2015-08-12 12:24:38 Error: [Cake\Error\FatalErrorException] Class 'Router' not found
+Request URL: /testBuild/users/resetPassword
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Class 'Router' ...', '/Users/edster20...', 21)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-08-12 12:41:50 Error: Fatal Error (1): Call to a member function link() on boolean in [/Users/edster2007/Sites/testBuild/src/Controller/UsersController.php, line 281]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2015-08-12 12:41:50 Error: [Cake\Error\FatalErrorException] Call to a member function link() on boolean
+Request URL: /testBuild/users/resetPassword
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', '/Users/edster20...', 281)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-08-12 12:42:44 Error: Fatal Error (1): Call to a member function link() on boolean in [/Users/edster2007/Sites/testBuild/src/Controller/UsersController.php, line 283]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2015-08-12 12:42:44 Error: [Cake\Error\FatalErrorException] Call to a member function link() on boolean
+Request URL: /testBuild/users/resetPassword
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', '/Users/edster20...', 283)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-08-12 12:45:21 Error: Fatal Error (4): syntax error, unexpected 'echo' (T_ECHO) in [/Users/edster2007/Sites/testBuild/src/Controller/UsersController.php, line 283]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2015-08-12 12:45:21 Error: [Cake\Error\FatalErrorException] syntax error, unexpected 'echo' (T_ECHO)
+Request URL: /testBuild/users/resetPassword
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/Users/edster20...', 283)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-08-12 12:45:35 Error: Fatal Error (1): Call to a member function link() on boolean in [/Users/edster2007/Sites/testBuild/src/Controller/UsersController.php, line 283]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2015-08-12 12:45:35 Error: [Cake\Error\FatalErrorException] Call to a member function link() on boolean
+Request URL: /testBuild/users/resetPassword
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', '/Users/edster20...', 283)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-08-12 12:55:14 Error: Fatal Error (1): Call to a member function link() on boolean in [/Users/edster2007/Sites/testBuild/src/Controller/UsersController.php, line 284]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2015-08-12 12:55:14 Error: [Cake\Error\FatalErrorException] Call to a member function link() on boolean
+Request URL: /testBuild/users/resetPassword
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', '/Users/edster20...', 284)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-08-12 12:55:18 Error: Fatal Error (1): Call to a member function link() on boolean in [/Users/edster2007/Sites/testBuild/src/Controller/UsersController.php, line 284]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2015-08-12 12:55:18 Error: [Cake\Error\FatalErrorException] Call to a member function link() on boolean
+Request URL: /testBuild/users/resetPassword
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', '/Users/edster20...', 284)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-08-12 12:55:25 Error: Fatal Error (1): Call to a member function link() on boolean in [/Users/edster2007/Sites/testBuild/src/Controller/UsersController.php, line 284]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2015-08-12 12:55:25 Error: [Cake\Error\FatalErrorException] Call to a member function link() on boolean
+Request URL: /testBuild/users/resetPassword
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', '/Users/edster20...', 284)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-08-12 12:55:56 Error: Fatal Error (4): syntax error, unexpected '$tempEmail' (T_VARIABLE) in [/Users/edster2007/Sites/testBuild/src/Controller/UsersController.php, line 288]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2015-08-12 12:55:56 Error: [Cake\Error\FatalErrorException] syntax error, unexpected '$tempEmail' (T_VARIABLE)
+Request URL: /testBuild/users/resetPassword
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/Users/edster20...', 288)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-08-12 12:56:18 Error: Fatal Error (1): Call to a member function link() on boolean in [/Users/edster2007/Sites/testBuild/src/Controller/UsersController.php, line 283]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2015-08-12 12:56:18 Error: [Cake\Error\FatalErrorException] Call to a member function link() on boolean
+Request URL: /testBuild/users/resetPassword
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', '/Users/edster20...', 283)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-08-12 13:11:30 Error: Fatal Error (4): syntax error, unexpected ';' in [/Users/edster2007/Sites/testBuild/src/Template/Users/reset_password.ctp, line 22]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2015-08-12 13:11:30 Error: [Cake\Error\FatalErrorException] syntax error, unexpected ';'
+Request URL: /testBuild/users/resetPassword
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/Users/edster20...', 22)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-08-12 13:12:33 Error: Fatal Error (1): Call to a member function link() on boolean in [/Users/edster2007/Sites/testBuild/src/Controller/UsersController.php, line 283]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2015-08-12 13:12:33 Error: [Cake\Error\FatalErrorException] Call to a member function link() on boolean
+Request URL: /testBuild/users/resetPassword
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', '/Users/edster20...', 283)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-08-12 13:16:52 Error: Fatal Error (4): syntax error, unexpected ']', expecting ')' in [/Users/edster2007/Sites/testBuild/src/Controller/UsersController.php, line 283]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2015-08-12 13:16:52 Error: [Cake\Error\FatalErrorException] syntax error, unexpected ']', expecting ')'
+Request URL: /testBuild/users/resetPassword
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/Users/edster20...', 283)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-08-12 13:17:21 Error: Fatal Error (1): Class 'App\Controller\Router' not found in [/Users/edster2007/Sites/testBuild/src/Controller/UsersController.php, line 283]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2015-08-12 13:17:21 Error: [Cake\Error\FatalErrorException] Class 'App\Controller\Router' not found
+Request URL: /testBuild/users/resetPassword
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Class 'App\\Cont...', '/Users/edster20...', 283)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-08-12 13:20:12 Error: Fatal Error (1): Call to undefined method App\Controller\UsersController::url() in [/Users/edster2007/Sites/testBuild/src/Controller/UsersController.php, line 284]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2015-08-12 13:20:12 Error: [Cake\Error\FatalErrorException] Call to undefined method App\Controller\UsersController::url()
+Request URL: /testBuild/users/resetPassword
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to undefin...', '/Users/edster20...', 284)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-08-12 13:20:22 Error: Fatal Error (1): Call to undefined function App\Controller\url() in [/Users/edster2007/Sites/testBuild/src/Controller/UsersController.php, line 284]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2015-08-12 13:20:22 Error: [Cake\Error\FatalErrorException] Call to undefined function App\Controller\url()
+Request URL: /testBuild/users/resetPassword
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to undefin...', '/Users/edster20...', 284)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-08-12 13:24:04 Error: Fatal Error (1): Class 'Router' not found in [/Users/edster2007/Sites/testBuild/src/Template/Users/reset_password.ctp, line 22]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2015-08-12 13:24:04 Error: [Cake\Error\FatalErrorException] Class 'Router' not found
+Request URL: /testBuild/users/resetPassword
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Class 'Router' ...', '/Users/edster20...', 22)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-08-12 13:30:36 Error: Fatal Error (4): syntax error, unexpected '$message' (T_VARIABLE) in [/Users/edster2007/Sites/testBuild/src/Controller/UsersController.php, line 288]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2015-08-12 13:30:36 Error: [Cake\Error\FatalErrorException] syntax error, unexpected '$message' (T_VARIABLE)
+Request URL: /testBuild/users/logout
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/Users/edster20...', 288)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-08-12 14:03:28 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/edster2007/Sites/testBuild/src/Template/Email/html/send_email.ctp, line 74]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+include - APP/Template/Email/html/send_email.ctp, line 74
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Network\Email\Email::_renderTemplates() - CORE/src/Network/Email/Email.php, line 1862
+Cake\Network\Email\Email::_render() - CORE/src/Network/Email/Email.php, line 1713
+Cake\Network\Email\Email::send() - CORE/src/Network/Email/Email.php, line 1303
+App\Controller\CustomersController::buildEmails() - APP/Controller/CustomersController.php, line 203
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 411
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-08-12 14:06:28 Error: Fatal Error (4): syntax error, unexpected ';' in [/Users/edster2007/Sites/testBuild/src/Controller/CustomersController.php, line 190]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2015-08-12 14:06:28 Error: [Cake\Error\FatalErrorException] syntax error, unexpected ';'
+Request URL: /testBuild/customers/buildEmails
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/Users/edster20...', 190)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-08-12 14:09:54 Error: Fatal Error (4): syntax error, unexpected ';' in [/Users/edster2007/Sites/testBuild/src/Template/Email/html/send_email.ctp, line 76]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2015-08-12 14:09:54 Error: [Cake\Error\FatalErrorException] syntax error, unexpected ';'
+Request URL: /testBuild/customers/buildEmails
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/Users/edster20...', 76)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-08-12 14:16:51 Error: Fatal Error (1): Call to undefined function App\Controller\add() in [/Users/edster2007/Sites/testBuild/src/Controller/CustomersController.php, line 191]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2015-08-12 14:16:51 Error: [Cake\Error\FatalErrorException] Call to undefined function App\Controller\add()
+Request URL: /testBuild/customers/buildEmails
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to undefin...', '/Users/edster20...', 191)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-08-12 14:48:12 Error: Fatal Error (4): syntax error, unexpected 'echo' (T_ECHO) in [/Users/edster2007/Sites/testBuild/src/Template/Customers/index.ctp, line 16]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2015-08-12 14:48:12 Error: [Cake\Error\FatalErrorException] syntax error, unexpected 'echo' (T_ECHO)
+Request URL: /testBuild/customers
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/Users/edster20...', 16)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-08-12 14:48:14 Error: Fatal Error (4): syntax error, unexpected 'echo' (T_ECHO) in [/Users/edster2007/Sites/testBuild/src/Template/Customers/index.ctp, line 16]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2015-08-12 14:48:14 Error: [Cake\Error\FatalErrorException] syntax error, unexpected 'echo' (T_ECHO)
+Request URL: /testBuild/customers
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/Users/edster20...', 16)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+

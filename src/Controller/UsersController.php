@@ -5,6 +5,8 @@ use App\Controller\AppController;
 use Cake\Event\Event;
 use Cake\Network\Exception\NotFoundException;
 use Cake\ORM\TableRegistry;
+use Cake\Network\Email\Email;
+use Cake\Routing\Router;
 
 /**
  * Users Controller
@@ -13,6 +15,14 @@ use Cake\ORM\TableRegistry;
  */
 class UsersController extends AppController
 {
+    
+    
+    public function beforeFilter(Event $event)
+    {
+       parent::beforeFilter($event);
+    
+       $this->Auth->allow(['add', 'resetPassword']);
+    }
 
     /**
      * Index method
@@ -91,6 +101,7 @@ class UsersController extends AppController
         $user = $this->Users->get($id, [
             'contain' => []
         ]);
+        
         if ($this->request->is(['patch', 'post', 'put'])) 
         {
             $user = $this->Users->patchEntity($user, $this->request->data);
@@ -110,6 +121,8 @@ class UsersController extends AppController
         $this->set('_serialize', ['user']);
     }
 
+
+
     /**
      * Delete method
      *
@@ -121,6 +134,7 @@ class UsersController extends AppController
     public function delete($id = null)
     {
         $this->request->allowMethod(['post', 'delete']);
+        
         $user = $this->Users->get($id);
         
         if ($this->Users->delete($user)) 
@@ -174,6 +188,7 @@ class UsersController extends AppController
      *                  Grab user email from form filled out by user                                  -- Done
      *                  Pull the related User from database                                           -- Done
      *                  Generate a temp PW_HASH to send to user                                       -- Done
+     *                  Store the random string in the ysers db entry.                                -- 
      *                  Build inline email with temp has and some message                              
      *                     with a link in it pointing to the edit userId password                     -- 
      *                  After new password is hashed save it to the database for required user        -- 
@@ -183,16 +198,12 @@ class UsersController extends AppController
     public function resetPassword()
     {
          //set this function to only run with data from a post request
-        $this->request->allowMethod(['post']);
+        //$this->request->allowMethod(['post']);
 
 
         //check the form has been submitted
         if(isset($_POST['txtEmail']))
-        {
-   
-           //set the users email to the POST data from the form.
-           //$email = $this->request->data;
-           
+        {           
            /*
                Build a custom SQL query object to find all users and 
                filter that to the user whos email matches the form data
@@ -215,8 +226,13 @@ class UsersController extends AppController
                
            }//end foreach query result (should only be one in this case)
            
+           
+           if(isset($selectedUser))
+           {
+           
+           
            //if the selectedUser data isSet then set the viewVar with this data else do nothing to prevent empty form submit.
-           isset($selectedUser) ? $this->set('selectedUser', $selectedUser): '';
+           isset($selectedUser) ? $this->set('selectedUser', $selectedUser) : '';
            
            //debug($selectedUser);
            //debug($email); 
@@ -224,43 +240,88 @@ class UsersController extends AppController
            //Create new random HASHED String to send to user
            // for security and randomness i mixed older md5 with nice sha256 ;)
            $intermediateSalt = md5(uniqid(rand(), true));
+           //set a temp string of 7 digits in length no decimal places
            $salt = substr($intermediateSalt, 0, 7);
+           //now run random string through a 256bit sha encrypt  - maybe overkill?
            $randPassword = hash("sha256", $salt);
+           
+           //update the selectedUsers reset value from old to new.
+           $selectedUser->reset = $randPassword;
          
            //debug("My random string is " . $randPassword);
+           
+           //set the ViewVariable of the randomString  -- may be taken out after development!!!!!!!
            $this->set('tmpString', $randPassword);
          
-           //Store temp HASH in user database  ~ may be session
-         
-         
+           //Store temp HASH in user database  ~ may be session //
+          
+           //store the id of the user in question to save time.
+           $id = $selectedUser->id;
+           //debug($selectedUser);
+            
+          
          
            //Send email to customer with their new reset password hash
+           
+           //create email object and set email config settings
+           $tempEmail = new Email('default');
+           $tempEmail->transport('default');
+           //set the type of email format and use our custom template.
+           $tempEmail->emailFormat('html');
+           $tempEmail->template('sendEmail');
+           
+           //set the email to send to
+           $tempEmail->addTo($selectedUser->email);
+           $tempEmail->subject('Solemate Password Reset');
+           
+           //Set the email headers.
+           $tempEmail->from(['solemateDoormats@doNotReply.com' => 'Solemate Doormats inc']);
+           $tempEmail->sender(['solemate.doormats@gmail.com' => 'Solemate Doormats inc']);
+           $tempEmail->replyTo('solemate.doormats@gmail.com');
+                                             
+           $message = "Solemate Doormats Password Reset<br />You requested a password reset we would like you to click the link below to reset your login password, ";
+
+           $fullUrl = Router::url(array('controller' => 'Users', 'action' => 'resetPassword', 'pwr' => $selectedUser->reset, 'id' => $selectedUser->id), true);           
+           $message .= $fullUrl . "<br />If you did not request a new password or made a mistake requesting then please disregard this email";
+           $message .= ".  Here at Solemate Doormats we keep our users passwords private even from the admins.  Feel free to drop us a email if";
+           $message .= " you would like more information on your account security.";
+           $message .= "<br />PRIVACY STATEMENT GOES HERE!!";
+
+           
+           //May not be needed
+           $tempEmail->viewVars(array('cust'=> $selectedUser));
+           
+                      
+           //email message and send line
+           $tempEmail->send($message);
          
-         
-         
-           //Send user to the edit user password page for their ID number.
+           //Send user to the edit user password page for their ID number via email and get value.
+           if(isset($_GET['pwr']))
+           {
+               debug($_GET['pwr']);
+           }
            
            
+           /*
+             Use a custom query to save our new random string to the users db entry for checking 
+             user email starts the password reset.
+           */ 
+           $query2 = TableRegistry::get('Users')->find();
+           $query2->update('Users')
+                   ->set(['reset' => $randPassword])
+                   ->where(['id' => $id]);
+           $stmt = $query2->execute();
            
-        }//end of if user email form POST data is set check.
-        
-        
-         
-         
-         
-        
+           }//END OF SELECTED USER IS SET CHECK.
+           else
+           {
+               $this->Flash->error('This user email address was not found in our database.');
+           }
+           
+        }//end of if user email form POST data is set check.           
     }//end of resetPassword func
     
-    
-    
-    public function beforeFilter(Event $event)
-    {
-       parent::beforeFilter($event);
-    
-       $this->Auth->allow(['add', 'resetPassword']);
-    }
-    
-    //logout
+    //logout functionality using the AUTH cakePHP plugin.
     public function logout()
     {
        $this->Flash->success('Bye bye You\'re now logged out.');

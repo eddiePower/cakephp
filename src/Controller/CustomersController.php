@@ -2,7 +2,6 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
-
 //add the email library or what ever cakephp calls them
 use Cake\Network\Email\Email;
 
@@ -157,7 +156,8 @@ class CustomersController extends AppController
     {
         $this->set("customers", $this->Customers->find("all", ['order' => 'last_name ASC']));
         
-        //$toList = array();
+        //create the viewVar array to be populated and sent via emails
+         $allUsers = array();
         
         $custTo = "<br />";
         $customerList = array();
@@ -168,8 +168,7 @@ class CustomersController extends AppController
         
         if ($this->request->is('post') || $this->request->is('put'))
         {
-            
-            $list=0;
+            $list = 0;
             
             foreach($this->request->data['Email']['checkbox'] as $id=>$checked)
             {
@@ -179,13 +178,19 @@ class CustomersController extends AppController
                     $cust = $this->Customers->get($id, ['contain' => []]);
                     $customerList[$list] = $cust->first_name.' '.$cust->last_name;
                     $email->addTo($cust->email);
-                    $email->viewVars(array('cust'=>$cust));
                     
                     //set the type of email format and use our custom template.
                     $email->emailFormat('html');
                     $email->template('sendEmail');
                 }//end of if checkbox is checked loop
+                
+                //store this customer data into our viewVar array
+                $allUsers[] = $cust;
+                    
             }//end foreach checkbox loop
+            
+            //now send all our view vars over in the array $allUsers.
+            $email->viewVars(array('cust' => $allUsers));
             
             //Set the email headers.
             $email->from(['solemateDoormats@doNotReply.com' => 'Solemate Doormats inc']);
@@ -206,7 +211,7 @@ class CustomersController extends AppController
 
                 }
                 
-                //!!!!!NEEDS TO BE LOOKED AT POSSIBLY NOT WORKING STILL.!!!!!!!!!
+                //!!!!!NEEDS TO BE Rendered on the View *.ctp file !!!!!!!!!
                 $this->Flash->success('Your email was successfully sent.');
                 
                 //If the email is sent succesfully redirect back to the main customer page.

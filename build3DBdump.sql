@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 130.194.7.82
--- Generation Time: Aug 05, 2015 at 02:41 AM
+-- Generation Time: Aug 12, 2015 at 04:55 PM
 -- Server version: 5.5.20
 -- PHP Version: 5.5.12
 
@@ -19,6 +19,12 @@ SET time_zone = "+00:00";
 --
 -- Database: `fitie2015t18dev`
 --
+
+-- --------------------------------------------------------
+--  EDDIES DROP ALL TABLES ATTEMPT LOL
+-- --------------------------------------------------------
+
+DROP TABLE if EXISTS `articles`, `categories`, `items`, `orders`, `order_details`, `phinxlog`, `purchases`, `purchase_details`, `suppliers`, `couriers`, `customers`, `users`;
 
 -- --------------------------------------------------------
 
@@ -42,7 +48,7 @@ CREATE TABLE IF NOT EXISTS `articles` (
 INSERT INTO `articles` (`id`, `title`, `body`, `category_id`, `created`, `modified`) VALUES
 (1, 'New Motor Bike front door mats', 'Hi again here we are adding our newest Motorbike Door mats back by popular demand we have pictures to be posted soon.', NULL, '2015-06-01 08:26:32', '2015-06-01 08:26:32'),
 (5, 'TEAM 18 NEWS - Ways to create labels for rick', 'Ways to generate labels for rick from css are shown here i havent read it all yet but it may hold some info\r\nhttp://www.codeproject.com/Articles/90577/Building-a-Label-Printing-Software-using-HTML-CSS hope we can get this site up to scratch for MYOB sync dev stages.\r\nalso found http://www.labelgrid.net/', NULL, '2015-06-08 07:27:17', '2015-06-08 07:29:07'),
-(7, 'August Sale!', 'Dont forget our sale coming up in the month of August 2015, there will be a 0.5% discount on orders over $10,000! great savings for all ;)', NULL, '2015-08-02 15:59:37', '2015-08-02 15:59:37');
+(7, 'August Sale!', 'Dont forget our sale coming up in the month of August 2015, there will be a 0.5% discount on orders over $10,000! great savings for all ;)', NULL, '2015-08-02 15:59:37', '2015-08-05 03:14:39');
 
 -- --------------------------------------------------------
 
@@ -319,26 +325,29 @@ INSERT INTO `suppliers` (`id`, `supplier_name`, `supplier_description`) VALUES
 
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL,
-  `username` varchar(80) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
+  `username` varchar(80) NOT NULL COMMENT 'The log in user name for each user/customer on the system',
+  `email` varchar(255) NOT NULL COMMENT 'users email address for correspondence',
+  `password` varchar(255) NOT NULL COMMENT 'user log in password',
+  `reset` varchar(64) DEFAULT NULL COMMENT 'a reset string for checking user has asked for a new password.',
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   `role` varchar(55) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `email`, `password`, `created`, `modified`, `role`) VALUES
-(1, 'ed', 'edster2007@gmail.com', '$2y$10$GP4s6apwYGEeuKyh8D40SeN8KXVAZNXoWIY6p9EGj9z668Q1z7PXC', '2015-04-03 05:45:16', '2015-06-06 06:46:52', 'admin'),
-(2, 'tester1', 'user@iTest.com', '$2y$10$9rpAiou/xu70Ag37P/TCOuVOgDSlj97nIhxCpUS5l.Bw/qZ7cPiJi', '2015-04-03 17:31:54', '2015-06-06 07:25:13', 'user'),
-(3, 'linc', 'lliu147@student.monash.edu', '$2y$10$EdWfOnju7g1Hk5FRCkQsjeFBefvh7sSmp/t.O1XHaKfJLaFPkY47a', '2015-04-23 00:00:00', '2015-05-19 12:27:56', 'admin'),
-(4, 'jus', 'ss4.justin@gmail.com', '$2y$10$SOC0M376y8xtWVtqKkLaOOEgav4qGO0ut2jz4x4Xx5FqgzRDMVjMm', '2015-04-25 00:00:00', '2015-05-19 12:28:03', 'admin'),
-(6, 'ep', 'eddie.power@icloud.com', '$2y$10$ktw61mCHoa8La8e9vBpAwe74zKEuSrvrdr/qA9T3qhAdPnCOG1fhK', '2015-06-08 06:30:11', '2015-06-08 06:30:11', 'admin'),
-(7, 'test2', 'test2@tester2.email.com', '$2y$10$3XfSU/uXgc3UfJ49oKCR9ODZO7tF/zprXnntlhOgom1sEG8lZNaXS', '2015-06-09 03:56:45', '2015-06-09 03:57:02', 'user'),
-(10, 'lliu', 'hhh@gmail.com', '$2y$10$.JpVuT/dOuqD8P0Dcg6GIub1Db1UCdSToBu6G93pLDPmoEcb1i1hu', '2015-07-31 01:01:19', '2015-07-31 01:01:19', 'user');
+INSERT INTO `users` (`id`, `username`, `email`, `password`, `reset`, `created`, `modified`, `role`) VALUES
+(1, 'ed', 'edster2007@gmail.com', '$2y$10$GP4s6apwYGEeuKyh8D40SeN8KXVAZNXoWIY6p9EGj9z668Q1z7PXC', NULL, '2015-04-03 05:45:16', '2015-06-06 06:46:52', 'admin'),
+(2, 'tester1', 'user@iTest.com', '$2y$10$9rpAiou/xu70Ag37P/TCOuVOgDSlj97nIhxCpUS5l.Bw/qZ7cPiJi', NULL, '2015-04-03 17:31:54', '2015-06-06 07:25:13', 'user'),
+(3, 'linc', 'lliu147@student.monash.edu', '$2y$10$EdWfOnju7g1Hk5FRCkQsjeFBefvh7sSmp/t.O1XHaKfJLaFPkY47a', NULL, '2015-04-23 00:00:00', '2015-05-19 12:27:56', 'admin'),
+(4, 'jus', 'ss4.justin@gmail.com', '$2y$10$SOC0M376y8xtWVtqKkLaOOEgav4qGO0ut2jz4x4Xx5FqgzRDMVjMm', NULL, '2015-04-25 00:00:00', '2015-05-19 12:28:03', 'admin'),
+(6, 'ep', 'eddie.power@icloud.com', '$2y$10$ktw61mCHoa8La8e9vBpAwe74zKEuSrvrdr/qA9T3qhAdPnCOG1fhK', NULL, '2015-06-08 06:30:11', '2015-06-08 06:30:11', 'admin'),
+(7, 'test2', 'test2@tester2.email.com', '$2y$10$3XfSU/uXgc3UfJ49oKCR9ODZO7tF/zprXnntlhOgom1sEG8lZNaXS', NULL, '2015-06-09 03:56:45', '2015-06-09 03:57:02', 'user'),
+(10, 'lliu', 'hhh@gmail.com', '$2y$10$.JpVuT/dOuqD8P0Dcg6GIub1Db1UCdSToBu6G93pLDPmoEcb1i1hu', NULL, '2015-07-31 01:01:19', '2015-07-31 01:01:19', 'user'),
+(11, 'shash7', 'shashwat.amin@yahoo.com', '$2y$10$nkmeAyGtKYVge1O62nJDkO/6v.I1UGWeK20CLb7vo6mY8nqY4kW0i', NULL, '2015-08-07 04:39:42', '2015-08-07 04:39:42', 'admin'),
+(12, 'dicksmith', 'shash122tfu@gmail.com', '$2y$10$WT5U5poJZsXRAonxsYildu8BPaCYoIFwIg78G8iMGXRwiZ2RwgfUu', NULL, '2015-08-07 04:40:49', '2015-08-07 04:40:49', 'user');
 
 --
 -- Indexes for dumped tables
@@ -468,7 +477,7 @@ ALTER TABLE `suppliers`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
 --
 -- Constraints for dumped tables
 --

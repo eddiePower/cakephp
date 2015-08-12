@@ -28,7 +28,7 @@ if (Configure::read('debug')):
     $this->end();
 endif;
 ?>
-<h2><?= h($message) ?></h2>
+<h2><?= h("Oops an error occured, Heisenburg are on the case please report issue if it continues." . $message) ?></h2>
 <p class="error">
     <strong><?= __d('cake', 'Error') ?>: </strong>
     <?= sprintf(

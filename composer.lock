@@ -202,16 +202,16 @@
         },
         {
             "name": "cakephp/migrations",
-            "version": "1.2",
+            "version": "1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/migrations.git",
-                "reference": "2c0bec392cc77d5a8656dde9482c869153bfd615"
+                "reference": "21156cad08ee7e68dcdc8fddbd8ce345eea604c5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cakephp/migrations/zipball/2c0bec392cc77d5a8656dde9482c869153bfd615",
-                "reference": "2c0bec392cc77d5a8656dde9482c869153bfd615",
+                "url": "https://api.github.com/repos/cakephp/migrations/zipball/21156cad08ee7e68dcdc8fddbd8ce345eea604c5",
+                "reference": "21156cad08ee7e68dcdc8fddbd8ce345eea604c5",
                 "shasum": ""
             },
             "require": {
@@ -248,7 +248,7 @@
                 "cakephp",
                 "migrations"
             ],
-            "time": "2015-07-31 13:26:04"
+            "time": "2015-08-11 17:32:27"
         },
         {
             "name": "cakephp/plugin-installer",

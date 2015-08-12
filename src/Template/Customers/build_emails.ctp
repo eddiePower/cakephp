@@ -6,6 +6,9 @@
   echo "<p />";
   echo $this->Form->create('CustomerEmail');
   
+  //draw and flash messages here in the view page.
+  echo $this->Flash->render(); 
+  
   //set small js block via cakephp used to set the WYSIWYG editor for emails
   echo $this->Html->scriptStart(['block' => true]);
   //set tinymce to show in the message textarea of the form with all these extra functionality / plugins.

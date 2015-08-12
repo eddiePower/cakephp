@@ -71,7 +71,19 @@ tbody tr:hover { background-color: #fff1af !important; }
                         echo '<p> ' . $line . "</p>\n";
                 endforeach;
                 
-                echo "Your customer information we have is " . $cust;
+                
+                echo "<br /><br />===================================================================";
+
+                
+                //!!!!!!!!!!!!!!!!!EDIT FOR RELEASE!! DO NOT SEND ALL USER DATA TO ALL USERS,!!!!!!!!!!
+                //list out all user details sent, may be used for sending user related data to that user.
+                foreach($cust as $customer)
+                {
+                    //debug("Email Variable is now: " . $customer . "<br />");
+                    echo "<br />Customer " . $customer->id . "'s information we have is " . $customer . "<br />";
+                } 
+                
+                echo "===================================================================<br />";
             ?>
 </p>	
   		</div>

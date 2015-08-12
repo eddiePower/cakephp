@@ -11,7 +11,12 @@
 	
 	
 </nav>
+
 <div class="col-12 last panel">
+	
+    <!-- show and flash messages here on the view page. -->
+    <?= $this->Flash->render(); ?>
+	
 	<table cellpadding="0" cellspacing="0">
 		<thead>
 			<tr>
