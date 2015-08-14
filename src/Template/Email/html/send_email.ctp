@@ -73,19 +73,21 @@ tbody tr:hover { background-color: #fff1af !important; }
                 
                 
                 echo "<br /><br />===================================================================";
-
                 
-                //!!!!!!!!!!!!!!!!!EDIT FOR RELEASE!! DO NOT SEND ALL USER DATA TO ALL USERS,!!!!!!!!!!
-                //list out all user details sent, may be used for sending user related data to that user.
-                foreach($cust as $customer)
+                if(is_array($cust))
                 {
-                    //debug("Email Variable is now: " . $customer . "<br />");
-                    echo "<br />Customer " . $customer->id . "'s information we have is " . $customer . "<br />";
-                } 
-                
+                    foreach($cust as $customer)
+                    {
+                       echo "<br />Customer " . $customer->id . "'s information we have is " . $customer . "<br />";
+                    } 
+                }
+                else
+                {
+                   debug($cust . "is the customer data.");
+                }
                 echo "===================================================================<br />";
             ?>
-</p>	
+            </p>	
   		</div>
 		</div>
 	</main>

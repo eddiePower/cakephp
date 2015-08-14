@@ -52,8 +52,9 @@ class UsersTable extends Table
             ->notEmpty('role', 'A role is required at this time, will be changed soon by dev team heisenburg')
             ->add('role', 'inList', [
                 'rule' => ['inList', ['admin', 'user']],
-                'message' => 'Please choose a valid role'
-            ]);
+                'message' => 'Please choose a valid role'])
+            ->notEmpty('confirm_password')
+            ->add('confirm_password','compareWith', ['rule' => ['compareWith', 'password'], 'message' => 'The password fields are not the same, please try again.']);
 
         return $validator;
     }
