@@ -11,6 +11,7 @@
     <table cellpadding="0" cellspacing="0">
     <thead>
         <tr>
+            <th><?= __('Item Image') ?></th>
             <th><?= $this->Paginator->sort('item_name') ?></th>
             <th><?= $this->Paginator->sort('quantity_on_hand') ?></th>
             <th><?= $this->Paginator->sort('item_number') ?></th>
@@ -20,6 +21,8 @@
     <tbody>
     <?php foreach ($items as $item): ?>
         <tr>
+            <td><?= $item->photo != NULL ? 
+                $this->Html->image('graphics/' . $item->photo, ['alt' => $item->item_name, 'fullBase' => true, 'class' => 'item_image']) : h('NO Image Yet'); ?></td>
             <td><?= h($item->item_name) ?></td>
             <td><?= $this->Number->format($item->quantity_on_hand) ?></td>
             <td><?= $this->Number->format($item->item_number, ['pattern' => '########']) ?></td>

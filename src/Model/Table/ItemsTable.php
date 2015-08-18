@@ -42,21 +42,16 @@ class ItemsTable extends Table
     {
         $validator
             ->add('id', 'valid', ['rule' => 'numeric'])
-            ->allowEmpty('id', 'create');
-            
-        $validator
+            ->allowEmpty('id', 'create')
             ->requirePresence('item_name', 'create')
-            ->notEmpty('item_name');
-            
-        $validator
+            ->notEmpty('item_name')
             ->add('quantity_on_hand', 'valid', ['rule' => 'numeric'])
             ->requirePresence('quantity_on_hand', 'create')
-            ->notEmpty('quantity_on_hand');
-            
-        $validator
+            ->notEmpty('quantity_on_hand')
             ->add('item_number', 'valid', ['rule' => 'numeric'])
             ->requirePresence('item_number', 'create')
-            ->notEmpty('item_number');
+            ->notEmpty('item_number')
+            ->allowEmpty('photo', 'photo_dir');
 
         return $validator;
     }

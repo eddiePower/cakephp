@@ -24,10 +24,17 @@
 				<td>
 					<?= __('Item Number / ID') ?>
 				</td>
+				<td>
+					<?= __('Item Image') ?>
+				</td>
 			</tr>
 		</thead>
 		<tbody>
 			<tr>
+			<td>
+				  <?= $item->photo != NULL ? 
+                    $this->Html->image('graphics/' . $item->photo, ['alt' => $item->item_name, 'fullBase' => true, 'class' => 'item_image']) : h('NO Image Yet'); ?>
+				</td>
 				<td>
 					<?= h($item->item_name) ?>
 				</td>
@@ -37,6 +44,7 @@
 				<td>
 					<?= $this->Number->format($item->item_number, ['pattern' => '########']) ?>
 				</td>
+				
 			</tr>
 		</tbody>
 	</table>

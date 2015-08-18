@@ -49,7 +49,7 @@
         <?= $this->Form->create($user , []); 
 	        ?>
            <?= $this->Form->input('password', ['label' => 'Create a new Password']) ?>
-           <?= $this->Form->input('confirm_password', ['label' => 'Re type Password', 'type' => 'password']) ?>
+           <?= $this->Form->input('confirm_password', ['label' => 'Confirm Password', 'type' => 'password']) ?>
            <?= $this->Form->button(__('Submit'), ['class' => 'positive']) ?>
            <?= $this->Form->end() ?>
         </div>

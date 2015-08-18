@@ -47,11 +47,39 @@ class ItemsController extends AppController
      */
     public function add()
     {
+    
+        if ($this->request->is('post')) 
+        {
+            if (isset($this->request->data['Cancel'])) 
+            {
+                $this->Flash->error('Add Item cancelled', true);
+                return $this->redirect(['action' => 'index']);
+            }
+        }
+        
         $item = $this->Items->newEntity();
         
         if ($this->request->is('post')) 
         {
+            //upload image if user has selected one
+            //calls uploadFiles function in AppController.php
+            $fileOK = $this->uploadFiles('img/graphics', $this->request->data['photo']);
+            
+            //debug("Debug line " . $this->request->data['photo']['name']);
+
+            if(array_key_exists('urls', $fileOK))
+            {
+                $this->request->data['photo'] = $fileOK['urls'][0];
+            }
+            else
+            {
+                debug("Debug line 2" . $this->request->data['photo']);
+                $this->request->data['photo'] = null;
+            }
+            
+            //If t            
             $item = $this->Items->patchEntity($item, $this->request->data);
+            
             if ($this->Items->save($item)) 
             {
                 $this->Flash->success('The item has been saved.');
@@ -62,6 +90,7 @@ class ItemsController extends AppController
                 $this->Flash->error('The item could not be saved. Please, try again.');
             }
         }
+        
         $this->set(compact('item'));
         $this->set('_serialize', ['item']);
     }
@@ -78,12 +107,39 @@ class ItemsController extends AppController
         $item = $this->Items->get($id, [
             'contain' => []
         ]);
-        if ($this->request->is(['patch', 'post', 'put'])) {
+        
+        
+        if ($this->request->is(['patch', 'post', 'put'])) 
+        {
+            if (isset($this->request->data['Cancel']))
+            {
+                $this->Flash->error('Edit Item was cancelled', true);
+                return $this->redirect(['action' => 'index']);
+            }
+
+            $currentImage = $item['photo'];
+
+            //upload the image via upload method in app controller (used to make available for whole app)
+            $fileOK = $this->uploadFiles('img/graphics', $this->request->data['photo']);
+            
+            if(array_key_exists('urls', $fileOK))
+            {
+                $this->request->data['photo'] = $fileOK['urls'][0];
+            }
+            else
+            {
+                $this->request->data['photo'] = $currentImage;
+            }
+            
             $item = $this->Items->patchEntity($item, $this->request->data);
-            if ($this->Items->save($item)) {
+            
+            if ($this->Items->save($item)) 
+            {
                 $this->Flash->success('The item has been saved.');
                 return $this->redirect(['action' => 'index']);
-            } else {
+            } 
+            else 
+            {
                 $this->Flash->error('The item could not be saved. Please, try again.');
             }
         }
@@ -102,11 +158,16 @@ class ItemsController extends AppController
     {
         $this->request->allowMethod(['post', 'delete']);
         $item = $this->Items->get($id);
-        if ($this->Items->delete($item)) {
+        
+        if ($this->Items->delete($item)) 
+        {
             $this->Flash->success('The item has been deleted.');
-        } else {
+        } 
+        else 
+        {
             $this->Flash->error('The item could not be deleted. Please, try again.');
         }
+        
         return $this->redirect(['action' => 'index']);
     }
 }
