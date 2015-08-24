@@ -16,15 +16,17 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8 */;
 
---
--- Database: `fitie2015t18dev`
---
 
 -- --------------------------------------------------------
 --  EDDIES DROP ALL TABLES ATTEMPT LOL
 -- --------------------------------------------------------
 
 DROP TABLE if EXISTS `articles`, `categories`, `items`, `orders`, `order_details`, `phinxlog`, `purchases`, `purchase_details`, `suppliers`, `couriers`, `customers`, `users`;
+
+-- --------------------------------------------------------
+--
+-- Database: `fitie2015t18dev`
+--
 
 -- --------------------------------------------------------
 
@@ -35,48 +37,22 @@ DROP TABLE if EXISTS `articles`, `categories`, `items`, `orders`, `order_details
 CREATE TABLE IF NOT EXISTS `articles` (
   `id` int(11) NOT NULL,
   `title` varchar(50) NOT NULL,
-  `body` text,
+  `post` text,
   `category_id` int(11) DEFAULT NULL,
   `created` datetime NOT NULL,
   `modified` datetime DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `articles`
 --
 
-INSERT INTO `articles` (`id`, `title`, `body`, `category_id`, `created`, `modified`) VALUES
+INSERT INTO `articles` (`id`, `title`, `post`, `category_id`, `created`, `modified`) VALUES
 (1, 'New Motor Bike front door mats', 'Hi again here we are adding our newest Motorbike Door mats back by popular demand we have pictures to be posted soon.', NULL, '2015-06-01 08:26:32', '2015-06-01 08:26:32'),
 (5, 'TEAM 18 NEWS - Ways to create labels for rick', 'Ways to generate labels for rick from css are shown here i havent read it all yet but it may hold some info\r\nhttp://www.codeproject.com/Articles/90577/Building-a-Label-Printing-Software-using-HTML-CSS hope we can get this site up to scratch for MYOB sync dev stages.\r\nalso found http://www.labelgrid.net/', NULL, '2015-06-08 07:27:17', '2015-06-08 07:29:07'),
-(7, 'August Sale!', 'Dont forget our sale coming up in the month of August 2015, there will be a 0.5% discount on orders over $10,000! great savings for all ;)', NULL, '2015-08-02 15:59:37', '2015-08-05 03:14:39');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `categories`
---
-
-CREATE TABLE IF NOT EXISTS `categories` (
-  `id` int(11) NOT NULL,
-  `parent_id` int(11) DEFAULT NULL,
-  `lft` int(11) DEFAULT NULL,
-  `rght` int(11) DEFAULT NULL,
-  `name` varchar(255) NOT NULL,
-  `description` varchar(255) DEFAULT NULL,
-  `created` datetime NOT NULL,
-  `modified` datetime DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `categories`
---
-
-INSERT INTO `categories` (`id`, `parent_id`, `lft`, `rght`, `name`, `description`, `created`, `modified`) VALUES
-(1, NULL, 5, 6, 'Stock', 'Any new or updates to our great stock range here at solemate doormats, any changes in availability price or other important details will be posted under this catagory.', '2015-06-01 08:06:26', '2015-06-01 08:06:26'),
-(2, 1, 1, 2, 'House Matts', 'All our stock aimed at the domestic dwellings or house type matts, these will be divided again into sub catagories.', '2015-06-01 08:07:26', '2015-06-01 08:07:26'),
-(3, 1, 3, 4, 'Safety Matts', 'Used in safety equipment and floor coverings, different categories will begin here.', '2015-06-01 08:36:46', '2015-06-01 08:36:46'),
-(4, 2, 7, 8, 'front door', 'Our front door matts', '2015-06-07 03:38:34', '2015-06-07 03:38:34'),
-(5, NULL, 9, 10, 'MotorBike - Harley mat', 'Great back door mat from our Harley motorcycle range, looks great at home or work for any bikie to wipe his feet on in style', '2015-06-09 13:51:34', '2015-06-09 13:51:34');
+(7, 'August Sale!', 'Dont forget our sale coming up in the month of August 2015, there will be a 0.5% discount on orders over $10,000! great savings for all ;)', NULL, '2015-08-02 15:59:37', '2015-08-05 03:14:39'),
+(8, 'Build 4 shortened URL', 'http://goo.gl/p4pvux is the shortened url for this site.  =D>', NULL, '2015-08-16 09:50:56', '2015-08-16 09:50:56'),
+(9, 'Need to add html and wysiwyg editor for new posts', '<p>We should add the wysiwyg editor and allow a specific htm like tags like img, table,</p>\r\n<h2>h1</h2>\r\n<p>and other simple htm like like that <img src="../../js/tinymce/plugins/emoticons/img/smiley-laughing.gif" alt="laughing" /><img src="../../js/tinymce/plugins/emoticons/img/smiley-cool.gif" alt="cool" /></p>', NULL, '2015-08-20 08:19:47', '2015-08-24 13:58:37');
 
 -- --------------------------------------------------------
 
@@ -146,23 +122,24 @@ CREATE TABLE IF NOT EXISTS `items` (
   `item_number` int(11) NOT NULL,
   `photo` varchar(255) DEFAULT NULL,
   `photo_dir` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `items`
 --
 
 INSERT INTO `items` (`id`, `item_name`, `quantity_on_hand`, `item_number`, `photo`, `photo_dir`) VALUES
-(1, 'door matt car shaped 1', 212, 222343, NULL, NULL),
-(2, 'Back Door matt', 255, 233454, NULL, NULL),
-(3, 'Safety Matt -- 8x8', 150, 100212, NULL, NULL),
-(4, 'Safety Matt 16x16', 512, 233211, NULL, NULL),
-(5, 'Harley Davidson Doormat 3', 1050, 7885332, NULL, NULL),
-(6, 'MotorBirke Matt 4', 567, 3332121, NULL, NULL),
-(7, 'Front Door "Welcome Home" Matt', 1043, 2245321, NULL, NULL),
-(8, 'Kids Live here Matt', 54321, 7654222, NULL, NULL),
-(9, 'Beware Dog Bites Matt', 53221, 865543, NULL, NULL),
-(10, 'Kids Bite Doormat ', 5214, 675443, NULL, NULL);
+(1, 'door matt car shaped 1', 212, 222343, '23-8007.jpg', NULL),
+(2, 'Back Door matt', 255, 233454, '23-2107.JPG', NULL),
+(3, 'Safety Matt -- 8x8', 150, 100212, '23-2110.jpg', NULL),
+(4, 'Safety Matt 16x16', 512, 233211, '23-9165.jpg', NULL),
+(5, 'Harley Davidson Doormat 3', 1050, 7885332, '23-2011.JPG', NULL),
+(6, 'MotorBirke Matt 4', 567, 3332121, '23-1074.jpg', NULL),
+(7, 'Front Door "Welcome Home" Matt', 1043, 2245321, '23-7147.jpg', NULL),
+(8, 'Kids Live here Matt', 54321, 7654222, '23-1028A.jpg', NULL),
+(9, 'Beware Dog Bites Matt', 53221, 865543, '23-1227.jpg', NULL),
+(10, 'Kids Bite Doormat ', 5214, 675443, '23-7370.jpg', NULL),
+(11, 'Car Doormat #2', 1250, 2345561, '23-8126.jpg.jpg', NULL);
 
 -- --------------------------------------------------------
 
@@ -209,7 +186,6 @@ CREATE TABLE IF NOT EXISTS `order_details` (
 --
 
 INSERT INTO `order_details` (`id`, `item_id`, `order_id`, `quantity_ordered`, `per_unit`, `discount`) VALUES
-(1, 1, 1, 10, 15.00, 23.00),
 (2, 2, 1, 255, 2.00, 0.00),
 (3, 2, 1, 12, 12.50, 0.00),
 (4, 2, 2, 5, 20.50, 5.00),
@@ -339,11 +315,11 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `email`, `password`, `reset`, `created`, `modified`, `role`) VALUES
-(1, 'ed', 'edster2007@gmail.com', '$2y$10$GP4s6apwYGEeuKyh8D40SeN8KXVAZNXoWIY6p9EGj9z668Q1z7PXC', NULL, '2015-04-03 05:45:16', '2015-06-06 06:46:52', 'admin'),
+(1, 'ed', 'edster2007@gmail.com', '$2y$10$GP4s6apwYGEeuKyh8D40SeN8KXVAZNXoWIY6p9EGj9z668Q1z7PXC', '9f5a5d7a7acc676ad3f2c7e5a7435fa966be57eb445b42c2fced194a9948312f', '2015-04-03 05:45:16', '2015-06-06 06:46:52', 'admin'),
 (2, 'tester1', 'user@iTest.com', '$2y$10$9rpAiou/xu70Ag37P/TCOuVOgDSlj97nIhxCpUS5l.Bw/qZ7cPiJi', NULL, '2015-04-03 17:31:54', '2015-06-06 07:25:13', 'user'),
 (3, 'linc', 'lliu147@student.monash.edu', '$2y$10$EdWfOnju7g1Hk5FRCkQsjeFBefvh7sSmp/t.O1XHaKfJLaFPkY47a', NULL, '2015-04-23 00:00:00', '2015-05-19 12:27:56', 'admin'),
 (4, 'jus', 'ss4.justin@gmail.com', '$2y$10$SOC0M376y8xtWVtqKkLaOOEgav4qGO0ut2jz4x4Xx5FqgzRDMVjMm', NULL, '2015-04-25 00:00:00', '2015-05-19 12:28:03', 'admin'),
-(6, 'ep', 'eddie.power@icloud.com', '$2y$10$ktw61mCHoa8La8e9vBpAwe74zKEuSrvrdr/qA9T3qhAdPnCOG1fhK', NULL, '2015-06-08 06:30:11', '2015-06-08 06:30:11', 'admin'),
+(6, 'ep', 'eddie.power@icloud.com', '$2y$10$c4Mr4rte0kyiCmxHFV5UyOEOenYr368ubRNRPdrHweFjgumHsv8Ai', '01da89d397a2fd9bedec497b3189db2d587c5c9e4fef44e2de4c20a973a2c757', '2015-06-08 06:30:11', '2015-08-14 03:05:44', 'admin'),
 (7, 'test2', 'test2@tester2.email.com', '$2y$10$3XfSU/uXgc3UfJ49oKCR9ODZO7tF/zprXnntlhOgom1sEG8lZNaXS', NULL, '2015-06-09 03:56:45', '2015-06-09 03:57:02', 'user'),
 (10, 'lliu', 'hhh@gmail.com', '$2y$10$.JpVuT/dOuqD8P0Dcg6GIub1Db1UCdSToBu6G93pLDPmoEcb1i1hu', NULL, '2015-07-31 01:01:19', '2015-07-31 01:01:19', 'user'),
 (11, 'shash7', 'shashwat.amin@yahoo.com', '$2y$10$nkmeAyGtKYVge1O62nJDkO/6v.I1UGWeK20CLb7vo6mY8nqY4kW0i', NULL, '2015-08-07 04:39:42', '2015-08-07 04:39:42', 'admin'),
@@ -357,12 +333,6 @@ INSERT INTO `users` (`id`, `username`, `email`, `password`, `reset`, `created`, 
 -- Indexes for table `articles`
 --
 ALTER TABLE `articles`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `categories`
---
-ALTER TABLE `categories`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -427,12 +397,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `articles`
 --
 ALTER TABLE `articles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
---
--- AUTO_INCREMENT for table `categories`
---
-ALTER TABLE `categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `couriers`
 --
@@ -447,7 +412,7 @@ ALTER TABLE `customers`
 -- AUTO_INCREMENT for table `items`
 --
 ALTER TABLE `items`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `orders`
 --

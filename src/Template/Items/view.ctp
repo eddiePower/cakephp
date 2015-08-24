@@ -12,6 +12,7 @@
 
 <div class="col-12 last panel">
 	<h3><?= h($item->item_name) ?> (Item Details)</h3>
+	 <?= $this->Flash->render(); ?>
 	<table>
 		<thead>
 			<tr>

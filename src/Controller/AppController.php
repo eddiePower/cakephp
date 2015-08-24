@@ -78,6 +78,8 @@ class AppController extends Controller
         //this loads the nice tooltip messages for errors, confirms etc.
         $this->loadComponent('Flash');
         
+        $this->loadComponent('Cookie', ['expiry' => '6 hours']);
+        
 
     }
     

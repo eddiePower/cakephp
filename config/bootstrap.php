@@ -182,6 +182,7 @@ Request::addDetector('tablet', function ($request) {
 //ENTRY POINT FOR LOADING ANY AND ALL PLUGINS
 
 Plugin::load('Migrations');
+Plugin::load('Xety/Cake3CookieAuth');
 
 // Only try to load DebugKit in development mode
 // Debug Kit should not be installed on a production system

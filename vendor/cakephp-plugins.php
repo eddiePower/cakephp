@@ -8,6 +8,7 @@ return [
         'DebugKit' => $baseDir . '/vendor/cakephp/debug_kit/',
         'Less' => $baseDir . '/vendor/elboletaire/less-cake-plugin/',
         'Migrations' => $baseDir . '/vendor/cakephp/migrations/',
-        'Twit' => $baseDir . '/plugins/Twit/'
+        'Twit' => $baseDir . '/plugins/Twit/',
+        'Xety/Cake3CookieAuth' => $baseDir . '/vendor/xety/cake3-cookieauth/'
     ]
 ];

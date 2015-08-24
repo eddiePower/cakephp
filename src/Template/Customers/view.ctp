@@ -9,7 +9,7 @@
 </nav>
 
 <div class="col-12 last panel">
-
+ <?= $this->Flash->render(); ?>
 	<table>
 		<thead>
 			<tr>

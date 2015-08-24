@@ -67,6 +67,7 @@ tbody tr:hover { background-color: #fff1af !important; }
             <?php
                 $content = explode("\n", $content);
                 
+                //print out all lines in the message variable from our send email form
                 foreach ($content as $line):
                         echo '<p> ' . $line . "</p>\n";
                 endforeach;
@@ -74,12 +75,16 @@ tbody tr:hover { background-color: #fff1af !important; }
                 
                 echo "<br /><br />===================================================================";
                 
+                
+                //check if we have viewVars called cust then
                 if(is_array($cust))
                 {
+                    //loop through each customer as a customer
                     foreach($cust as $customer)
                     {
                        echo "<br />Customer " . $customer->id . "'s information we have is " . $customer . "<br />";
                     } 
+                    
                 }
                 else
                 {

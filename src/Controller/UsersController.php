@@ -8,6 +8,7 @@ use Cake\ORM\TableRegistry;
 use Cake\Network\Email\Email;
 use Cake\Routing\Router;
 
+
 /**
  * Users Controller
  *
@@ -40,6 +41,16 @@ class UsersController extends AppController
         //set a variable to dispaly user role admin in this case
         $this->set('userRole', $this->Auth->user('role'));
         
+        
+        //SESSION TESTING.
+        //create a test variable from the session variable that is set on login.
+        $name = $this->request->session()->read('username');
+        
+        //test setting session variable with users role for use later in the app.
+       // $this->request->session()->write('userrole', $this->Auth->user('role'));
+        
+        //debug($name . " is the session username stored");
+        
     }
 
     /**
@@ -71,6 +82,7 @@ class UsersController extends AppController
     public function add()
     {
         $user = $this->Users->newEntity();
+        
         if ($this->request->is('post')) 
         {
             $user = $this->Users->patchEntity($user, $this->request->data);
@@ -152,8 +164,10 @@ class UsersController extends AppController
     //login / AUTH functions
     public function login()
     {
+        //if the http request is a post from a form then
         if ($this->request->is('post')) 
         {
+            //set $user using the Auth identify()
            $user = $this->Auth->identify();
             
             //if a user exists then
@@ -163,9 +177,19 @@ class UsersController extends AppController
               $this->Auth->setUser($user);
               $this->Flash->success('You are now being logged in.');
               
+                      
+        //Session testing
+        $session = $this->request->session();
+        $session->write('username', $this->Auth->user('username'));
+        $name = $session->read('username');
+        
+        //debug($name . " is the session username stored");
+              
+              //redirect the user to the pre set url 
               return $this->redirect($this->Auth->redirectUrl());
            }
            
+           //otherwise flash an error to the user.
            $this->Flash->error('Your username or password is incorrect. Please Try again');
         }
     }
@@ -177,24 +201,18 @@ class UsersController extends AppController
      * @return void Redirects to password reset page.
      * @throws \Cake\Network\Exception\NotFoundException When user record not found.
      *
-     * @description This is ran when the user clicks on the reset password
-     *  link to generate a new password by entering their email address
+     * @description This will run when the user clicks on the reset password
+     *  link to generate a new replacment password. This is done by entering their email address
      *    that they registered with, this ensures the user owns the account 
      *   they are resetting the password on and also that they cant intercept the
-     *   sent password.
+     *   new password.  We firstly generate a random string storing it in the database then
+     * this string is sent as part of the users link to click on again ensuring the user requesting
+     * the new password is the one who owns the account.  After the user arrives at the url they are
+     *  presented with a small form consisting of 2 password fields: Password & Confirm Password
+     * after a quick check that the passwords match the new password is Hashed and stored in the DB
+     *  and the user is returned to the log in page with a flash message telling them it worked 
+     * if there was an error the page will not re direct and will display the error allowing user to retry.
      *
-     *
-     *   FUNCTION BREAK DOWN:
-     *                  Grab user email from form filled out by user                                  -- Done
-     *                  Pull the related User from database                                           -- Done
-     *                  Generate a temp PW_HASH to send to user                                       -- Done
-     *                  Store the random string in the ysers db entry.                                -- Done
-     *                  Build inline email with temp has and some message                              
-     *                     with a link in it pointing to the edit userId password                     -- Done
-     *                  After new password is hashed save it to the database for required user        -- Done
-     *                  Send User to the Login page ready for new password to be used!                -- Done
-     *
-     *                              REMOVE THE STEPS ABOVE  & REMOVE DEBUG LINES BELOW!!!!
      */
      
     public function resetPassword()
@@ -219,19 +237,13 @@ class UsersController extends AppController
                //when we match on the right user data from our DB lookup
                if($user->email == $_POST['txtEmail'])
                {
-                   //debug($user);
-                   
                    //set the viewVariable to this userEmail.
                    $selectedUser = $user;
-               }
-               
-           }//end foreach query result (should only be one in this case)
-           
+               }    
+           }//end foreach query result (should only be one in this case)           
            
            if(isset($selectedUser))
            {
-              
-              
               //if the selectedUser data isSet then set the viewVar with this data else do nothing to prevent empty form submit.
               isset($selectedUser) ? $this->set('selectedUser', $selectedUser) : '';
  
@@ -245,24 +257,19 @@ class UsersController extends AppController
               
               //update the selectedUsers reset value from old to new.
               $selectedUser->reset = $randPassword;
-                            
-              //set the ViewVariable of the randomString  -- may be taken out after development!!!!!!!
-              $this->set('tmpString', $randPassword);
               
-              //Store temp HASH in user database  ~ may be session //
-              
-              //store the id of the user in question to save time.
+              //Store temp HASH in user database
+              //store the id of the user in question to save time on a db lookup.
               $id = $selectedUser->id;
-              //debug($selectedUser);
                
-              //Send email to customer with their new reset password hash
-              
+              //Send email to customer with their new reset password hashed link/url
               //create email object and set email config settings
               $tempEmail = new Email('default');
               $tempEmail->transport('default');
+              
               //set the type of email format and use our custom template.
               $tempEmail->emailFormat('html');
-              $tempEmail->template('sendEmail');
+              $tempEmail->template('sendPwreset');
               
               //set the email to send to
               $tempEmail->addTo($selectedUser->email);
@@ -272,10 +279,12 @@ class UsersController extends AppController
               $tempEmail->from(['solemateDoormats@doNotReply.com' => 'Solemate Doormats inc']);
               $tempEmail->sender(['solemate.doormats@gmail.com' => 'Solemate Doormats inc']);
               $tempEmail->replyTo('solemate.doormats@gmail.com');
-                                                
-              $message = "Solemate Doormats Password Reset<br />You requested a password reset we would like you to click the link below to reset your login password, ";
+                                                              
+              //generate a url using our generated random hash and user id 
+              $fullUrl = Router::url(array('controller' => 'Users', 'action' => 'resetPassword', 'pwr' => $selectedUser->reset, 'id' => $selectedUser->id), true);    
               
-              $fullUrl = Router::url(array('controller' => 'Users', 'action' => 'resetPassword', 'pwr' => $selectedUser->reset, 'id' => $selectedUser->id), true);           
+              //Build the message to send to the users requesting the new password.
+              $message = "Solemate Doormats Password Reset<br />You requested a password reset we would like you to click the link below to reset your login password, ";
               $message .= $fullUrl . "<br />If you did not request a new password or made a mistake requesting then please disregard this email";
               $message .= ".  Here at Solemate Doormats we keep our users passwords private even from the admins.  Feel free to drop us a email if";
               $message .= " you would like more information on your account security.";

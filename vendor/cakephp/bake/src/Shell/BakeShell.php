@@ -78,7 +78,7 @@ class BakeShell extends Shell
             $args = $this->args;
             array_shift($args);
             $args = implode($args, ' ');
-            $this->out(sprintf('    bin/cake bake template %s', $args), 2);
+            $this->out(sprintf('    <info>`bin/cake bake template %s`</info>', $args), 2);
             return false;
         }
 
@@ -225,7 +225,7 @@ class BakeShell extends Shell
         if (empty($name) && !$this->param('everything')) {
             $this->Model->connection = $this->connection;
             $this->out('Possible model names based on your database:');
-            foreach ($this->Model->listAll() as $table) {
+            foreach ($this->Model->listUnskipped() as $table) {
                 $this->out('- ' . $table);
             }
             $this->out('Run <info>`cake bake all [name]`</info> to generate skeleton files.');
@@ -237,11 +237,7 @@ class BakeShell extends Shell
 
         if ($this->param('everything')) {
             $this->Model->connection = $this->connection;
-            $allTables = collection($this->Model->listAll());
-            $filteredTables = $allTables->reject(function ($tableName) {
-                $ignoredTables = ['i18n', 'cake_sessions', 'phinxlog', 'users_phinxlog'];
-                return in_array($tableName, $ignoredTables);
-            });
+            $filteredTables = collection($this->Model->listUnskipped());
         }
 
         $filteredTables->each(function ($tableName) {
@@ -300,6 +296,8 @@ class BakeShell extends Shell
         ])->addOption('plugin', [
             'short' => 'p',
             'help' => 'Plugin to bake into.'
+        ])->addOption('prefix', [
+            'help' => 'Prefix to bake controllers and templates into.'
         ])->addOption('theme', [
             'short' => 't',
             'help' => 'The theme to use when baking code.',

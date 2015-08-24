@@ -8,6 +8,7 @@
 </nav>
 
 <div class="col-12 panel last">
+ <?= $this->Flash->render(); ?>
 	<?= $this->Form->create($customer); ?>
 	<h3>Add customer</h3>
 		<?php

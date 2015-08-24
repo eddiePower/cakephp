@@ -21,11 +21,7 @@ class ArticlesTable extends Table
     {
         $validator
             ->notEmpty('title')
-            ->notEmpty('category')
-            ->add('category', 'inList', [
-                'rule' => ['inList', ['category_name']],
-                'message' => 'Please choose a valid Category'])
-            ->notEmpty('body');
+            ->notEmpty('post');
 
         return $validator;
     }

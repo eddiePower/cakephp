@@ -16,6 +16,6 @@ class Article extends Entity
      */
     protected $_accessible = [
         'title' => true,
-        'body' => true,
+        'post' => true,
     ];
 }

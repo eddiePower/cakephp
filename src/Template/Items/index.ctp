@@ -8,6 +8,7 @@
 </nav>
 
 <div class="col-12 last panel">
+    <?= $this->Flash->render(); ?>
     <table cellpadding="0" cellspacing="0">
     <thead>
         <tr>

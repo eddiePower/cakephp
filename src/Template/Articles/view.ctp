@@ -1,6 +1,6 @@
 <div class="col-12 last panel">
 <h1 class="nav-title"><?= h($article->title) ?></h1>
-<p><?= h($article->body) ?></p>
+<p><?= __($article->post) ?></p>
                     
 <p><small>Created:
  <?= 

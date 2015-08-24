@@ -157,7 +157,7 @@ class CustomersController extends AppController
         $this->set("customers", $this->Customers->find("all", ['order' => 'last_name ASC']));
         
         //create the viewVar array to be populated and sent via emails
-         $allUsers = array();
+        $allUsers = array();
         
         $custTo = "<br />";
         $customerList = array();
@@ -179,16 +179,19 @@ class CustomersController extends AppController
                     $customerList[$list] = $cust->first_name.' '.$cust->last_name;
                     $email->addTo($cust->email);
                     
-                    //set the type of email format and use our custom template.
-                    $email->emailFormat('html');
-                    $email->template('sendEmail');
+                    //store this customer data into our viewVar array
+                    array_push($allUsers, $cust);
+                    //debug($allUsers);
                 }//end of if checkbox is checked loop
-                
-                //store this customer data into our viewVar array
-                $allUsers[] = $cust;
+
                     
             }//end foreach checkbox loop
             
+            
+            //set the type of email format and use our custom template.
+            $email->emailFormat('html');
+            $email->template('sendEmail');
+                    
             //now send all our view vars over in the array $allUsers.
             $email->viewVars(array('cust' => $allUsers));
             

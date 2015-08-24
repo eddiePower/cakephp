@@ -7,6 +7,7 @@
 	<h3>
 	Role: <?= $userRole; ?>
    </h3>
+    <?= $this->Flash->render(); ?>
     <table class="table table-bordered table-striped">
     <thead>
         <tr>

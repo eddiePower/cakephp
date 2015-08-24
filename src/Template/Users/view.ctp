@@ -2,7 +2,7 @@
 	<h3>
 	<?= __('User Actions') ?>
 	</h3>
-
+ <?= $this->Flash->render(); ?>
 	<table>
 		<tbody>
 			<tr>
@@ -95,5 +95,4 @@
 		</tbody>
 	</table>
 	<?php endif; ?>
-	<?= $this->Flash->render('Test render flash') ?>
 </div>

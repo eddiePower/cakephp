@@ -8,6 +8,7 @@
 </nav>
 
 <div class="col-12 last panel">
+ <?= $this->Flash->render(); ?>
 	<?= $this->Form->create($item, ['type' => 'file']); ?>
 	<h3>Add Item</h3>
 	<?php

@@ -20,6 +20,13 @@ class ItemsController extends AppController
     {
         $this->set('items', $this->paginate($this->Items));
         $this->set('_serialize', ['items']);
+        
+        //SESSION TESTING.
+        //create a test variables from the session array that is set on login & index actions.
+        $name = $this->request->session()->read('username');
+        $role = $this->request->session()->read('userrole');
+
+        //debug("User name is " . $name . "\nAnd user role is " . $role);
     }
 
     /**
@@ -37,7 +44,7 @@ class ItemsController extends AppController
         
         $this->set('item', $item);
         $this->set('_serialize', ['item']);
-
+        
     }
 
     /**

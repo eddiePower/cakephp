@@ -19,7 +19,7 @@
             $this->Html->scriptEnd(); 
         -->
         <th><?= $this->Paginator->sort('Title') ?></th>
-        <th><?= $this->Paginator->sort('Body') ?></th>
+<!--         <th><?= $this->Paginator->sort('Body') ?></th> -->
         <th><?= $this->Paginator->sort('Created') ?></th>
         <!-- Check to see if user has admin priviliges if so then show edit / delete controles -->
         <?= $userRole == 'admin' ? __('<th class="actions">Action</th>') : '' ?>
@@ -32,10 +32,12 @@
         <td>
             <?= $this->Html->link($article->title, ['action' => 'view', $article->id], ['class' => 'btn normal']) ?>
         </td>
+<!--
         <td>
-            <?= $this->Html->link($this->Text->truncate($article->body, 60), ['action' => 'view', $article->id], ['class' => 'btn normal']) ?>
-            
+        
+            <?= $this->Html->link($this->Text->truncate(__($article->post), 60), ['action' => 'view', $article->id], ['class' => 'btn normal']) ?>            
         </td>
+-->
         <td>
             <?= h($article->created) ?>
         </td>

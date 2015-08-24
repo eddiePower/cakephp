@@ -18,7 +18,7 @@ class ArticlesController extends AppController
     {
         $this->set('articles', $this->Articles->find('all', array(
     'order' => array('created' => 'DESC') // Sorts by putting the latest post on the top
-)), $this->paginate($this->Articles));
+    )), $this->paginate($this->Articles));
 
         $this->set('_serialize', ['articles']);     
         
@@ -55,14 +55,11 @@ class ArticlesController extends AppController
                     $this->Flash->success(__('Your article has been saved.'));
                     return $this->redirect(['action' => 'index']);
                 }
+                
                 $this->Flash->error(__('Unable to add your article.'));
             }
             
             $this->set('article', $article);
-            
-            //Addded the categories list for choosing one category for each article
-            $categories = $this->Articles->Categories->find('treeList');
-            $this->set(compact('categories'));
         }
         else  // else redirect them with error message telling them NO!
         {
@@ -93,10 +90,6 @@ class ArticlesController extends AppController
            }
            
            $this->set('article', $article);
-           
-           //Addded the categories list for choosing one category for each article
-           $categories = $this->Articles->Categories->find('treeList');
-           $this->set(compact('categories'));
         }
         else  // else redirect them with error message telling them NO!
         {
@@ -115,7 +108,7 @@ class ArticlesController extends AppController
    
        if ($this->Articles->delete($article)) 
        {
-          $this->Flash->success(__('The article with id: {0} has been deleted.', h($id)));
+          $this->Flash->success(__('The article with TITLE: {0} has been deleted.', h($article->title)));
           
           return $this->redirect(['action' => 'index']);
        }

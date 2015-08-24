@@ -43,12 +43,12 @@
 
         <div class="col-12 last panel">
         <?php 
-            echo "The reset value sent from your email is now " . $_GET['pwr'];
-            echo "<br />And the users id number is: " . $_GET['id'];
+            echo "Please enter a new password for your account";
+            echo "<br />";
          ?>
         <?= $this->Form->create($user , []); 
 	        ?>
-           <?= $this->Form->input('password', ['label' => 'Create a new Password']) ?>
+           <?= $this->Form->input('password', ['label' => 'Create a new Password', 'placeholder' => '']) ?>
            <?= $this->Form->input('confirm_password', ['label' => 'Confirm Password', 'type' => 'password']) ?>
            <?= $this->Form->button(__('Submit'), ['class' => 'positive']) ?>
            <?= $this->Form->end() ?>

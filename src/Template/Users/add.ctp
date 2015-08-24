@@ -1,6 +1,7 @@
 <h1 class="center">
 	Signup
 </h1>
+
 <div class="panel col-4 offset-4">
        <?= $this->Flash->render(); ?>
        <?= $this->Form->create($user, [
