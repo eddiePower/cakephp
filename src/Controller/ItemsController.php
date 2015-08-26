@@ -80,7 +80,7 @@ class ItemsController extends AppController
             }
             else
             {
-                debug("Debug line 2" . $this->request->data['photo']);
+                //debug("Debug line 2" . $this->request->data['photo']);
                 $this->request->data['photo'] = null;
             }
             

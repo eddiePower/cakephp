@@ -12,9 +12,10 @@
                                 'searchreplace wordcount visualblocks visualchars fullscreen',
                                 'insertdatetime media nonbreaking save table contextmenu directionality',
                                 'emoticons template paste textcolor colorpicker textpattern imagetools'],
-                                toolbar1: 'insertfile undo redo | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent   indent | link image',
+                                toolbar1: 'insertfile undo redo | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
                                 toolbar2: 'print preview media | forecolor backcolor emoticons',
                                 image_advtab: true,
+                                relative_urls: false,
                                 tools: 'inserttable'});";
   echo $this->Html->scriptEnd(); 
     

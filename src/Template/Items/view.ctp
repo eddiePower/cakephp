@@ -16,6 +16,9 @@
 	<table>
 		<thead>
 			<tr>
+			   <td>
+			      <?= __('Item Image') ?>
+				</td>
 				<td>
 					<?= __('Item Name') ?>
 				</td>
@@ -24,9 +27,6 @@
 				</td>
 				<td>
 					<?= __('Item Number / ID') ?>
-				</td>
-				<td>
-					<?= __('Item Image') ?>
 				</td>
 			</tr>
 		</thead>

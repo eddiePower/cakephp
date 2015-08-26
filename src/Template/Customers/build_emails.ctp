@@ -18,14 +18,49 @@
                                 'searchreplace wordcount visualblocks visualchars fullscreen',
                                 'insertdatetime media nonbreaking save table contextmenu directionality',
                                 'emoticons template paste textcolor colorpicker textpattern imagetools'],
-                                toolbar1: 'insertfile undo redo | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent   indent | link image',
+                                toolbar1: 'insertfile undo redo | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
                                 toolbar2: 'print preview media | forecolor backcolor emoticons',
                                 image_advtab: true,
+                                relative_urls: false,
                                 tools: 'inserttable'});";
   echo $this->Html->scriptEnd(); 
        
   //simple counter for number of customers to send to.     
   $CustCount = 0;
+
+    echo $this->Html->scriptStart(['block' => true]);
+  
+    echo "$(document).ready(function() {
+    $('#selecctall').click(function(event) {  //on click 
+        if(this.checked) 
+        { // check select status
+            $('.emailCheck').each(function() { //loop through each checkbox
+                this.checked = true;  //select all checkboxes with class              
+            });
+        }
+        else
+        {
+            $('.emailCheck').each(function() { //loop through each checkbox
+                this.checked = false;                      
+            });         
+        }
+    });
+    
+});";
+  echo $this->Html->scriptEnd(); 
+  
+  //create table to display email lists checkboxes.
+  echo "<table border='0' width='90%'>";
+  
+
+  ?>
+  <tr>
+  <td>
+   <input type="checkbox" id="selecctall"/> Selecct All Customers</td><td><input type="checkbox" name="chkAllSalesReps" id="chkSalesReps" />Select all sales rep</td><td>
+  		<input type="checkbox" name="chkAllSoleTraders" id="chkAllSoleTraders" />Select all sole traders</td></tr>
+</table>
+
+<?php
   
   //create table to display customer email data with.
   echo "<table border='0' width='90%'>";
@@ -52,6 +87,7 @@
         $id = $customer->id;
         echo $this->Form->checkbox("Email.checkbox.$id", [
             'label'=>'',
+            'class' =>'emailCheck',
             'legend'=>false,
             'type'=>'checkbox',
         ]);

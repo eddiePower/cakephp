@@ -43,8 +43,8 @@ class UsersController extends AppController
         
         
         //SESSION TESTING.
-        //create a test variable from the session variable that is set on login.
-        $name = $this->request->session()->read('username');
+        //create a test variable from the session variable that is set at login.
+        $uName = $this->request->session()->read('username');
         
         //test setting session variable with users role for use later in the app.
        // $this->request->session()->write('userrole', $this->Auth->user('role'));

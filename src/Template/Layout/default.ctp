@@ -28,9 +28,15 @@ $cakeDescription = 'SoleMate Doormats - Built on CakePHP v3';
 		<?= $this->Html->meta('icon') ?>
 		<?= $this->Html->css(['lightgrid']) ?>
 		<!-- Add in jQuery links here using cakePHP -->
-		
+		<?= $this->Html->script('snowflake') ?>
+		<script>
+			document.addEventListener("DOMContentLoaded", function(event) {
+				document.body.className += " christmas";
+				snowflake.init();
+			});
+		</script>
 		<?= $this->Html->script('tinymce/tinymce.min.js') ?>
-
+        <?= $this->Html->script(['https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js']) ?>
 
 		<?= $this->fetch('meta') ?>
 		<?= $this->fetch('script') ?>
