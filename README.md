@@ -1,3 +1,20 @@
+# Team Heisenburg Build 5 ------>shoppingCart System, Order Logic fixed, ACL for user access, siteConfig/Admin section + more ???.
+
+Eddie:-
+*Fixed up the orderDetail logic so it will now subtract from the stock levels for new orderDetails
+*Fixed up the orderDetail delete() method so it will now return the stock levels back to the warehouse.
+*Will display the ordered item total and discount subtracted -- may need GST 10% added at some point.
+*Fixed up the edit orderDetail method so it will now auto correct the stock levels accordingly i.e - user decides to order less stock then stock is returned to the stock level and vice versa if the user decides they want more items then these are deducted from the stock levels and ensuring they are =to or above 0.
+*ShoppingCart Page , *database S.cart entry.... 
+
+
+---------------------------------------------------------------------------------
+# Team Heisenburg Build 4 ------> Forgot Password system added, Item images & File Upload, better email templates, HTML tags in News Page, 
+
+
+No Notes done by Eddie lol oops.
+
+--------------------------------------------------------------------------------------
 # Team Heisenburg Build 3 ------> News System / Better Email system / more ???.
 
 We have added a section of the admin site where rick can set some news for his customers to view similar to a simple blog system that only rick or admin's can edit or add too.  We will also be finishing off the email system to send out html emails customised to each individual customers name, better selection system for users to email, begin the customer types grouping for email sending and a send to all checkbox on selection page,
@@ -57,11 +74,11 @@ Still to do.
 Login and ACL (Access control lists) for account types  ----> Still needed 19/5/15
 Fix the database to include more customer details -------> Done 19/05/15
 fix the databse to include a username -------------------> Done 19/05/15
-fix login to use username and password for quicker login  ---> Still needed 19/5
-fix sign up with a password confirmation  --------------------> Still needed
-add a forgot my password link and system ---------------------> still needed
+fix login to use username and password for quicker login  ---> done
+fix sign up with a password confirmation  --------------------> done
+add a forgot my password link and system ---------------------> done
 Add form validation on email composer.  ----------------------> Still needed
-Add HTML and Text email templates  in the Template folder ----> Still needed
-Fix email so the message comes from the templates ------------> Still needed.
+Add HTML and Text email templates  in the Template folder ----> Done
+Fix email so the message comes from the templates ------------> Done
 ........
-Reason for outstanding tasks is MYOB research was taking up 90% of time untill we were told not to look at this now by POD and just use fake data.
+Reason for outstanding tasks is MYOB research was taking up a lot of time untill we were told not to look at it yet by POD 

@@ -28,13 +28,11 @@ $cakeDescription = 'SoleMate Doormats - Built on CakePHP v3';
 		<?= $this->Html->meta('icon') ?>
 		<?= $this->Html->css(['lightgrid']) ?>
 		<!-- Add in jQuery links here using cakePHP -->
-		<?= $this->Html->script('snowflake') ?>
-		<script>
-			document.addEventListener("DOMContentLoaded", function(event) {
-				document.body.className += " christmas";
-				snowflake.init();
-			});
-		</script>
+		<?= $this->Html->script(['snowflake', 'siteConfig']) ?>
+		<!--
+<script type="text/javascript" src="js/snowflake.js" id="xmassCss1"></script>
+		<script type="text/javascript" src="js/siteConfig.js" id="xmassCss2"></script>
+-->
 		<?= $this->Html->script('tinymce/tinymce.min.js') ?>
         <?= $this->Html->script(['https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js']) ?>
 
@@ -42,13 +40,22 @@ $cakeDescription = 'SoleMate Doormats - Built on CakePHP v3';
 		<?= $this->fetch('script') ?>
 	</head>
 
-	<body>
+	<body id="smSite">
 
 		<header class="site-header">
 			<nav class="header-nav">
 				<h1 class="header-nav-title center">
 				<?= $this->Html->image('http://www.ibaustralia.com/ibaustralia/custom/logo_custom.gif') ?>
 				</h1>				
+				<?php
+				    /*
+				      check to see if the session variable is set
+				       this happens in the login function in users controller
+				      so if its set we know were logged in and to show the menu
+				    */
+				    if(isset($_SESSION['username']))
+                    {
+				?>
 				<?= $this->Html->link(__('Log Out'), ['controller' => 'Users', 'action' => 'logout'], array('class' => 'header-nav-item')) ?>
 				<?= $this->Html->link(__('Orders'), ['controller' => 'Orders', 'action' => 'index'], array('class' => 'header-nav-item')) ?>
 				<?= $this->Html->link(__('Customers'), ['controller' => 'Customers', 'action' => 'index'], array('class' => 'header-nav-item')) ?>
@@ -57,6 +64,9 @@ $cakeDescription = 'SoleMate Doormats - Built on CakePHP v3';
 				<?= $this->Html->link(__('Items'), ['controller' => 'Items', 'action' => 'index'], array('class' => 'header-nav-item')) ?>
 				<?= $this->Html->link(__('Users'), ['controller' => 'Users', 'action' => 'index'], array('class' => 'header-nav-item')) ?>
 				<?= $this->Html->link(__('Ricks News'), ['controller' => 'articles', 'action' => 'index'], array('class' => 'header-nav-item')) ?>
+				<?php
+				    } //end of the is user logged in check
+				?>
 			</nav>
 			
 		</header>

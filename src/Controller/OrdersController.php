@@ -42,28 +42,43 @@ class OrdersController extends AppController
     }
 
     /**
-     * Add method
+     * Add a new order method
+     *
+     * This is to let customers(users) start a new order and will probably be automated by the shopping cart
+     * in all cases unless an admin user is generating an order manually.
      *
      * @return void Redirects on successful add, renders view otherwise.
      */
     public function add()
     {
+        //create a new order entity in the database
         $order = $this->Orders->newEntity();
+        
+        //if the http request is of type post then
         if ($this->request->is('post')) 
         {
+            //use the data in the add order form to update the new order Database entry
             $order = $this->Orders->patchEntity($order, $this->request->data);
+            
+            //if the order save process is a success
             if ($this->Orders->save($order)) 
             {
+                //show user it worked and redirect them back to the order listing (will soon be only their orders listed)
                 $this->Flash->success('The order has been saved.');
                 return $this->redirect(['action' => 'index']);
             } 
-            else 
+            else //else somthing went wrong so show user a sad face message
             {
                 $this->Flash->error('The order could not be saved. Please, try again.');
             }
         }
+        
+        //get all couriers and customers ready for linking to this new order 
+        //      (customer = orderie & courier = delivery choice by customer/user)
         $couriers = $this->Orders->Couriers->find('list', ['limit' => 200]);
         $customers = $this->Orders->Customers->find('list', ['limit' => 200]);
+        
+        //set the ViewVars for the view page add.
         $this->set(compact('order', 'couriers', 'customers'));
         $this->set('_serialize', ['order']);
     }
@@ -80,17 +95,25 @@ class OrdersController extends AppController
         $order = $this->Orders->get($id, [
             'contain' => []
         ]);
-        if ($this->request->is(['patch', 'post', 'put'])) {
+        
+        if ($this->request->is(['patch', 'post', 'put'])) 
+        {
             $order = $this->Orders->patchEntity($order, $this->request->data);
-            if ($this->Orders->save($order)) {
+            
+            if ($this->Orders->save($order)) 
+            {
                 $this->Flash->success('The order has been saved.');
                 return $this->redirect(['action' => 'index']);
-            } else {
+            } 
+            else 
+            {
                 $this->Flash->error('The order could not be saved. Please, try again.');
             }
         }
+        
         $couriers = $this->Orders->Couriers->find('list', ['limit' => 200]);
         $customers = $this->Orders->Customers->find('list', ['limit' => 200]);
+        
         $this->set(compact('order', 'couriers', 'customers'));
         $this->set('_serialize', ['order']);
     }

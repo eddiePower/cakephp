@@ -14,6 +14,7 @@
 </nav>
 
 <div class="col-12 last panel">
+ <?= $this->Flash->render(); ?>
 	<h3>Order ID : <?= h($order->id) ?></h3>
 	<table>
 		<thead>
@@ -58,26 +59,26 @@
 
 	
 
-	<h4 class="subheader"><?= __('Related Order Details') ?></h4>
+	<h4 class="subheader"><?= __('Related Order Details of order #' . $order->id) ?></h4>
 	<?php if (!empty($order->order_details)): ?>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
-	<!--             <th><?= __('Id') ?></th> -->
 	<th><?= __('Item Id') ?></th>
 	<th><?= __('Order Id') ?></th>
 	<th><?= __('Quantity Ordered') ?></th>
 	<th><?= __('Per Unit Cost') ?></th>
 	<th><?= __('Discount %') ?></th>
+	<th><?= __('Order total (ex GST)') ?></th>
 	<th class="actions"><?= __('Actions') ?></th>
 	</tr>
 	<?php foreach ($order->order_details as $orderDetails): ?>
 	<tr>
-	<!--             <td><?= h($orderDetails->id) ?></td> -->
 	<td><?= h($orderDetails->item_id) ?></td>
 	<td><?= h($orderDetails->order_id) ?></td>
 	<td><?= h($orderDetails->quantity_ordered) ?></td>
 	<td><?= h($this->Number->currency($orderDetails->per_unit)) ?></td>
 	<td><?= h($this->Number->toPercentage($orderDetails->discount)) ?></td>
+	<td><?= h($this->Number->currency($orderDetails->quantity_ordered * $orderDetails->per_unit))?></td>
 
 	<td class="actions">
 	<?= $this->Html->link(__('View'), ['controller' => 'OrderDetails', 'action' => 'view', $orderDetails->id]) ?>

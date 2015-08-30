@@ -31,6 +31,7 @@
                 <?= $this->Html->link(__('View'), ['action' => 'view', $item->id], ['class' => 'label']) ?>
                 <?= $this->Html->link(__('Edit'), ['action' => 'edit', $item->id], ['class' => 'label']) ?>
                 <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $item->id], ['confirm' => __('Are you sure you want to delete item {0} with item number {1} ?', $item->item_name, $item->item_number), 'class' => 'label danger']) ?>
+                <?= $this->Html->link(__('Add to Shopping Cart'), ['controller' => 'shoppingCarts', 'action' => 'addItem', $item->id], ['class' => 'label']) ?>
             </td>
         </tr>
 

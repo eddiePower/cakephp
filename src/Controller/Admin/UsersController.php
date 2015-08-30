@@ -1,5 +1,5 @@
 <?php
-namespace App\Controller;
+namespace App\Controller\Admin;
 
 use App\Controller\AppController;
 use Cake\Event\Event;
@@ -32,34 +32,24 @@ class UsersController extends AppController
      */
     public function index()
     {
-        //If the user is a admin then we will allow all bookmarks to show up
-        if($this->Auth->user('role') == 'admin')
-        { 
-          $this->set('users', $this->paginate($this->Users));
-          $this->set('_serialize', ['users']);              
-          
-          //Set a variable for use on the index view to show user name / email.
-          $this->set('username', $this->Auth->user('email')); 
-          
-          //set a variable to dispaly user role admin in this case
-          $this->set('userRole', $this->Auth->user('role'));
-          
-          
-          //SESSION TESTING.
-          //create a test variable from the session variable that is set at login.
-          $uName = $this->request->session()->read('username');
-          
-          //test setting session variable with users role for use later in the app.
-         // $this->request->session()->write('userrole', $this->Auth->user('role'));
-          
-          //debug($name . " is the session username stored");
-        }
-        else
-        {
-             $this->Flash->success('You do not have the rights to view this page');
-             return $this->redirect(['controller' => 'Items', 'action' => 'index']);
-        }
-
+        $this->set('users', $this->paginate($this->Users));
+        $this->set('_serialize', ['users']);              
+        
+        //Set a variable for use on the index view to show user name / email.
+        $this->set('username', $this->Auth->user('email')); 
+        
+        //set a variable to dispaly user role admin in this case
+        $this->set('userRole', $this->Auth->user('role'));
+        
+        
+        //SESSION TESTING.
+        //create a test variable from the session variable that is set at login.
+        $uName = $this->request->session()->read('username');
+        
+        //test setting session variable with users role for use later in the app.
+       // $this->request->session()->write('userrole', $this->Auth->user('role'));
+        
+        //debug($name . " is the session username stored");
         
     }
 
@@ -80,7 +70,6 @@ class UsersController extends AppController
         $user = $this->Users->get($id, [
             'contain' => ['Customers']
         ]);
-        
         $this->set('user', $user);
         $this->set('_serialize', ['user']);
     }
@@ -175,7 +164,6 @@ class UsersController extends AppController
     //login / AUTH functions
     public function login()
     {
-        
         //if the http request is a post from a form then
         if ($this->request->is('post')) 
         {
@@ -297,7 +285,7 @@ class UsersController extends AppController
               
               //Build the message to send to the users requesting the new password.
               $message = "Solemate Doormats Password Reset<br />You requested a password reset we would like you to click the link below to reset your login password, ";
-              $message .= "<a href='" . $fullUrl . "'>Click to reset your password</a><br />If you did not request a new password or made a mistake requesting then please disregard this email";
+              $message .= $fullUrl . "<br />If you did not request a new password or made a mistake requesting then please disregard this email";
               $message .= ".  Here at Solemate Doormats we keep our users passwords private even from the admins.  Feel free to drop us a email if";
               $message .= " you would like more information on your account security.";
               $message .= "<br />PRIVACY STATEMENT GOES HERE!!";
@@ -359,9 +347,6 @@ class UsersController extends AppController
     //logout functionality using the AUTH cakePHP plugin.
     public function logout()
     {
-       //destroy session when logging out 
-       session_destroy();
-       
        $this->Flash->success('Bye bye You\'re now logged out.');
        return $this->redirect($this->Auth->logout());
     }

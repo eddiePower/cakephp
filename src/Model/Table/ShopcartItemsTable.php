@@ -1,16 +1,19 @@
 <?php
 namespace App\Model\Table;
 
-use App\Model\Entity\Category;
+use App\Model\Entity\ShopcartItem;
 use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
 
 /**
- * Categories Model
+ * ShopcartItems Model
+ *
+ * @property \Cake\ORM\Association\BelongsTo $Shopcart
+ * @property \Cake\ORM\Association\BelongsTo $Items
  */
-class CategoriesTable extends Table
+class ShopcartItemsTable extends Table
 {
 
     /**
@@ -21,23 +24,20 @@ class CategoriesTable extends Table
      */
     public function initialize(array $config)
     {
-        $this->table('categories');
-        $this->displayField('name');
+        parent::initialize($config);
+
+        $this->table('shopcart_items');
+        $this->displayField('id');
         $this->primaryKey('id');
-        $this->addBehavior('Timestamp');
-        $this->addBehavior('Tree');
-        $this->belongsTo('ParentCategories', [
-            'className' => 'Categories',
-            'foreignKey' => 'parent_id'
+
+        $this->belongsTo('Shopcart', [
+            'foreignKey' => 'shopcart_id',
+            'joinType' => 'INNER'
         ]);
-        $this->hasMany('Articles', [
-            'foreignKey' => 'category_id'
+        $this->belongsTo('Items', [
+            'foreignKey' => 'item_id',
+            'joinType' => 'INNER'
         ]);
-        $this->hasMany('ChildCategories', [
-            'className' => 'Categories',
-            'foreignKey' => 'parent_id'
-        ]);
-        $this->addBehavior('Tree');
     }
 
     /**
@@ -51,21 +51,11 @@ class CategoriesTable extends Table
         $validator
             ->add('id', 'valid', ['rule' => 'numeric'])
             ->allowEmpty('id', 'create');
-            
+
         $validator
-            ->add('lft', 'valid', ['rule' => 'numeric'])
-            ->allowEmpty('lft');
-            
-        $validator
-            ->add('rght', 'valid', ['rule' => 'numeric'])
-            ->allowEmpty('rght');
-            
-        $validator
-            ->requirePresence('name', 'create')
-            ->notEmpty('name');
-            
-        $validator
-            ->allowEmpty('description');
+            ->add('quantity', 'valid', ['rule' => 'numeric'])
+            ->requirePresence('quantity', 'create')
+            ->notEmpty('quantity');
 
         return $validator;
     }
@@ -79,7 +69,8 @@ class CategoriesTable extends Table
      */
     public function buildRules(RulesChecker $rules)
     {
-        $rules->add($rules->existsIn(['parent_id'], 'ParentCategories'));
+        $rules->add($rules->existsIn(['shopcart_id'], 'Shopcart'));
+        $rules->add($rules->existsIn(['item_id'], 'Items'));
         return $rules;
     }
 }

@@ -9,6 +9,7 @@
 </nav>
 
 <div class="col-12 last panel">
+ <?= $this->Flash->render(); ?>
 	<table cellpadding="0" cellspacing="0">
 	<thead>
 	<tr>
@@ -16,12 +17,16 @@
 	<th><?= $this->Paginator->sort('Order Ship date') ?></th>
 	<th><?= $this->Paginator->sort('quantity_ordered') ?></th>
 	<th><?= $this->Paginator->sort('price per_unit') ?></th>
-	<th><?= $this->Paginator->sort('customer_discount') ?></th>
+	<th><?= $this->Paginator->sort('customer_discount %') ?></th>
+	<th><?= $this->Paginator->sort('customer_order_discount $') ?></th>
+	<th><?= $this->Paginator->sort('Order total (ex GST)') ?></th>
 	<th class="actions"><?= __('Actions') ?></th>
 	</tr>
 	</thead>
 	<tbody>
-	<?php foreach ($orderDetails as $orderDetail): ?>
+	<?php foreach ($orderDetails as $orderDetail): 
+	            //discount % divide by 100 multiply by the item total (qty ordered * price pr unit)
+	         $percent = ($orderDetail->discount / '100' * ($orderDetail->quantity_ordered * $orderDetail->per_unit)); ?>
 	<tr>
 	<td>
 	<?= $orderDetail->has('item') ? $this->Html->link($orderDetail->item->item_name, ['controller' => 'Items', 'action' => 'view', $orderDetail->item->id]) : '' ?>
@@ -32,6 +37,9 @@
 	<td><?= $this->Number->format($orderDetail->quantity_ordered) ?></td>
 	<td><?= '$' . $this->Number->format($orderDetail->per_unit) ?></td>
 	<td><?= $this->Number->format($orderDetail->discount) . '%' ?></td>
+
+    <td><?= h($this->Number->currency($percent)) ?></td>	
+	<td><?= h($this->Number->currency($orderDetail->quantity_ordered * $orderDetail->per_unit - $percent))?></td>	
 	<td class="actions">
 	<?= $this->Html->link(__('View'), ['action' => 'view', $orderDetail->id], ['class' => 'label']) ?>
 	<?= $this->Html->link(__('Edit'), ['action' => 'edit', $orderDetail->id], ['class' => 'label']) ?>

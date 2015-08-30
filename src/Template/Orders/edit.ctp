@@ -16,6 +16,7 @@
 </nav>
 
 <div class="col-12 last panel">
+ <?= $this->Flash->render(); ?>
 	<?= $this->Form->create($order); ?>
 	<h3>Edit Order</h3>
 	<?php

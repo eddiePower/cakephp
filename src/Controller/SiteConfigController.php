@@ -45,7 +45,7 @@ class SiteConfigController extends AppController
         $cssName = $this->request->session()->read('currentCSS');
         $this->set('cssName', $this->request->session()->read('currentCSS'));
         
-        /* debug("The CSS file is " . $cssName); */
+       // debug($cssName);
         
         
         
@@ -70,7 +70,10 @@ class SiteConfigController extends AppController
         
         //show the users a list of current css page names or themese like xmass theme.
         
-        
+        if($cssSelector == 1)
+        {
+            
+        }
         //get the users selectiong of the new css file
         
         

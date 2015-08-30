@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 130.194.7.82
--- Generation Time: Aug 12, 2015 at 04:55 PM
+-- Generation Time: Aug 30, 2015 at 08:27 AM
 -- Server version: 5.5.20
 -- PHP Version: 5.5.12
 
@@ -16,14 +16,6 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8 */;
 
-
--- --------------------------------------------------------
---  EDDIES DROP ALL TABLES ATTEMPT LOL
--- --------------------------------------------------------
-
-DROP TABLE if EXISTS `articles`, `categories`, `items`, `orders`, `order_details`, `phinxlog`, `purchases`, `purchase_details`, `suppliers`, `couriers`, `customers`, `users`;
-
--- --------------------------------------------------------
 --
 -- Database: `fitie2015t18dev`
 --
@@ -41,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `articles` (
   `category_id` int(11) DEFAULT NULL,
   `created` datetime NOT NULL,
   `modified` datetime DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `articles`
@@ -50,9 +42,9 @@ CREATE TABLE IF NOT EXISTS `articles` (
 INSERT INTO `articles` (`id`, `title`, `post`, `category_id`, `created`, `modified`) VALUES
 (1, 'New Motor Bike front door mats', 'Hi again here we are adding our newest Motorbike Door mats back by popular demand we have pictures to be posted soon.', NULL, '2015-06-01 08:26:32', '2015-06-01 08:26:32'),
 (5, 'TEAM 18 NEWS - Ways to create labels for rick', 'Ways to generate labels for rick from css are shown here i havent read it all yet but it may hold some info\r\nhttp://www.codeproject.com/Articles/90577/Building-a-Label-Printing-Software-using-HTML-CSS hope we can get this site up to scratch for MYOB sync dev stages.\r\nalso found http://www.labelgrid.net/', NULL, '2015-06-08 07:27:17', '2015-06-08 07:29:07'),
-(7, 'August Sale!', 'Dont forget our sale coming up in the month of August 2015, there will be a 0.5% discount on orders over $10,000! great savings for all ;)', NULL, '2015-08-02 15:59:37', '2015-08-05 03:14:39'),
-(8, 'Build 4 shortened URL', 'http://goo.gl/p4pvux is the shortened url for this site.  =D>', NULL, '2015-08-16 09:50:56', '2015-08-16 09:50:56'),
-(9, 'Need to add html and wysiwyg editor for new posts', '<p>We should add the wysiwyg editor and allow a specific htm like tags like img, table,</p>\r\n<h2>h1</h2>\r\n<p>and other simple htm like like that <img src="../../js/tinymce/plugins/emoticons/img/smiley-laughing.gif" alt="laughing" /><img src="../../js/tinymce/plugins/emoticons/img/smiley-cool.gif" alt="cool" /></p>', NULL, '2015-08-20 08:19:47', '2015-08-24 13:58:37');
+(7, 'August Sale!', '<p>Dont forget our sale coming up in the month of August 2015, there will be a 0.5% discount on orders over $10,000! great savings for all ;)</p>\r\n<p><img src="/team18/build4/development/img/graphics/23-909.jpg" alt="Sale item for August 2015" width="360" height="211" /></p>\r\n<h3>Price: $15.95 per unit.</h3>', NULL, '2015-08-02 15:59:37', '2015-08-29 15:39:46'),
+(8, 'Build 4 shortened URL', '<p><a href="http://goo.gl/p4pvux">http://goo.gl/p4pvux</a> is the shortened url for this site. =D&gt;</p>', NULL, '2015-08-16 09:50:56', '2015-08-24 15:25:50'),
+(11, 'MYOB import/export links', '<p>Here''s some info on how to import and export data to and from MYOB V19. This will help as a general idea of the process on the myob side.&nbsp;<a title="Info on how to import csv" href="http://help.myob.com/wiki/display/ar/Importing+data" target="_blank">Myob import</a>&nbsp;/&nbsp;<a title="Info on exporting csv data from myob" href="http://help.myob.com/wiki/display/ar/Exporting+data" target="_blank">Export data</a></p>', NULL, '2015-08-29 14:01:37', '2015-08-29 15:37:23');
 
 -- --------------------------------------------------------
 
@@ -122,24 +114,25 @@ CREATE TABLE IF NOT EXISTS `items` (
   `item_number` int(11) NOT NULL,
   `photo` varchar(255) DEFAULT NULL,
   `photo_dir` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `items`
 --
 
 INSERT INTO `items` (`id`, `item_name`, `quantity_on_hand`, `item_number`, `photo`, `photo_dir`) VALUES
-(1, 'door matt car shaped 1', 212, 222343, '23-8007.jpg', NULL),
-(2, 'Back Door matt', 255, 233454, '23-2107.JPG', NULL),
-(3, 'Safety Matt -- 8x8', 150, 100212, '23-2110.jpg', NULL),
-(4, 'Safety Matt 16x16', 512, 233211, '23-9165.jpg', NULL),
-(5, 'Harley Davidson Doormat 3', 1050, 7885332, '23-2011.JPG', NULL),
-(6, 'MotorBirke Matt 4', 567, 3332121, '23-1074.jpg', NULL),
-(7, 'Front Door "Welcome Home" Matt', 1043, 2245321, '23-7147.jpg', NULL),
-(8, 'Kids Live here Matt', 54321, 7654222, '23-1028A.jpg', NULL),
-(9, 'Beware Dog Bites Matt', 53221, 865543, '23-1227.jpg', NULL),
-(10, 'Kids Bite Doormat ', 5214, 675443, '23-7370.jpg', NULL),
-(11, 'Car Doormat #2', 1250, 2345561, '23-8126.jpg.jpg', NULL);
+(1, 'door matt car shaped 1', 212, 222343, '19-7260.jpg', NULL),
+(2, 'Back Door matt', 255, 233454, '23-909.jpg', NULL),
+(3, 'Safety Matt -- 8x8', 150, 100212, '23-1101.jpg', NULL),
+(4, 'Safety Matt 16x16', 512, 233211, '23-2099.jpg', NULL),
+(5, 'Harley Davidson Doormat 3', 1050, 7885332, '23-2111.jpg', NULL),
+(6, 'MotorBirke Matt 4', 567, 3332121, '23-1028w.jpg', NULL),
+(7, 'Front Door "Welcome Home" Matt', 1043, 2245321, '23-1199.jpg', NULL),
+(8, 'Kids Live here Matt', 54321, 7654222, '23-1004.jpg', NULL),
+(9, 'Beware Dog Bites Matt', 53221, 865543, '23-7205a.jpg', NULL),
+(10, 'Kids Bite Doormat ', 5214, 675443, '23-7261.jpg', NULL),
+(11, 'Car Doormat #2', 1250, 2345561, '23-7326.jpg', NULL),
+(12, 'The Thinker', 3, 31231, 'article-0-19AC00B7000005DC-789_634x754.jpg', NULL);
 
 -- --------------------------------------------------------
 
@@ -186,38 +179,16 @@ CREATE TABLE IF NOT EXISTS `order_details` (
 --
 
 INSERT INTO `order_details` (`id`, `item_id`, `order_id`, `quantity_ordered`, `per_unit`, `discount`) VALUES
-(2, 2, 1, 255, 2.00, 0.00),
-(3, 2, 1, 12, 12.50, 0.00),
 (4, 2, 2, 5, 20.50, 5.00),
 (5, 1, 2, 5, 15.50, 0.00),
 (6, 1, 2, 100, 10.00, 15.00),
 (7, 3, 3, 23, 12.22, 12.00),
-(8, 2, 3, 233, 15.45, 2.00),
 (9, 8, 4, 332, 9.90, 2.00),
 (10, 7, 4, 512, 17.80, 4.00),
 (11, 8, 5, 12, 12.24, 12.00),
 (12, 6, 6, 66, 12.45, 12.00),
 (13, 4, 6, 1332, 9.56, 1.00),
 (14, 6, 6, 12, 21.21, 2.00);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `phinxlog`
---
-
-CREATE TABLE IF NOT EXISTS `phinxlog` (
-  `version` bigint(20) NOT NULL,
-  `start_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `end_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `phinxlog`
---
-
-INSERT INTO `phinxlog` (`version`, `start_time`, `end_time`) VALUES
-(20150601075210, '2015-05-31 22:00:50', '2015-05-31 22:00:50');
 
 -- --------------------------------------------------------
 
@@ -273,6 +244,48 @@ INSERT INTO `purchase_details` (`id`, `purchase_id`, `item_id`, `quantity_purcha
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `shopcart`
+--
+
+CREATE TABLE IF NOT EXISTS `shopcart` (
+  `id` int(11) NOT NULL,
+  `user_id` int(8) NOT NULL,
+  `created` datetime DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `shopcart`
+--
+
+INSERT INTO `shopcart` (`id`, `user_id`, `created`) VALUES
+(8, 1, '2015-08-29 12:54:39');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `shopcart_items`
+--
+
+CREATE TABLE IF NOT EXISTS `shopcart_items` (
+  `id` int(8) NOT NULL,
+  `shopcart_id` int(8) NOT NULL,
+  `item_id` int(8) NOT NULL,
+  `quantity` int(11) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `shopcart_items`
+--
+
+INSERT INTO `shopcart_items` (`id`, `shopcart_id`, `item_id`, `quantity`) VALUES
+(1, 8, 1, 0),
+(2, 8, 3, 0),
+(3, 8, 8, 0),
+(4, 8, 10, 0);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `suppliers`
 --
 
@@ -315,11 +328,11 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `email`, `password`, `reset`, `created`, `modified`, `role`) VALUES
-(1, 'ed', 'edster2007@gmail.com', '$2y$10$GP4s6apwYGEeuKyh8D40SeN8KXVAZNXoWIY6p9EGj9z668Q1z7PXC', '9f5a5d7a7acc676ad3f2c7e5a7435fa966be57eb445b42c2fced194a9948312f', '2015-04-03 05:45:16', '2015-06-06 06:46:52', 'admin'),
+(1, 'ed', 'edster2007@gmail.com', '$2y$10$BF.BMJjbtnAWTZN7YSSnguLRAGzWbaEd8DQY/X4a2QJ8RvJD0yHUy', 'e1802c8bf09f0fa9e55fb2df1688fa2e4c0a97251a3c97ad91a17520f39f6bc5', '2015-04-03 05:45:16', '2015-08-28 05:19:11', 'admin'),
 (2, 'tester1', 'user@iTest.com', '$2y$10$9rpAiou/xu70Ag37P/TCOuVOgDSlj97nIhxCpUS5l.Bw/qZ7cPiJi', NULL, '2015-04-03 17:31:54', '2015-06-06 07:25:13', 'user'),
-(3, 'linc', 'lliu147@student.monash.edu', '$2y$10$EdWfOnju7g1Hk5FRCkQsjeFBefvh7sSmp/t.O1XHaKfJLaFPkY47a', NULL, '2015-04-23 00:00:00', '2015-05-19 12:27:56', 'admin'),
+(3, 'linc', 'lliu147@student.monash.edu', '$2y$10$./9ayi7OwCRTx1IHMqYnI.0MeGK7BkP6staZR.cwUc8OQqmHL5ew6', '689cefb7e1435c386053807b9953a71f10f50ecb733e342c1a630c7e8be48238', '2015-04-23 00:00:00', '2015-08-26 11:37:43', 'admin'),
 (4, 'jus', 'ss4.justin@gmail.com', '$2y$10$SOC0M376y8xtWVtqKkLaOOEgav4qGO0ut2jz4x4Xx5FqgzRDMVjMm', NULL, '2015-04-25 00:00:00', '2015-05-19 12:28:03', 'admin'),
-(6, 'ep', 'eddie.power@icloud.com', '$2y$10$c4Mr4rte0kyiCmxHFV5UyOEOenYr368ubRNRPdrHweFjgumHsv8Ai', '01da89d397a2fd9bedec497b3189db2d587c5c9e4fef44e2de4c20a973a2c757', '2015-06-08 06:30:11', '2015-08-14 03:05:44', 'admin'),
+(6, 'ep', 'eddie.power@icloud.com', '$2y$10$5ICI54fBf9PkKnVZBdBHVu7XWiYRmUA35XRkNF.PNyue5iJu2XA2W', '150e1770b930613bf9f62a84106a2557ecf791993a861251e37a5d8d4f710a91', '2015-06-08 06:30:11', '2015-08-28 05:12:09', 'admin'),
 (7, 'test2', 'test2@tester2.email.com', '$2y$10$3XfSU/uXgc3UfJ49oKCR9ODZO7tF/zprXnntlhOgom1sEG8lZNaXS', NULL, '2015-06-09 03:56:45', '2015-06-09 03:57:02', 'user'),
 (10, 'lliu', 'hhh@gmail.com', '$2y$10$.JpVuT/dOuqD8P0Dcg6GIub1Db1UCdSToBu6G93pLDPmoEcb1i1hu', NULL, '2015-07-31 01:01:19', '2015-07-31 01:01:19', 'user'),
 (11, 'shash7', 'shashwat.amin@yahoo.com', '$2y$10$nkmeAyGtKYVge1O62nJDkO/6v.I1UGWeK20CLb7vo6mY8nqY4kW0i', NULL, '2015-08-07 04:39:42', '2015-08-07 04:39:42', 'admin'),
@@ -378,6 +391,18 @@ ALTER TABLE `purchase_details`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `shopcart`
+--
+ALTER TABLE `shopcart`
+  ADD PRIMARY KEY (`id`), ADD KEY `shopcart_fk` (`user_id`);
+
+--
+-- Indexes for table `shopcart_items`
+--
+ALTER TABLE `shopcart_items`
+  ADD PRIMARY KEY (`id`), ADD KEY `shopcart_items_fk1` (`item_id`), ADD KEY `shopcart_items_fk2` (`shopcart_id`);
+
+--
 -- Indexes for table `suppliers`
 --
 ALTER TABLE `suppliers`
@@ -397,7 +422,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `articles`
 --
 ALTER TABLE `articles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `couriers`
 --
@@ -412,7 +437,7 @@ ALTER TABLE `customers`
 -- AUTO_INCREMENT for table `items`
 --
 ALTER TABLE `items`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `orders`
 --
@@ -433,6 +458,16 @@ ALTER TABLE `purchases`
 --
 ALTER TABLE `purchase_details`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT for table `shopcart`
+--
+ALTER TABLE `shopcart`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+--
+-- AUTO_INCREMENT for table `shopcart_items`
+--
+ALTER TABLE `shopcart_items`
+  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `suppliers`
 --
@@ -465,6 +500,19 @@ ADD CONSTRAINT `order_fk2` FOREIGN KEY (`courier_id`) REFERENCES `couriers` (`id
 --
 ALTER TABLE `purchases`
 ADD CONSTRAINT `purchase_fk1` FOREIGN KEY (`supplier_id`) REFERENCES `suppliers` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE;
+
+--
+-- Constraints for table `shopcart`
+--
+ALTER TABLE `shopcart`
+ADD CONSTRAINT `shopcart_users_fk` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `shopcart_items`
+--
+ALTER TABLE `shopcart_items`
+ADD CONSTRAINT `shopCart_items_fk` FOREIGN KEY (`item_id`) REFERENCES `items` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+ADD CONSTRAINT `shopcart_items_fk1` FOREIGN KEY (`shopcart_id`) REFERENCES `shopcart` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
