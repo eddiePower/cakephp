@@ -32,9 +32,9 @@
             </td>
             <td><?= $this->Number->format($shopcartItem->quantity) ?></td>
             <td class="actions">
-                <?= $this->Html->link(__('View'), ['action' => 'view', $shopcartItem->id]) ?>
-                <?= $this->Html->link(__('Edit'), ['action' => 'edit', $shopcartItem->id]) ?>
-                <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $shopcartItem->id], ['confirm' => __('Are you sure you want to delete # {0}?', $shopcartItem->item_name)]) ?>
+                <?= $this->Html->link(__('View'), ['action' => 'view', $shopcartItem->id], ['class' => 'label']) ?>
+                <?= $this->Html->link(__('Edit'), ['action' => 'edit', $shopcartItem->id], ['class' => 'label']) ?>
+                <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $shopcartItem->id], ['confirm' => __('Are you sure you want to remove the {0} doormat from your cart?', $shopcartItem->item->item_name, $shopcartItem->item->item_number), 'class' => 'label danger']) ?>
             </td>
         </tr>
 

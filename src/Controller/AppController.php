@@ -75,6 +75,11 @@ class AppController extends Controller
         // continues to work.
         $this->Auth->allow(['display']);
        
+       
+        //set the user role in the session for security check later on.
+        $session = $this->request->session();
+        $session->write('userRole', $this->Auth->user('role'));
+
         //this loads the nice tooltip messages for errors, confirms etc.
         $this->loadComponent('Flash');
         

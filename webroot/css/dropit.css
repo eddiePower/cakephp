@@ -1,0 +1,60 @@
+
+
+.dropdown-container {
+	display: inline-block;
+	float: right;
+	
+	background-color: #FFF;
+	padding: 4px;
+	margin-top: 10px;
+	
+	text-align: center;
+	
+	border-radius: 6px;
+	
+	z-index: 1;  /* /used to keep the menu above the data tables drop down */
+	position: relative; /* shash may change this. */
+}
+
+.dropdown-container .dropdown-button {
+	display: inline-block;
+	height: 32px;
+	padding: 0 16px;
+	font-weight: 500;
+	line-height: 2em;
+	color:#e74c3c;
+}
+
+.dropdown-container .dropdown-item {
+	float: none;
+	display: none;
+	margin: 2px 0;
+	padding: 0 16px;
+	
+	font-size: 0.9em;
+	
+	border-radius: 3px;
+	background-color: #FFF;
+	color:#e74c3c;
+}
+
+.dropdown-container .dropdown-item:hover,
+.dropdown-container .dropdown-item:active {
+	background-color: #e74c3c;
+	color:#FFF;
+	text-decoration: none;
+}
+
+.dropdown-container.active .dropdown-item {
+	display: block;
+ 
+}
+
+.dropdown-container.active {
+	border:#DDD solid 1px;	
+	box-shadow: 0 1px 2px 1px rgba(0,0,0,0.1);
+}
+
+.dropdown-container.active .dropdown-button {
+	box-shadow: none;
+}

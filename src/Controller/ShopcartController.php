@@ -49,17 +49,25 @@ class ShopcartController extends AppController
     public function add()
     {
         $shopcart = $this->Shopcart->newEntity();
-        if ($this->request->is('post')) {
+        
+        if ($this->request->is('post')) 
+        {
             $shopcart = $this->Shopcart->patchEntity($shopcart, $this->request->data);
-            if ($this->Shopcart->save($shopcart)) {
+            
+            if ($this->Shopcart->save($shopcart)) 
+            {
                 $this->Flash->success(__('The shopcart has been saved.'));
                 return $this->redirect(['action' => 'index']);
-            } else {
+            } 
+            else 
+            {
                 $this->Flash->error(__('The shopcart could not be saved. Please, try again.'));
             }
         }
+        
         $users = $this->Shopcart->Users->find('list', ['limit' => 200]);
         $items = $this->Shopcart->Items->find('list', ['limit' => 200]);
+        
         $this->set(compact('shopcart', 'users', 'items'));
         $this->set('_serialize', ['shopcart']);
     }
@@ -101,10 +109,15 @@ class ShopcartController extends AppController
     public function delete($id = null)
     {
         $this->request->allowMethod(['post', 'delete']);
+        
         $shopcart = $this->Shopcart->get($id);
-        if ($this->Shopcart->delete($shopcart)) {
+        
+        if ($this->Shopcart->delete($shopcart)) 
+        {
             $this->Flash->success(__('The shopcart has been deleted.'));
-        } else {
+        } 
+        else 
+        {
             $this->Flash->error(__('The shopcart could not be deleted. Please, try again.'));
         }
         return $this->redirect(['action' => 'index']);

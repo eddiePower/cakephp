@@ -25,6 +25,9 @@ class UsersController extends AppController
        $this->Auth->allow(['add', 'resetPassword']);
     }
 
+   
+
+
     /**
      * Index method
      *
@@ -33,8 +36,10 @@ class UsersController extends AppController
     public function index()
     {
         //If the user is a admin then we will allow all bookmarks to show up
+        
         if($this->Auth->user('role') == 'admin')
         { 
+
           $this->set('users', $this->paginate($this->Users));
           $this->set('_serialize', ['users']);              
           
@@ -48,17 +53,25 @@ class UsersController extends AppController
           //SESSION TESTING.
           //create a test variable from the session variable that is set at login.
           $uName = $this->request->session()->read('username');
+          $this->request->session()->write('userRole', $this->Auth->user('role'));
           
           //test setting session variable with users role for use later in the app.
          // $this->request->session()->write('userrole', $this->Auth->user('role'));
           
           //debug($name . " is the session username stored");
+       
         }
         else
         {
-             $this->Flash->success('You do not have the rights to view this page');
-             return $this->redirect(['controller' => 'Items', 'action' => 'index']);
+              //grab the current user id 
+              $id = $this->Auth->user('id');
+              
+             
+             
+             //redirect to view of that id.
+             return $this->redirect(['action' => 'view', $id]);            
         }
+
 
         
     }
@@ -72,17 +85,40 @@ class UsersController extends AppController
      */
     public function view($id = null)
     {
+        //if the ID is not found then throw a red page error of user not found, may swap it out to a 
+        // flash error message and a redirect
         if (!$id) 
         {
             throw new NotFoundException(__('Invalid user'));
         }
         
-        $user = $this->Users->get($id, [
-            'contain' => ['Customers']
-        ]);
+        //Set a var with logged in user data
+        $setUser = $this->request->session()->read('user');
+        //set the loggedin user ID as a var
+        $setID = $setUser['id'];
         
-        $this->set('user', $user);
-        $this->set('_serialize', ['user']);
+        //make sure the logged in user is the one trying to view this data
+        // or if that user is an admin then were all cool to show data.
+        if($setID == $id || $setUser['role'] == 'admin')
+        {
+            $user = $this->Users->get($id, [
+                'contain' => ['Customers']
+            ]);
+                  
+            //Set a variable for possible future use.
+            $this->set('username', $this->Auth->user('email')); 
+              
+            //set a variable to check userrole and display options depending
+            $this->set('userRole', $this->Auth->user('role'));
+            
+            $this->set('user', $user);
+            $this->set('_serialize', ['user']);
+        }
+        else
+        {
+            $this->Flash->error("Page is not authorised for viewing, please contact an administrator if you feel this is an error.");
+            return $this->redirect(['action' => 'view', $setID]);
+        }
     }
 
     /**
@@ -92,6 +128,7 @@ class UsersController extends AppController
      */
     public function add()
     {
+        
         $user = $this->Users->newEntity();
         
         if ($this->request->is('post')) 
@@ -125,23 +162,38 @@ class UsersController extends AppController
             'contain' => []
         ]);
         
-        if ($this->request->is(['patch', 'post', 'put'])) 
-        {
-            $user = $this->Users->patchEntity($user, $this->request->data);
-            
-            if ($this->Users->save($user)) 
-            {
-                $this->Flash->success('The user has been saved.');
-                return $this->redirect(['action' => 'index']);
-            } 
-            else 
-            {
-                $this->Flash->error('The user could not be saved. Please, try again.');
-            }
-        }
+        $this->set('userRole', $user->role);
+        $tmpUsrStore = $this->request->session()->read('user');
+        $loggedUserID = $tmpUsrStore['id'];
+        //debug($tmpUsrStore);
         
-        $this->set(compact('user'));
-        $this->set('_serialize', ['user']);
+        if($loggedUserID == $user->id)
+        {
+           if ($this->request->is(['patch', 'post', 'put'])) 
+           {
+               $user = $this->Users->patchEntity($user, $this->request->data);
+               
+               if ($this->Users->save($user)) 
+               {
+                   $this->Flash->success('The user has been saved.');
+                   return $this->redirect(['action' => 'index']);
+               } 
+               else 
+               {
+                   $this->Flash->error('The user could not be saved. Please, try again.');
+               }
+           }
+           
+           
+           $this->set(compact('user'));
+           $this->set('_serialize', ['user']);
+        }
+        else
+        {
+            $this->Flash->error("Error Your not authorised, we are logging this request with the admin.");
+            
+            return $this->redirect(['action' => 'index']);
+        }
     }
 
 
@@ -159,6 +211,15 @@ class UsersController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         
         $user = $this->Users->get($id);
+        
+        //make sure the user is not the admin account as it cannont be deleted.
+        if($user->role == "admin" || $this->request->session()->read('user'['id']) != $id)
+        {
+            debug($user);
+            
+            return false;
+        }
+        
         
         if ($this->Users->delete($user)) 
         {
@@ -179,24 +240,31 @@ class UsersController extends AppController
         //if the http request is a post from a form then
         if ($this->request->is('post')) 
         {
-            //set $user using the Auth identify()
+           //set $user using the Auth identify()
            $user = $this->Auth->identify();
             
-            //if a user exists then
-           if ($user) 
+           $session = $this->request->session();
+            
+           //if a user exists then
+           if($user) 
            {
               //set the user for the AUTH componant
               $this->Auth->setUser($user);
               $this->Flash->success('You are now being logged in.');
-              
                       
-        //Session testing
-        $session = $this->request->session();
-        $session->write('username', $this->Auth->user('username'));
-        $name = $session->read('username');
-        
-        //debug($name . " is the session username stored");
+              //Session init             
+              $session->write('user', $this->Auth->user());
               
+              //set the user session variable to a working var
+              $aUser = $session->read('user');
+              
+              //pull out the username and role for authorisation app wide.
+              $session->write('username', $aUser['username']);
+              $session->write('userRole', $aUser['role']);
+              
+              //debug($aUser['username']);
+              //$name = $aUser['username'];
+                      
               //redirect the user to the pre set url 
               return $this->redirect($this->Auth->redirectUrl());
            }

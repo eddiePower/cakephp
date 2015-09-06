@@ -6,6 +6,7 @@
 	<table>
 		<tbody>
 			<tr>
+			<?php if($userRole == 'admin') { ?>  
 				<td><?= $this->Html->link(__('Edit User'), ['action' => 'edit', $user->id], ['class' => 'btn btn-sm btn-default']) ?> </td>
 				<td><?= $this->Form->postLink(__('Delete User'), ['action' => 'delete', $user->id], ['confirm' => __('Are you sure you want to delete user {0}?', $user->email), 'class' => 'btn btn-sm btn-danger']) ?></td>
 				<td><?= $this->Html->link(__('List Users'), ['action' => 'index'],['class' => 'btn btn-sm btn-default']) ?></td>
@@ -13,6 +14,11 @@
 				<td><?= $this->Html->link(__('List Customers'), ['controller' => 'Customers', 'action' => 'index'], ['class' => 'btn btn-sm btn-default']) ?></td>
 				<td><?= $this->Html->link(__('New Customer'), ['controller' => 'Customers', 'action' => 'add'], ['class' => 'btn btn-sm btn-default']) ?> 				</td>
 			</tr>
+			<?php }else{ ?>
+			<td><?= $this->Html->link(__('Edit My Details'), ['action' => 'edit', $user->id], ['class' => 'btn btn-sm btn-default']) ?> </td>
+				<td><?= $this->Form->postLink(__('Delete My Account'), ['action' => 'delete', $user->id], ['confirm' => __('Are you sure you want to delete your user account {0} this will mean you will loose access to this site?', $user->email), 'class' => 'btn btn-sm btn-danger']) ?></td>
+			</tr>
+			<?php } ?>
 		</tbody>
 	</table>
 </div>

@@ -30,11 +30,11 @@
 </div>
 <div class="related row">
     <div class="column large-12">
-    <h4 class="subheader"><?= __('Related Items') ?></h4>
+    <h4 class="subheader"><?= __('Items in ShoppingCart') ?></h4>
     <?php if (!empty($shopcart->items)): ?>
     <table cellpadding="0" cellspacing="0">
         <tr>
-            <th><?= __('Id') ?></th>
+            <!-- <th><?= __('Id') ?></th> -->
             <th><?= __('Item Name') ?></th>
             <th><?= __('Quantity On Hand') ?></th>
             <th><?= __('Item Number') ?></th>
@@ -44,7 +44,7 @@
         </tr>
         <?php foreach ($shopcart->items as $items): ?>
         <tr>
-            <td><?= h($items->id) ?></td>
+            <!-- <td><?= h($items->id) ?></td> -->
             <td><?= h($items->item_name) ?></td>
             <td><?= h($items->quantity_on_hand) ?></td>
             <td><?= h($items->item_number) ?></td>
@@ -52,11 +52,11 @@
             <td><?= h($items->photo_dir) ?></td>
 
             <td class="actions">
-                <?= $this->Html->link(__('View'), ['controller' => 'Items', 'action' => 'view', $items->id]) ?>
-
-                <?= $this->Html->link(__('Edit'), ['controller' => 'Items', 'action' => 'edit', $items->id]) ?>
-
-                <?= $this->Form->postLink(__('Delete'), ['controller' => 'Items', 'action' => 'delete', $items->id], ['confirm' => __('Are you sure you want to delete # {0}?', $items->id)]) ?>
+                <?= $this->Html->link(__('View Item info'), ['controller' => 'items', 'action' => 'view', $items->id], ['class' => 'label']) ?>
+              <!--
+  <?= $this->Html->link(__('Edit'), ['controller' => 'items', 'action' => 'edit', $items->id]) ?>
+                <?= $this->Form->postLink(__('Delete'), ['controller' => 'shopcart_items', 'action' => 'delete', $items->id], ['confirm' => __('Are you sure you want to delete # {0}?', $items->id)]) ?>
+-->
 
             </td>
         </tr>

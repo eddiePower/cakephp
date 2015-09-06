@@ -14,7 +14,8 @@
   //set tinymce to show in the message textarea of the form with all these extra functionality / plugins.
   echo "tinymce.init({ selector: '#message',
                        theme: 'modern',
-                       plugins: ['advlist autolink lists link image charmap print preview hr anchor pagebreak',
+                       skin: 'custom',
+                       plugins: ['advlist autolink lists link image  charmap print preview hr anchor pagebreak',
                                 'searchreplace wordcount visualblocks visualchars fullscreen',
                                 'insertdatetime media nonbreaking save table contextmenu directionality',
                                 'emoticons template paste textcolor colorpicker textpattern imagetools'],

@@ -73,10 +73,12 @@ Router::scope('/', function ($routes) {
     $routes->fallbacks('InflectedRoute');
 });
 
+/*
 Router::prefix('Admin', function ($routes) 
 {
     $routes->fallbacks('InflectedRoute');
 });
+*/
 
 
 /**

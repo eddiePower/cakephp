@@ -7,20 +7,24 @@
         ?>
 	</nav>
         </p>
-    
+<?=
+//enable the data-tables jQuery plugin for better table uttils.
+$this->Html->scriptStart(['block' => true]);
+echo "$(document).ready(function(){
+    $('#data-table').DataTable();
+});";
+$this->Html->scriptEnd();
+?>
+
+<?php if($userRole == 'admin') { ?><!-- Admin view -->
 <div class="col-12 last panel">
-    <table class="table table-bordered table-striped">
+    <?= $this->Flash->render() ?>
+    <table class="table table-bordered table-striped" id="data-table">
     <thead>
     <tr>
-        <!-- 
-            JAVASCRIPT BLOCKS VIA CAKEPHP: 
-            $this->Html->scriptStart(['block' => true]);
-            echo "alert('I am in the JavaScript');"
-            $this->Html->scriptEnd(); 
-        -->
-        <th><?= $this->Paginator->sort('Title') ?></th>
-<!--         <th><?= $this->Paginator->sort('Body') ?></th> -->
-        <th><?= $this->Paginator->sort('Created') ?></th>
+
+        <th><?= __('Title') ?></th>
+        <th><?= __('Created') ?></th>
         <!-- Check to see if user has admin priviliges if so then show edit / delete controles -->
         <?= $userRole == 'admin' ? __('<th class="actions">Action</th>') : '' ?>
     </tr>
@@ -32,12 +36,6 @@
         <td>
             <?= $this->Html->link($article->title, ['action' => 'view', $article->id], ['class' => 'btn normal']) ?>
         </td>
-<!--
-        <td>
-        
-            <?= $this->Html->link($this->Text->truncate(__($article->post), 60), ['action' => 'view', $article->id], ['class' => 'btn normal']) ?>            
-        </td>
--->
         <td>
             <?= h($article->created) ?>
         </td>
@@ -51,7 +49,8 @@
   <?php endforeach; ?>
 </tbody>
 </table>
-    <div class="paginator">
+    <!--
+<div class="paginator">
         <ul class="pagination">
             <?= $this->Paginator->prev('< ' . __('previous')) ?>
             <?= $this->Paginator->numbers() ?>
@@ -59,4 +58,19 @@
         </ul>
         <p><?= $this->Paginator->counter() ?></p>
     </div>
+-->
 </div>
+
+
+<?php } else { ?><!-- User view -->
+	<?php foreach ($articles as $article): ?>
+	<div class="col-8 offset-2 last panel">
+		<h2>
+			<?= $this->Html->link($article->title, ['action' => 'view', $article->id], ['class' => 'btn normal']) ?>
+		</h2>
+		<p>
+			<?= $this->Html->link($this->Text->truncate(strip_tags($article->post, ''), 60), ['action' => 'view', $article->id], ['class' => 'btn normal']) ?>
+		</p>
+	</div>
+	<?php endforeach; ?>
+<?php } ?>

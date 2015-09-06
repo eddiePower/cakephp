@@ -18,7 +18,7 @@
             <h6 class="subheader"><?= __('Shopcart') ?></h6>
             <p><?= $shopcartItem->has('shopcart') ? $this->Html->link($shopcartItem->shopcart->id, ['controller' => 'Shopcart', 'action' => 'view', $shopcartItem->shopcart->id]) : '' ?></p>
             <h6 class="subheader"><?= __('Item') ?></h6>
-            <p><?= $shopcartItem->has('item') ? $this->Html->link($shopcartItem->item->id, ['controller' => 'Items', 'action' => 'view', $shopcartItem->item->id]) : '' ?></p>
+            <p><?= $shopcartItem->has('item') ? $this->Html->link($shopcartItem->item->id, ['controller' => 'Shopcart_items', 'action' => 'view', $shopcartItem->item->id]) : '' ?></p>
         </div>
         <div class="large-2 columns numbers end">
             <h6 class="subheader"><?= __('Id') ?></h6>

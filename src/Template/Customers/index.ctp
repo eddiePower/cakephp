@@ -1,6 +1,14 @@
 <h1 class="center">Customers</h1>
 
-<!--<h3><?= __('Actions') ?></h3>-->
+<?=
+//enable the data-tables jQuery plugin for better table uttils.
+$this->Html->scriptStart(['block' => true]);
+echo "$(document).ready(function(){
+    $('#data-table').DataTable();
+});";
+$this->Html->scriptEnd();
+?>
+
 <nav class="nav-container">
 	<?= $this->Html->link(__('New Customer'), ['action' => 'add'], ['class' => 'nav-item']) ?>
 	<?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index'], ['class' => 'nav-item']) ?>
@@ -17,15 +25,15 @@
     <!-- show and flash messages here on the view page. -->
     <?= $this->Flash->render(); ?>
 	
-	<table cellpadding="0" cellspacing="0">
+	<table class="table table-bordered table-striped" id="data-table" cellpadding="0" cellspacing="0">
 		<thead>
 			<tr>
-				<th><?= $this->Paginator->sort('first_name') ?></th>
-				<th><?= $this->Paginator->sort('last_name') ?></th>
-				<th><?= $this->Paginator->sort('postcode') ?></th>
-				<th><?= $this->Paginator->sort('phone') ?></th>
-				<th><?= $this->Paginator->sort('customer_type') ?></th>
-				<th><?= $this->Paginator->sort('email customer') ?></th>
+				<th><?= __('First Name') ?></th>
+				<th><?= __('last_name') ?></th>
+				<th><?= __('postcode') ?></th>
+				<th><?= __('phone') ?></th>
+				<th><?= __('customer_type') ?></th>
+				<th><?= __('email customer') ?></th>
 				<th class="actions"><?= __('Actions') ?></th>
 			</tr>
 		</thead>
@@ -52,7 +60,8 @@
 			
 		</tbody>
 	</table>
-	<div class="paginator">
+	<!--
+<div class="paginator">
 		<ul class="pagination">
 		<?= $this->Paginator->prev('< ' . __('previous')) ?>
 		<?= $this->Paginator->numbers() ?>
@@ -62,4 +71,5 @@
 		<?= $this->Paginator->counter() ?>
 		</p>
 	</div>
+-->
 </div>

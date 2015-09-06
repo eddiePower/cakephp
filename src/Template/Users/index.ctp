@@ -1,5 +1,12 @@
 <h1 class="center">Users</h1>
-
+<?=
+//enable the data-tables jQuery plugin for better table uttils.
+$this->Html->scriptStart(['block' => true]);
+echo "$(document).ready(function(){
+    $('#data-table').DataTable();
+});";
+$this->Html->scriptEnd();
+?>
 <div class="col-12 last panel">
 	<h3>
 	Logged in as <?= $username; ?>
@@ -8,14 +15,19 @@
 	Role: <?= $userRole; ?>
    </h3>
     <?= $this->Flash->render(); ?>
-    <table class="table table-bordered table-striped">
+    <br />
+    <nav class="nav-container">
+	  <?= $this->Html->link(__('Add New User account'), ['controller' => 'Users', 'action' => 'add'], ['class' => 'nav-item']) ?>
+    </nav>
+    
+    <table class="table table-bordered table-striped" id="data-table">
     <thead>
         <tr>
-            <th><?= $this->Paginator->sort('username') ?></th>
-            <th><?= $this->Paginator->sort('email') ?></th>
-            <th><?= $this->Paginator->sort('password') ?></th>
-            <th><?= $this->Paginator->sort('created') ?></th>
-            <th><?= $this->Paginator->sort('role') ?></th>
+            <th><?= __('Username') ?></th>
+            <th><?= __('Email') ?></th>
+            <th><?= __('Password') ?></th>
+            <th><?= __('Date Created') ?></th>
+            <th><?= __('User Role') ?></th>
             <th class="actions"><?= __('Actions') ?></th>
         </tr>
     </thead>
@@ -38,6 +50,7 @@
     <?php endforeach; ?>
     </tbody>
     </table>
+<!-- Not used in the dataTables plugin as it handles it internally.
     <div class="paginator">
         <ul class="pagination">
             <?= $this->Paginator->prev('< ' . __('previous')) ?>
@@ -47,3 +60,4 @@
         <p><?= $this->Paginator->counter() ?></p>
     </div>
 </div>
+-->

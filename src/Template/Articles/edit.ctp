@@ -8,6 +8,7 @@
   //set tinymce to show in the message textarea of the form with all these extra functionality / plugins.
   echo "tinymce.init({ selector: '#post',
                        theme: 'modern',
+                       skin: 'custom',
                        plugins: ['advlist autolink lists link image charmap print preview hr anchor pagebreak',
                                 'searchreplace wordcount visualblocks visualchars fullscreen',
                                 'insertdatetime media nonbreaking save table contextmenu directionality',
@@ -20,8 +21,9 @@
   echo $this->Html->scriptEnd(); 
     
     echo $this->Form->input('title');
-    echo $this->Form->input('post',  ['rows' => '15', 'cols' => '95', 'label' => 'body']);
-    echo $this->Form->button(__('Save Article'));    
+    echo $this->Form->input('post',  ['rows' => '15', 'cols' => '95', 'label' => 'body', 'required' => 'false']);
+    echo $this->Form->submit(__('Save Article'));   
+    echo $this->Form->submit(__('Cancel'), ['name' => 'Cancel']); 
     echo $this->Form->end();   
 
 ?>

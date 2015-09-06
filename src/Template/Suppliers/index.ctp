@@ -1,6 +1,13 @@
 
 <h1 class="center">Suppliers</h1>
-
+<?=
+//enable the data-tables jQuery plugin for better table uttils.
+$this->Html->scriptStart(['block' => true]);
+echo "$(document).ready(function(){
+    $('#data-table').DataTable();
+});";
+$this->Html->scriptEnd();
+?>
 <nav class="nav-container">
 	<?= $this->Html->link(__('New Supplier'), ['action' => 'add'], ['class' => 'nav-item']) ?>
 	<?= $this->Html->link(__('List Purchases'), ['controller' => 'Purchases', 'action' => 'index'], ['class' => 'nav-item']) ?>
@@ -8,11 +15,11 @@
 </nav>
 
 <div class="suppliers index col-12 last panel">
-    <table>
+    <table class="table table-bordered table-striped" id="data-table">
     <thead>
         <tr>
-            <th><?= $this->Paginator->sort('supplier_name') ?></th>
-            <th><?= $this->Paginator->sort('supplier_description') ?></th>
+            <th><?= __('Doormat supplier name') ?></th>
+            <th><?= __('Supplier description') ?></th>
             <th class="actions"><?= __('Actions') ?></th>
         </tr>
     </thead>
@@ -31,7 +38,8 @@
     <?php endforeach; ?>
     </tbody>
     </table>
-    <div class="paginator">
+   <!--
+ <div class="paginator">
         <ul class="pagination">
             <?= $this->Paginator->prev('< ' . __('previous')) ?>
             <?= $this->Paginator->numbers() ?>
@@ -39,4 +47,5 @@
         </ul>
         <p><?= $this->Paginator->counter() ?></p>
     </div>
+-->
 </div>
