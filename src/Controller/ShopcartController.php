@@ -23,6 +23,7 @@ class ShopcartController extends AppController
         ];
         $this->set('shopcart', $this->paginate($this->Shopcart));
         $this->set('_serialize', ['shopcart']);
+        
     }
 
     /**
@@ -39,6 +40,14 @@ class ShopcartController extends AppController
         ]);
         $this->set('shopcart', $shopcart);
         $this->set('_serialize', ['shopcart']);
+        
+        //set a viewVar for the items in the cart being viewed.
+        // this saves space and time rather then each display 
+        //having $shopcart.'shopcartItems' every line
+        
+        $this->set('cartItems', $shopcart.'shopcartItems');        
+        //debug($shopcart.'shopcartItems'); 
+
     }
 
     /**
@@ -48,7 +57,15 @@ class ShopcartController extends AppController
      */
     public function add()
     {
+        
+                            
+        $aUser = $this->request->session()->read('user');
+        
+        $usersID = $aUser['id'];
+        //debug($usersID);
+        
         $shopcart = $this->Shopcart->newEntity();
+        
         
         if ($this->request->is('post')) 
         {

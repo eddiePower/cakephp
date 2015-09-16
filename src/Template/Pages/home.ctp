@@ -24,7 +24,7 @@ if (!Configure::read('debug')):
 	throw new NotFoundException();
 endif;
 
-$cakeDescription = 'SoleMate DoorMats built on CakePHP v3';
+$cakeDescription = 'SoleMate DoorMats';
 ?>
 <!DOCTYPE html>
 <html>
@@ -37,8 +37,8 @@ $cakeDescription = 'SoleMate DoorMats built on CakePHP v3';
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'>
 		
 <?= $this->Html->css(['lightgrid']) ?>
-
-<?= $this->Html->script('https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js') ?>
+		<!-- Add in jQuery and all jScript links here using cakePHP -->		
+		<?= $this->Html->script(['https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js','https://cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js']) ?>
 <?= $this->Html->script('utils') ?>
 <?= $this->Html->script('index') ?>
 </head>
@@ -48,6 +48,8 @@ $cakeDescription = 'SoleMate DoorMats built on CakePHP v3';
 		 <h1 class="header-nav-title center">
 		 <?= $this->Html->image('http://www.ibaustralia.com/ibaustralia/custom/logo_custom.gif') ?>
 		 </h1>
+		<br />
+		 <b><i> &nbsp&nbsp"All our products are produced with environmentally friendly and sustainable processes, using all natural materials."</i></b>
 		</nav>
 	</header>
 	
@@ -95,6 +97,34 @@ $cakeDescription = 'SoleMate DoorMats built on CakePHP v3';
 				<h2>
 					Our process
 				</h2>
+				<div class="preview-container clearfix">
+					<div class="col-4">
+						<?php echo $this->Html->image('pages/our-process-12.jpg', array('alt' => 'our-process')); ?>
+					</div>
+					<div class="col-4">
+						<?php echo $this->Html->image('pages/our-process-11.jpg', array('alt' => 'our-process')); ?>
+					</div>
+					<div class="col-4">
+						<?php echo $this->Html->image('pages/our-process-6.jpg', array('alt' => 'our-process')); ?>
+					</div>
+				</div>
+				
+				<blockquote class="quote">
+					All our mats are handcrafted from natural fibers
+				</blockquote>
+				<p>
+					IB Australia is an Australian-owned family business promoting a sustainable environmentally friendly, fair trade business.
+				</p>
+				<p>
+				We believe we are making a differences to the villagers by bringing their handcrafted mats to the Australian market, enabling them to have a sustained employed future. We sell all types of mats including but not limited to, novelty, automobilia and traditional mats.
+				</p>
+				<p>
+				  <?= $this->Html->link('Take a look at how we create our mats', '/pages/our-process', ['class' => 'button positive auto']) ?>
+				</p>
+				<br>
+				<br>
+				<br>
+				<br>
 			</div>
     
   	</div>
@@ -103,38 +133,48 @@ $cakeDescription = 'SoleMate DoorMats built on CakePHP v3';
 	<footer class="site-footer">
 		<div class="footer-inner row">
 			<div class="col-4">
-				<a href="#" class="footer-link">
-				Contact info
-				</a>
+				<h3>
+					Contact us
+				</h3>
+				
+					<b>Email: </b><span>rick@ibaustralia.com</span>
+					<br>
+					<b>Phone: </b><span>(03) 9583 1300</span>
+					<br>
+					<b>Address: </b>
+					<br><span>
+						4 Shearson Crescent<br>
+						Mentone, Vic 3194<br>
+						Australia
+					</span>
 			</div>
 			<div class="col-4">
-				<h3>
-				Faqs
-				</h3>
-				<a href="#" class="footer-link">
-				About us
-				</a><br />
-				<a href="#" class="footer-link">
-				Manifacturing process
-				</a>
-			</div>
-			<div class="col-4 last">
-				<h3>
-					Connect with us
-				</h3>
-				<a href="#" class="footer-link">
-				Find us on Facebook
-				</a><br />
-				<a href="#" class="footer-link">
-				Find us on Twitter
-				</a>
-			</div>
-			<div class="col-12 last">
-				<br>
-				<p class="center">
-					2015 IbAustralia
-				</p>
-			</div>
+					<h3>
+					Faqs
+					</h3>
+					<?= $this->Html->link('About our doormats', '/pages/about-our-doormats', ['class' => 'footer-link']) ?>
+					<?= $this->Html->link('Trading terms', '/pages/trading-terms', ['class' => 'footer-link']) ?>
+					<?= $this->Html->link('Our process', '/pages/our-process', ['class' => 'footer-link']) ?>
+					<!--
+					!!!!!SHASH SHOULD USE THESE LINKS OTHERWISE IT BREAKS EACH TIME WE MOVE IT FROM SERVER TO SERVER!!!!
+<a href="../pages/our-process" class="footer-link">
+						Our process
+					</a>
+-->
+				</div>
+				<div class="col-4 last">
+					<h3>
+						Connect with us
+					</h3>
+					<?= $this->Html->link('Find us on Facebook', 'https://www.facebook.com/Solematedoormats', ['class' => 'footer-link', 'target' => '_blank']) ?>
+					<?= $this->Html->link('About us', '/pages/about-us', ['class' => 'footer-link']) ?>
+
+				</div>
+				<div class="col-12 last">
+					<p class="center">
+						2015 IbAustralia
+					</p>
+				</div>
 		</div>
 	</footer>
 </body>

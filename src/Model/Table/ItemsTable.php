@@ -51,7 +51,8 @@ class ItemsTable extends Table
             ->add('item_number', 'valid', ['rule' => 'numeric'])
             ->requirePresence('item_number', 'create')
             ->notEmpty('item_number')
-            ->allowEmpty('photo', 'photo_dir');
+            ->add('barcode', 'valid', ['rule' => 'numeric'])
+            ->allowEmpty('photo', 'photo_dir', 'barcode');
 
         return $validator;
     }

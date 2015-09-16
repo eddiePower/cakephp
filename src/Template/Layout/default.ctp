@@ -13,7 +13,7 @@
 * @license       http://www.opensource.org/licenses/mit-license.php MIT License
 */
 
-$cakeDescription = 'SoleMate Doormats - Built on CakePHP v3';
+$cakeDescription = 'SoleMate Doormats';
 ?>
 <!DOCTYPE html>
 <html>
@@ -29,7 +29,7 @@ $cakeDescription = 'SoleMate Doormats - Built on CakePHP v3';
 		<?= $this->Html->css(['dropit']) ?>
 		<?= $this->Html->css(['lightgrid']) ?>
 		<!-- Add in jQuery and all jScript links here using cakePHP -->		
-		<?= $this->Html->script(['tinymce/tinymce.min.js','https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js', 'dropdown', 'snowflake.js', 'siteConfig.js', 'https://cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js']) ?>
+		<?= $this->Html->script(['tinymce/tinymce.min.js','https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js','https://cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js', 'common', 'dropdown', 'snowflake.js', 'siteConfig.js']) ?>
 		<?= $this->fetch('meta') ?>
 		<?= $this->fetch('script') ?>
 	</head>
@@ -38,8 +38,9 @@ $cakeDescription = 'SoleMate Doormats - Built on CakePHP v3';
 		<header class="site-header">
 			<nav class="header-nav">
 				<h1 class="header-nav-title center">
-				<?= $this->Html->image('http://www.ibaustralia.com/ibaustralia/custom/logo_custom.gif') ?>
-				</h1>				
+					<?= $this->Html->image('http://www.ibaustralia.com/ibaustralia/custom/logo_custom.gif') ?>
+				</h1>
+				<b><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"All our products are produced with environmentally friendly and sustainable processes, using all natural materials."</i></b>
 				<?php
 					/*
 					check to see if the session variable is set
@@ -67,6 +68,8 @@ $cakeDescription = 'SoleMate Doormats - Built on CakePHP v3';
 							?>
 							<?= $this->Html->link(__('Log Out'), ['controller' => 'Users', 'action' => 'logout'], array('class' => 'header-nav-item')) ?>
 							<?= $this->Html->link(__('My Account Details'), ['controller' => 'Users', 'action' => 'index'], array('class' => 'header-nav-item')) ?>
+							<?= $this->Html->link(__('My Customer Details'), ['controller' => 'Customers', 'action' => 'index'], array('class' => 'header-nav-item')) ?>
+
 							<?= $this->Html->link(__('Items'), ['controller' => 'Items', 'action' => 'index'], array('class' => 'header-nav-item')) ?>
 							<?= $this->Html->link(__('Ricks News'), ['controller' => 'articles', 'action' => 'index'], array('class' => 'header-nav-item')) ?>
 							<?php
@@ -86,34 +89,44 @@ $cakeDescription = 'SoleMate Doormats - Built on CakePHP v3';
 		<footer class="site-footer">
 			<div class="footer-inner row">
 				<div class="col-4">
-					<a href="#" class="footer-link">
-					Contact info
-					</a>
+					<h3>
+						Contact us
+					</h3>
+
+						<b>Email: </b><span>rick@ibaustralia.com</span>
+						<br>
+						<b>Phone: </b><span>(03) 9583 1300</span>
+						<br>
+						<b>Address: </b>
+						<br><span>
+							4 Shearson Crescent<br>
+							Mentone, Vic 3194<br>
+							Australia
+						</span>
 				</div>
 				<div class="col-4">
 					<h3>
 					Faqs
 					</h3>
-					<a href="#" class="footer-link">
-					About us
-					</a><br />
-					<a href="#" class="footer-link">
-					Manifacturing process
+					<?= $this->Html->link('About our doormats', '/pages/about-our-doormats', ['class' => 'footer-link']) ?>
+					<?= $this->Html->link('Trading terms', '/pages/trading-terms', ['class' => 'footer-link']) ?>
+					<?= $this->Html->link('Our process', '/pages/our-process', ['class' => 'footer-link']) ?>
+					<!--
+					!!!!!SHASH SHOULD USE THESE LINKS OTHERWISE IT BREAKS THE BUILD EACH TIME WE MOVE IT FROM SERVER TO SERVER!!!!
+<a href="../pages/our-process" class="footer-link">
+						Our process
 					</a>
+-->
 				</div>
 				<div class="col-4 last">
 					<h3>
 						Connect with us
 					</h3>
-					<a href="#" class="footer-link">
-					Find us on Facebook
-					</a><br />
-					<a href="#" class="footer-link">
-					Find us on Twitter
-					</a>
+					<?= $this->Html->link('Find us on Facebook', 'https://www.facebook.com/Solematedoormats', ['class' => 'footer-link', 'target' => '_blank']) ?>
+					<?= $this->Html->link('About us', '/pages/about-us', ['class' => 'footer-link']) ?>
+
 				</div>
 				<div class="col-12 last">
-					<br>
 					<p class="center">
 						2015 IbAustralia
 					</p>
@@ -121,4 +134,4 @@ $cakeDescription = 'SoleMate Doormats - Built on CakePHP v3';
 			</div>
 		</footer>
 	</body>
-</html>
+</html

@@ -41,7 +41,7 @@
 	}
 	
 	function toggleDropdown() {
-		//console.log(active);
+		console.log(active);
 		if(!active) {
 			$('.dropdown-container').addClass('active');
 			active = true;

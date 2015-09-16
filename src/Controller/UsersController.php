@@ -17,16 +17,12 @@ use Cake\Routing\Router;
 class UsersController extends AppController
 {
     
-    
     public function beforeFilter(Event $event)
     {
        parent::beforeFilter($event);
     
        $this->Auth->allow(['add', 'resetPassword']);
     }
-
-   
-
 
     /**
      * Index method
@@ -49,31 +45,22 @@ class UsersController extends AppController
           //set a variable to dispaly user role admin in this case
           $this->set('userRole', $this->Auth->user('role'));
           
-          
           //SESSION TESTING.
           //create a test variable from the session variable that is set at login.
           $uName = $this->request->session()->read('username');
           $this->request->session()->write('userRole', $this->Auth->user('role'));
           
-          //test setting session variable with users role for use later in the app.
-         // $this->request->session()->write('userrole', $this->Auth->user('role'));
-          
           //debug($name . " is the session username stored");
        
         }
-        else
+        else  //else if the userRole is just a plain user then only view their specific data only.
         {
               //grab the current user id 
               $id = $this->Auth->user('id');
               
-             
-             
              //redirect to view of that id.
              return $this->redirect(['action' => 'view', $id]);            
-        }
-
-
-        
+        }       
     }
 
     /**
@@ -104,6 +91,8 @@ class UsersController extends AppController
             $user = $this->Users->get($id, [
                 'contain' => ['Customers']
             ]);
+            
+            //debug($user->customers);
                   
             //Set a variable for possible future use.
             $this->set('username', $this->Auth->user('email')); 
@@ -117,6 +106,8 @@ class UsersController extends AppController
         else
         {
             $this->Flash->error("Page is not authorised for viewing, please contact an administrator if you feel this is an error.");
+            
+            //return the user back to their view page from their stored session userID
             return $this->redirect(['action' => 'view', $setID]);
         }
     }
@@ -128,15 +119,22 @@ class UsersController extends AppController
      */
     public function add()
     {
-        
+        //set the new databas entity
         $user = $this->Users->newEntity();
         
-        if ($this->request->is('post')) 
+        //set a variable to check userrole and display options depending
+        $this->set('userRole', $this->Auth->user('role'));
+        
+        
+        //check the http request is of type post
+        if ($this->request->is('post') || $this->Auth->user('role') == 'admin') 
         {
+            //set the user data to be the data on the form in post request
             $user = $this->Users->patchEntity($user, $this->request->data);
             
+            //if the save user command runs ok
             if ($this->Users->save($user)) 
-            {
+            {   
                 $this->Flash->success('The user has been saved.');
                 return $this->redirect(['action' => 'index']);
             } 
@@ -144,6 +142,11 @@ class UsersController extends AppController
             {
                 $this->Flash->error('The user could not be saved. Please, try again.');
             }
+        }
+        else
+        {   
+            $this->Flash->error('Your not allowed to sign up new users. contact the admin');
+            return $this->redirect(['controller' => 'Customers', 'action' => 'index']);
         }
         $this->set(compact('user'));
         $this->set('_serialize', ['user']);
@@ -167,12 +170,16 @@ class UsersController extends AppController
         $loggedUserID = $tmpUsrStore['id'];
         //debug($tmpUsrStore);
         
-        if($loggedUserID == $user->id)
+        //check that the user logged in is the user bieng edited or if they are an admin user
+        if($loggedUserID == $user->id || $tmpUsrStore['role'] == 'admin')
         {
+            //if the http request sent is of type patch post or put.
            if ($this->request->is(['patch', 'post', 'put'])) 
            {
+            //set the user entity data to be the data in the http request
                $user = $this->Users->patchEntity($user, $this->request->data);
                
+               //if the save user command worked ok
                if ($this->Users->save($user)) 
                {
                    $this->Flash->success('The user has been saved.');
@@ -188,7 +195,7 @@ class UsersController extends AppController
            $this->set(compact('user'));
            $this->set('_serialize', ['user']);
         }
-        else
+        else  //else the user is not permitted to be in this area so warn them.
         {
             $this->Flash->error("Error Your not authorised, we are logging this request with the admin.");
             
@@ -211,13 +218,15 @@ class UsersController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         
         $user = $this->Users->get($id);
+        $storedUser = $this->request->session()->read('user');
         
-        //make sure the user is not the admin account as it cannont be deleted.
-        if($user->role == "admin" || $this->request->session()->read('user'['id']) != $id)
+        //make sure the user is not the main admin account make it not deleteded.
+        if($user->role == "admin" && $storedUser['id'] != $id)
         {
             debug($user);
             
-            return false;
+            return $this->redirect(['action' => 'index']);
+
         }
         
         
@@ -330,8 +339,10 @@ class UsersController extends AppController
               //Create new random HASHED String to send to user
               // for security and randomness i mixed older md5 with nice sha256 ;)
               $intermediateSalt = md5(uniqid(rand(), true));
+              
               //set a temp string of 7 digits in length no decimal places
               $salt = substr($intermediateSalt, 0, 7);
+              
               //now run random string through a 256bit sha encrypt  - maybe overkill?
               $randPassword = hash("sha256", $salt);
               
@@ -431,6 +442,7 @@ class UsersController extends AppController
        session_destroy();
        
        $this->Flash->success('Bye bye You\'re now logged out.');
+      
        return $this->redirect($this->Auth->logout());
     }
     

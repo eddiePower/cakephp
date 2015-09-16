@@ -13,7 +13,13 @@
     <fieldset>
         <legend><?= __('Add Shopcart') ?></legend>
         <?php
-            echo $this->Form->input('user_id', ['options' => $users]);
+/*             echo $this->Form->input('user_id', ['options' => $users]); */
+
+            foreach($items as $cartItem)
+            {
+                debug($cartItem);
+            }
+            
             echo $this->Form->input('items._ids', ['options' => $items]);
         ?>
     </fieldset>

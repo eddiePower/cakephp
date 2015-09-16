@@ -12,16 +12,18 @@
     </ul>
 </div>
 <div class="shopcart view large-10 medium-9 columns">
-    <h2><?= h($shopcart->id) ?></h2>
+<!--     <h2><?= h($shopcart->id) ?></h2> -->
     <div class="row">
         <div class="large-5 columns strings">
             <h6 class="subheader"><?= __('User') ?></h6>
             <p><?= $shopcart->has('user') ? $this->Html->link($shopcart->user->email, ['controller' => 'Users', 'action' => 'view', $shopcart->user->id]) : '' ?></p>
         </div>
-        <div class="large-2 columns numbers end">
+ <!--
+       <div class="large-2 columns numbers end">
             <h6 class="subheader"><?= __('Id') ?></h6>
             <p><?= $this->Number->format($shopcart->id) ?></p>
         </div>
+-->
         <div class="large-2 columns dates end">
             <h6 class="subheader"><?= __('Created') ?></h6>
             <p><?= h($shopcart->created) ?></p>
@@ -36,7 +38,7 @@
         <tr>
             <!-- <th><?= __('Id') ?></th> -->
             <th><?= __('Item Name') ?></th>
-            <th><?= __('Quantity On Hand') ?></th>
+            <th><?= __('Quantity Ordered') ?></th>
             <th><?= __('Item Number') ?></th>
             <th><?= __('Photo') ?></th>
             <th><?= __('Photo Dir') ?></th>
@@ -46,9 +48,9 @@
         <tr>
             <!-- <td><?= h($items->id) ?></td> -->
             <td><?= h($items->item_name) ?></td>
-            <td><?= h($items->quantity_on_hand) ?></td>
+            <td><?= h($items['_joinData']['quantity']) ?></td>
             <td><?= h($items->item_number) ?></td>
-            <td><?= h($items->photo) ?></td>
+            <td><?= $items->photo != NULL ? $this->Html->image('graphics/' . $items->photo, ['alt' => $items->item_name, 'fullBase' => true, 'class' => 'item_image']) : h('NO Image Yet'); ?></td>
             <td><?= h($items->photo_dir) ?></td>
 
             <td class="actions">
@@ -57,11 +59,18 @@
   <?= $this->Html->link(__('Edit'), ['controller' => 'items', 'action' => 'edit', $items->id]) ?>
                 <?= $this->Form->postLink(__('Delete'), ['controller' => 'shopcart_items', 'action' => 'delete', $items->id], ['confirm' => __('Are you sure you want to delete # {0}?', $items->id)]) ?>
 -->
+            
 
             </td>
         </tr>
-
+        
+        <!--
+<?= __("<u>quantity ordered: </u>"); ?>
+        <?= debug($items['_joinData']['quantity']); ?>
+-->
+        
         <?php endforeach; ?>
+       
     </table>
     <?php endif; ?>
     </div>

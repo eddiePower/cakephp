@@ -1,11 +1,23 @@
 <h1 class="center"><?= h($customer->first_name) ?> (Customer)</h1>
 <nav class="nav-container">
 <?= $this->Html->link(__('Edit Customer'), ['action' => 'edit', $customer->id], ['class' => 'nav-item']) ?>
-<?= $this->Form->postLink(__('Delete Customer'), ['action' => 'delete', $customer->id], ['confirm' => __('Are you sure you want to delete # {0}?', $customer->id), 'class' => 'nav-item']) ?>
+<?= $this->Form->postLink(__('Delete Customer'), ['action' => 'delete', $customer->id], ['confirm' => __('Are you sure you want to delete  {0}?', $customer->first_name . ' '. $customer->last_name), 'class' => 'nav-item']) ?>
 <?= $this->Html->link(__('List Customers'), ['action' => 'index'], ['class' => 'nav-item']) ?>
 <?= $this->Html->link(__('New Customer'), ['action' => 'add'], ['class' => 'nav-item']) ?>
+<?php
+	   if($userRole == 'admin'){
+?>
 <?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index'], ['class' => 'nav-item']) ?>
 <?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add'], ['class' => 'nav-item']) ?>
+<?php
+	   }
+	   else
+	   {
+?>
+<?= $this->Html->link(__('Account Details'), ['controller' => 'Users', 'action' => 'index'], ['class' => 'nav-item']) ?>
+<?php
+       }
+?>
 </nav>
 
 <div class="col-12 last panel">
@@ -28,9 +40,15 @@
 				<th>
 					<?= __('Customer Type') ?>
 				</th>
+				<?php
+				 if($userRole == 'admin'){
+				 ?>
 				<th>
 					<?= __('User') ?>
 				</th>
+				<?php
+				}
+				?>
 			</tr>
 		</thead>
 		<tbody>
@@ -50,9 +68,16 @@
 				<td>
 					<?= h($customer->customer_type) ?>
 				</td>
+				<?php
+				 if($userRole == 'admin'){
+				 ?>
 				<td>
-					<?= $customer->has('user') ? $this->Html->link($customer->user->id, ['controller' => 'Users', 'action' => 'view', $customer->user->id]) : '' ?>
+					<?= $customer->has('user') ? $this->Html->link($customer->user->username, ['controller' => 'Users', 'action' => 'view', $customer->user->id]) : '' ?>
+					
 				</td>
+				<?php
+					}
+					?>
 			</tr>
 		</tbody>
 	</table>

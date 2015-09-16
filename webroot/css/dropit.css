@@ -11,7 +11,7 @@
 	text-align: center;
 	
 	border-radius: 6px;
-	
+		
 	z-index: 1;  /* /used to keep the menu above the data tables drop down */
 	position: relative; /* shash may change this. */
 }
@@ -42,16 +42,17 @@
 .dropdown-container .dropdown-item:active {
 	background-color: #e74c3c;
 	color:#FFF;
+	
 	text-decoration: none;
 }
 
 .dropdown-container.active .dropdown-item {
 	display: block;
- 
 }
 
 .dropdown-container.active {
-	border:#DDD solid 1px;	
+	border:#DDD solid 1px;
+	
 	box-shadow: 0 1px 2px 1px rgba(0,0,0,0.1);
 }
 

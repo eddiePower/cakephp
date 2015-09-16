@@ -18,6 +18,7 @@ class Item extends Entity
         'item_name' => true,
         'quantity_on_hand' => true,
         'item_number' => true,
+        'barcode' => true,
         'photo' => true,
         'photo_dir' => true,
         'order_details' => true,

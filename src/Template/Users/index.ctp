@@ -58,6 +58,6 @@ $this->Html->scriptEnd();
             <?= $this->Paginator->next(__('next') . ' >') ?>
         </ul>
         <p><?= $this->Paginator->counter() ?></p>
-    </div>
+    </div>-->
 </div>
--->
+

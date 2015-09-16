@@ -20,26 +20,61 @@ class CustomersController extends AppController
      */
     public function index()
     {
-        $this->paginate = [
-            'contain' => ['Users']
-        ];
-        $this->set('customers', $this->paginate($this->Customers));
-        $this->set('_serialize', ['customers']);
         
-        //Set a variable for use on the index view to show user name / email.
-        $this->set('username', $this->Auth->user('email'));
-        
-        //If the user is a admin then we will allow all bookmarks to show up
-        if($this->Auth->user('role') == 'admin')
-        {  
-           //set a variable to display user role admin in this case
-           $this->set('userRole', $this->Auth->user('role'));
+        if($this->request->session()->read('userRole') == 'admin')
+        {
+           $this->paginate = [
+               'contain' => ['Users']
+               ];
+           
+           
+           $this->set('customers', $this->paginate($this->Customers));           
+           $this->set('_serialize', ['customers']);
+           
+           //Set a variable for use on the index view to show user name / email.
+           $this->set('username', $this->Auth->user('username'));  
+           //Set a var with logged in user data
+           $setUser = $this->request->session()->read('user');
+           //set the loggedin user ID as a var
+           $setID = $setUser['id'];
+           
         }
+        //else is user and should only see customer data linked to them.
         else
         {
-            //set a variable to dispaly user role - users
-           $this->set('userRole', $this->Auth->user('role'));
-        }
+            //grab all customers from the model
+            $allCusts = $this->Customers->find("all");
+            
+            //create space for just the logged in users customers
+            $userCustomers = array();
+            
+            //loop through all customers
+           foreach($allCusts as $aCust)
+           {
+                //if the logged in user id matches the stored customer-user id 
+                if($this->Auth->user('id') == $aCust['user_id'])
+                {
+                   //debug($aCust);
+                   //push the contents onto the userCustomers array
+                   array_push($userCustomers, $aCust);
+                } 
+           }
+           //debug($userCustomers);
+           
+           $this->paginate = [
+               'contain' => ['Users']
+               ];
+           
+           //now set the view variable as the users customers only.
+           $this->set('customers', $userCustomers);
+           
+           $this->set('_serialize', ['customers']);
+           
+
+        }         
+           $this->set('userRole', $this->Auth->user('role'));         
+           //Set a variable for use on the index view to show user name / email.
+           $this->set('username', $this->Auth->user('username'));      
     }
 
     /**
@@ -51,11 +86,39 @@ class CustomersController extends AppController
      */
     public function view($id = null)
     {
-        $customer = $this->Customers->get($id, [
+    
+       //if the ID is not found then throw a red page error of user not found, may swap it out to a 
+       // flash error message and a redirect
+       if (!$id) 
+       {
+           throw new NotFoundException(__('Invalid user'));
+       }
+    
+       //Set a var with logged in user data
+       $setUser = $this->request->session()->read('user');
+       $userRole = $this->request->session()->read('userRole');
+       $this->set('userRole', $userRole);         
+
+       //set the loggedin user ID as a var
+       $setID = $setUser['id'];
+       
+       $customer = $this->Customers->get($id, [
             'contain' => ['Users']
-        ]);
-        $this->set('customer', $customer);
-        $this->set('_serialize', ['customer']);
+       ]);
+       
+       
+       //if the user id is the same as customer user id or their role is an admin.
+       if($customer['user_id'] == $setID || $setUser['role'] == 'admin')
+       {
+           $this->set('customer', $customer);
+           $this->set('_serialize', ['customer']);   
+       }
+       else
+       {
+           $this->Flash->error("Your not allowed to view other users customer data. Contact admin if you feel this is incorrect.");
+           return $this->redirect(['action' => 'index']);
+       }
+     
     }
 
     /**
@@ -66,6 +129,39 @@ class CustomersController extends AppController
     public function add()
     {
         $customer = $this->Customers->newEntity();
+        
+        //Set a var with logged in user data
+        $setUser = $this->request->session()->read('user');
+        $userRole = $this->request->session()->read('userRole');
+        $this->set('userRole', $userRole);         
+
+        //set the loggedin user ID as a var
+        $setID = $setUser['id'];
+        //debug($customer);
+        
+        $query = $this->Customers->find('all')
+                    ->where(['user_id' => $setID]);
+        $results = $query->toArray();
+        
+/*         debug(sizeof($results)); */
+        
+        //if the user role is of type user and they already have a customer 
+        // set then dont allow them to add another, 
+        //!!!!CAN ADD A LIMIT ON SALES REPS HERE AS WELL IF NEED BE!!!!
+        if(sizeof($results) == 1 && $userRole = 'user')
+        {
+            $this->Flash->error('You can only have one set of customer data, please edit your info on edit customer page, if you need a sales rep status please contact solemate admin staff.');
+            return $this->redirect(['action' => 'index']);
+        }
+        
+        //if the user is not a admin then set the user id as the new customer
+        // id and run check on view side to show / hide the selector of users.
+        if($this->request->session()->read('userRole') != 'admin')
+        {
+            $customer->user_id = $setID;
+        }
+        //else show user create customer data which has the user id pre-set to their id.
+        
         if ($this->request->is('post')) 
         {
             $customer = $this->Customers->patchEntity($customer, $this->request->data);
@@ -97,9 +193,31 @@ class CustomersController extends AppController
         $customer = $this->Customers->get($id, [
             'contain' => []
         ]);
+                
+        //Set a var with logged in user data
+        $setUser = $this->request->session()->read('user');
+        $userRole = $this->request->session()->read('userRole');
+        $this->set('userRole', $userRole);         
+
+        //set the loggedin user ID as a var
+        $setID = $setUser['id'];
+        
+        //if user logged in id is not the same as customer user id to be edited
+        // and they are not an admin then kick them back out to index
+        if($customer->user_id != $setID && $userRole != 'admin')
+        {
+            //error
+            $this->Flash->error("You can only edit your own customer details, if you feel this is an incorrect please contact solemate staff.");
+            //redirect
+            return $this->redirect(['action' => 'index']);
+            
+        }
+
+        //otherwise run the edit on the customer
         if ($this->request->is(['patch', 'post', 'put'])) 
         {
             $customer = $this->Customers->patchEntity($customer, $this->request->data);
+            
             if ($this->Customers->save($customer)) 
             {
                 $this->Flash->success('The customer has been saved.');
@@ -112,6 +230,7 @@ class CustomersController extends AppController
         }
         
         $users = $this->Customers->Users->find('list', ['limit' => 200]);
+       
         $this->set(compact('customer', 'users'));
         $this->set('_serialize', ['customer']);
     }
@@ -154,6 +273,21 @@ class CustomersController extends AppController
     
     public function buildEmails()
     {
+        //Set a variable for use on the index view to show user name / email.
+           $this->set('username', $this->Auth->user('username'));  
+           //Set a var with logged in user data
+           $setUser = $this->request->session()->read('user');
+           //set the loggedin user ID as a var
+           $setID = $setUser['id'];
+           $userRole = $this->request->session()->read('userRole');
+           
+           if($userRole != 'admin')
+           {
+               $this->Flash->error("Were sorry your not authorised to view this page, please contact admin if you feel this is incorrect.");
+               return $this->redirect(['action' => 'index']);
+           }
+        
+        
         $this->set("customers", $this->Customers->find("all", ['order' => 'last_name ASC']));
         
         //create the viewVar array to be populated and sent via emails
@@ -214,7 +348,7 @@ class CustomersController extends AppController
 
                 }
                 
-                //!!!!!NEEDS TO BE Rendered on the View *.ctp file !!!!!!!!!
+                
                 $this->Flash->success('Your email was successfully sent.');
                 
                 //If the email is sent succesfully redirect back to the main customer page.

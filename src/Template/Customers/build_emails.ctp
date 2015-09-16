@@ -1,6 +1,5 @@
 
 <h1 class="center">Solemate Doormat's Customer Contact system.</h1>
-
 <?php
 
   echo "<p />";
@@ -24,10 +23,10 @@
                                 image_advtab: true,
                                 relative_urls: false,
                                 tools: 'inserttable'});";
-  echo $this->Html->scriptEnd(); 
+   echo $this->Html->scriptEnd(); 
        
-  //simple counter for number of customers to send to.     
-  $CustCount = 0;
+   //simple counter for number of customers to send to.     
+   $CustCount = 0;
 
     echo $this->Html->scriptStart(['block' => true]);
   
@@ -60,12 +59,12 @@
    <input type="checkbox" id="selecctall"/> Selecct All Customers</td><td><input type="checkbox" name="chkAllSalesReps" id="chkSalesReps" />Select all sales rep</td><td>
   		<input type="checkbox" name="chkAllSoleTraders" id="chkAllSoleTraders" />Select all sole traders</td></tr>
 </table>
-
+<table border="0" width="90%">
 <?php
   
   //create table to display customer email data with.
-  echo "<table border='0' width='90%'>";
-
+  echo "<tbody>";
+  //store each item in the customers array as customer varibale
   foreach ($customers as $customer)
   {
     //if customer count is equally divisable by 2 then create a new row
@@ -76,10 +75,8 @@
 <tr>
     <?php
     } //end of customers per row counter.
-    ?>
-    
+    ?>  
     <td width="35%">
-    
         <?= __($customer->first_name . " " . $customer->last_name) ?> <br />
         <?php echo $customer->email; ?>
     </td>
@@ -93,23 +90,20 @@
             'type'=>'checkbox',
         ]);
         ?>
-        
-      
-
     </td>
     <?php
       $CustCount++;
       }
     ?>
-</tr>
+</tr></tbody>
 </table>
 <br /><br />
 
-<table border="0" width="90%">
+    <table border="0" width="90%">
     <tr>
         <td class="heading"><p align="right">subject : </p></td>
         <td class="data">
-            <?php echo $this->Form->input('subject', ['label' =>'','size'=>'80']);?>
+            <?php echo $this->Form->input('subject', ['label' =>'','size'=>'80']); ?>
         </td>
     </tr>
     <tr>

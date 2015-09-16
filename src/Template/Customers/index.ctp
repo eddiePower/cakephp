@@ -8,32 +8,52 @@ echo "$(document).ready(function(){
 });";
 $this->Html->scriptEnd();
 ?>
+<div class="col-12 last panel">
+	<h3>
+	Logged in as <?= $username; ?>
+	</h3>
+	<h3>
+	Role: <?= $userRole; ?>
+   </h3>
+     <!-- show and flash messages here on the view page. -->
+     <?= $this->Flash->render(); ?>
+     <br />
+     <nav class="nav-container">
+    	<?= $this->Html->link(__('New Customer'), ['action' => 'add'], ['class' => 'nav-item']) ?>
+	<?php
+	       if($userRole == 'admin')	  
+	       {
+	       ?>
+	        <?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index'], ['class' => 'nav-item']) ?>
 
-<nav class="nav-container">
-	<?= $this->Html->link(__('New Customer'), ['action' => 'add'], ['class' => 'nav-item']) ?>
-	<?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index'], ['class' => 'nav-item']) ?>
-	<?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add'], ['class' => 'nav-item']) ?>
 	
 <!-- Send user to email listing and create email page.	 -->
 	<?= $this->Html->link(__('Send Email'), ['controller' => 'Customers', 'action' => 'buildEmails'], ['class' => 'nav-item']) ?>
-	
-	
+	<?php
+	    }
+	    else
+	    {
+	?>
+	<?= $this->Html->link(__('My Account Details'), ['controller' => 'Users', 'action' => 'index'], ['class' => 'nav-item']) ?>
+    <?php
+        }
+    ?>
 </nav>
 
 <div class="col-12 last panel">
-	
-    <!-- show and flash messages here on the view page. -->
-    <?= $this->Flash->render(); ?>
+
+
 	
 	<table class="table table-bordered table-striped" id="data-table" cellpadding="0" cellspacing="0">
 		<thead>
 			<tr>
 				<th><?= __('First Name') ?></th>
-				<th><?= __('last_name') ?></th>
-				<th><?= __('postcode') ?></th>
-				<th><?= __('phone') ?></th>
-				<th><?= __('customer_type') ?></th>
-				<th><?= __('email customer') ?></th>
+				<th><?= __('Last Name') ?></th>
+				<th><?= __('Customer Address') ?></th>
+				<th><?= __('Postcode') ?></th>
+				<th><?= __('Phone') ?></th>
+				<th><?= __('Customer Type') ?></th>
+				<th><?= __('Customer email') ?></th>
 				<th class="actions"><?= __('Actions') ?></th>
 			</tr>
 		</thead>
@@ -42,6 +62,7 @@ $this->Html->scriptEnd();
 			<tr>
 				<td><?= h($customer->first_name) ?></td>
 				<td><?= h($customer->last_name) ?></td>
+				<td><?= h($customer->address) ?></td>
 				<td><?= $this->Number->format($customer->postcode, ['pattern' => '####']) ?></td>
 				<td><?= h($customer->phone) ?></td>
 				<td><?= h($customer->customer_type) ?></td>
@@ -60,16 +81,5 @@ $this->Html->scriptEnd();
 			
 		</tbody>
 	</table>
-	<!--
-<div class="paginator">
-		<ul class="pagination">
-		<?= $this->Paginator->prev('< ' . __('previous')) ?>
-		<?= $this->Paginator->numbers() ?>
-		<?= $this->Paginator->next(__('next') . ' >') ?>
-		</ul>
-		<p>
-		<?= $this->Paginator->counter() ?>
-		</p>
-	</div>
--->
+</div>
 </div>

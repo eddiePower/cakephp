@@ -16,23 +16,23 @@ if(isset($_SESSION['username']))  {
 	<?php }
 	}
 ?>
-
-
-<?=
-//enable the data-tables jQuery plugin for better table uttils.
-$this->Html->scriptStart(['block' => true]);
-echo "$(document).ready(function(){
-    $('#data-table').DataTable();
-});";
-$this->Html->scriptEnd();
-?>
-
     <?= $this->Flash->render(); ?>
 		<?php
 			if(isset($_SESSION['username'])) 
 			{
+			  
+			
+			
 				if($this->request->session()->read('userRole') == 'admin') // Show table view for the admin
 				{
+				
+                    //enable the data-tables jQuery plugin for better table uttils.
+                   $this->Html->scriptStart(['block' => true]);
+                   echo "$(document).ready(function(){
+                       $('#data-table').DataTable();
+                   });";
+                   $this->Html->scriptEnd();
+				
 					?>
 						<div class="col-12 last panel">
 						<!-- Show table layout in Admin view -->
@@ -40,9 +40,10 @@ $this->Html->scriptEnd();
 							<thead>
 								<tr>
 								<th><?= __('Item Image') ?></th>
-								<th><?= __('item_name') ?></th>
-								<th><?= __('quantity_on_hand') ?></th>
-								<th><?= __('item_number') ?></th>
+								<th><?= __('Item name') ?></th>
+								<th><?= __('Quantity on hand') ?></th>
+								<th><?= __('Item Number') ?></th>
+								<th><?= __('Item Barcode') ?></th>
 								<th class="actions"><?= __('Actions') ?></th>
 								</tr>
 							</thead>
@@ -54,32 +55,24 @@ $this->Html->scriptEnd();
 								<td><?= h($item->item_name) ?></td>
 								<td><?= $this->Number->format($item->quantity_on_hand) ?></td>
 								<td><?= $this->Number->format($item->item_number, ['pattern' => '########']) ?></td>
+								<td><?= $this->Number->format($item->barcode, ['pattern' => '########']) ?></td>
 								<td class="actions">
 								<?= $this->Html->link(__('View'), ['action' => 'view', $item->id], ['class' => 'label']) ?>
 								<?= $this->Html->link(__('Edit'), ['action' => 'edit', $item->id], ['class' => 'label']) ?>
 								<?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $item->id], ['confirm' => __('Are you sure you want to delete item {0} with item number {1} ?', $item->item_name, $item->item_number), 'class' => 'label danger']) ?>
-								<?= $this->Html->link(__('Add to Shopping Cart'), ['controller' => 'shoppingCarts', 'action' => 'addItem', $item->id], ['class' => 'label']) ?>
+								<!-- <?= $this->Html->link(__('Add to Shopping Cart'), ['controller' => 'Shopcart', 'action' => 'addItem', $item->id], ['class' => 'label']) ?> -->
 								</td>
 								</tr>
 
 								<?php endforeach; ?>
 							</tbody>
 						</table>
-					<!--
-<div class="paginator">
-						<ul class="pagination">
-						<?= $this->Paginator->prev('< ' . __('previous')) ?>
-						<?= $this->Paginator->numbers() ?>
-						<?= $this->Paginator->next(__('next') . ' >') ?>
-						</ul>
-						<p><?= $this->Paginator->counter() ?></p>
-					</div>
--->
 				</div>
 				<?php
 				} else {
 				?>
-				<div class="col-3 sidebar">
+				<div class="col-3 sidebar user" id="userRole">
+				
 					<div class="module">
 						<h3>
 							Sort by
@@ -93,6 +86,13 @@ $this->Html->scriptEnd();
 						</h3>
 						<a href="orders">
 							Check orders
+						</a>
+						<hr>
+						<h3>
+							Shopping Cart
+						</h3>
+						<a href="shopcart">
+							View Cart
 						</a>
 					</div>
 				</div>
@@ -108,15 +108,16 @@ $this->Html->scriptEnd();
 								$this->Html->image('graphics/' . $item->photo, ['alt' => $item->item_name, 'fullBase' => true, 'class' => 'item_image']) : h('NO Image Yet'); ?>
 							</div>
 							<div class="info">
-								<span class="item-name">
+								<h3 class="item-name">
 								<?= h($item->item_name) ?>
-								</span>
+								</h3>
 								
 								<div>
 								<span class="item-quantity">
 								#<?= $this->Number->format($item->quantity_on_hand) ?>
 								</span>
-								<?= $this->Html->link(__('Add to Shopping Cart'), ['controller' => 'shoppingCarts', 'action' => 'addItem', $item->id], ['class' => 'label right']) ?>
+								<img class="barcode-container" data-barcode="<?= $this->Number->format($item->barcode, ['pattern' => '########']) ?>">
+								<?= $this->Html->link(__('Add to Shopping Cart'), ['controller' => 'Shopcart', 'action' => 'addItem', $item->id], ['class' => 'label']) ?>
 								</div>
 							</div>
 						</div>

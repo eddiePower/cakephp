@@ -16,7 +16,7 @@
 		//echo debug($userRole);
 	if($userRole == 'admin')
 	{
-    	echo $this->Form->input('role', ['options' => ['admin' => 'Admin', 'user' => 'User']]);
+    	echo $this->Form->input('role', ['options' => ['admin' => 'Admin', 'salesRep' => 'Sales Rep', 'user' => 'User']]);
 
 	}
 	?>

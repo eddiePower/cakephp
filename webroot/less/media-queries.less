@@ -32,13 +32,25 @@
 	.panel {
 		margin-bottom: 16px;
 	}
+	
+	.row,
+	.header-nav{
+		width: 480px;
+	}
+	
+	.site-footer h3 {
+		margin-top: 16px;
+	}
 }
 
 // Sample media queries(not used by lightgrid)
-@media only screen and (min-device-width : 768px) and (max-device-width : 1023px) {
-
+@media only screen and (min-width : 768px) and (max-width : 1023px) {
+	.row,
+	.header-nav{
+		width: 768px;
+	}
 }
 
-@media only screen and (min-device-width : 1024px) and (max-device-width : 1200px) {
+@media only screen and (min-width : 1024px) and (max-width : 1200px) {
 
 }

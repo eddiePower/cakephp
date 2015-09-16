@@ -15,6 +15,7 @@
 	echo $this->Form->input('item_name');
 	echo $this->Form->input('quantity_on_hand');
 	echo $this->Form->input('item_number');
+	echo $this->Form->input('barcode');
 	echo $this->Form->file('photo', ['label' =>'Item Image','size'=>'50']);
 	?>
 	<?= $this->Form->button(__('Submit'), ['class' => 'positive']) ?>
