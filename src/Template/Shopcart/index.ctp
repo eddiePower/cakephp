@@ -1,3 +1,4 @@
+
 <div class="actions columns large-2 medium-3">
     <h3><?= __('Actions') ?></h3>
     <ul class="side-nav">
@@ -7,20 +8,26 @@
         <li><?= $this->Html->link(__('List Items'), ['controller' => 'Items', 'action' => 'index']) ?></li>
     </ul>
 </div>
+<?=
+//enable the data-tables jQuery plugin for better table uttils.
+$this->Html->scriptStart(['block' => true]);
+echo "$(document).ready(function(){
+    $('#data-table').DataTable();
+});";
+$this->Html->scriptEnd();
+?>
 <div class="shopcart index large-10 medium-9 columns">
-    <table cellpadding="0" cellspacing="0">
+        <table class="table table-bordered table-striped" id="data-table" cellpadding="0" cellspacing="0">
     <thead>
-        <tr>
-<!--             <th><?= $this->Paginator->sort('id') ?></th> -->
-            <th><?= $this->Paginator->sort('user_id') ?></th>
-            <th><?= $this->Paginator->sort('created') ?></th>
+	<tr style="height: 50px">
+            <th><?= __('User ID') ?></th>
+            <th><?= __('Date Created') ?></th>
             <th class="actions"><?= __('Actions') ?></th>
         </tr>
     </thead>
     <tbody>
     <?php foreach ($shopcart as $shopcart): ?>
         <tr>
-<!--             <td><?= $this->Number->format($shopcart->id) ?></td> -->
             <td>
                 <?= $shopcart->has('user') ? $this->Html->link($shopcart->user->email, ['controller' => 'Users', 'action' => 'view', $shopcart->user->id]) : '' ?>
             </td>
@@ -35,12 +42,4 @@
     <?php endforeach; ?>
     </tbody>
     </table>
-    <div class="paginator">
-        <ul class="pagination">
-            <?= $this->Paginator->prev('< ' . __('previous')) ?>
-            <?= $this->Paginator->numbers() ?>
-            <?= $this->Paginator->next(__('next') . ' >') ?>
-        </ul>
-        <p><?= $this->Paginator->counter() ?></p>
-    </div>
 </div>

@@ -50,18 +50,14 @@ class OrdersTable extends Table
             ->allowEmpty('id', 'create');
             
         $validator
-            ->add('shipped_date', 'valid', ['rule' => 'date'])
-            ->requirePresence('shipped_date', 'create')
-            ->notEmpty('shipped_date');
+            ->add('ordered_date', 'valid', ['rule' => 'date'])
+            ->requirePresence('ordered_date', 'create')
+            ->notEmpty('ordered_date');
             
         $validator
             ->add('required_date', 'valid', ['rule' => 'date'])
             ->requirePresence('required_date', 'create')
             ->notEmpty('required_date');
-            
-        $validator
-            ->requirePresence('status', 'create')
-            ->notEmpty('status');
 
         return $validator;
     }

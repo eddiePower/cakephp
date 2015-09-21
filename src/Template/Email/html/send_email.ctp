@@ -64,33 +64,26 @@ tbody tr:hover { background-color: #fff1af !important; }
   				A message from Solemate doormats
   			</h2>
   			<p class="" style="margin-top: 1.375em; margin-bottom: 1.375em;">
+  			Hi <?= $user->username; ?> here is the latest news from Solemate Doormats delivered just for you,
+  			We have your current customer info as: <br />
+  			Business Name: <?= $cust->first_name . " " . $cust->last_name; ?><br />
+  			Address: <?= $cust->address; ?><br />
+  			Phone: <?= $cust->phone; ?><br />  			
+  			Here is our latest news for you,
             <?php
                 $content = explode("\n", $content);
                 
                 //print out all lines in the message variable from our send email form
                 foreach ($content as $line):
-                        echo '<p> ' . $line . "</p>\n";
+                        echo ' ' . $line . " \n";
                 endforeach;
                 
                 
-                echo "<br /><br />===================================================================";
-                
-                
-                //check if we have viewVars called cust then
-                if(is_array($cust))
-                {
-                    //loop through each customer as a customer
-                    foreach($cust as $customer)
-                    {
-                       echo "<br />Customer " . $customer->id . "'s information we have is " . $customer . "<br />";
-                    } 
-                    
-                }
-                else
-                {
-                   debug($cust . "is the customer data.");
-                }
-                echo "===================================================================<br />";
+                //echo "<br /><br />===================================================================";
+            
+                //debug($cust . "is the customer data.");
+                //debug($user . " is the user data sent ova");
+                //echo "===================================================================<br />";
             ?>
             </p>	
   		</div>

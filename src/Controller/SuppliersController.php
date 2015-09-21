@@ -1,4 +1,17 @@
 <?php
+
+/*
+ *   SuppliersController.php by Eddie Power.
+ *	 Team 18 - Heisenburg 
+ *	 IE Project 2015.
+ *	 Team Members: 
+ *		User Documentation: Linc Lui
+ *	    CSS3 & Javascript: Shash Amin
+ * 	    CakePHP 3.X / DB : Eddie Power
+ *	 Copyright 2015. Solemate Doormats
+ *   
+ */
+
 namespace App\Controller;
 
 use App\Controller\AppController;

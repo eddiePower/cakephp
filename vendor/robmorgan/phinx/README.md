@@ -87,7 +87,7 @@ You can also use the Box application to build Phinx as a Phar archive (http://bo
 1. Install Box:
 
     ```
-    curl -s http://box-project.org/installer.php | php
+    curl -LSs https://box-project.github.io/box2/installer.php | php
     ```
 
 1. Create a Phar archive
@@ -111,6 +111,22 @@ Follow Rob (@\_rjm\_) on Twitter to stay up to date (http://twitter.com/_rjm_)
 ## Misc
 
 ### Version History
+
+**0.4.6** (Friday, 11th September 2015)
+
+* You can now set custom migration templates in the config files
+* Support for MySQL unsigned booleans
+* Support for Postgres `smallint` column types
+* Support for `AFTER` when using `changeColumn()` with MySQL
+* Support for `precision` and `scale` when using the Postgres `decimal` type
+* Fixed a bug where duplicate migration names could be used
+* The schema table is now created with a primary key
+* Fixed issues when using the MySQL `STRICT_TRANS_TABLE` mode
+* Improved the docs in the default migration template
+* Made Box PHAR ignore the bundled `phinx.yml` configuration file
+* Updated Box installer URL
+* Internal code improvements
+* Documentation improvements
 
 **0.4.5** (Tuesday, 1st September 2015)
 

@@ -11,31 +11,40 @@ Orders
 	<?= $this->Html->link(__('List Order Details'), ['controller' => 'OrderDetails', 'action' => 'index'], ['class' => 'nav-item']) ?>
 	<?= $this->Html->link(__('New Order Detail'), ['controller' => 'OrderDetails', 'action' => 'add'], ['class' => 'nav-item']) ?>
 </nav>
-
+<?=
+//enable the data-tables jQuery plugin for better table uttils.
+$this->Html->scriptStart(['block' => true]);
+echo "$(document).ready(function(){
+    $('#data-table').DataTable();
+});";
+$this->Html->scriptEnd();
+?>
 <div class="col-12 last panel">
  <?= $this->Flash->render(); ?>
-	<table cellpadding="0" cellspacing="0">
+	<table class="table table-bordered table-striped" id="data-table" cellpadding="0" cellspacing="0">
 		<thead>
-		<tr>
-		    <th><?= $this->Paginator->sort('id') ?></th>
-			<th><?= $this->Paginator->sort('shipped_date') ?></th>
-			<th><?= $this->Paginator->sort('required_date') ?></th>
-			<th><?= $this->Paginator->sort('status') ?></th>
-			<th><?= $this->Paginator->sort('courier_id') ?></th>
-			<th><?= $this->Paginator->sort('customer_id') ?></th>
+		<tr style="height: 50px">
+		    <!-- <th><?= $this->Paginator->sort('id') ?></th> -->
+			<th><?= __('Ordered Date') ?></th>
+			<th><?= __('Required Date') ?></th>
+			<th><?= __('Customer Comments') ?></th>
+<!-- 			<th><?= $this->Paginator->sort('courier_id') ?></th> -->
+			<th><?= __('Customer ID') ?></th>
 			<th class="actions"><?= __('Actions') ?></th>
 		</tr>
 		</thead>
 	<tbody>
 	<?php foreach ($orders as $order): ?>
 			<tr>
-			        <td><?= h($order->id) ?></td>
-					<td><?= h($order->shipped_date) ?></td>
+			        <!-- <td><?= h($order->id) ?></td> -->
+					<td><?= h($order->ordered_date) ?></td>
 					<td><?= h($order->required_date) ?></td>
-					<td><?= h($order->status) ?></td>
-					<td>
+					<td><?=  $order->customer_comments != '' ? h($order->customer_comments) : __('No comments added')  ?></td>
+					<!--
+<td>
 							<?= $order->has('courier') ? $this->Html->link($order->courier->courier_name, ['controller' => 'Couriers', 'action' => 'view', $order->courier->id]) : '' ?>
 					</td>
+-->
 					<td>
 							<?= $order->has('customer') ? $this->Html->link($order->customer->first_name, ['controller' => 'Customers', 'action' => 'view', $order->customer->id]) : '' ?>
 					</td>
@@ -49,12 +58,4 @@ Orders
 	<?php endforeach; ?>
 	</tbody>
 	</table>
-	<div class="paginator">
-			<ul class="pagination">
-					<?= $this->Paginator->prev('< ' . __('previous')) ?>
-					<?= $this->Paginator->numbers() ?>
-					<?= $this->Paginator->next(__('next') . ' >') ?>
-			</ul>
-			<p><?= $this->Paginator->counter() ?></p>
-	</div>
 </div>

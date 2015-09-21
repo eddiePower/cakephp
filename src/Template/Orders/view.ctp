@@ -1,5 +1,12 @@
 <h1 class="center">Order details - <?= h($order->shipped_date) ?></h1>
-
+<?=
+//enable the data-tables jQuery plugin for better table uttils.
+$this->Html->scriptStart(['block' => true]);
+echo "$(document).ready(function(){
+    $('#data-table').DataTable();
+});";
+$this->Html->scriptEnd();
+?>
 <nav class="nav-container">
 	<?= $this->Html->link(__('Edit Order'), ['action' => 'edit', $order->id], ['class' => 'nav-item']) ?>
 	<?= $this->Form->postLink(__('Delete Order'), ['action' => 'delete', $order->id], ['confirm' => __('Are you sure you want to delete # {0}?', $order->id), 'class' => 'nav-item']) ?>
@@ -16,20 +23,22 @@
 <div class="col-12 last panel">
  <?= $this->Flash->render(); ?>
 	<h3>Order ID : <?= h($order->id) ?></h3>
-	<table>
+	<table id="data-table">
 		<thead>
-			<tr>
+			<tr style="height:50px;">
 				<td>
-					<?= __('Status') ?>
+					<?= __('Customer Comments') ?>
 				</td>
+<!--
 				<td>
 					<?= __('Courier') ?>
 				</td>
+-->
 				<td>
 					<?= __('Customer') ?>
 				</td>
 				<td>
-					<?= __('Shipped Date') ?>
+					<?= __('Ordered Date') ?>
 				</td>
 				<td>
 					<?= __('Required Date') ?>
@@ -39,16 +48,18 @@
 		<tbody>
 			<tr>
 				<td>
-					<?= h($order->status) ?>
+					<?= h($order->customer_comments) ?>
 				</td>
+<!--
 				<td>
 					<?= $order->has('courier') ? $this->Html->link($order->courier->courier_name, ['controller' => 'Couriers', 'action' => 'view', $order->courier->id]) : '' ?>
 				</td>
+-->
 				<td>
 					<?= $order->has('customer') ? $this->Html->link($order->customer->first_name, ['controller' => 'Customers', 'action' => 'view', $order->customer->id]) : '' ?>
 				</td>
 				<td>
-					<?= h($order->shipped_date) ?>
+					<?= h($order->ordered_date) ?>
 				</td>
 				<td>
 					<?= h($order->required_date) ?>
@@ -61,8 +72,8 @@
 
 	<h4 class="subheader"><?= __('Related Order Details of order #' . $order->id) ?></h4>
 	<?php if (!empty($order->order_details)): ?>
-	<table cellpadding="0" cellspacing="0">
-	<tr>
+	<table  id="data-table" cellpadding="0" cellspacing="0">
+	<tr style="height:50px;">
 	<th><?= __('Item Id') ?></th>
 	<th><?= __('Order Id') ?></th>
 	<th><?= __('Quantity Ordered') ?></th>
@@ -73,6 +84,7 @@
 	</tr>
 	<?php foreach ($order->order_details as $orderDetails): ?>
 	<tr>
+<!-- 	<?= debug($orderDetails->item_id); ?> -->
 	<td><?= h($orderDetails->item_id) ?></td>
 	<td><?= h($orderDetails->order_id) ?></td>
 	<td><?= h($orderDetails->quantity_ordered) ?></td>

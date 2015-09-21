@@ -50,14 +50,5 @@ $this->Html->scriptEnd();
     <?php endforeach; ?>
     </tbody>
     </table>
-<!-- Not used in the dataTables plugin as it handles it internally.
-    <div class="paginator">
-        <ul class="pagination">
-            <?= $this->Paginator->prev('< ' . __('previous')) ?>
-            <?= $this->Paginator->numbers() ?>
-            <?= $this->Paginator->next(__('next') . ' >') ?>
-        </ul>
-        <p><?= $this->Paginator->counter() ?></p>
-    </div>-->
 </div>
 

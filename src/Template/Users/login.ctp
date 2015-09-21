@@ -1,7 +1,9 @@
 <h1 class="center">
 User Login
 </h1>
-
+     <!-- show and flash messages here on the view page. -->
+     <?= $this->Flash->render(); ?>
+     
 <div class="col-4 offset-4 panel">
     <?= $this->Flash->render(); ?>
     <?= $this->Form->create(null, []) ?>

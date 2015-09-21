@@ -3,10 +3,16 @@ namespace App\Controller;
 
 use App\Controller\AppController;
 
-/**
- * Couriers Controller
- *
- * @property \App\Model\Table\CouriersTable $Couriers
+/*
+ *   CouriersController.php by Eddie Power.
+ *	 Team 18 - Heisenburg 
+ *	 IE Project 2015.
+ *	 Team Members: 
+ *		User Documentation: Linc Lui
+ *	    CSS3 & Javascript: Shash Amin
+ * 	    CakePHP 3.X / DB : Eddie Power
+ *	 Copyright 2015. Solemate Doormats
+ *   
  */
 class CouriersController extends AppController
 {

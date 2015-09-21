@@ -587,53 +587,6 @@
         ]
     },
     {
-        "name": "nikic/php-parser",
-        "version": "v1.4.0",
-        "version_normalized": "1.4.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/nikic/PHP-Parser.git",
-            "reference": "196f177cfefa0f1f7166c0a05d8255889be12418"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/196f177cfefa0f1f7166c0a05d8255889be12418",
-            "reference": "196f177cfefa0f1f7166c0a05d8255889be12418",
-            "shasum": ""
-        },
-        "require": {
-            "ext-tokenizer": "*",
-            "php": ">=5.3"
-        },
-        "time": "2015-07-14 17:31:05",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "1.4-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "files": [
-                "lib/bootstrap.php"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause"
-        ],
-        "authors": [
-            {
-                "name": "Nikita Popov"
-            }
-        ],
-        "description": "A PHP parser written in PHP",
-        "keywords": [
-            "parser",
-            "php"
-        ]
-    },
-    {
         "name": "psy/psysh",
         "version": "v0.5.2",
         "version_normalized": "0.5.2.0",
@@ -810,362 +763,6 @@
             "cookie",
             "login",
             "plugin"
-        ]
-    },
-    {
-        "name": "cakephp/debug_kit",
-        "version": "3.1.10",
-        "version_normalized": "3.1.10.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/cakephp/debug_kit.git",
-            "reference": "960b96b47a2f4ebd44b1d484807b80ce6e691576"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/cakephp/debug_kit/zipball/960b96b47a2f4ebd44b1d484807b80ce6e691576",
-            "reference": "960b96b47a2f4ebd44b1d484807b80ce6e691576",
-            "shasum": ""
-        },
-        "require": {
-            "cakephp/cakephp": "3.0.*",
-            "jdorn/sql-formatter": "~1.2"
-        },
-        "require-dev": {
-            "cakephp/cakephp-codesniffer": "dev-master",
-            "phpunit/phpunit": "4.1.*"
-        },
-        "suggest": {
-            "ext-sqlite": "DebugKit needs to store panel data in a database. SQLite is simple and easy to use."
-        },
-        "time": "2015-08-24 06:26:27",
-        "type": "cakephp-plugin",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "3.0.x-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "DebugKit\\": "src",
-                "DebugKit\\Test\\Fixture\\": "tests\\Fixture"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Mark Story",
-                "homepage": "http://mark-story.com",
-                "role": "Author"
-            },
-            {
-                "name": "CakePHP Community",
-                "homepage": "https://github.com/cakephp/debug_kit/graphs/contributors"
-            }
-        ],
-        "description": "CakePHP Debug Kit",
-        "homepage": "https://github.com/cakephp/debug_kit",
-        "keywords": [
-            "cakephp",
-            "debug",
-            "kit"
-        ]
-    },
-    {
-        "name": "cakephp/bake",
-        "version": "1.0.13",
-        "version_normalized": "1.0.13.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/cakephp/bake.git",
-            "reference": "36a58b1d953bd31c3d380394639850cbc726cd09"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/cakephp/bake/zipball/36a58b1d953bd31c3d380394639850cbc726cd09",
-            "reference": "36a58b1d953bd31c3d380394639850cbc726cd09",
-            "shasum": ""
-        },
-        "require": {
-            "cakephp/cakephp": "~3.0",
-            "php": ">=5.4"
-        },
-        "require-dev": {
-            "cakephp/cakephp-codesniffer": "dev-master",
-            "phpunit/phpunit": "*"
-        },
-        "time": "2015-08-21 16:51:34",
-        "type": "cakephp-plugin",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Bake\\": "src"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "CakePHP Community",
-                "homepage": "https://github.com/cakephp/bake/graphs/contributors"
-            }
-        ],
-        "description": "Bake plugin for CakePHP 3.0",
-        "homepage": "https://github.com/cakephp/bake",
-        "keywords": [
-            "bake",
-            "cakephp"
-        ]
-    },
-    {
-        "name": "mobiledetect/mobiledetectlib",
-        "version": "2.8.16",
-        "version_normalized": "2.8.16.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/serbanghita/Mobile-Detect.git",
-            "reference": "9a8b6c6b259924a7c80021da8ba167766a9fd5b6"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/serbanghita/Mobile-Detect/zipball/9a8b6c6b259924a7c80021da8ba167766a9fd5b6",
-            "reference": "9a8b6c6b259924a7c80021da8ba167766a9fd5b6",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.0.0"
-        },
-        "require-dev": {
-            "codeclimate/php-test-reporter": "dev-master",
-            "johnkary/phpunit-speedtrap": "~1.0@dev",
-            "phpunit/phpunit": "*"
-        },
-        "time": "2015-08-31 13:30:54",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "classmap": [
-                "Mobile_Detect.php"
-            ],
-            "psr-0": {
-                "Detection": "namespaced/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Serban Ghita",
-                "email": "serbanghita@gmail.com",
-                "homepage": "http://mobiledetect.net",
-                "role": "Developer"
-            }
-        ],
-        "description": "Mobile_Detect is a lightweight PHP class for detecting mobile devices. It uses the User-Agent string combined with specific HTTP headers to detect the mobile environment.",
-        "homepage": "https://github.com/serbanghita/Mobile-Detect",
-        "keywords": [
-            "detect mobile devices",
-            "mobile",
-            "mobile detect",
-            "mobile detector",
-            "php mobile detect"
-        ]
-    },
-    {
-        "name": "robmorgan/phinx",
-        "version": "v0.4.5",
-        "version_normalized": "0.4.5.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/robmorgan/phinx.git",
-            "reference": "c3f379aebc48266a41d3f72e57db509235a2c1fe"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/robmorgan/phinx/zipball/c3f379aebc48266a41d3f72e57db509235a2c1fe",
-            "reference": "c3f379aebc48266a41d3f72e57db509235a2c1fe",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.2",
-            "symfony/config": "~2.7",
-            "symfony/console": "~2.7",
-            "symfony/yaml": "~2.7"
-        },
-        "require-dev": {
-            "phpunit/phpunit": "3.7.*",
-            "squizlabs/php_codesniffer": "dev-phpcs-fixer"
-        },
-        "time": "2015-09-01 10:19:53",
-        "bin": [
-            "bin/phinx"
-        ],
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Phinx\\": "src/Phinx"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Rob Morgan",
-                "email": "robbym@gmail.com",
-                "homepage": "http://robmorgan.id.au",
-                "role": "Lead Developer"
-            },
-            {
-                "name": "Woody Gilk",
-                "email": "woody.gilk@gmail.com",
-                "homepage": "http://shadowhand.me",
-                "role": "Developer"
-            }
-        ],
-        "description": "Phinx makes it ridiculously easy to manage the database migrations for your PHP app.",
-        "homepage": "https://phinx.org",
-        "keywords": [
-            "database",
-            "database migrations",
-            "db",
-            "migrations",
-            "phinx"
-        ]
-    },
-    {
-        "name": "elboletaire/twbs-cake-plugin",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/elboletaire/twbs-cake-plugin.git",
-            "reference": "8cb68f266dd466eae504de082cdb6424dc18efbc"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/elboletaire/twbs-cake-plugin/zipball/8cb68f266dd466eae504de082cdb6424dc18efbc",
-            "reference": "8cb68f266dd466eae504de082cdb6424dc18efbc",
-            "shasum": ""
-        },
-        "require": {
-            "cakephp/cakephp": "~3.0",
-            "elboletaire/less-cake-plugin": ">=1.6.1",
-            "friendsofcake/bootstrap-ui": "~0.3",
-            "php": ">=5.4.19"
-        },
-        "time": "2015-09-01 13:37:28",
-        "type": "cakephp-plugin",
-        "installation-source": "source",
-        "autoload": {
-            "psr-4": {
-                "Bootstrap\\": "src"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Òscar Casajuana",
-                "email": "elboletaire@underave.net",
-                "homepage": "http://racotecnic.com",
-                "role": "Developer"
-            }
-        ],
-        "description": "Twitter Bootstrap Plugin for CakePHP 3 with bundled less.php and less.js parsers, helpers and bake templates",
-        "keywords": [
-            "bootstrap",
-            "cakephp",
-            "plugin"
-        ]
-    },
-    {
-        "name": "cakephp/cakephp",
-        "version": "3.0.13",
-        "version_normalized": "3.0.13.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/cakephp/cakephp.git",
-            "reference": "5921b2facedbc4cdcdc4daa5f736118838796bad"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/cakephp/cakephp/zipball/5921b2facedbc4cdcdc4daa5f736118838796bad",
-            "reference": "5921b2facedbc4cdcdc4daa5f736118838796bad",
-            "shasum": ""
-        },
-        "require": {
-            "aura/intl": "1.1.*",
-            "ext-intl": "*",
-            "ext-mbstring": "*",
-            "ircmaxell/password-compat": "1.0.*",
-            "nesbot/carbon": "1.13.*",
-            "php": ">=5.4.16",
-            "psr/log": "1.0"
-        },
-        "replace": {
-            "cakephp/cache": "self.version",
-            "cakephp/collection": "self.version",
-            "cakephp/core": "self.version",
-            "cakephp/database": "self.version",
-            "cakephp/datasource": "self.version",
-            "cakephp/event": "self.version",
-            "cakephp/filesystem": "self.version",
-            "cakephp/i18n": "self.version",
-            "cakephp/log": "self.version",
-            "cakephp/orm": "self.version",
-            "cakephp/utility": "self.version",
-            "cakephp/validation": "self.version"
-        },
-        "require-dev": {
-            "cakephp/cakephp-codesniffer": "dev-master",
-            "phpunit/phpunit": "*"
-        },
-        "time": "2015-09-07 01:53:22",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "3.0.x-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Cake\\": "src"
-            },
-            "files": [
-                "src/Core/functions.php",
-                "src/Collection/functions.php",
-                "src/I18n/functions.php",
-                "src/Utility/bootstrap.php"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "CakePHP Community",
-                "homepage": "https://github.com/cakephp/cakephp/graphs/contributors"
-            }
-        ],
-        "description": "The CakePHP framework",
-        "homepage": "http://cakephp.org",
-        "keywords": [
-            "framework"
         ]
     },
     {
@@ -1493,5 +1090,403 @@
         ],
         "description": "Symfony Yaml Component",
         "homepage": "https://symfony.com"
+    },
+    {
+        "name": "mobiledetect/mobiledetectlib",
+        "version": "2.8.17",
+        "version_normalized": "2.8.17.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/serbanghita/Mobile-Detect.git",
+            "reference": "b87da5f63a76e9615a0c74fcf168657b1ea7e41d"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/serbanghita/Mobile-Detect/zipball/b87da5f63a76e9615a0c74fcf168657b1ea7e41d",
+            "reference": "b87da5f63a76e9615a0c74fcf168657b1ea7e41d",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.0.0"
+        },
+        "require-dev": {
+            "codeclimate/php-test-reporter": "dev-master",
+            "johnkary/phpunit-speedtrap": "~1.0@dev",
+            "phpunit/phpunit": "*"
+        },
+        "time": "2015-09-17 14:45:21",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "Mobile_Detect.php"
+            ],
+            "psr-0": {
+                "Detection": "namespaced/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Serban Ghita",
+                "email": "serbanghita@gmail.com",
+                "homepage": "http://mobiledetect.net",
+                "role": "Developer"
+            }
+        ],
+        "description": "Mobile_Detect is a lightweight PHP class for detecting mobile devices. It uses the User-Agent string combined with specific HTTP headers to detect the mobile environment.",
+        "homepage": "https://github.com/serbanghita/Mobile-Detect",
+        "keywords": [
+            "detect mobile devices",
+            "mobile",
+            "mobile detect",
+            "mobile detector",
+            "php mobile detect"
+        ]
+    },
+    {
+        "name": "robmorgan/phinx",
+        "version": "v0.4.6",
+        "version_normalized": "0.4.6.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/robmorgan/phinx.git",
+            "reference": "1351ca36dd2419d7de02afd1aaa415929112d7f1"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/robmorgan/phinx/zipball/1351ca36dd2419d7de02afd1aaa415929112d7f1",
+            "reference": "1351ca36dd2419d7de02afd1aaa415929112d7f1",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.2",
+            "symfony/config": "~2.7",
+            "symfony/console": "~2.7",
+            "symfony/yaml": "~2.7"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "3.7.*",
+            "squizlabs/php_codesniffer": "dev-phpcs-fixer"
+        },
+        "time": "2015-09-11 15:44:41",
+        "bin": [
+            "bin/phinx"
+        ],
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Phinx\\": "src/Phinx"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Rob Morgan",
+                "email": "robbym@gmail.com",
+                "homepage": "http://robmorgan.id.au",
+                "role": "Lead Developer"
+            },
+            {
+                "name": "Woody Gilk",
+                "email": "woody.gilk@gmail.com",
+                "homepage": "http://shadowhand.me",
+                "role": "Developer"
+            }
+        ],
+        "description": "Phinx makes it ridiculously easy to manage the database migrations for your PHP app.",
+        "homepage": "https://phinx.org",
+        "keywords": [
+            "database",
+            "database migrations",
+            "db",
+            "migrations",
+            "phinx"
+        ]
+    },
+    {
+        "name": "elboletaire/twbs-cake-plugin",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/elboletaire/twbs-cake-plugin.git",
+            "reference": "4dda225b697bf12198d91b4d88015fce7499e3ca"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/elboletaire/twbs-cake-plugin/zipball/4dda225b697bf12198d91b4d88015fce7499e3ca",
+            "reference": "4dda225b697bf12198d91b4d88015fce7499e3ca",
+            "shasum": ""
+        },
+        "require": {
+            "cakephp/cakephp": "~3.0",
+            "elboletaire/less-cake-plugin": ">=1.6.1",
+            "friendsofcake/bootstrap-ui": "~0.3",
+            "php": ">=5.4.19"
+        },
+        "time": "2015-09-13 21:18:55",
+        "type": "cakephp-plugin",
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "Bootstrap\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Òscar Casajuana",
+                "email": "elboletaire@underave.net",
+                "homepage": "http://racotecnic.com",
+                "role": "Developer"
+            }
+        ],
+        "description": "Twitter Bootstrap Plugin for CakePHP 3 with bundled less.php and less.js parsers, helpers and bake templates",
+        "keywords": [
+            "bootstrap",
+            "cakephp",
+            "plugin"
+        ]
+    },
+    {
+        "name": "cakephp/cakephp",
+        "version": "3.1.0",
+        "version_normalized": "3.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/cakephp/cakephp.git",
+            "reference": "e430f46594877acf7f165464d097d2167e1ba166"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/cakephp/cakephp/zipball/e430f46594877acf7f165464d097d2167e1ba166",
+            "reference": "e430f46594877acf7f165464d097d2167e1ba166",
+            "shasum": ""
+        },
+        "require": {
+            "aura/intl": "1.1.*",
+            "ext-intl": "*",
+            "ext-mbstring": "*",
+            "ircmaxell/password-compat": "1.0.*",
+            "nesbot/carbon": "1.13.*",
+            "php": ">=5.4.16",
+            "psr/log": "1.0"
+        },
+        "replace": {
+            "cakephp/cache": "self.version",
+            "cakephp/collection": "self.version",
+            "cakephp/core": "self.version",
+            "cakephp/database": "self.version",
+            "cakephp/datasource": "self.version",
+            "cakephp/event": "self.version",
+            "cakephp/filesystem": "self.version",
+            "cakephp/i18n": "self.version",
+            "cakephp/log": "self.version",
+            "cakephp/orm": "self.version",
+            "cakephp/utility": "self.version",
+            "cakephp/validation": "self.version"
+        },
+        "require-dev": {
+            "cakephp/cakephp-codesniffer": "dev-master",
+            "phpunit/phpunit": "*"
+        },
+        "time": "2015-09-20 02:14:20",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Cake\\": "src"
+            },
+            "files": [
+                "src/Core/functions.php",
+                "src/Collection/functions.php",
+                "src/I18n/functions.php",
+                "src/Utility/bootstrap.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "CakePHP Community",
+                "homepage": "https://github.com/cakephp/cakephp/graphs/contributors"
+            }
+        ],
+        "description": "The CakePHP framework",
+        "homepage": "http://cakephp.org",
+        "keywords": [
+            "framework"
+        ]
+    },
+    {
+        "name": "cakephp/debug_kit",
+        "version": "3.2.0",
+        "version_normalized": "3.2.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/cakephp/debug_kit.git",
+            "reference": "63f39fe6edd5609f7ed7b570ebb6690f05ebfd72"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/cakephp/debug_kit/zipball/63f39fe6edd5609f7ed7b570ebb6690f05ebfd72",
+            "reference": "63f39fe6edd5609f7ed7b570ebb6690f05ebfd72",
+            "shasum": ""
+        },
+        "require": {
+            "cakephp/cakephp": "3.1.*",
+            "jdorn/sql-formatter": "~1.2"
+        },
+        "require-dev": {
+            "cakephp/cakephp-codesniffer": "dev-master",
+            "phpunit/phpunit": "4.1.*"
+        },
+        "suggest": {
+            "ext-sqlite": "DebugKit needs to store panel data in a database. SQLite is simple and easy to use."
+        },
+        "time": "2015-09-20 02:00:26",
+        "type": "cakephp-plugin",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "DebugKit\\": "src",
+                "DebugKit\\Test\\Fixture\\": "tests\\Fixture"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Mark Story",
+                "homepage": "http://mark-story.com",
+                "role": "Author"
+            },
+            {
+                "name": "CakePHP Community",
+                "homepage": "https://github.com/cakephp/debug_kit/graphs/contributors"
+            }
+        ],
+        "description": "CakePHP Debug Kit",
+        "homepage": "https://github.com/cakephp/debug_kit",
+        "keywords": [
+            "cakephp",
+            "debug",
+            "kit"
+        ]
+    },
+    {
+        "name": "cakephp/bake",
+        "version": "1.1.0",
+        "version_normalized": "1.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/cakephp/bake.git",
+            "reference": "749c0081ca27027b93723d4305bcb4ad18012057"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/cakephp/bake/zipball/749c0081ca27027b93723d4305bcb4ad18012057",
+            "reference": "749c0081ca27027b93723d4305bcb4ad18012057",
+            "shasum": ""
+        },
+        "require": {
+            "cakephp/cakephp": "3.1.*",
+            "php": ">=5.4"
+        },
+        "require-dev": {
+            "cakephp/cakephp-codesniffer": "dev-master",
+            "phpunit/phpunit": "*"
+        },
+        "time": "2015-09-20 01:53:23",
+        "type": "cakephp-plugin",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Bake\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "CakePHP Community",
+                "homepage": "https://github.com/cakephp/bake/graphs/contributors"
+            }
+        ],
+        "description": "Bake plugin for CakePHP 3.0",
+        "homepage": "https://github.com/cakephp/bake",
+        "keywords": [
+            "bake",
+            "cakephp"
+        ]
+    },
+    {
+        "name": "nikic/php-parser",
+        "version": "v1.4.1",
+        "version_normalized": "1.4.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/nikic/PHP-Parser.git",
+            "reference": "f78af2c9c86107aa1a34cd1dbb5bbe9eeb0d9f51"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/f78af2c9c86107aa1a34cd1dbb5bbe9eeb0d9f51",
+            "reference": "f78af2c9c86107aa1a34cd1dbb5bbe9eeb0d9f51",
+            "shasum": ""
+        },
+        "require": {
+            "ext-tokenizer": "*",
+            "php": ">=5.3"
+        },
+        "time": "2015-09-19 14:15:08",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.4-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "lib/bootstrap.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Nikita Popov"
+            }
+        ],
+        "description": "A PHP parser written in PHP",
+        "keywords": [
+            "parser",
+            "php"
+        ]
     }
 ]

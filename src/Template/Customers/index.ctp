@@ -25,9 +25,8 @@ $this->Html->scriptEnd();
 	       {
 	       ?>
 	        <?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index'], ['class' => 'nav-item']) ?>
-
 	
-<!-- Send user to email listing and create email page.	 -->
+    <!-- Send user to email listing and create email page.	 -->
 	<?= $this->Html->link(__('Send Email'), ['controller' => 'Customers', 'action' => 'buildEmails'], ['class' => 'nav-item']) ?>
 	<?php
 	    }
@@ -41,12 +40,9 @@ $this->Html->scriptEnd();
 </nav>
 
 <div class="col-12 last panel">
-
-
-	
 	<table class="table table-bordered table-striped" id="data-table" cellpadding="0" cellspacing="0">
 		<thead>
-			<tr>
+		<tr style="height: 50px">
 				<th><?= __('First Name') ?></th>
 				<th><?= __('Last Name') ?></th>
 				<th><?= __('Customer Address') ?></th>

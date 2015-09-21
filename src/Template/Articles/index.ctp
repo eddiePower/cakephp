@@ -21,7 +21,7 @@ $this->Html->scriptEnd();
     <?= $this->Flash->render() ?>
     <table class="table table-bordered table-striped" id="data-table">
     <thead>
-    <tr>
+	<tr style="height: 50px">
 
         <th><?= __('Title') ?></th>
         <th><?= __('Created') ?></th>

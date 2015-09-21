@@ -38,7 +38,7 @@ if(isset($_SESSION['username']))  {
 						<!-- Show table layout in Admin view -->
 						<table cellpadding="0" cellspacing="0" id="data-table">
 							<thead>
-								<tr>
+		                       <tr style="height: 50px">
 								<th><?= __('Item Image') ?></th>
 								<th><?= __('Item name') ?></th>
 								<th><?= __('Quantity on hand') ?></th>
@@ -123,14 +123,6 @@ if(isset($_SESSION['username']))  {
 						</div>
 					<?php endforeach; ?>
 					<div class="clearfix"></div>
-					<div class="paginator">
-						<ul class="pagination">
-						<?= $this->Paginator->prev('< ' . __('previous')) ?>
-						<?= $this->Paginator->numbers() ?>
-						<?= $this->Paginator->next(__('next') . ' >') ?>
-						</ul>
-						<p><?= $this->Paginator->counter() ?></p>
-					</div>
 				</div>
 			<?php
 		}

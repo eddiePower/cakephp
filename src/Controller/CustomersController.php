@@ -2,13 +2,20 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\ORM\TableRegistry;
 //add the email library or what ever cakephp calls them
 use Cake\Network\Email\Email;
 
-/**
- * Customers Controller
- *
- * @property \App\Model\Table\CustomersTable $Customers
+/*
+ *   CustomersController.php by Eddie Power.
+ *	 Team 18 - Heisenburg 
+ *	 IE Project 2015.
+ *	 Team Members: 
+ *		User Documentation: Linc Lui
+ *	    CSS3 & Javascript: Shash Amin
+ * 	    CakePHP 3.X / DB : Eddie Power
+ *	 Copyright 2015. Solemate Doormats
+ *   
  */
 class CustomersController extends AppController
 {
@@ -310,8 +317,12 @@ class CustomersController extends AppController
                 {
                     $list++;
                     $cust = $this->Customers->get($id, ['contain' => []]);
-                    $customerList[$list] = $cust->first_name.' '.$cust->last_name;
+                    $customerList[$list] = $cust->first_name . ' ' . $cust->last_name;
+                    
+/*
+                    //add the checked customers to the email list.
                     $email->addTo($cust->email);
+*/
                     
                     //store this customer data into our viewVar array
                     array_push($allUsers, $cust);
@@ -325,8 +336,78 @@ class CustomersController extends AppController
             //set the type of email format and use our custom template.
             $email->emailFormat('html');
             $email->template('sendEmail');
+              
+              
+            //loop through all customers sending the same email but with a 
+            // custom heading by a for loop setting viewVar and sending the email
+            
+            foreach($allUsers as $custToSendTo)
+            {
+            
+                //set the email to send to as this customer for this loop iteration
+                //add the checked customers to the email list.
+                $email->to($custToSendTo['email']);
                     
-            //now send all our view vars over in the array $allUsers.
+                   //grab the user data who we are sending too.
+                   $query = TableRegistry::get('Users')->find();
+                   $query->where(['id' => $custToSendTo['user_id']]);
+           
+                   //loop through query result
+                    foreach($query as $user)
+                    {
+                    
+                        //debug($user);
+                        //when we match on the right user data from our DB lookup
+                        if($user->id == $custToSendTo['user_id'])
+                        {
+                            //set the viewVariable to this user data  --
+                            //  may limit the data sent for security soon.
+                            $userDetails = $user;
+                        }    
+                     }//end foreach query result (should only be one in this case) 
+            
+            
+                //now send all our view vars over in the array $allUsers.
+                $email->viewVars(['cust' => $custToSendTo]);
+                $email->viewVars(['user' => $userDetails]);
+                
+                //Set the email headers.
+                $email->from(['solemateDoormats@doNotReply.com' => 'Solemate Doormats inc']);
+                $email->sender(['solemate.doormats@gmail.com' => 'Solemate Doormats inc']);
+                $email->replyTo('solemate.doormats@gmail.com');
+                
+                //Begin the email building from the data provided in the form.
+                $email->subject($this->request->data['subject']);
+                
+                try
+                {
+                    //Grab the main body of the email to be sent in the form.
+                    $email->send($this->request->data['message']);
+                                        
+                    /*
+//loop through selected customers for showing in send to field of form.
+                    foreach ($customerList as $customer)
+                    {
+                        //print the customer names in the list above the email message
+                        $custTo .= $customer . "<br />";
+                    
+                    }
+*/
+                    
+                }
+                catch(Exception $e)
+                {
+                    //$this->Flash->error('Error sending email. ' . $e->getMessage());
+                }
+                    
+                    
+            }
+                  
+                  
+                  
+                  
+           /*
+ //now send all our view vars over in the array $allUsers.
             $email->viewVars(array('cust' => $allUsers));
             
             //Set the email headers.
@@ -344,21 +425,42 @@ class CustomersController extends AppController
                 
                 foreach ($customerList as $customer)
                 {
+                    //print the customer names in the list above the email message
                     $custTo .= $customer . "<br />";
 
                 }
-                
                 
                 $this->Flash->success('Your email was successfully sent.');
                 
                 //If the email is sent succesfully redirect back to the main customer page.
                 return $this->redirect(['controller' => 'Customers', 'action' => 'index']);
-
+              
             }
             catch(Exception $e)
             {
                 $this->Flash->error('Error sending email. ' . $e->getMessage());
-            }           
+            }
+*/           
+            
+            
+            
+            
+            
+            
+            if(isset($e))
+            {
+                $this->Flash->error('Error sending email. ' . $e->getMessage());
+            }
+            else
+            {
+              $this->Flash->success('Your email was successfully sent.');
+                
+              //If the email is sent succesfully redirect back to the main customer page.
+              return $this->redirect(['controller' => 'Customers', 'action' => 'index']);   
+            }
+           
+            
+            
         }//end request is post / put checking if loop        
     }
 }

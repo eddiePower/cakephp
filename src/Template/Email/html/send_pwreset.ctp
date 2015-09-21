@@ -66,15 +66,22 @@ tbody tr:hover { background-color: #fff1af !important; }
   			<p class="" style="margin-top: 1.375em; margin-bottom: 1.375em;">
             <?php
                 $content = explode("\n", $content);
-                echo "Username: " . $cust->username . "<br />Email: " . $cust->email;
+                echo "";
+                echo "Here's the user account details we have for you: <br />";
+                echo "<table><tbody><tr><th style='text-align: left;'>Username:</th><td>" . $cust->username . "</td></tr><tr><th style='text-align: left;'>Email:</th>";
+                echo "<td>" . $cust->email ."</td></tr><tr><th style='text-align: left;'>Account Creation:</th><td>" . $cust->created ."</td></tr>";
+                echo "</tbody></table>";
+                echo "<br /><h4><b><u><i>Instructions:</i></u></b></h4>";
                 foreach ($content as $line):
-                        echo '<p> ' . $line . "</p>\n";
+                        echo " " . $line . " \n";
                 endforeach;
                 
                 
-                echo "<br /><br />===================================================================";
+                /*
+echo "<br /><br />===================================================================";
                 debug($cust . "is the customer data.");
                 echo "===================================================================<br />";
+*/
             ?>
             </p>	
   		</div>

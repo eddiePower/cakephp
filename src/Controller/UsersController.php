@@ -1,4 +1,16 @@
 <?php
+/*
+ *   UsersController.php by Eddie Power.
+ *	 Team 18 - Heisenburg 
+ *	 IE Project 2015.
+ *	 Team Members: 
+ *		User Documentation: Linc Lui
+ *	    CSS3 & Javascript: Shash Amin
+ * 	    CakePHP 3.X / DB : Eddie Power
+ *	 Copyright 2015. Solemate Doormats
+ *   
+ */
+
 namespace App\Controller;
 
 use App\Controller\AppController;
@@ -111,7 +123,8 @@ class UsersController extends AppController
             return $this->redirect(['action' => 'view', $setID]);
         }
     }
-
+    
+    
     /**
      * Add method
      *
@@ -124,8 +137,7 @@ class UsersController extends AppController
         
         //set a variable to check userrole and display options depending
         $this->set('userRole', $this->Auth->user('role'));
-        
-        
+                
         //check the http request is of type post
         if ($this->request->is('post') || $this->Auth->user('role') == 'admin') 
         {
@@ -165,10 +177,11 @@ class UsersController extends AppController
             'contain' => []
         ]);
         
-        $this->set('userRole', $user->role);
+        
         $tmpUsrStore = $this->request->session()->read('user');
         $loggedUserID = $tmpUsrStore['id'];
-        //debug($tmpUsrStore);
+        $this->set('userRole', $tmpUsrStore['role']);
+        //debug($loggedUserID);
         
         //check that the user logged in is the user bieng edited or if they are an admin user
         if($loggedUserID == $user->id || $tmpUsrStore['role'] == 'admin')
@@ -182,6 +195,7 @@ class UsersController extends AppController
                //if the save user command worked ok
                if ($this->Users->save($user)) 
                {
+                    //$this->beforeSave($this->request);
                    $this->Flash->success('The user has been saved.');
                    return $this->redirect(['action' => 'index']);
                } 
@@ -252,6 +266,7 @@ class UsersController extends AppController
            //set $user using the Auth identify()
            $user = $this->Auth->identify();
             
+            //set a session as a variable for quick access
            $session = $this->request->session();
             
            //if a user exists then
@@ -259,7 +274,7 @@ class UsersController extends AppController
            {
               //set the user for the AUTH componant
               $this->Auth->setUser($user);
-              $this->Flash->success('You are now being logged in.');
+              $this->Flash->success('You are logged in.');
                       
               //Session init             
               $session->write('user', $this->Auth->user());
@@ -334,7 +349,7 @@ class UsersController extends AppController
            if(isset($selectedUser))
            {
               //if the selectedUser data isSet then set the viewVar with this data else do nothing to prevent empty form submit.
-              isset($selectedUser) ? $this->set('selectedUser', $selectedUser) : '';
+              $this->set('selectedUser', $selectedUser);
  
               //Create new random HASHED String to send to user
               // for security and randomness i mixed older md5 with nice sha256 ;)
@@ -363,7 +378,7 @@ class UsersController extends AppController
               $tempEmail->template('sendPwreset');
               
               //set the email to send to
-              $tempEmail->addTo($selectedUser->email);
+              $tempEmail->to($selectedUser->email);
               $tempEmail->subject('Solemate Password Reset');
               
               //Set the email headers.
@@ -375,11 +390,17 @@ class UsersController extends AppController
               $fullUrl = Router::url(array('controller' => 'Users', 'action' => 'resetPassword', 'pwr' => $selectedUser->reset, 'id' => $selectedUser->id), true);    
               
               //Build the message to send to the users requesting the new password.
-              $message = "Solemate Doormats Password Reset<br />You requested a password reset we would like you to click the link below to reset your login password, ";
-              $message .= "<a href='" . $fullUrl . "'>Click to reset your password</a><br />If you did not request a new password or made a mistake requesting then please disregard this email";
+              $message = "Solemate Doormats Password Reset<br />We received a requested to reset the password on your account, If you made a mistake by clicking the forgot password link then please feel free to disregard this email.  ";
+              $message .= " We would like you to click the link below to reset your login password,<br />";
+              $message .= "<a href='" . $fullUrl . "'>Click here to reset/change your password.</a><br />";
+              $message .= "If you continue to get these password reset emails without requesting them feel free to contact the admin staff by email here at Solemate Doormats and we can investigate it for you.";
               $message .= ".  Here at Solemate Doormats we keep our users passwords private even from the admins.  Feel free to drop us a email if";
-              $message .= " you would like more information on your account security.";
-              $message .= "<br />PRIVACY STATEMENT GOES HERE!!";
+              $message .= " you would like more information on your account security, or if you feel someone else is requesting these password resets maliciously.";
+              $message .= "<br /><br /><br /><b>Privacy Agreement:</b><i>All content sent / displayed from Solemate Doormats / IB Australia is for private customer use only, any materials shown in these emails are copyright";
+              $message .= " protected by Solemate Doormats and should under no circumstance be used without written consent from the company owner, any use of these materials";
+              $message .= " without consent will be seen as an act of IP copyright breach and will be followed with appropriate legal action.  If you are not the intended recipient of this email please disregard and delete this message, if this is in hard copy please shred any copies you may have received in error.  ";
+              $message .= "Materials covered by I.P. copyright: Logo's, Doormat print's / design's, the Solemate Doormats trading name, Solemate Doormats colour scheme's.";
+              $message .= "<br /><p align='center'> &copy; 2015 IB Australia - Solemate Doormats</p></i>";
                   
               /*
                 Use a custom query to save our new random string into the users db entry for checking 
@@ -400,7 +421,7 @@ class UsersController extends AppController
            }//END OF SELECTED USER IS SET CHECK.
            else
            {
-               $this->Flash->error('This user email address was not found in our database.');
+               $this->Flash->error('Error: This user email address was not found in our database.  Try again with the address you registered with please.');
            }
            
         }//end of if user email form POST data is set check.     
@@ -419,7 +440,7 @@ class UsersController extends AppController
                //if the save of the user data(password) is successfull then
                if ($this->Users->save($user)) 
                {
-                  $this->Flash->success('The user password has been changed.');
+                  $this->Flash->success('Success: Your login password has been changed ' . $user->username . '. ');
                   return $this->redirect(['action' => 'login']);
                } 
                else  //else tell user there was a issue with save.

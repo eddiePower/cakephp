@@ -15,7 +15,7 @@ class Order extends Entity
      * @var array
      */
     protected $_accessible = [
-        'shipped_date' => true,
+        'ordered_date' => true,
         'required_date' => true,
         'status' => true,
         'courier_id' => true,

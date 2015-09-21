@@ -4,12 +4,11 @@
 	</h3>
 </div>
 
-<!-- Display the Flash messages here if they are needed -->
-<?= $this->Flash->render(); ?>
-
+<!-- if there is no password Reset random value in the url then  -->
 <?php if(!isset($_GET['pwr'])) { ?>
 <div class="col-12 last panel">
 	<?php 
+	        //if there is no email address variable then draw the reset form 
 	      if(!isset($selectedUser)) 
 	      { 
 	?>
@@ -27,9 +26,11 @@
             <?= $this->Form->submit() ?>
             <?= $this->Form->End() ?>
             
-	        <?= $this->Flash->render('Test render flash') ?>
+            <!-- Display the Flash messages here if they are needed -->
+            <?= $this->Flash->render(); ?>
 	<?php
 		 } 
+		 //otherwise we are submitting the form and showing the user a simple message.
 		 else if(isset($selectedUser))
 		 {
             echo ("<h4>We have sent an email to your account " . $selectedUser->email . " with a link to follow which will begin the reset your password process, please follow the instructions mentioned in the email.</h4>");
@@ -40,7 +41,8 @@
       else
       {
 ?>
-
+        <!-- Display the Flash messages here if they are needed -->
+        <?= $this->Flash->render(); ?>
         <div class="col-12 last panel">
         <?php 
             echo "Please enter a new password for your account";

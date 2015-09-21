@@ -14,7 +14,7 @@
 ]) ?>
         
         <?php
-            echo $this->Form->input('username');
+            echo $this->Form->input('username', ['help' => 'enter a username for a login alias']);
             echo $this->Form->input('email');
             echo $this->Form->input('password');
             echo $this->Form->input('confirm_password', ['label' => 'Confirm Password', 'type' => 'password']);
