@@ -9,7 +9,6 @@ User Login
     <?= $this->Form->create(null, []) ?>
     <?= $this->Form->input('username', ['type' => 'text']) ?>
     <?= $this->Form->input('password', ['type' => 'password']) ?>
-    <?= $this->Form->input('remember me', ['type' => 'checkbox']) ?>
     <?= $this->Form->submit(__('Log In'), ['class' => 'positive']) ?>
     <?= $this->Form->end() ?>
     <?= __('<br />') . $this->Form->postLink(__('Forgot my password'), ['action' => 'resetPassword']) ?>

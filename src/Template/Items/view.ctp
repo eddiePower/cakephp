@@ -22,11 +22,12 @@
 				<td>
 					<?= __('Item Name') ?>
 				</td>
-				<td>
-					<?= __('Quantity On Hand') ?>
-				</td>
+				<?=  $this->request->session()->read('userRole') == 'admin' ? __('<td>Quantity On Hand</td>') : '' ?> 
 				<td>
 					<?= __('Item Number / ID') ?>
+				</td>
+				<td>
+				<?= __('Base Price') ?>
 				</td>
 			</tr>
 		</thead>
@@ -39,17 +40,17 @@
 				<td>
 					<?= h($item->item_name) ?>
 				</td>
-				<td>
-					<?= $this->Number->format($item->quantity_on_hand) ?>
-				</td>
+				<?= $this->request->session()->read('userRole') == 'admin' ? __('<td>' . $this->Number->format($item->quantity_on_hand) . '</td>') : '' ?>
 				<td>
 					<?= $this->Number->format($item->item_number, ['pattern' => '########']) ?>
 				</td>
+				<td> <?= $this->Number->currency($item->base_price, 'USD') ?></td> 
 				
 			</tr>
 		</tbody>
 	</table>
-	
+   
+    <?php if($this->request->session()->read('userRole') == 'admin') { ?> 
 	<h4 class="subheader"><?= __('Related OrderDetails') ?></h4>
 	<?php if (!empty($item->order_details)): ?>
 	<table cellpadding="0" cellspacing="0">
@@ -87,7 +88,6 @@
 	</table>
 	<?php endif; ?>
 
-
 	<h4 class="subheader"><?= __('Related PurchaseDetails') ?></h4>
 	<?php if (!empty($item->purchase_details)): ?>
 	<table cellpadding="0" cellspacing="0">
@@ -120,4 +120,5 @@
 	<?php endforeach; ?>
 	</table>
 	<?php endif; ?>
+	<?php } ?>
 </div>

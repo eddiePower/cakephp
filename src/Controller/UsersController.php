@@ -14,12 +14,17 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+
 use Cake\Event\Event;
 use Cake\Network\Exception\NotFoundException;
+//used for db table queries
 use Cake\ORM\TableRegistry;
+//used for sending email
 use Cake\Network\Email\Email;
+//used to generate app url no matter the server
 use Cake\Routing\Router;
-
+//used to store app global information
+use Cake\Core\Configure;
 
 /**
  * Users Controller
@@ -139,27 +144,31 @@ class UsersController extends AppController
         $this->set('userRole', $this->Auth->user('role'));
                 
         //check the http request is of type post
-        if ($this->request->is('post') || $this->Auth->user('role') == 'admin') 
+        if ($this->request->is('post')) 
         {
-            //set the user data to be the data on the form in post request
-            $user = $this->Users->patchEntity($user, $this->request->data);
-            
-            //if the save user command runs ok
-            if ($this->Users->save($user)) 
-            {   
-                $this->Flash->success('The user has been saved.');
-                return $this->redirect(['action' => 'index']);
-            } 
-            else 
+            if($this->Auth->user('role') == 'admin')
             {
-                $this->Flash->error('The user could not be saved. Please, try again.');
+              //set the user data to be the data on the form in post request
+              $user = $this->Users->patchEntity($user, $this->request->data);
+            
+              //if the save user command runs ok
+              if ($this->Users->save($user)) 
+              {   
+                 $this->Flash->success('The user has been saved.');
+                 return $this->redirect(['action' => 'index']);
+              } 
+              else 
+              {
+                 $this->Flash->error('The user could not be saved. Please, try again.');
+              }
+            }
+            else
+            {   
+               $this->Flash->error('Your not allowed to sign up new users. contact the admin');
+               return $this->redirect(['controller' => 'Customers', 'action' => 'index']);
             }
         }
-        else
-        {   
-            $this->Flash->error('Your not allowed to sign up new users. contact the admin');
-            return $this->redirect(['controller' => 'Customers', 'action' => 'index']);
-        }
+        
         $this->set(compact('user'));
         $this->set('_serialize', ['user']);
     }
@@ -232,14 +241,22 @@ class UsersController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         
         $user = $this->Users->get($id);
+        
         $storedUser = $this->request->session()->read('user');
         
+        //debug($user);
+        
         //make sure the user is not the main admin account make it not deleteded.
-        if($user->role == "admin" && $storedUser['id'] != $id)
+        if($user->id == 1 || $storedUser['id'] != $id)
         {
-            debug($user);
+            //debug($user);
             
-            return $this->redirect(['action' => 'index']);
+            if($user->id == 1)
+            {
+              $this->Flash->error('This user is the main Admin user and should not be removed.');
+
+              return $this->redirect(['action' => 'index']);
+            }
 
         }
         
@@ -256,7 +273,7 @@ class UsersController extends AppController
         return $this->redirect(['action' => 'index']);
     }
     
-    //login / AUTH functions
+    //login / AUTHENTICATE USER function
     public function login()
     {
         
@@ -271,24 +288,70 @@ class UsersController extends AppController
             
            //if a user exists then
            if($user) 
-           {
+           {                    
               //set the user for the AUTH componant
               $this->Auth->setUser($user);
-              $this->Flash->success('You are logged in.');
                       
               //Session init             
-              $session->write('user', $this->Auth->user());
+              $session->write('user', $this->Auth->user());    
               
-              //set the user session variable to a working var
-              $aUser = $session->read('user');
+               //set the user session variable to a working var
+              $aUser = $session->read('user');        
               
+              //load shopcart model for use here -- this creates a shopping cart for the
+              // the user while they are logged in they can either save this before exit
+              // or it will be re written next time they log in.              
+              $this->loadmodel('Shopcart');
+             
+              //check for any saved carts in the database
+              // were allowing 2 per customer total so if theres 2
+              // in the database already then we over write the oldest entry
+              $query = TableRegistry::get('Shopcart')->find();
+              $query->where(['user_id' => $user['id']]);
+              
+              $countCarts = 0;
+              
+              //loop through query result
+              foreach($query as $cart)
+              {
+                  $countCarts++;
+                  
+                  //keep the number of carts at 2 to prevent database size growing too big
+                 if($countCarts > 1)
+                 {
+                    //grab the current cart in the query result
+                    $cartToDelete = $this->Shopcart->get($cart->id);
+                    //and delete it this way any carts more then 2 will
+                    // be removed no matter how many are made
+                    $this->Shopcart->delete($cartToDelete);
+                 }
+                 //debug($cart->created);  
+              }
+              
+              //if the user is under the 2 carts saved amount then just create a new cart.
+              if($countCarts < 1)
+              {
+                  //create a new database entity 
+                  $cart = $this->Shopcart->newEntity();
+                  
+                  //store the user id to use in the shopcart creation. 
+                  $uId = $aUser['id'];
+                  
+                  //store the userID into the shopping cart to tie it to 
+                  // logged in user.
+                  $cart->user_id = $uId;  
+                  
+                  //now save this shopping cart to the database for later use.
+                  $this->Shopcart->save($cart);
+              }
+                                          
               //pull out the username and role for authorisation app wide.
               $session->write('username', $aUser['username']);
               $session->write('userRole', $aUser['role']);
-              
-              //debug($aUser['username']);
-              //$name = $aUser['username'];
                       
+              //Flash the success message about log in successfull   
+              $this->Flash->success('Welcome to solemate doormats <b><i><u>' . $user['username'] . '</b></i></u>, your login was successful.');
+              
               //redirect the user to the pre set url 
               return $this->redirect($this->Auth->redirectUrl());
            }

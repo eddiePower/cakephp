@@ -7,7 +7,7 @@
 		)
 	?>
 	<?= $this->Html->link(__('List Orders'), ['action' => 'index'], ['class' => 'nav-item']) ?>
-	<?= $this->Html->link(__('List Couriers'), ['controller' => 'Couriers', 'action' => 'index'], ['class' => 'nav-item']) ?>
+<!-- 	<?= $this->Html->link(__('List Couriers'), ['controller' => 'Couriers', 'action' => 'index'], ['class' => 'nav-item']) ?> -->
 	<?= $this->Html->link(__('New Courier'), ['controller' => 'Couriers', 'action' => 'add'], ['class' => 'nav-item']) ?>
 	<?= $this->Html->link(__('List Customers'), ['controller' => 'Customers', 'action' => 'index'], ['class' => 'nav-item']) ?>
 	<?= $this->Html->link(__('New Customer'), ['controller' => 'Customers', 'action' => 'add'], ['class' => 'nav-item']) ?>
@@ -19,6 +19,11 @@
 	 {
         $( "#datepicker" ).datepicker({ dateFormat: "yy-mm-dd" }); 
     });
+    
+    $(function() 
+	 {
+        $( "#datepicker1" ).datepicker({ dateFormat: "yy-mm-dd" }); 
+    });
   </script>
 <div class="col-12 last panel">
  <?= $this->Flash->render(); ?>
@@ -26,9 +31,9 @@
 	<h3>Edit Order</h3>
 	<?php
 	echo __("Date Ordered:");
-	echo $this->Form->text('ordered_date', ['disabled' => 'true']);
+	echo $this->Form->text('ordered_date', ['id' => 'datepicker', 'disabled' => 'true']);
 	echo __("Request delivery date:");
-	echo $this->Form->text('required_date', ['id' => 'datepicker', 'placeholder'=> 'Click to pick a date', 'alt' => 'Click to change the required order date']);
+	echo $this->Form->text('required_date', ['id' => 'datepicker1']);
 	echo __("Order Comments:");
 	echo $this->Form->input('customer_comments', ['label' => '']);
 /* 	echo $this->Form->input('courier_id', ['options' => $couriers]); */

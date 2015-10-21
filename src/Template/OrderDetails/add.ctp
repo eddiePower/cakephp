@@ -12,10 +12,11 @@
 	<?= $this->Form->create($orderDetail); ?>
 	<h3>Add Order Detail</h3>
 	<?php
+/* 	debug($orderDetail); */
 	echo $this->Form->input('item_id', ['options' => $items]);
 	echo $this->Form->input('order_id', ['options' => $orders]);
 	echo $this->Form->input('quantity_ordered');
-	echo $this->Form->input('per_unit');
+	echo $this->Form->input('per_unit', ['disabled' => 'true', 'value' => $stockPrice]);
 	echo $this->Form->input('discount');
 	?>
 	</fieldset>

@@ -53,7 +53,6 @@ class OrderDetailsTable extends Table
             
         $validator
             ->add('per_unit', 'valid', ['rule' => 'numeric'])
-            ->requirePresence('per_unit', 'create')
             ->notEmpty('per_unit');
             
         $validator

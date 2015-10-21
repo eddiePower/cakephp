@@ -48,16 +48,11 @@
     
 });";
   echo $this->Html->scriptEnd(); 
-  
-  //create table to display email lists checkboxes.
-  echo "<table border='0' width='90%'>";
-  
-
   ?>
+  <table border="0" width="30%">
   <tr>
   <td>
-   <input type="checkbox" id="selecctall"/> Selecct All Customers</td><td><input type="checkbox" name="chkAllSalesReps" id="chkSalesReps" />Select all sales rep</td><td>
-  		<input type="checkbox" name="chkAllSoleTraders" id="chkAllSoleTraders" />Select all sole traders</td></tr>
+   <input type="checkbox" id="selecctall"/>Select All Customers</td><td>  </td><td>  </td></tr>
 </table>
 <table border="0" width="90%">
 <?php

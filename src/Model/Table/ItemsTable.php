@@ -38,22 +38,26 @@ class ItemsTable extends Table
      * @param \Cake\Validation\Validator $validator Validator instance.
      * @return \Cake\Validation\Validator
      */
+     
+     
     public function validationDefault(Validator $validator)
     {
         $validator
-            ->add('id', 'valid', ['rule' => 'numeric'])
+           ->add('id', 'valid', ['rule' => 'numeric'])
             ->allowEmpty('id', 'create')
             ->requirePresence('item_name', 'create')
             ->notEmpty('item_name')
             ->add('quantity_on_hand', 'valid', ['rule' => 'numeric'])
             ->requirePresence('quantity_on_hand', 'create')
+            ->add('base_price', 'valid', ['rule' => 'numeric'])
+            ->requirePresence('base_price', 'create')
             ->notEmpty('quantity_on_hand')
             ->add('item_number', 'valid', ['rule' => 'numeric'])
             ->requirePresence('item_number', 'create')
             ->notEmpty('item_number')
             ->add('barcode', 'valid', ['rule' => 'numeric'])
-            ->allowEmpty('photo', 'photo_dir', 'barcode');
-
+            ->allowEmpty('barcode');
         return $validator;
     }
+
 }

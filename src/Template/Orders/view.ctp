@@ -3,27 +3,29 @@
 //enable the data-tables jQuery plugin for better table uttils.
 $this->Html->scriptStart(['block' => true]);
 echo "$(document).ready(function(){
-    $('#data-table').DataTable();
+    $(''table.display'').DataTable();
 });";
 $this->Html->scriptEnd();
 ?>
 <nav class="nav-container">
-	<?= $this->Html->link(__('Edit Order'), ['action' => 'edit', $order->id], ['class' => 'nav-item']) ?>
-	<?= $this->Form->postLink(__('Delete Order'), ['action' => 'delete', $order->id], ['confirm' => __('Are you sure you want to delete # {0}?', $order->id), 'class' => 'nav-item']) ?>
-	<?= $this->Html->link(__('List Orders'), ['action' => 'index'], ['class' => 'nav-item']) ?>
+	<?= $this->Html->link(__('Edit this Order'), ['action' => 'edit', $order->id], ['class' => 'nav-item']) ?>
+	<?= $this->Form->postLink(__('Delete this Order'), ['action' => 'delete', $order->id], ['confirm' => __('Are you sure you want to delete # {0}?', $order->id), 'class' => 'nav-item']) ?>
+	<?= $this->Html->link(__('List all Orders'), ['action' => 'index'], ['class' => 'nav-item']) ?>
 	<?= $this->Html->link(__('New Order'), ['action' => 'add'], ['class' => 'nav-item']) ?>
-	<?= $this->Html->link(__('List Couriers'), ['controller' => 'Couriers', 'action' => 'index'], ['class' => 'nav-item']) ?>
+	<!--
+<?= $this->Html->link(__('List Couriers'), ['controller' => 'Couriers', 'action' => 'index'], ['class' => 'nav-item']) ?>
 	<?= $this->Html->link(__('New Courier'), ['controller' => 'Couriers', 'action' => 'add'], ['class' => 'nav-item']) ?>
+-->
 	<?= $this->Html->link(__('List Customers'), ['controller' => 'Customers', 'action' => 'index'], ['class' => 'nav-item']) ?>
 	<?= $this->Html->link(__('New Customer'), ['controller' => 'Customers', 'action' => 'add'], ['class' => 'nav-item']) ?>
-	<?= $this->Html->link(__('List Order Details'), ['controller' => 'OrderDetails', 'action' => 'index'], ['class' => 'nav-item']) ?>
+	<?= $this->Html->link(__('List all Ordered items'), ['controller' => 'OrderDetails', 'action' => 'index'], ['class' => 'nav-item']) ?>
 	<?= $this->Html->link(__('New Order Detail'), ['controller' => 'OrderDetails', 'action' => 'add'], ['class' => 'nav-item']) ?>
 </nav>
 
 <div class="col-12 last panel">
  <?= $this->Flash->render(); ?>
 	<h3>Order ID : <?= h($order->id) ?></h3>
-	<table id="data-table">
+	<table id="" class="display">
 		<thead>
 			<tr style="height:50px;">
 				<td>
@@ -46,19 +48,16 @@ $this->Html->scriptEnd();
 			</tr>
 		</thead>
 		<tbody>
-			<tr>
-				<td>
-					<?= h($order->customer_comments) ?>
+			<tr><td>
+					<?= $order->has('customer_comments') ? h($order->customer_comments) : __("No comments left by staff or customer") ?>
 				</td>
 <!--
 				<td>
 					<?= $order->has('courier') ? $this->Html->link($order->courier->courier_name, ['controller' => 'Couriers', 'action' => 'view', $order->courier->id]) : '' ?>
 				</td>
 -->
-				<td>
-					<?= $order->has('customer') ? $this->Html->link($order->customer->first_name, ['controller' => 'Customers', 'action' => 'view', $order->customer->id]) : '' ?>
-				</td>
-				<td>
+				<td><?= $order->has('customer') ? $this->Html->link($order->customer->first_name, ['controller' => 'Customers', 'action' => 'view', $order->customer->id]) : '' ?>
+				</td><td>
 					<?= h($order->ordered_date) ?>
 				</td>
 				<td>
@@ -71,10 +70,15 @@ $this->Html->scriptEnd();
 	
 
 	<h4 class="subheader"><?= __('Related Order Details of order #' . $order->id) ?></h4>
-	<?php if (!empty($order->order_details)): ?>
-	<table  id="data-table" cellpadding="0" cellspacing="0">
+	<?php if (!empty($order->order_details)): 
+    	   //set the row count to 0 this counts new rows 
+    	   // to print out item image and names only once
+    	    $count = 0;
+	?>
+	<table id="" class="display" cellpadding="0" cellspacing="0">
 	<tr style="height:50px;">
-	<th><?= __('Item Id') ?></th>
+	<th><?= __('Item Image') ?></th>
+	<th><?= __('Item Name') ?></th>
 	<th><?= __('Order Id') ?></th>
 	<th><?= __('Quantity Ordered') ?></th>
 	<th><?= __('Per Unit Cost') ?></th>
@@ -82,10 +86,14 @@ $this->Html->scriptEnd();
 	<th><?= __('Order total (ex GST)') ?></th>
 	<th class="actions"><?= __('Actions') ?></th>
 	</tr>
-	<?php foreach ($order->order_details as $orderDetails): ?>
+	<?php 
+	    foreach ($order->order_details as $orderDetails): 
+	?>
 	<tr>
-<!-- 	<?= debug($orderDetails->item_id); ?> -->
-	<td><?= h($orderDetails->item_id) ?></td>
+<!-- 	<?= debug($order); ?> -->
+    <td><?= $order->orderDetail[$count]['itemPhoto'] != NULL ? 
+								$this->Html->image('graphics/' . $order->orderDetail[$count]['itemPhoto'], ['fullBase' => true, 'class' => 'item_imageThum', 'alt' => 'Our doormat called: ' . $order->orderDetail[$count]['itemName'] . '. A very good mat']) : h('No Image Yet'); ?></td>
+	<td><?= h($order->orderDetail[$count]['itemName']) ?></td>
 	<td><?= h($orderDetails->order_id) ?></td>
 	<td><?= h($orderDetails->quantity_ordered) ?></td>
 	<td><?= h($this->Number->currency($orderDetails->per_unit)) ?></td>
@@ -98,7 +106,9 @@ $this->Html->scriptEnd();
 	<?= $this->Html->link(__('Edit'), ['controller' => 'OrderDetails', 'action' => 'edit', $orderDetails->id]) ?>
 
 	<?= $this->Form->postLink(__('Delete'), ['controller' => 'OrderDetails', 'action' => 'delete', $orderDetails->id], ['confirm' => __('Are you sure you want to delete # {0}?', $orderDetails->id)]) ?>
-
+    <?php 
+    //increase the count
+    $count++; ?>
 	</td>
 	</tr>
 

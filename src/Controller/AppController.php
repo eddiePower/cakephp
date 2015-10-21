@@ -15,6 +15,7 @@ namespace App\Controller;
 use Cake\Controller\Controller;
 use Cake\I18n\Time;
 use Cake\Event\Event;
+use Cake\Core\Configure;
 
 
 /**
@@ -26,7 +27,7 @@ use Cake\Event\Event;
  * @link http://book.cakephp.org/3.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller
-{    
+{                
     /**
      * Initialization hook method.
      *
@@ -42,7 +43,8 @@ class AppController extends Controller
         //configure the date to australian format globally .
         Time::setToStringFormat('dd/MM/YYYY');
         
-        
+        Configure::write('orderRecievedEmail', 'eddie.power@icloud.com');
+
         
         //set up the AUTH componant to facilitate login.
         $this->loadComponent('Auth', [
@@ -81,8 +83,7 @@ class AppController extends Controller
         //this loads the nice tooltip messages for errors, confirms etc.
         $this->loadComponent('Flash');
         
-        $this->loadComponent('Cookie', ['expiry' => '6 hours']);
-        
+        $this->loadComponent('Cookie', ['expiry' => '+2 days']);
 
     }
     

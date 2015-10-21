@@ -8,16 +8,6 @@ use Cake\ORM\Entity;
  */
 class Item extends Entity
 {
-    protected $_virtual = ['itemName'];
-
-    protected function _getItemName()
-    {
-        $name = $this->_properties['item_name'];
-        return $name;
-    }
-
-
-
     /**
      * Fields that can be mass assigned using newEntity() or patchEntity().
      *

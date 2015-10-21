@@ -1,29 +1,37 @@
 <div class="actions columns large-2 medium-3">
     <h3><?= __('Actions') ?></h3>
     <ul class="side-nav">
-        <li><?= $this->Html->link(__('New Shopcart Item'), ['action' => 'add']) ?></li>
+        <?php $cartID = ("10"); ?>
+        <li><?= $this->Html->link(__('New Shopcart Item'), ['action' => 'add', $cartID]) ?></li>
         <li><?= $this->Html->link(__('List Shopcart'), ['controller' => 'Shopcart', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Shopcart'), ['controller' => 'Shopcart', 'action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Items'), ['controller' => 'Items', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Item'), ['controller' => 'Items', 'action' => 'add']) ?></li>
     </ul>
 </div>
+<div class="col-12 last panel">
 <div class="shopcartItems index large-10 medium-9 columns">
  <?= $this->Flash->render(); ?>
-    <table cellpadding="0" cellspacing="0">
+ <?=
+//enable the data-tables jQuery plugin for better table uttils.
+$this->Html->scriptStart(['block' => true]);
+echo "$(document).ready(function(){
+    $('#data-table').DataTable();
+});";
+$this->Html->scriptEnd();
+?>
+    <table class="table table-bordered table-striped" id="data-table" cellpadding="0" cellspacing="0">
     <thead>
-        <tr>
-            <th><?= $this->Paginator->sort('id') ?></th>
-            <th><?= $this->Paginator->sort('shopcart_id') ?></th>
-            <th><?= $this->Paginator->sort('item_id') ?></th>
-            <th><?= $this->Paginator->sort('quantity') ?></th>
+        <tr style="height: 50px">
+            <th><?= __('Cart id') ?></th>
+            <th><?= __('Item id') ?></th>
+            <th><?= __('Quantity Ordered') ?></th>
             <th class="actions"><?= __('Actions') ?></th>
         </tr>
     </thead>
     <tbody>
     <?php foreach ($shopcartItems as $shopcartItem): ?>
         <tr>
-            <td><?= $this->Number->format($shopcartItem->id) ?></td>
             <td>
                 <?= $shopcartItem->has('shopcart') ? $this->Html->link($shopcartItem->shopcart->id, ['controller' => 'Shopcart', 'action' => 'view', $shopcartItem->shopcart->id]) : '' ?>
             </td>
@@ -49,4 +57,5 @@
         </ul>
         <p><?= $this->Paginator->counter() ?></p>
     </div>
+</div>
 </div>

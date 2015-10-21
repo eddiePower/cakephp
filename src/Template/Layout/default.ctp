@@ -27,7 +27,7 @@ $cakeDescription = 'SoleMate Doormats';
 		<link href='http://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'>
 		<?= $this->Html->meta('icon') ?>
 		<?= $this->Html->css(['dropit']) ?>
-		<?= $this->Html->css(['lightgrid', 'http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css']) ?>
+		<?= $this->Html->css(['lightgrid', 'http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css', 'jquery.dataTables.css']) ?>
 		
 		<!-- Add in jQuery and all jScript links here using cakePHP -->		
 		<?= $this->Html->script(['tinymce/tinymce.min.js','https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js','https://cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js', 'http://code.jquery.com/ui/1.11.4/jquery-ui.js', 'common', 'dropdown', 'snowflake.js', 'siteConfig.js']) ?>

@@ -34,10 +34,12 @@
 				<th><?= __('User Email') ?></th> 
 				<td><?= h($user->email) ?></td>
 				</tr>    
+<!--
 				<tr>
 				<th><?= __('User Password') ?></th> 
 				<td><?= h($user->password) ?></td>
 			</tr>
+-->
 			<tr>
 				<th><?= __('User Role') ?></th> 
 				<td><?= h($user->role) ?></td>

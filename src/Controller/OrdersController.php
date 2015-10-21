@@ -3,6 +3,12 @@ namespace App\Controller;
 
 use Cake\ORM\TableRegistry;
 use App\Controller\AppController;
+use Cake\I18n\Time;
+//used for sending email
+use Cake\Network\Email\Email;
+//used to generate app url no matter the server
+use Cake\Routing\Router;
+use Cake\Core\Configure;
 
 /*
  *   OrdersController.php by Eddie Power.
@@ -54,9 +60,11 @@ class OrdersController extends AppController
         $orderUserID = $order->customer->user_id;
         //debug($order->customer->user_id);
         
+        //debug($setUser);
+        
         //make sure the logged in user is the one who owns this data
         // or if that user is an admin then were all cool to all show data.
-        if($setID == $orderUserID)
+        if($setID == $orderUserID || $setUser['role'] == 'admin')
         {
             $query = TableRegistry::get('OrderDetails')->find();
             $query->where(['order_id' => $id]);
@@ -68,21 +76,58 @@ class OrdersController extends AppController
            foreach($query as $detail)
            { 
                 //show the item ID for the order details
-               debug($detail);
+               //debug($detail['item_id']);
+               
+               //now find that item id's item name
+               $query1 = TableRegistry::get('Items')->find();
+               $query1->where(['id' => $detail['item_id']]);
+               
+               //loop through the items found
+               foreach($query1 as $item)
+               {     
+                   //debug($item);
+                   //store item name and photo file name
+                  $name = $item['item_name'];
+                  $img = $item['photo'];
+                  
+                  //store the name and photo in the temp 
+                  // array space for use in the view
+                  //this is a lazy way of getting name and image inline.
+                  $detail['itemName'] = $name;
+                  $detail['itemPhoto'] = $img;
+                  //debug($detail);
+                  
+                   //push the contents onto the userCustomers array
+                   array_push($itemNames, $detail);
+                   
+                  //now store our edited array of the orderDetails
+                  // into the order variable that will be pushed to
+                  //the viewVar
+                  $order->orderDetail = $itemNames;
+                  
+                 // debug($itemNames);
+                 // debug($order);
+                  
+               }
+               
                
                
            }//end foreach query result (should only be one in this case)  
-        
-            $this->set('orderedItems', $itemNames);
+           
+            //set the rest of the viewVars that are not dependant on user or orderedItems
             $this->set('order', $order);
             $this->set('_serialize', ['order']);
         }
-        else if($setUser['role'] == 'admin')
+       /*
+ else if($setUser['role'] == 'admin')
         {
+          debug($itemNames);
+                  debug($order);
             //show all orders for all users as were talking to a admin
             $this->set('order', $order);
             $this->set('_serialize', ['order']);
         }
+*/
         else
         {
             $this->Flash->error("Page is not authorised for viewing, please contact an administrator if you feel this is an error.");
@@ -107,13 +152,14 @@ class OrdersController extends AppController
         //create a new order entity in the database
         $order = $this->Orders->newEntity();    
         
+        
         //if the http request is of type post then
         if ($this->request->is('post')) 
         {
             //use the data in the add order form to update the new order Database entry
             $order = $this->Orders->patchEntity($order, $this->request->data);
             
-            //pre set the ordered_dates
+            //pre set the ordered_date and courier id as we are not including that this build.
             $order->ordered_date = date("Y-m-d");   
             $order->courier_id = ("1");
             
@@ -122,7 +168,31 @@ class OrdersController extends AppController
             if ($this->Orders->save($order)) 
             {
                 //show user it worked and redirect them back to the order listing (will soon be only their orders listed)
-                $this->Flash->success('The order has been placed in our system.');
+                $this->Flash->success('The order has been placed in our system. Your order will be processed soon.');
+                
+                //send an email to rick letting him know that an order was placed.
+                //Send email to customer with their new reset password hashed link/url
+                //create email object and set email config settings
+                $orderEmail = new Email('default');
+                $orderEmail->transport('default');
+                
+                //set the type of email format and use our custom template.
+                $orderEmail->emailFormat('html');
+                $orderEmail->template('order_email');
+
+                //set the email to send to
+                $orderEmail->to(Configure::read('orderRecievedEmail'));
+                $orderEmail->subject('Solemate Order has been placed on ' . date("Y-m-d"));
+              
+                //Set the email headers.
+                $orderEmail->from(['solemateDoormats@doNotReply.com' => 'Solemate Doormats Web Orders']);
+                $orderEmail->sender(['solemate.doormats@gmail.com' => 'Solemate Doormats inc']);
+                $orderEmail->replyTo('solemate.doormats@gmail.com');
+                
+                                         
+              //email message and send line
+              $orderEmail->send('Hi there admin this is an automated email to let you know a new order has been placed on the website ordering system, the order id is ' . $order->id . '. The customer id was ' . $order->customer_id);  
+                                
                 
                 return $this->redirect(['action' => 'index']);
             } 
@@ -153,9 +223,19 @@ class OrdersController extends AppController
      */
     public function edit($id = null)
     {
+    
+        //configure the date for this method only .
+        Time::setToStringFormat('YYYY-MM-dd');
+    
         $order = $this->Orders->get($id, [
             'contain' => []
         ]);
+        
+        //hard code the result for the courier since we ran out of time.
+        //pre set the ordered_dates
+        //$order->ordered_date = date("Y-m-d");   
+        $order->courier_id = ("1");
+        
         
         if ($this->request->is(['patch', 'post', 'put'])) 
         {
@@ -163,7 +243,11 @@ class OrdersController extends AppController
             
             if ($this->Orders->save($order)) 
             {
+                //show the user that the order was updated
                 $this->Flash->success('The order has been saved.');
+                
+                //send email to rick to let him know an order has been changed, one line email call.
+                
                 return $this->redirect(['action' => 'index']);
             } 
             else 

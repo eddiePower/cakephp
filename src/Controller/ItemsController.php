@@ -1,6 +1,7 @@
 <?php
 namespace App\Controller;
 
+use Cake\ORM\TableRegistry;
 use App\Controller\AppController;
 
 /*
@@ -32,7 +33,22 @@ class ItemsController extends AppController
         $name = $this->request->session()->read('username');
         $role = $this->request->session()->read('userrole');
 
-        //debug("User name is " . $name . "\nAnd user role is " . $role);
+        $aUser = $this->request->session()->read('user');
+        $this->set('aUser', $aUser);
+        
+        $userCart = TableRegistry::get('Shopcart');
+
+        // Start a new query.
+        $query = $userCart->find();
+        $query->where(['user_id' => $aUser['id']]);
+        
+        foreach ($query as $cart) 
+        {
+            $this->set('userCartID', $cart->id);
+            //debug($cart->id);
+        }
+                
+        
     }
 
     /**
@@ -59,21 +75,17 @@ class ItemsController extends AppController
      * @return void Redirects on successful add, renders view otherwise.
      */
     public function add()
-    {
+    {    
+        $item = $this->Items->newEntity();
     
         if ($this->request->is('post')) 
         {
-            if (isset($this->request->data['Cancel'])) 
+
+            if (isset($this->request->data['Cancel']))
             {
-                $this->Flash->error('Add Item cancelled', true);
+                $this->Flash->error('Add Item was cancelled');
                 return $this->redirect(['action' => 'index']);
             }
-        }
-        
-        $item = $this->Items->newEntity();
-        
-        if ($this->request->is('post')) 
-        {
             //upload image if user has selected one
             //calls uploadFiles function in AppController.php
             $fileOK = $this->uploadFiles('img/graphics', $this->request->data['photo']);
@@ -89,8 +101,7 @@ class ItemsController extends AppController
                 //debug("Debug line 2" . $this->request->data['photo']);
                 $this->request->data['photo'] = null;
             }
-            
-            //If t            
+                    
             $item = $this->Items->patchEntity($item, $this->request->data);
             
             if ($this->Items->save($item)) 

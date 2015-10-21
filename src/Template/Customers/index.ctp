@@ -4,7 +4,9 @@
 //enable the data-tables jQuery plugin for better table uttils.
 $this->Html->scriptStart(['block' => true]);
 echo "$(document).ready(function(){
-    $('#data-table').DataTable();
+    $('#data-table').DataTable({
+    'order': [[ 0, 'asc' ]]
+    });
 });";
 $this->Html->scriptEnd();
 ?>
@@ -40,7 +42,7 @@ $this->Html->scriptEnd();
 </nav>
 
 <div class="col-12 last panel">
-	<table class="table table-bordered table-striped" id="data-table" cellpadding="0" cellspacing="0">
+	<table class="table table-bordered table-striped" id="data-table">
 		<thead>
 		<tr style="height: 50px">
 				<th><?= __('First Name') ?></th>

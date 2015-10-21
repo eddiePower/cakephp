@@ -7,8 +7,11 @@ if(isset($_SESSION['username']))  {
 		<?= $this->Html->link(__('New Item'), ['action' => 'add'], ['class' => 'nav-item']) ?>
 		<?= $this->Html->link(__('List Order Details'), ['controller' => 'OrderDetails', 'action' => 'index'], ['class' => 'nav-item']) ?>
 		<?= $this->Html->link(__('New Order Detail'), ['controller' => 'OrderDetails', 'action' => 'add'], ['class' => 'nav-item']) ?>
-		<?= $this->Html->link(__('List Purchase Details'), ['controller' => 'PurchaseDetails', 'action' => 'index'], ['class' => 'nav-item']) ?>
-		<?= $this->Html->link(__('New Purchase Detail'), ['controller' => 'PurchaseDetails', 'action' => 'add'], ['class' => 'nav-item']) ?>
+
+
+<!-- 		may remove this line as it is not needed really on the admin side, may remove shopping cart space completely for admins before roll out -->
+        <?= $this->Html->link(__('Test shopping cart'), ['controller' => 'Shopcart', 'action' => 'view', $userCartID], ['class' => 'nav-item']) ?>
+
 		</nav>
 		
 	<?php } else { ?>
@@ -20,22 +23,20 @@ if(isset($_SESSION['username']))  {
 		<?php
 			if(isset($_SESSION['username'])) 
 			{
-			  
-			
-			
 				if($this->request->session()->read('userRole') == 'admin') // Show table view for the admin
 				{
 				
                     //enable the data-tables jQuery plugin for better table uttils.
                    $this->Html->scriptStart(['block' => true]);
                    echo "$(document).ready(function(){
-                       $('#data-table').DataTable();
+                       $('#data-table').DataTable({
+                                'order': [[ 1, 'asc' ]]
+                       });
                    });";
                    $this->Html->scriptEnd();
 				
 					?>
 						<div class="col-12 last panel">
-						<!-- Show table layout in Admin view -->
 						<table cellpadding="0" cellspacing="0" id="data-table">
 							<thead>
 		                       <tr style="height: 50px">
@@ -60,7 +61,7 @@ if(isset($_SESSION['username']))  {
 								<?= $this->Html->link(__('View'), ['action' => 'view', $item->id], ['class' => 'label']) ?>
 								<?= $this->Html->link(__('Edit'), ['action' => 'edit', $item->id], ['class' => 'label']) ?>
 								<?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $item->id], ['confirm' => __('Are you sure you want to delete item {0} with item number {1} ?', $item->item_name, $item->item_number), 'class' => 'label danger']) ?>
-								<!-- <?= $this->Html->link(__('Add to Shopping Cart'), ['controller' => 'Shopcart', 'action' => 'addItem', $item->id], ['class' => 'label']) ?> -->
+								<?= $this->Html->link(__('Add 2 Cart'), ['controller' => 'ShopcartItems', 'action' => 'add', $aUser['id'], $item->id], ['class' => 'label']) ?>
 								</td>
 								</tr>
 
@@ -91,9 +92,8 @@ if(isset($_SESSION['username']))  {
 						<h3>
 							Shopping Cart
 						</h3>
-						<a href="shopcart">
-							View Cart
-						</a>
+						<?= $this->Html->link(__('View Cart'), ['controller' => 'Shopcart', 'action' => 'view', $userCartID]) ?>
+
 					</div>
 				</div>
 				<div class="col-9 last main">
@@ -108,17 +108,17 @@ if(isset($_SESSION['username']))  {
 								$this->Html->image('graphics/' . $item->photo, ['alt' => $item->item_name, 'fullBase' => true, 'class' => 'item_image']) : h('NO Image Yet'); ?>
 							</div>
 							<div class="info">
-								<h3 class="item-name">
-								<?= h($item->item_name) ?>
-								</h3>
-								
-								<div>
-								<span class="item-quantity">
-								#<?= $this->Number->format($item->quantity_on_hand) ?>
-								</span>
-								<img class="barcode-container" data-barcode="<?= $this->Number->format($item->barcode, ['pattern' => '########']) ?>">
-								<?= $this->Html->link(__('Add to Shopping Cart'), ['controller' => 'Shopcart', 'action' => 'addItem', $item->id], ['class' => 'label']) ?>
-								</div>
+							  <h3 class="item-name">
+							  <?= h($item->item_name) ?>
+							  </h3>
+							  <div>
+							  <span class="item-quantity">
+							  #<?= $this->Number->format($item->quantity_on_hand) ?>
+							  </span>
+							  <img class="barcode-container" data-barcode="<?= $this->Number->format($item->barcode, ['pattern' => '########']) ?>">
+							  <?= $this->Html->link(__('Add to Shopping Cart'), ['controller' => 'ShopcartItems', 'action' => 'add', $aUser['id'], $item->id], ['class' => 'label']) ?>
+							  <?= $this->Html->link(__('Item Info'), ['controller' => 'Items', 'action' => 'view', $item->id], ['class' => 'label']) ?>
+							  </div>
 							</div>
 						</div>
 					<?php endforeach; ?>

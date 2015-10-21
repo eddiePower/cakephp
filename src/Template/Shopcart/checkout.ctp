@@ -1,5 +1,5 @@
 <div class="actions columns large-2 medium-3">
-    <h3><?= __('Actions') ?></h3>
+    <h3><?= __('Checkout Actions') ?></h3>
     <ul class="side-nav">
         <li><?= $this->Html->link(__('Edit Shopcart'), ['action' => 'edit', $shopcart->id]) ?> </li>
         <li><?= $this->Form->postLink(__('Delete Shopcart'), ['action' => 'delete', $shopcart->id], ['confirm' => __('Are you sure you want to delete # {0}?', $shopcart->id)]) ?> </li>
@@ -50,12 +50,18 @@
                 <?= $this->Html->link(__('View Item info'), ['controller' => 'items', 'action' => 'view', $items->id], ['class' => 'label']) ?>
                 <!-- ADD IN THE REMOVE ITEM HERE AND EDIT ITEM DETAILS FOR THE SHOPPING CART ITEM, IE QTY similar to the ADD PAGE -->
                 
-                <?= $this->Form->postLink(__('Remove Item from Cart'), ['controller' => 'ShopcartItems', 'action' => 'delete', $items['_joinData']['id']],  ['class' => 'label danger'], ['confirm' => __('Are you sure you want to delete this item from your cart, Item Name:  {0}?', $items->item_name)]) ?>
+                <?= $this->Form->postLink(__('Remove Item from Cart'), ['controller' => 'ShopcartItems', 'action' => 'delete', $items['_joinData']['id']],  ['class' => 'label'], ['confirm' => __('Are you sure you want to delete this item from your cart, Item Name:  {0}?', $items->item_name)]) ?>
             </td>
         </tr>
         <?php endforeach; ?>
        
     </table>
     <?php endif; ?>
+    </div>
+        <br />
+    <div id="checkout_totals" class="large-2 columns">
+        <h3>Cart Total $$</h3>
+        will display the cart or order total here with buttons to place the order or cancel the checkout.
+        
     </div>
 </div>

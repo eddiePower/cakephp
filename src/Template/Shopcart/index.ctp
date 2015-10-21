@@ -26,19 +26,18 @@ $this->Html->scriptEnd();
         </tr>
     </thead>
     <tbody>
-    <?php foreach ($shopcart as $shopcart): ?>
+    <?php foreach ($shopcart as $aCart): ?>
         <tr>
             <td>
-                <?= $shopcart->has('user') ? $this->Html->link($shopcart->user->email, ['controller' => 'Users', 'action' => 'view', $shopcart->user->id]) : '' ?>
+                <?= $aCart->has('user') ? $this->Html->link($aCart->user->email, ['controller' => 'Shopcart', 'action' => 'view', $aCart->id]) : '' ?>
             </td>
-            <td><?= h($shopcart->created) ?></td>
+            <td><?= h($aCart->created) ?></td>
             <td class="actions">
-                <?= $this->Html->link(__('View'), ['action' => 'view', $shopcart->id]) ?>
-                <?= $this->Html->link(__('Edit'), ['action' => 'edit', $shopcart->id]) ?>
-                <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $shopcart->id], ['confirm' => __('Are you sure you want to delete # {0}?', $shopcart->created)]) ?>
+                <?= $this->Html->link(__('View'), ['action' => 'view', $aCart->id]) ?>
+                <?= $this->Html->link(__('Edit'), ['action' => 'edit', $aCart->id]) ?>
+                <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $aCart->id], ['confirm' => __('Are you sure you want to delete this cart for user {0}?', $aCart->user->email)]) ?>
             </td>
         </tr>
-
     <?php endforeach; ?>
     </tbody>
     </table>

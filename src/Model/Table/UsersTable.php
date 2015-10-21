@@ -49,7 +49,7 @@ class UsersTable extends Table
             ->requirePresence('password', 'create')
             ->notEmpty('password', 'Please choose a secure pass phrase')
             ->requirePresence('role', 'create')
-            ->notEmpty('role', 'A role is required at this time, will be changed soon by dev team heisenburg')
+            ->notEmpty('role')
             ->add('role', 'inList', [
                 'rule' => ['inList', ['admin', 'salesRep', 'user']],
                 'message' => 'Please choose a valid role'])

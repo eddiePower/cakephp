@@ -3,7 +3,9 @@
 //enable the data-tables jQuery plugin for better table uttils.
 $this->Html->scriptStart(['block' => true]);
 echo "$(document).ready(function(){
-    $('#data-table').DataTable();
+    $('#data-table').DataTable({
+    'order': [[ 0, 'asc' ]]
+    });
 });";
 $this->Html->scriptEnd();
 ?>
@@ -25,7 +27,7 @@ $this->Html->scriptEnd();
         <tr>
             <th><?= __('Username') ?></th>
             <th><?= __('Email') ?></th>
-            <th><?= __('Password') ?></th>
+<!--             <th><?= __('Password') ?></th> -->
             <th><?= __('Date Created') ?></th>
             <th><?= __('User Role') ?></th>
             <th class="actions"><?= __('Actions') ?></th>
@@ -37,7 +39,7 @@ $this->Html->scriptEnd();
             <td><?= h($user->username) ?></td>
             <td><?= h($user->email) ?></td>
             <!-- Used a cake truncate method for somthing different, can also use tail for end of string -->
-            <td><?= h($this->Text->truncate($user->password, 20, ['ellipsis' => '...', 'exact' => true])) ?></td>
+<!--             <td><?= h($this->Text->truncate($user->password, 20, ['ellipsis' => '...', 'exact' => true])) ?></td> -->
             <td><?= h($user->created) ?></td>
             <td><?= h($user->role) ?></td>
             <td class="actions">

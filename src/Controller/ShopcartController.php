@@ -30,6 +30,8 @@ class ShopcartController extends AppController
         $this->set('shopcart', $this->paginate($this->Shopcart));
         $this->set('_serialize', ['shopcart']);
         
+        
+        
     }
 
     /**
@@ -51,8 +53,7 @@ class ShopcartController extends AppController
         // this saves space and time rather then each display 
         //having $shopcart.'shopcartItems' every line
         
-        $this->set('cartItems', $shopcart.'shopcartItems');        
-        //debug($shopcart.'shopcartItems'); 
+        //$this->set('cartItems', $shopcart);        
 
     }
 
@@ -63,29 +64,25 @@ class ShopcartController extends AppController
      */
     public function add()
     {
-        
-                            
+                
         $aUser = $this->request->session()->read('user');
         
+        //store the user id to autoset the users shopping cart.
         $usersID = $aUser['id'];
-        //debug($usersID);
         
         $shopcart = $this->Shopcart->newEntity();
+
+        $shopcart->user_id = $usersID;  
+        //debug($shopcart);
         
-        
-        if ($this->request->is('post')) 
+        if ($this->Shopcart->save($shopcart)) 
         {
-            $shopcart = $this->Shopcart->patchEntity($shopcart, $this->request->data);
-            
-            if ($this->Shopcart->save($shopcart)) 
-            {
-                $this->Flash->success(__('The shopcart has been saved.'));
-                return $this->redirect(['action' => 'index']);
-            } 
-            else 
-            {
-                $this->Flash->error(__('The shopcart could not be saved. Please, try again.'));
-            }
+            //$this->Flash->success(__('The shopcart has been saved.'));
+            return $this->redirect(['controller' => 'Items', 'action' => 'index']);
+        } 
+        else 
+        {
+            $this->Flash->error(__('The shopcart could not be saved. Please, try again.'));
         }
         
         $users = $this->Shopcart->Users->find('list', ['limit' => 200]);
@@ -107,15 +104,21 @@ class ShopcartController extends AppController
         $shopcart = $this->Shopcart->get($id, [
             'contain' => ['Items']
         ]);
-        if ($this->request->is(['patch', 'post', 'put'])) {
+        if ($this->request->is(['patch', 'post', 'put'])) 
+        {
             $shopcart = $this->Shopcart->patchEntity($shopcart, $this->request->data);
-            if ($this->Shopcart->save($shopcart)) {
+            
+            if ($this->Shopcart->save($shopcart)) 
+            {
                 $this->Flash->success(__('The shopcart has been saved.'));
                 return $this->redirect(['action' => 'index']);
-            } else {
+            } 
+            else 
+            {
                 $this->Flash->error(__('The shopcart could not be saved. Please, try again.'));
             }
         }
+        
         $users = $this->Shopcart->Users->find('list', ['limit' => 200]);
         $items = $this->Shopcart->Items->find('list', ['limit' => 200]);
         $this->set(compact('shopcart', 'users', 'items'));
@@ -123,7 +126,7 @@ class ShopcartController extends AppController
     }
 
     /**
-     * Delete method
+     * Delete shoppingCart method
      *
      * @param string|null $id Shopcart id.
      * @return void Redirects to index.
@@ -137,12 +140,39 @@ class ShopcartController extends AppController
         
         if ($this->Shopcart->delete($shopcart)) 
         {
-            $this->Flash->success(__('The shopcart has been deleted.'));
+            $this->Flash->success(__('The shopping cart has been deleted.'));
         } 
         else 
         {
-            $this->Flash->error(__('The shopcart could not be deleted. Please, try again.'));
+            $this->Flash->error(__('The shopping cart could not be deleted. Please, try again.'));
         }
-        return $this->redirect(['action' => 'index']);
+        
+        return $this->redirect(['controller' => 'Items', 'action' => 'index']);
     }
+    
+    public function checkout($id = null)
+    {
+        //grab the shopping cart,
+        $shopcart = $this->Shopcart->get($id, [
+            'contain' => ['Users', 'Items']
+        ]);
+        
+        //add items to an array
+        
+        // calculate and show the cost for this order,
+        
+        //either send data to add order and add order items,
+        
+        // or create an order and orderDetails objects and populate them from here.
+        
+        //calculate the order total by adding up the item base prices and make note that 
+        
+        //set some ViewVars for the checkout view page.
+        $this->set('shopcart', $shopcart);
+        $this->set('_serialize', ['shopcart']);
+    
+
+    }
+    
+    
 }

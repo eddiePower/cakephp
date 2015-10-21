@@ -88,9 +88,16 @@ class OrderDetailsController extends AppController
                 //loop through query result
                 foreach($query as $orderedItem)
                 {
-                   // debug($orderedItem->quantity_on_hand);  
+                   //debug($orderedItem->base_price);  
+                   //store this items price as the orderedItems price.
+                   $orderDetail->per_unit = $orderedItem->base_price;
+                   //debug($orderDetail->per_unit);
+                   
                 }//end foreach query result (should only be one in this case)           
            
+                //add ajax to this call!!
+                $this->set('stockPrice', $orderDetail->per_unit);
+                
                 //store the new item quantity in the warehouse by subtracting the quantity ordered.                
                 $newQtyOnHand = $orderedItem->quantity_on_hand - $this->request->data['quantity_ordered'];
                 
@@ -113,7 +120,6 @@ class OrderDetailsController extends AppController
                 {
                     //!!!!!!!!!!!!!email Rick to let him know the item is now out of stock
                     
-                    
                     //save the new stock levels to the items table.
                     $query2 = TableRegistry::get('Items')->find();
                     $query2->update('Items')
@@ -122,7 +128,6 @@ class OrderDetailsController extends AppController
                     $stmt = $query2->execute();
                     
                     //go forward with creating the order
-                    
                     
                 }
                 else
@@ -138,11 +143,15 @@ class OrderDetailsController extends AppController
                     
                     //go forward with creating the order
                     
+                   
+                    
                 }
-                
+                    
                 //store the new orderDetails from the data entered in the addOrderDetail form
                 $orderDetail = $this->OrderDetails->patchEntity($orderDetail, $this->request->data);
                 
+                
+                //debug($orderDetail);
                 //if the save of the new entity in database works then
                 if ($this->OrderDetails->save($orderDetail)) 
                 {
@@ -182,6 +191,7 @@ class OrderDetailsController extends AppController
      */
     public function edit($id = null)
     {
+        
         $orderDetail = $this->OrderDetails->get($id, [
             'contain' => []
         ]);
