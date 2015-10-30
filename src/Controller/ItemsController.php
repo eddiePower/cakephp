@@ -36,14 +36,16 @@ class ItemsController extends AppController
         $aUser = $this->request->session()->read('user');
         $this->set('aUser', $aUser);
         
+        //get all shopping carts from the dbase
         $userCart = TableRegistry::get('Shopcart');
 
-        // Start a new query.
+        // Start a new query to find cart of logged in user
         $query = $userCart->find();
         $query->where(['user_id' => $aUser['id']]);
         
         foreach ($query as $cart) 
         {
+            //set a viewVar of the users cart space for link on items index.
             $this->set('userCartID', $cart->id);
             //debug($cart->id);
         }
@@ -64,6 +66,9 @@ class ItemsController extends AppController
             'contain' => ['OrderDetails', 'PurchaseDetails']
         ]);
         
+        $aUser = $this->request->session()->read('user');
+        $this->set('aUser', $aUser);
+        
         $this->set('item', $item);
         $this->set('_serialize', ['item']);
         
@@ -72,51 +77,62 @@ class ItemsController extends AppController
     /**
      * Add method
      *
-     * @return void Redirects on successful add, renders view otherwise.
+     * @return void Redirects on successful add of new stock item, renders view otherwise.
      */
     public function add()
     {    
-        $item = $this->Items->newEntity();
-    
-        if ($this->request->is('post')) 
+        //if this is just a user then re direct them away from adding new stock items
+        if($this->request->session()->read('userRole') != 'admin')
         {
-
-            if (isset($this->request->data['Cancel']))
-            {
-                $this->Flash->error('Add Item was cancelled');
-                return $this->redirect(['action' => 'index']);
-            }
-            //upload image if user has selected one
-            //calls uploadFiles function in AppController.php
-            $fileOK = $this->uploadFiles('img/graphics', $this->request->data['photo']);
-            
-            //debug("Debug line " . $this->request->data['photo']['name']);
-
-            if(array_key_exists('urls', $fileOK))
-            {
-                $this->request->data['photo'] = $fileOK['urls'][0];
-            }
-            else
-            {
-                //debug("Debug line 2" . $this->request->data['photo']);
-                $this->request->data['photo'] = null;
-            }
-                    
-            $item = $this->Items->patchEntity($item, $this->request->data);
-            
-            if ($this->Items->save($item)) 
-            {
-                $this->Flash->success('The item has been saved.');
-                return $this->redirect(['action' => 'index']);
-            } 
-            else 
-            {
-                $this->Flash->error('The item could not be saved. Please, try again.');
-            }
+           $this->Flash->error('This action is not available to you, contact Solemate Admin if you feel this is an error.');
+           return $this->redirect(['action' => 'index']);
         }
-        
-        $this->set(compact('item'));
-        $this->set('_serialize', ['item']);
+        else
+        {
+           $item = $this->Items->newEntity();
+          
+           if ($this->request->is('post')) 
+           {
+          
+               if (isset($this->request->data['Cancel']))
+               {
+                   $this->Flash->error('Add Item was cancelled');
+                   return $this->redirect(['action' => 'index']);
+               }
+               //upload image if user has selected one
+               //calls uploadFiles function in AppController.php
+               $fileOK = $this->uploadFiles('img/graphics', $this->request->data['photo']);
+               
+               //debug("Debug line " . $this->request->data['photo']['name']);
+          
+               if(array_key_exists('urls', $fileOK))
+               {
+                   $this->request->data['photo'] = $fileOK['urls'][0];
+               }
+               else
+               {
+                   //debug("Debug line 2" . $this->request->data['photo']);
+                   $this->request->data['photo'] = null;
+               }
+               
+               //debug($this->request->data);
+               $item = $this->Items->patchEntity($item, $this->request->data);
+               //debug($item);
+               
+               if ($this->Items->save($item)) 
+               {
+                   $this->Flash->success('The item has been saved.');
+                   return $this->redirect(['action' => 'index']);
+               } 
+               else 
+               {
+                   $this->Flash->error('The item could not be saved. Please, try again.');
+               }
+           }
+           
+           $this->set(compact('item'));
+           $this->set('_serialize', ['item']);
+        }
     }
 
     /**
@@ -128,47 +144,57 @@ class ItemsController extends AppController
      */
     public function edit($id = null)
     {
-        $item = $this->Items->get($id, [
-            'contain' => []
-        ]);
-        
-        
-        if ($this->request->is(['patch', 'post', 'put'])) 
+         //if this is just a user then re direct them away from edditing a stock item
+        if($this->request->session()->read('userRole') != 'admin')
         {
-            if (isset($this->request->data['Cancel']))
-            {
-                $this->Flash->error('Edit Item was cancelled', true);
-                return $this->redirect(['action' => 'index']);
-            }
-
-            $currentImage = $item['photo'];
-
-            //upload the image via upload method in app controller (used to make available for whole app)
-            $fileOK = $this->uploadFiles('img/graphics', $this->request->data['photo']);
-            
-            if(array_key_exists('urls', $fileOK))
-            {
-                $this->request->data['photo'] = $fileOK['urls'][0];
-            }
-            else
-            {
-                $this->request->data['photo'] = $currentImage;
-            }
-            
-            $item = $this->Items->patchEntity($item, $this->request->data);
-            
-            if ($this->Items->save($item)) 
-            {
-                $this->Flash->success('The item has been saved.');
-                return $this->redirect(['action' => 'index']);
-            } 
-            else 
-            {
-                $this->Flash->error('The item could not be saved. Please, try again.');
-            }
+           $this->Flash->error('This action is not available to you, contact Solemate Admin if you feel this is an error.');
+           return $this->redirect(['action' => 'index']);
         }
-        $this->set(compact('item'));
-        $this->set('_serialize', ['item']);
+        else
+        {
+           $item = $this->Items->get($id, [
+               'contain' => []
+           ]);
+           
+           
+           if ($this->request->is(['patch', 'post', 'put'])) 
+           {
+               if (isset($this->request->data['Cancel']))
+               {
+                   $this->Flash->error('Edit Item was cancelled', true);
+                   return $this->redirect(['action' => 'index']);
+               }
+         
+               $currentImage = $item['photo'];
+         
+               //upload the image via upload method in app controller (used to make available for whole app)
+               $fileOK = $this->uploadFiles('img/graphics', $this->request->data['photo']);
+               
+               if(array_key_exists('urls', $fileOK))
+               {
+                   $this->request->data['photo'] = $fileOK['urls'][0];
+               }
+               else
+               {
+                   $this->request->data['photo'] = $currentImage;
+               }
+               
+               $item = $this->Items->patchEntity($item, $this->request->data);
+               
+               if ($this->Items->save($item)) 
+               {
+                   $this->Flash->success('The item has been saved.');
+                   return $this->redirect(['action' => 'index']);
+               } 
+               else 
+               {
+                   $this->Flash->error('The item could not be saved. Please, try again.');
+               }
+           }
+           
+           $this->set(compact('item'));
+           $this->set('_serialize', ['item']);
+       }
     }
 
     /**
@@ -180,18 +206,27 @@ class ItemsController extends AppController
      */
     public function delete($id = null)
     {
-        $this->request->allowMethod(['post', 'delete']);
-        $item = $this->Items->get($id);
-        
-        if ($this->Items->delete($item)) 
+        //if this is just a user then re direct them away from adding new stock items
+        if($this->request->session()->read('userRole') != 'admin')
         {
-            $this->Flash->success('The item has been deleted.');
-        } 
-        else 
-        {
-            $this->Flash->error('The item could not be deleted. Please, try again.');
+           $this->Flash->error('This action is not available to you, contact Solemate Admin if you feel this is an error.');
+           return $this->redirect(['action' => 'index']);
         }
-        
-        return $this->redirect(['action' => 'index']);
+        else
+        {
+           $this->request->allowMethod(['post', 'delete']);
+           $item = $this->Items->get($id);
+           
+           if ($this->Items->delete($item)) 
+           {
+               $this->Flash->success('The item has been deleted.');
+           } 
+           else 
+           {
+               $this->Flash->error('The item could not be deleted. Please, try again.');
+           }
+           
+           return $this->redirect(['action' => 'index']);
+        }
     }
 }

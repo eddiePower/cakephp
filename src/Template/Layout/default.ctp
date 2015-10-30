@@ -30,7 +30,7 @@ $cakeDescription = 'SoleMate Doormats';
 		<?= $this->Html->css(['lightgrid', 'http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css', 'jquery.dataTables.css']) ?>
 		
 		<!-- Add in jQuery and all jScript links here using cakePHP -->		
-		<?= $this->Html->script(['tinymce/tinymce.min.js','https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js','https://cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js', 'http://code.jquery.com/ui/1.11.4/jquery-ui.js', 'common', 'dropdown', 'snowflake.js', 'siteConfig.js']) ?>
+		<?= $this->Html->script(['tinymce/tinymce.min.js','https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js','https://cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js', 'http://code.jquery.com/ui/1.11.4/jquery-ui.js', 'jquery-barcode.js', 'common', 'dropdown', 'snowflake.js', 'siteConfig.js']) ?>
 		<?= $this->fetch('meta') ?>
 		<?= $this->fetch('script') ?>
 	</head>

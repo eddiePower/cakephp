@@ -47,9 +47,10 @@ $this->Html->scriptEnd();
 		<tr style="height: 50px">
 				<th><?= __('First Name') ?></th>
 				<th><?= __('Last Name') ?></th>
-				<th><?= __('Customer Address') ?></th>
+				<th><?= __('Address') ?></th>
 				<th><?= __('Postcode') ?></th>
 				<th><?= __('Phone') ?></th>
+<!-- 				<th><?= __('Website URL') ?></th> -->
 				<th><?= __('Customer Type') ?></th>
 				<th><?= __('Customer email') ?></th>
 				<th class="actions"><?= __('Actions') ?></th>
@@ -63,6 +64,7 @@ $this->Html->scriptEnd();
 				<td><?= h($customer->address) ?></td>
 				<td><?= $this->Number->format($customer->postcode, ['pattern' => '####']) ?></td>
 				<td><?= h($customer->phone) ?></td>
+<!-- 				<td><?= h($customer->customer_url) ?></td> -->
 				<td><?= h($customer->customer_type) ?></td>
 
 				<!--  Entry point for email checkbox and array builder / form.   -->

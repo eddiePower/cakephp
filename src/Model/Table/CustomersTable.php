@@ -70,6 +70,9 @@ class CustomersTable extends Table
             ->allowEmpty('phone');
             
         $validator
+            ->allowEmpty('customer_url');
+            
+        $validator
             ->allowEmpty('notes');
             
         $validator

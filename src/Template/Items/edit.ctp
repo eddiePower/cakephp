@@ -9,8 +9,10 @@
 	<?= $this->Html->link(__('List Items'), ['action' => 'index'], ['class' => 'nav-item']) ?>
 	<?= $this->Html->link(__('List Order Details'), ['controller' => 'OrderDetails', 'action' => 'index'], ['class' => 'nav-item']) ?>
 	<?= $this->Html->link(__('New Order Detail'), ['controller' => 'OrderDetails', 'action' => 'add'], ['class' => 'nav-item']) ?>
-	<?= $this->Html->link(__('List Purchase Details'), ['controller' => 'PurchaseDetails', 'action' => 'index'], ['class' => 'nav-item']) ?>
+	<!--
+<?= $this->Html->link(__('List Purchase Details'), ['controller' => 'PurchaseDetails', 'action' => 'index'], ['class' => 'nav-item']) ?>
 	<?= $this->Html->link(__('New Purchase Detail'), ['controller' => 'PurchaseDetails', 'action' => 'add'], ['class' => 'nav-item']) ?>
+-->
 </nav>
 
 <div class="col-12 last panel">
@@ -20,6 +22,12 @@
 	<?php
 	      echo $this->Form->input('item_name');
 	      echo $this->Form->input('quantity_on_hand');
+	      	
+          echo $this->Form->input('matt_bale_count');
+          echo $this->Form->input('bale_cost');
+          echo $this->Form->input('matt_weight');
+          echo $this->Form->input('base_price');
+	
 	      echo $this->Form->input('item_number');
 	      echo $this->Form->input('barcode');
           echo $this->Form->file('photo', ['label' =>'Item Image','size'=>'50']);

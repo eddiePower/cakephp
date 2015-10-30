@@ -16,6 +16,10 @@ class Item extends Entity
     protected $_accessible = [
         'item_name' => true,
         'quantity_on_hand' => true,
+        'matt_bale_count' => true,
+        'bale_cost' => true,
+        'matt_weight' => true,
+        'base_price' => true,
         'item_number' => true,
         'barcode' => true,
         'photo' => true,

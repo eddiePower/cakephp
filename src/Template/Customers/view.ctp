@@ -81,20 +81,18 @@
 			</tr>
 		</tbody>
 	</table>
+	
+	<h4 class="subheader"><?= __('<b><i>Customer Website URL:</i></b>') ?></h4>
+	<p><?= $this->Html->link($customer->customer_url, $customer->customer_url, ['target' => '_blank', 'title' => 'Click to open the company website.']) ?></p>
 
-
-	<!--
-	<h6 class="subheader"><?= __('Id') ?></h6>
-	<p><?= $this->Number->format($customer->id) ?></p>
-	-->
-	<h4 class="subheader"><?= __('Postcode') ?></h4>
+	<h4 class="subheader"><?= __('<b><i>Postcode:</i></b>') ?></h4>
 	<p><?= $this->Number->format($customer->postcode, ['pattern' => '####']) ?></p>
 
-	<h4 class="subheader"><?= __('Address') ?></h4>
-	<?= $this->Text->autoParagraph(h($customer->address)); ?>
+	<h4 class="subheader"><?= __('<b><i>Address:</i></b>') ?></h4>
+    <p><a href="http://maps.google.com/?q=<?= __($customer->address . ', ' . $customer->postcode . '. Australia') ?>" 
+    target="_blank" title="Click to open the company address in google maps."><?= __($customer->address) ?></a></p>
 
-
-	<h4 class="subheader"><?= __('Notes') ?></h4>
+	<h4 class="subheader"><?= __('<b><i>Notes:</i></b>') ?></h4>
 	<?= $this->Text->autoParagraph(h($customer->notes)); ?>
 
 

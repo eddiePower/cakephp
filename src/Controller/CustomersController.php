@@ -155,7 +155,7 @@ class CustomersController extends AppController
         //if the user role is of type user and they already have a customer 
         // set then dont allow them to add another, 
         //!!!!CAN ADD A LIMIT ON SALES REPS HERE AS WELL IF NEED BE!!!!
-        if(sizeof($results) == 1 && $userRole = 'user')
+        if(sizeof($results) == 1 && $userRole == 'user')
         {
             $this->Flash->error('You can only have one set of customer data, please edit your info on edit customer page, if you need a sales rep status please contact solemate admin staff.');
             return $this->redirect(['action' => 'index']);
@@ -251,18 +251,38 @@ class CustomersController extends AppController
      */
     public function delete($id = null)
     {
-        $this->request->allowMethod(['post', 'delete']);
+        //set some working vars
+        //first we need the user to get the id from
+        $setUser = $this->request->session()->read('user');
+        $setID = $setUser['id'];
+        //next the customer to be deleted again for checks and if ok then deletion.
         $customer = $this->Customers->get($id);
-        if ($this->Customers->delete($customer)) 
+
+        //check if the customer to delete's user id is not = to logged in user & userRole is not a admin
+        // re direct user away from page as this is not allowd
+        if($customer->user_id != $setID && $this->request->session()->read('userRole') != 'admin')
         {
-            $this->Flash->success('The customer has been deleted.');
-        } 
-        else 
-        {
-            $this->Flash->error('The customer could not be deleted. Please, try again.');
+            //error
+            $this->Flash->error("You can only remove your own customer details, if you feel this is an incorrect please contact solemate staff.");
+            //redirect
+            return $this->redirect(['action' => 'index']);
+            
         }
+        else  // else go on with the deletion as we know either they are a admin or its their own customer data.
+        {
+          $this->request->allowMethod(['post', 'delete']);
         
-        return $this->redirect(['action' => 'index']);
+           if ($this->Customers->delete($customer)) 
+           {
+               $this->Flash->success('The customer has been deleted.');
+           } 
+           else 
+           {
+               $this->Flash->error('The customer could not be deleted. Please, try again.');
+           }
+           
+           return $this->redirect(['action' => 'index']);
+        }
     }
 
 

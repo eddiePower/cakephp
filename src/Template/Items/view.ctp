@@ -1,13 +1,17 @@
 <h1 class="center"><?= h($item->item_name) ?> - Item</h1>
 <nav class="nav-container">
+<!--
 	<?= $this->Html->link(__('Edit Item'), ['action' => 'edit', $item->id], ['class' => 'nav-item']) ?>
 	<?= $this->Form->postLink(__('Delete Item'), ['action' => 'delete', $item->id], ['confirm' => __('Are you sure you want to delete # {0}?', $item->id), 'class' => 'nav-item']) ?>
-	<?= $this->Html->link(__('List Items'), ['action' => 'index'], ['class' => 'nav-item']) ?>
-	<?= $this->Html->link(__('New Item'), ['action' => 'add'], ['class' => 'nav-item']) ?>
+-->
+	<?= $this->Html->link(__('Stock Items'), ['action' => 'index'], ['class' => 'nav-item']) ?>
+<!-- 	<?= $this->Html->link(__('New Item'), ['action' => 'add'], ['class' => 'nav-item']) ?> -->
 	<?= $this->Html->link(__('List Order Details'), ['controller' => 'OrderDetails', 'action' => 'index'], ['class' => 'nav-item']) ?>
-	<?= $this->Html->link(__('New Order Detail'), ['controller' => 'OrderDetails', 'action' => 'add'], ['class' => 'nav-item']) ?>
+<!-- 	<?= $this->Html->link(__('New Order Detail'), ['controller' => 'OrderDetails', 'action' => 'add'], ['class' => 'nav-item']) ?> -->
+<!--  REMOVED DUE TO TIME CONSTRAINTS THIS IS WHERE WE STARTED ADMIN STOCK PURCHASES 
 	<?= $this->Html->link(__('List Purchase Details'), ['controller' => 'PurchaseDetails', 'action' => 'index'], ['class' => 'nav-item']) ?>
 	<?= $this->Html->link(__('New Purchase Detail'), ['controller' => 'PurchaseDetails', 'action' => 'add'], ['class' => 'nav-item']) ?>
+-->
 </nav>
 
 <div class="col-12 last panel">
@@ -23,11 +27,15 @@
 					<?= __('Item Name') ?>
 				</td>
 				<?=  $this->request->session()->read('userRole') == 'admin' ? __('<td>Quantity On Hand</td>') : '' ?> 
+				<?=  $this->request->session()->read('userRole') == 'admin' ? __('<td>Barcode</td>') : '' ?> 
 				<td>
-					<?= __('Item Number / ID') ?>
+    				<?= __('Item Number') ?>
 				</td>
 				<td>
 				<?= __('Base Price') ?>
+				</td>
+				<td>
+				<?= __('Actions') ?>
 				</td>
 			</tr>
 		</thead>
@@ -41,16 +49,38 @@
 					<?= h($item->item_name) ?>
 				</td>
 				<?= $this->request->session()->read('userRole') == 'admin' ? __('<td>' . $this->Number->format($item->quantity_on_hand) . '</td>') : '' ?>
+				<?= $this->request->session()->read('userRole') == 'admin' ? __('<td><script type="text/javascript">
+    					$(document).ready(function()
+    					{
+    					   $("#bcTarget").barcode("' . $item->barcode . '", "ean13");
+    					});
+				   </script>
+				   <div id="bcTarget">
+				   </div>
+				</td>') : '' ?>
 				<td>
 					<?= $this->Number->format($item->item_number, ['pattern' => '########']) ?>
 				</td>
-				<td> <?= $this->Number->currency($item->base_price, 'USD') ?></td> 
+				<td> <?= $this->Number->currency($item->base_price, 'USD') ?></td>
+				<td><?= $this->Html->link(__('Add to Shopping Cart'), ['controller' => 'ShopcartItems', 'action' => 'add', $aUser['id'], $item->id], ['class' => 'label']) ?></td> 
 				
 			</tr>
 		</tbody>
 	</table>
-   
-    <?php if($this->request->session()->read('userRole') == 'admin') { ?> 
+	<?php 
+	if($this->request->session()->read('userRole') == 'admin')
+	{
+	?>
+	<div class="col-12 last panel">
+	<h3>Warehousing Information:</h3>
+	<p>Bale Size: <?= $item->matt_bale_count ?> Units,</p>
+	<p>Bale Cost: <?= $this->Number->currency($item->bale_cost, 'USD') ?>,</p>
+	<p>Matt Weight: <?= $item->matt_weight ?> Kg.</p>
+	</div>
+	<?php
+	    }
+	    
+	    if($this->request->session()->read('userRole') == 'admin') { ?> 
 	<h4 class="subheader"><?= __('Related OrderDetails') ?></h4>
 	<?php if (!empty($item->order_details)): ?>
 	<table cellpadding="0" cellspacing="0">

@@ -26,11 +26,13 @@ class OrderDetailsController extends AppController
      */
     public function index()
     {
-        $this->paginate = [
-            'contain' => ['Items', 'Orders']
-        ];
-        $this->set('orderDetails', $this->paginate($this->OrderDetails));
-        $this->set('_serialize', ['orderDetails']);
+      
+           $this->paginate = [
+               'contain' => ['Items', 'Orders']
+           ];
+           $this->set('orderDetails', $this->paginate($this->OrderDetails));
+           $this->set('_serialize', ['orderDetails']);
+
     }
 
     /**
@@ -96,7 +98,7 @@ class OrderDetailsController extends AppController
                 }//end foreach query result (should only be one in this case)           
            
                 //add ajax to this call!!
-                $this->set('stockPrice', $orderDetail->per_unit);
+                //$this->set('stockPrice', $orderDetail->per_unit);q
                 
                 //store the new item quantity in the warehouse by subtracting the quantity ordered.                
                 $newQtyOnHand = $orderedItem->quantity_on_hand - $this->request->data['quantity_ordered'];
@@ -149,7 +151,6 @@ class OrderDetailsController extends AppController
                     
                 //store the new orderDetails from the data entered in the addOrderDetail form
                 $orderDetail = $this->OrderDetails->patchEntity($orderDetail, $this->request->data);
-                
                 
                 //debug($orderDetail);
                 //if the save of the new entity in database works then

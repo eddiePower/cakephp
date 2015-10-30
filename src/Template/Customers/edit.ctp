@@ -22,6 +22,7 @@
 	  echo $this->Form->input('address');
 	  echo $this->Form->input('postcode');
 	  echo $this->Form->input('phone');
+	  echo $this->Form->input('customer_url');
 	  echo $this->Form->input('notes');
 	  echo $this->Form->input('customer_type');
 	

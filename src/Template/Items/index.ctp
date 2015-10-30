@@ -56,12 +56,15 @@ if(isset($_SESSION['username']))  {
 								<td><?= h($item->item_name) ?></td>
 								<td><?= $this->Number->format($item->quantity_on_hand) ?></td>
 								<td><?= $this->Number->format($item->item_number, ['pattern' => '########']) ?></td>
-								<td><?= $this->Number->format($item->barcode, ['pattern' => '########']) ?></td>
+								<td>
+								    <?= $this->Html->link($this->Number->format($item->barcode, ['pattern' => '#############']), ['action' => 'view', $item->id]) ?>
+								</td>
+								
 								<td class="actions">
 								<?= $this->Html->link(__('View'), ['action' => 'view', $item->id], ['class' => 'label']) ?>
 								<?= $this->Html->link(__('Edit'), ['action' => 'edit', $item->id], ['class' => 'label']) ?>
 								<?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $item->id], ['confirm' => __('Are you sure you want to delete item {0} with item number {1} ?', $item->item_name, $item->item_number), 'class' => 'label danger']) ?>
-								<?= $this->Html->link(__('Add 2 Cart'), ['controller' => 'ShopcartItems', 'action' => 'add', $aUser['id'], $item->id], ['class' => 'label']) ?>
+								<?= $this->Html->link(__('Add to Cart'), ['controller' => 'ShopcartItems', 'action' => 'add', $aUser['id'], $item->id], ['class' => 'label']) ?>
 								</td>
 								</tr>
 

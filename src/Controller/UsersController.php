@@ -140,6 +140,12 @@ class UsersController extends AppController
         //set the new databas entity
         $user = $this->Users->newEntity();
         
+        if($this->request->session()->read('userRole') != 'admin')
+        {
+            $this->Flash->error('Your not allowed to sign up new users. contact the admin');
+            return $this->redirect(['controller' => 'Users', 'action' => 'index']);
+        }
+        
         //set a variable to check userrole and display options depending
         $this->set('userRole', $this->Auth->user('role'));
                 
@@ -325,6 +331,7 @@ class UsersController extends AppController
                     // be removed no matter how many are made
                     $this->Shopcart->delete($cartToDelete);
                  }
+                
                  //debug($cart->created);  
               }
               
@@ -339,10 +346,11 @@ class UsersController extends AppController
                   
                   //store the userID into the shopping cart to tie it to 
                   // logged in user.
-                  $cart->user_id = $uId;  
+                  $cart->user_id = $uId;                 
+                  
                   
                   //now save this shopping cart to the database for later use.
-                  $this->Shopcart->save($cart);
+                  $this->Shopcart->save($cart);                      
               }
                                           
               //pull out the username and role for authorisation app wide.

@@ -22,5 +22,6 @@ class OrderDetail extends Entity
         'discount' => true,
         'item' => true,
         'order' => true,
+        'user_id' => true,
     ];
 }

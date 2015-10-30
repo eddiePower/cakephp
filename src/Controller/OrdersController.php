@@ -162,7 +162,10 @@ class OrdersController extends AppController
             //pre set the ordered_date and courier id as we are not including that this build.
             $order->ordered_date = date("Y-m-d");   
             $order->courier_id = ("1");
-            
+                          
+            //set gged in user id as the order user id property
+            $loggedUser = $this->request->session()->read('user');
+            $order->user_id = $loggedUser['id'];
               
             //if the order save process is a success
             if ($this->Orders->save($order)) 

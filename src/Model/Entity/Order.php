@@ -17,7 +17,7 @@ class Order extends Entity
     protected $_accessible = [
         'ordered_date' => true,
         'required_date' => true,
-        'status' => true,
+        'customer_comments' => true,
         'courier_id' => true,
         'customer_id' => true,
         'courier' => true,

@@ -189,9 +189,17 @@ class ShopcartItemsController extends AppController
      */
     public function delete($id = null)
     {
+        //as long as this function is called via a post or delete call go on.
         $this->request->allowMethod(['post', 'delete']);
         
+        //grab out our cart item from the dbase.
         $shopcartItem = $this->ShopcartItems->get($id);
+        
+        //store cart id this item came from so we can go back
+        // to the cart view.
+        $cartID = $shopcartItem['shopcart_id'];
+        
+        //debug($cartID);
         
         if ($this->ShopcartItems->delete($shopcartItem)) 
         {
@@ -201,7 +209,9 @@ class ShopcartItemsController extends AppController
         {
             $this->Flash->error(__('The shopcart item could not be deleted. Please, try again.'));
         }
-        return $this->redirect(['controller' => 'Items', 'action' => 'index']);
+        
+        //now return to the cart view that we deleted this item rom
+        return $this->redirect(['controller' => 'Shopcart', 'action' => 'view', $cartID]);
     }
 }
 

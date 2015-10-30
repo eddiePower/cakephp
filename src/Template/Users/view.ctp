@@ -25,7 +25,7 @@
 
 <div class="col-12 last panel">
 	<h3>
-	<?= h($user->email) ?>
+	<?= h("User: " . $user->username . "'s account details.") ?>
 	</h3>
 	
 	<table>
@@ -33,20 +33,10 @@
 			<tr>
 				<th><?= __('User Email') ?></th> 
 				<td><?= h($user->email) ?></td>
-				</tr>    
-<!--
-				<tr>
-				<th><?= __('User Password') ?></th> 
-				<td><?= h($user->password) ?></td>
-			</tr>
--->
+            </tr>    
 			<tr>
 				<th><?= __('User Role') ?></th> 
 				<td><?= h($user->role) ?></td>
-			</tr>
-			<tr>
-				<th><?= __('Account Id') ?></th> 
-				<td><?= $this->Number->format($user->id) ?></td>
 			</tr>
 			<tr>
 				<th><?= __('Account Created') ?></th> 
@@ -59,7 +49,8 @@
 	
 	<?php if (!empty($user->customers)): ?>
 	<h3>
-	<?= __('User Related Customers') ?>
+    <?= $userRole == 'admin' ? __($user->username . "'s customer info: ") :  __("Your customer Information") ?>
+ 
 	</h3>
 	
 	<table>

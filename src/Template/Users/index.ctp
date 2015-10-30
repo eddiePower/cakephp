@@ -4,7 +4,7 @@
 $this->Html->scriptStart(['block' => true]);
 echo "$(document).ready(function(){
     $('#data-table').DataTable({
-    'order': [[ 0, 'asc' ]]
+    'order': [[ 2, 'desc' ]]
     });
 });";
 $this->Html->scriptEnd();
@@ -36,8 +36,8 @@ $this->Html->scriptEnd();
     <tbody>
     <?php foreach ($users as $user): ?>
         <tr>
-            <td><?= h($user->username) ?></td>
-            <td><?= h($user->email) ?></td>
+            <td style="text-align: left;"><?= h($user->username) ?></td>
+            <td style="text-align: left;"><?= h($user->email) ?></td>
             <!-- Used a cake truncate method for somthing different, can also use tail for end of string -->
 <!--             <td><?= h($this->Text->truncate($user->password, 20, ['ellipsis' => '...', 'exact' => true])) ?></td> -->
             <td><?= h($user->created) ?></td>

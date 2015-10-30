@@ -2,7 +2,8 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
-
+//used for db table queries
+use Cake\ORM\TableRegistry;
 /*
  *   ShopcartController.php by Eddie Power.
  *	 Team 18 - Heisenburg 
@@ -27,11 +28,31 @@ class ShopcartController extends AppController
         $this->paginate = [
             'contain' => ['Users']
         ];
-        $this->set('shopcart', $this->paginate($this->Shopcart));
-        $this->set('_serialize', ['shopcart']);
         
-        
-        
+        if($this->request->session()->read('userRole') == 'admin')
+        {
+           $this->set('shopcart', $this->paginate($this->Shopcart));
+           $this->set('_serialize', ['shopcart']);
+        }
+        else  //MAY CHANGE THIS TO IF NOT ADMIN GO TO THE VIEW OF ANY CART SPACE.
+        {
+           //store the current logged in user session var
+           $loggedUser = $this->request->session()->read('user');
+           
+           //run sql on shopcart to get user's carts
+           $query = TableRegistry::get('Shopcart')->find();
+           $query->where(['user_id' => $loggedUser['id']]);
+           
+           
+           //find the users cart and run the view cart func with the cart_id
+           foreach($query as $uCart)
+           {
+              //debug($uCart);
+              $id = $uCart['id'];
+              return $this->redirect(['action' => 'view', $id]);            
+
+           }
+        }
     }
 
     /**
@@ -49,11 +70,26 @@ class ShopcartController extends AppController
         $this->set('shopcart', $shopcart);
         $this->set('_serialize', ['shopcart']);
         
-        //set a viewVar for the items in the cart being viewed.
-        // this saves space and time rather then each display 
-        //having $shopcart.'shopcartItems' every line
+        //create a var to store the cart total in
+        $cTotal = 0.00;
         
-        //$this->set('cartItems', $shopcart);        
+        //for every item calculate its base cost * no ordered and
+        // add it to the running total.
+        foreach($shopcart['items'] as $item)
+        {
+            //debug($item->base_price);
+            //debug($item['_joinData']['quantity']);
+            $cTotal += ($item->base_price * $item['_joinData']['quantity']);
+            //debug($cTotal);     
+
+        }
+        
+        //add GST to value;
+        $auTax = $cTotal / 10;
+        
+        //send viewVars of total and AU Tax to the view page
+        $this->set('cartTotal', $cTotal);
+        $this->set('gst', $auTax);
 
     }
 
@@ -61,6 +97,9 @@ class ShopcartController extends AppController
      * Add method
      *
      * @return void Redirects on successful add, renders view otherwise.
+     *    Use:  used to creat a new shopping cart for users, this is normally
+     *          ran automatically from the login function and creates a space for
+     *          items to be saved as cartItems by a seperate controller.
      */
     public function add()
     {
@@ -158,6 +197,8 @@ class ShopcartController extends AppController
         ]);
         
         //add items to an array
+        debug($shopcart['items']);
+        
         
         // calculate and show the cost for this order,
         

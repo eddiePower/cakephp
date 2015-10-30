@@ -21,6 +21,7 @@ class Customer extends Entity
         'address' => true,
         'postcode' => true,
         'phone' => true,
+        'customer_url' => true,
         'notes' => true,
         'customer_type' => true,
         'user_id' => true,
