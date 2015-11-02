@@ -31,13 +31,52 @@ class OrdersController extends AppController
      */
     public function index()
     {
-        $this->paginate = [
-            'contain' => ['Couriers', 'Customers']
-        ];
-        $this->set('orders', $this->paginate($this->Orders));
-        $this->set('_serialize', ['orders']);
+    
+       if($this->request->session()->read('userRole') == 'admin')
+       {
+          $this->paginate = [
+              'contain' => ['Couriers', 'Customers']
+          ];
+          
+          //set viewVars for all orders.
+          $this->set('orders', $this->paginate($this->Orders));
+          $this->set('_serialize', ['orders']);
+       }
+       else
+       {
+          //grab all orders from the model
+          $allOrds = $this->Orders->find("all");
+            
+          //create space for just the logged in users Orders
+          $userOrders = array();
+          
+          //loop through all orders
+           foreach($allOrds as $aOrder)
+           {
+                //if the logged in user id matches the stored customer-user id 
+                if($this->Auth->user('id') == $aOrder['user_id'])
+                {
+                   //debug($aOrder);
+                   
+                   //push the contents onto the userCustomers array
+                   array_push($userOrders, $aOrder);
+                } 
+           }
+           //debug($userOrders);
+           
+            $this->paginate = [
+              'contain' => ['Couriers', 'Customers']
+          ];
+          
+          //set viewVars for all orders.
+          $this->set('orders', $userOrders);
+          $this->set('_serialize', ['orders']);
+        }         
+           $this->set('userRole', $this->Auth->user('role'));         
+           //Set a variable for use on the index view to show user name / email.
+           $this->set('username', $this->Auth->user('username'));
     }
-
+   
     /**
      * View method
      *

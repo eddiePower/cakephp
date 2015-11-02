@@ -1,3 +1,31 @@
+
+# Team Heisenburg Build 6 ------>shoppingCart Checkout, Edit, Add multiple same item, Order, Cart ACL for user / adminaccess, Any other issues in backend code, CSS issues accross all platforms Mobile, PC, Tablet.
+
+Eddie:-
+* Added Add item to cart --> Done
+* Added Add multiple same item to cart logic to just add to qty if same item ----> Done
+* Add jQuery to hide the email address's on customer email page to save space.  ----> Done
+* Add Remove item from cart ---> Done
+* Add Edit all items in cart ---> Working on it
+* Add Checkout cart function (create order, create order_items for each item, clear cart contents) ---> working on it
+* Start Admin Walkthrough videos for Rick (Add User, Edit User, Send Email, etc) ----> working on it
+* Build skeleton for the user documentation for Rick and POD & Dora -----> working on it
+
+MAY BE STUFF:-
+* Look into who's online idea Eddie has (DB table (user_id, logIn_Time, logOut_time), view with table uname, Green light for loged in, red for      
+logged off recently) ---> Only if time will work on it
+
+Linc:-
+* User testing and documentation for build 6 / final release
+* User documentation for final release and build 6.
+
+Shash:-
+* Work on any CSS / Javascript issues we find
+* Fix up menu to button in mobile and menu as a large screen ---> done.
+* Fix web responsive ness. ----> Done
+
+--------------------------------------------------------------------------------- 
+
 # Team Heisenburg Build 5 ------>shoppingCart System, Order Logic fixed, ACL for user access, siteConfig/Admin section + more ???.
 
 Eddie:-

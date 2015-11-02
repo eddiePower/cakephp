@@ -40,6 +40,8 @@ $cakeDescription = 'SoleMate DoorMats built on CakePHP v3';
 
 <?= $this->Html->script('https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js') ?>
 <?= $this->Html->script('utils') ?>
+<script src="https://maps.googleapis.com/maps/api/js"></script>
+<?= $this->Html->script('gmaps') ?>
 <?= $this->Html->script('index') ?>
 </head>
 <body class="page">
@@ -54,20 +56,33 @@ $cakeDescription = 'SoleMate DoorMats built on CakePHP v3';
   <main class="site-main">
   	<div class="main-inner row">
   		<h1 class="center">
-  			About us
+  			Contact
   		</h1>
   		<div class="col-10 offset-1 last panel">
   		<a class="button auto" href="../">
   			Go back
   		</a>
-  <p>IB Australia is a well established Australian owned family business that has been operating for over 30 years.</p>
-<p>In this time IB Australia has developed an extensive network and reputation in the giftware &amp; homewares market space.</p>
-<p>The company management’s commitment to environment and sustainability issues has over time seen the business model evolve to a point where every product in our offer is a 100% fully sustainable floor covering including Coir mats, rubber and coir mats and Jute mats and all process from manufacturing to recycling are absolutely natural and environmentally friendly.</p>
-<p>Each mat is produced from the Coir husk of Coconuts which provide an endless natural source of raw materials. Local Indigenous craftsmen and women the use hand looms to produce the finished product. The rubber in our rubber and coir mats are made from a combination of recycled and naturally sourced virgin rubber</p>
-<p>IB Australia is committed to the highest standards of responsible behavior and integrity in all our relationships with customers, business partners and authorities.</p>
-<p>IB Australia has a strong commitment towards our people, customers, partners and the environment and equally to principles such as fairness, honesty, openness, service orientation and friendliness.</p>
+  		<p>
+  			We are a small family run business based in Moorabbin, Victoria. Come down to our warehouse to take a visit.
+  		</p>
+  		<p>
+  			<b>
+  				Address :
+  			</b>
+  			4 Shearson Crescent
+				Mentone, Vic 3194
+				Australia
+  		</p>
+  		<p>
+  			<b>
+  				Phone :
+  			</b>
+  			(03) 9583 1300 
+  		</p>
+  		<div id="map">
+  			<img class="center" src="http://maps.googleapis.com/maps/api/staticmap?center=4+Shearson+Crescent+Mentone,+Vic+3194+Australia&zoom=14&scale=1&size=600x300&maptype=roadmap&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xff0000%7Clabel:1%7C4+Shearson+Crescent+Mentone,+Vic+3194+Australia">
   		</div>
-    
+  		</div>
   	</div>
 	</main>
 	
@@ -113,6 +128,6 @@ $cakeDescription = 'SoleMate DoorMats built on CakePHP v3';
 					</p>
 				</div>
 			</div>
-		</footer>
-</body>
+		</footer>		
+	</body>
 </html>

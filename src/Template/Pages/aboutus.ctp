@@ -119,6 +119,15 @@ $cakeDescription = 'SoleMate DoorMats built on CakePHP v3';
 					</a>
 					</span>
 				</div>
+				<div class="col-4 last">
+					<h3>
+						Connect with us
+					</h3>
+					<?= $this->Html->link('Find us on Facebook', 'https://www.facebook.com/Solematedoormats', ['class' => 'footer-link', 'target' => '_blank']) ?>
+					<?= $this->Html->link(__('Home'), ['controller' => 'users', 'action' => 'index'], array('class' => 'footer-link')) ?>
+					<?= $this->Html->link('Contact us', '/pages/contact-us', ['class' => 'footer-link']) ?>
+					<?= $this->Html->link('About us', '/pages/about-us', ['class' => 'footer-link']) ?>
+				</div>
 				<div class="col-4">
 					<h3>
 					Faqs
@@ -126,15 +135,6 @@ $cakeDescription = 'SoleMate DoorMats built on CakePHP v3';
 					<?= $this->Html->link('About our doormats', '/pages/about-our-doormats', ['class' => 'footer-link']) ?>
 					<?= $this->Html->link('Trading terms', '/pages/trading-terms', ['class' => 'footer-link']) ?>
 					<?= $this->Html->link('Our process', '/pages/our-process', ['class' => 'footer-link']) ?>
-				</div>
-				<div class="col-4 last">
-					<h3>
-						Connect with us
-					</h3>
-					<?= $this->Html->link('Find us on Facebook', 'https://www.facebook.com/Solematedoormats', ['class' => 'footer-link', 'target' => '_blank']) ?>
-					<?= $this->Html->link(__('Home'), ['controller' => 'users', 'action' => 'index'], array('class' => 'footer-link')) ?>
-					<?= $this->Html->link('About us', '/pages/about-us', ['class' => 'footer-link']) ?>
-
 				</div>
 				<div class="col-12 last">
 					<p class="center">

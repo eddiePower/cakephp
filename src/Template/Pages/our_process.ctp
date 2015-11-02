@@ -57,6 +57,9 @@ $cakeDescription = 'SoleMate DoorMats built on CakePHP v3';
   			Our process
   		</h1>
   		<div class="col-10 offset-1 last panel">
+  		<a class="button auto" href="../">
+  			Go back
+  		</a>
 <p>Coconuts are fast growing and are considered a “tree of life” for many in developing countries. Found across much of the tropic and subtropic area, the coconut is known for its great versatility as seen in the many domestic, commercial, and industrial uses of its different parts. Coconuts are also part of the daily diet of many people.
 Each Doormat is produced from the husk of coconuts and recycled rubber. The doormat is sustainable and environmentally friendly and can be recycled at the end of its life cycle.</p>
 <p>The Artisans from the village where the doormats are made, rely on the production of doormats to sustain an employable future. Different suburbs of the village work on different sections of the production of the doormats. Each Artisan is paid a fair wage for their craft.</p>

@@ -10,6 +10,7 @@
 	
 	'use strict';
 	
+	var active = false;
 	var canvas;
 	var context;
 	var Dots = [];
@@ -25,6 +26,7 @@
 	var velocityVariance = 0.2;
 
 	function Initialize() {
+		active = true;
 		setCanvas();
 		
 		generateDots();
@@ -152,9 +154,11 @@
 	}
 
 	window.onresize = function() {
-		Dots = [];
-		canvas.width = window.innerWidth;
-		canvas.height = window.innerHeight;
+		if(active) {
+			Dots = [];
+			canvas.width = window.innerWidth;
+			canvas.height = window.innerHeight;
+		}
 	};
 
 	window.snowflake = {

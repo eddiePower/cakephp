@@ -31,6 +31,7 @@
     echo $this->Html->scriptStart(['block' => true]);
   
     echo "$(document).ready(function() {
+    
     $('#selecctall').click(function(event) {  //on click 
         if(this.checked) 
         { // check select status
@@ -46,9 +47,26 @@
         }
     });
     
+         $('#button').click(function(){
+
+         if($(this).html() == '⏎')
+         {
+            $(this).html('☝');
+            $('.block').animate({'top': '+=425px'}, 'slow');  
+         }
+         else
+         {  
+             $(this).html('⏎');
+             $('.block').animate({'top': '-=425px'}, 'slow');
+         }
+         $('#box').slideToggle();
+      }); 
 });";
   echo $this->Html->scriptEnd(); 
   ?>
+  
+  <div id="widnow">
+  <div id="box">
   <table border="0" width="30%">
   <tr>
   <td>
@@ -92,8 +110,15 @@
     ?>
 </tr></tbody>
 </table>
-<br /><br />
+</div>
+<div id="title_bar">
+Click To Show / Hide Emails:
+        <div id="button">☝</div>
+    </div>
+</div>
 
+<br /><br />
+<div id='slider' class='block'>
     <table border="0" width="90%">
     <tr>
         <td class="heading"><p align="right">subject : </p></td>
@@ -114,3 +139,4 @@
     </tr>
 </table>
  <?= $this->Html->link(__(' Back'), ['controller' => 'Customers', 'action' => 'index'], ['class' => 'button auto']) ?>
+</div>

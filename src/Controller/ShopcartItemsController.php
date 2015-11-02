@@ -55,12 +55,7 @@ class ShopcartItemsController extends AppController
      * @return void Redirects on successful add, renders view otherwise.
      */
     public function add($uId = null, $itemID = null)
-    {   
-        
-
-        //debug($uId);
-        //debug($itemID);
-        
+    {           
         //if the 2 passed in variables are not = to null then
         //we will pull up item image, name and display this to
         //the user with a input for quantity when this form is
@@ -72,6 +67,8 @@ class ShopcartItemsController extends AppController
             //pull out all item data for this item
             $aQuery = TableRegistry::get('Items')->find();
             $aQuery->where(['id' => $itemID]);
+            
+            //declare this here to persist outside of scope of foreach
             $theItem;
             
             foreach($aQuery as $item)
@@ -79,6 +76,8 @@ class ShopcartItemsController extends AppController
                 //debug($item);
                 $theItem = $item;
             }
+            
+            
             
             //now we have all the relavant item data we export some 
             //to the add item view like image, name and qty
@@ -111,7 +110,7 @@ class ShopcartItemsController extends AppController
             foreach($query as $cart)
             {
                $aCart = $cart;
-               //debug($aCart);  
+               //debug($cart);  
             }  
            
            //if the request sent is of type post
@@ -121,17 +120,76 @@ class ShopcartItemsController extends AppController
                //debug($this->request->data);
                //set the shopping cart ID to the users cart ID;
           
+              
+               
                $shopcartItem->user_id = $uId;
                $shopcartItem->item_id = $itemID;
                $shopcartItem->quantity = $_POST['QtyToOrder'];
                $shopcartItem->shopcart_id = $aCart->id;
                
-               //debug($shopcartItem);
+                //debug($aCart);               
+                
+                //before we save the cart item, we need to check the cartItems for the users cart.
+                //to do this we need to find the users cart by sql with user id
+                    //debug($shopcartItem);
+                    $query = TableRegistry::get('Shopcart')->find();
+                    $query->where(['user_id' => $uId]);
+                    $tmpCart;
+                    
+                    //loop through cart for user query result
+                    foreach($query as $cart)
+                    {
+                       $tmpCart = $cart;
+                       //debug($tmpCart['id']);  
+                    } 
+
+                //next we will pull all items for that cart id and store in an array,
+                $query = TableRegistry::get('ShopcartItems')->find();
+                $query->where(['shopcart_id' => $tmpCart['id']]);
+                
+                $tmpItems = array();
+                
+                //loop through query result
+                foreach($query as $cartItem)
+                {
+                   //add the item from the cart to our items array for checking
+                   //if the new item is already in the cart.                   
+                   array_push($tmpItems, $cartItem);
+                   //debug($cartItem);  
+                } 
+                
+                //loop over the current items in the cart, splitting them into searchable indexes.
+                foreach ($tmpItems as $key => $val)
+                {
+                    //if the value in the item_id matches the one we are trying to add
+                    //then we dont want to duplicate it, just update the qty ordered.
+                    if($val['item_id'] == $itemID)
+                    {
+                       //store the new or updated qty to write to the database
+                       $newQty = ($val['quantity'] + $_POST['QtyToOrder']);
+                        
+                       //store the shopping cart item id number for easy updates
+                       $tmpID = $val['id'];
+                        
+                       //Use a custom query to save our new quantity ordered into the shoppingCartItem db entry 
                        
-               //if the shopcartItem save is ok
+                       $query2 = TableRegistry::get('Shopcart_Items')->find();
+                       $query2->update('Shopcart_Items')
+                               ->set(['quantity' => $newQty])
+                               ->where(['id' => $tmpID]);
+                       $stmt = $query2->execute();
+                                                
+                        //if success re direct back to items page with success message.
+                        $this->Flash->success(__('The Item quantity has been updated.'));
+
+                        return $this->redirect(['controller' => 'Shopcart', 'action' => 'index']);                        
+                    }
+                }         
+                       
+               //if the code progresses this far then we check shopcartItem save is ok
                if ($this->ShopcartItems->save($shopcartItem)) 
                {
-                   $this->Flash->success(__('The item has been added to your cart.'));
+                   $this->Flash->success(__('The item has been added to your cart.'));                   
                    
                    return $this->redirect(['controller' => 'items', 'action' => 'index']);
                    
@@ -198,12 +256,13 @@ class ShopcartItemsController extends AppController
         //store cart id this item came from so we can go back
         // to the cart view.
         $cartID = $shopcartItem['shopcart_id'];
+        $tmpName = $shopcartItem['item_name'];
         
         //debug($cartID);
         
         if ($this->ShopcartItems->delete($shopcartItem)) 
         {
-            $this->Flash->success(__('The shopcart item has been deleted.'));
+            $this->Flash->success(__('The shopcart item  has been deleted.'));
         } 
         else 
         {

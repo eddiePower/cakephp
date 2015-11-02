@@ -6,6 +6,8 @@
 	
 	var el;
 	var active = false;
+	var isDropdownSet = false;
+	var breakpoint = 1005;
 	
 	window.dropdown = function(selector) {
 		el = $(selector);
@@ -51,8 +53,25 @@
 		}
 	}
 	
+	function setResizeHandler() {
+		window.onresize = function() {
+			if(!isDropdownSet) {
+				var width = $(window).width();
+				if(width < breakpoint) {
+					dropdown('.header-nav');
+					isDropdownSet = true;
+				}
+			}
+		}
+	}
+	
 	function init() {
-		dropdown('.header-nav');
+		var width = $(window).width();
+		if(width < breakpoint) {
+			dropdown('.header-nav');
+		} else {
+			setResizeHandler();
+		}
 	}
 	
 	$(document).ready(init);

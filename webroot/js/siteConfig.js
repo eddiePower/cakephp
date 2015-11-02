@@ -20,8 +20,8 @@ snowflake.init();
 	'use strict';
 	
 	function init() {
-		document.body.className += ' christmas';
-		snowflake.init();
+		/*document.body.className += ' christmas';
+		snowflake.init();*/
 	}
 	
 	$(document).ready(init);

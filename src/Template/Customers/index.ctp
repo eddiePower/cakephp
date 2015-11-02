@@ -42,7 +42,7 @@ $this->Html->scriptEnd();
 </nav>
 
 <div class="col-12 last panel">
-	<table class="table table-bordered table-striped" id="data-table">
+	<table class="table table-bordered table-striped" id="data-table" style="width: 87%;">
 		<thead>
 		<tr style="height: 50px">
 				<th><?= __('First Name') ?></th>

@@ -1,5 +1,5 @@
 <h1 class="center">
-Orders
+Order History for user: <?= $username ?>
 </h1>
 
 <nav class="nav-container">
@@ -8,16 +8,18 @@ Orders
 <?= $this->Html->link(__('List Couriers'), ['controller' => 'Couriers', 'action' => 'index'], ['class' => 'nav-item']) ?>
 	<?= $this->Html->link(__('New Courier'), ['controller' => 'Couriers', 'action' => 'add'], ['class' => 'nav-item']) ?>
 -->
-	<?= $this->Html->link(__('List Customers'), ['controller' => 'Customers', 'action' => 'index'], ['class' => 'nav-item']) ?>
-	<?= $this->Html->link(__('New Customer'), ['controller' => 'Customers', 'action' => 'add'], ['class' => 'nav-item']) ?>
-	<?= $this->Html->link(__('List Order Details'), ['controller' => 'OrderDetails', 'action' => 'index'], ['class' => 'nav-item']) ?>
-	<?= $this->Html->link(__('New Order Detail'), ['controller' => 'OrderDetails', 'action' => 'add'], ['class' => 'nav-item']) ?>
+	<?= $this->Html->link(__('Customer information'), ['controller' => 'Customers', 'action' => 'index'], ['class' => 'nav-item']) ?>
+	<?= $this->Html->link(__('My Account'), ['controller' => 'Users', 'action' => 'index'], ['class' => 'nav-item']) ?>
+	<?= $this->Html->link(__('View Items'), ['controller' => 'Items', 'action' => 'index'], ['class' => 'nav-item']) ?>
+	<?= $this->Html->link(__('My ShoppingCart'), ['controller' => 'Shopcart', 'action' => 'index'], ['class' => 'nav-item']) ?>
 </nav>
 <?=
 //enable the data-tables jQuery plugin for better table uttils.
 $this->Html->scriptStart(['block' => true]);
 echo "$(document).ready(function(){
-    $('#data-table').DataTable();
+    $('#data-table').DataTable({
+    'order': [[ 0, 'desc' ]]
+    });
 });";
 $this->Html->scriptEnd();
 ?>
@@ -31,7 +33,7 @@ $this->Html->scriptEnd();
 			<th><?= __('Required Date') ?></th>
 			<th><?= __('Customer Comments') ?></th>
 <!-- 			<th><?= $this->Paginator->sort('courier_id') ?></th> -->
-			<th><?= __('Customer ID') ?></th>
+			<th><?= __('Customer / User Name') ?></th>
 			<th class="actions"><?= __('Actions') ?></th>
 		</tr>
 		</thead>
@@ -48,12 +50,12 @@ $this->Html->scriptEnd();
 					</td>
 -->
 					<td>
-							<?= $order->has('customer') ? $this->Html->link($order->customer->first_name, ['controller' => 'Customers', 'action' => 'view', $order->customer->id]) : '' ?>
+							<?=  $this->request->session()->read('userRole') == 'admin' ? $order['customer']['first_name'] . ' ' . $order['customer']['last_name'] : $username ?>
 					</td>
 					<td class="actions">
 							<?= $this->Html->link(__('View'), ['action' => 'view', $order->id], ['class' => 'label']) ?>
 							<?= $this->Html->link(__('Edit'), ['action' => 'edit', $order->id], ['class' => 'label']) ?>
-							<?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $order->id], ['confirm' => __('Are you sure you want to delete order with shipping date of {0} and customer {1} and courier: {2}?', $order->shipped_date, $order->customer->first_name . ' ' . $order->customer->last_name, $order->courier->courier_name), 'class' => 'label danger']) ?>
+							<?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $order->id], ['confirm' => __('Are you sure you want to delete order with shipping date of {0} and customer {1}?', $order->ordered_date, $order->customer_id), 'class' => 'label danger']) ?>
 					</td>
 			</tr>
 

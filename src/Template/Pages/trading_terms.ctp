@@ -57,6 +57,9 @@ $cakeDescription = 'SoleMate DoorMats built on CakePHP v3';
   			Trading terms
   		</h1>
   		<div class="col-10 offset-1 last panel">
+  		<a class="button auto" href="../">
+  			Go back
+  		</a>
   <p><strong>MINIMUM ORDER:</strong> Is $250.00 or $10.00 surcharge on orders under $250.</p>
 <p><strong>Delivery:</strong> allow 7-14 Days for delivery ex-warehouse, F.I.S Melbourne metropolitan area and F.O.B Sydney, Brisbane,
 Adelaide and Perth for orders exceeding $500.00, otherwise F.O.B Melbourne.</p>
@@ -108,6 +111,15 @@ urgently or if you want to benefit from the lower prices.</p>
 					</a>
 					</span>
 				</div>
+				<div class="col-4 last">
+					<h3>
+						Connect with us
+					</h3>
+					<?= $this->Html->link('Find us on Facebook', 'https://www.facebook.com/Solematedoormats', ['class' => 'footer-link', 'target' => '_blank']) ?>
+					<?= $this->Html->link(__('Home'), ['controller' => 'users', 'action' => 'index'], array('class' => 'footer-link')) ?>
+					<?= $this->Html->link('Contact us', '/pages/contact-us', ['class' => 'footer-link']) ?>
+					<?= $this->Html->link('About us', '/pages/about-us', ['class' => 'footer-link']) ?>
+				</div>
 				<div class="col-4">
 					<h3>
 					Faqs
@@ -115,15 +127,6 @@ urgently or if you want to benefit from the lower prices.</p>
 					<?= $this->Html->link('About our doormats', '/pages/about-our-doormats', ['class' => 'footer-link']) ?>
 					<?= $this->Html->link('Trading terms', '/pages/trading-terms', ['class' => 'footer-link']) ?>
 					<?= $this->Html->link('Our process', '/pages/our-process', ['class' => 'footer-link']) ?>
-				</div>
-				<div class="col-4 last">
-					<h3>
-						Connect with us
-					</h3>
-					<?= $this->Html->link('Find us on Facebook', 'https://www.facebook.com/Solematedoormats', ['class' => 'footer-link', 'target' => '_blank']) ?>
-					<?= $this->Html->link(__('Home'), ['controller' => 'users', 'action' => 'index'], array('class' => 'footer-link')) ?>
-					<?= $this->Html->link('About us', '/pages/about-us', ['class' => 'footer-link']) ?>
-
 				</div>
 				<div class="col-12 last">
 					<p class="center">

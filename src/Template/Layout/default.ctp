@@ -27,7 +27,7 @@ $cakeDescription = 'SoleMate Doormats';
 		<link href='http://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'>
 		<?= $this->Html->meta('icon') ?>
 		<?= $this->Html->css(['dropit']) ?>
-		<?= $this->Html->css(['lightgrid', 'http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css', 'jquery.dataTables.css']) ?>
+		<?= $this->Html->css(['lightgrid', 'http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css', 'jquery.dataTables.css', 'flashEmailDivControls.css']) ?>
 		
 		<!-- Add in jQuery and all jScript links here using cakePHP -->		
 		<?= $this->Html->script(['tinymce/tinymce.min.js','https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js','https://cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js', 'http://code.jquery.com/ui/1.11.4/jquery-ui.js', 'jquery-barcode.js', 'common', 'dropdown', 'snowflake.js', 'siteConfig.js']) ?>
@@ -41,7 +41,6 @@ $cakeDescription = 'SoleMate Doormats';
 				<h1 class="header-nav-title center">
 					<?= $this->Html->image('http://www.ibaustralia.com/ibaustralia/custom/logo_custom.gif') ?>
 				</h1>
-				<b><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"All our products are produced with environmentally friendly and sustainable processes, using all natural materials."</i></b>
 				<?php
 					/*
 					check to see if the session variable is set
@@ -55,14 +54,15 @@ $cakeDescription = 'SoleMate Doormats';
 						{
 							?>
 							<?= $this->Html->link(__('Log Out'), ['controller' => 'Users', 'action' => 'logout'], array('class' => 'header-nav-item')) ?>
-							<?= $this->Html->link(__('Orders'), ['controller' => 'Orders', 'action' => 'index'], array('class' => 'header-nav-item')) ?>
-							<?= $this->Html->link(__('Customers'), ['controller' => 'Customers', 'action' => 'index'], array('class' => 'header-nav-item')) ?>
+							<?= $this->Html->link(__('All Customers'), ['controller' => 'Customers', 'action' => 'index'], array('class' => 'header-nav-item')) ?>
 							<!--
 <?= $this->Html->link(__('Couriers'), ['controller' => 'Couriers', 'action' => 'index'], array('class' => 'header-nav-item')) ?>
 							<?= $this->Html->link(__('Purchases'), ['controller' => 'Purchases', 'action' => 'index'], array('class' => 'header-nav-item')) ?>
 -->
-							<?= $this->Html->link(__('Items'), ['controller' => 'Items', 'action' => 'index'], array('class' => 'header-nav-item')) ?>
-							<?= $this->Html->link(__('Shopping Carts'), ['controller' => 'Shopcart', 'action' => 'index'], array('class' => 'header-nav-item')) ?>
+							<?= $this->Html->link(__('Stocked Items'), ['controller' => 'Items', 'action' => 'index'], array('class' => 'header-nav-item')) ?>
+							<?= $this->Html->link(__('User Shopping Carts'), ['controller' => 'Shopcart', 'action' => 'index'], array('class' => 'header-nav-item')) ?>
+							<?= $this->Html->link(__('User Orders'), ['controller' => 'Orders', 'action' => 'index'], array('class' => 'header-nav-item')) ?>
+
 							<?= $this->Html->link(__('Users'), ['controller' => 'Users', 'action' => 'index'], array('class' => 'header-nav-item')) ?>
 							<?= $this->Html->link(__('Ricks News'), ['controller' => 'articles', 'action' => 'index'], array('class' => 'header-nav-item')) ?>
 							<?php
@@ -75,6 +75,7 @@ $cakeDescription = 'SoleMate Doormats';
 							<?= $this->Html->link(__('My Customer Details'), ['controller' => 'Customers', 'action' => 'index'], array('class' => 'header-nav-item')) ?>
 							<?= $this->Html->link(__('My Shopping Cart'), ['controller' => 'Shopcart', 'action' => 'index'], array('class' => 'header-nav-item')) ?>
 							<?= $this->Html->link(__('Items'), ['controller' => 'Items', 'action' => 'index'], array('class' => 'header-nav-item')) ?>
+							<?= $this->Html->link(__('My Orders'), ['controller' => 'Orders', 'action' => 'index'], array('class' => 'header-nav-item')) ?>
 							<?= $this->Html->link(__('Ricks News'), ['controller' => 'articles', 'action' => 'index'], array('class' => 'header-nav-item')) ?>
 							<?php
 						}
@@ -109,6 +110,15 @@ $cakeDescription = 'SoleMate Doormats';
 					</a>
 					</span>
 				</div>
+				<div class="col-4 last">
+					<h3>
+						Connect with us
+					</h3>
+					<?= $this->Html->link('Find us on Facebook', 'https://www.facebook.com/Solematedoormats', ['class' => 'footer-link', 'target' => '_blank']) ?>
+					<?= $this->Html->link(__('Home'), ['controller' => 'users', 'action' => 'index'], array('class' => 'footer-link')) ?>
+					<?= $this->Html->link('Contact us', '/pages/contact-us', ['class' => 'footer-link']) ?>
+					<?= $this->Html->link('About us', '/pages/about-us', ['class' => 'footer-link']) ?>
+				</div>
 				<div class="col-4">
 					<h3>
 					Faqs
@@ -116,15 +126,6 @@ $cakeDescription = 'SoleMate Doormats';
 					<?= $this->Html->link('About our doormats', '/pages/about-our-doormats', ['class' => 'footer-link']) ?>
 					<?= $this->Html->link('Trading terms', '/pages/trading-terms', ['class' => 'footer-link']) ?>
 					<?= $this->Html->link('Our process', '/pages/our-process', ['class' => 'footer-link']) ?>
-				</div>
-				<div class="col-4 last">
-					<h3>
-						Connect with us
-					</h3>
-					<?= $this->Html->link('Find us on Facebook', 'https://www.facebook.com/Solematedoormats', ['class' => 'footer-link', 'target' => '_blank']) ?>
-					<?= $this->Html->link(__('Home'), ['controller' => 'users', 'action' => 'index'], array('class' => 'footer-link')) ?>
-					<?= $this->Html->link('About us', '/pages/about-us', ['class' => 'footer-link']) ?>
-
 				</div>
 				<div class="col-12 last">
 					<p class="center">

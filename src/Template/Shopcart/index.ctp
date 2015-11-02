@@ -17,6 +17,7 @@ echo "$(document).ready(function(){
 $this->Html->scriptEnd();
 ?>
 <div class="shopcart index large-10 medium-9 columns">
+ <?= $this->Flash->render(); ?>
         <table class="table table-bordered table-striped" id="data-table" cellpadding="0" cellspacing="0">
     <thead>
 	<tr style="height: 50px">
