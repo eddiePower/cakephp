@@ -30,10 +30,10 @@
 	<?php
 
     //sending the paced date automatically as the current date.
-	echo $this->Form->text('required_date', ['id' => 'datepicker', 'placeholder'=> 'Click to pick a date']);
+	echo $this->Form->text('required_date', ['id' => 'datepicker', 'placeholder'=> 'Click to pick a required date']);
 	echo $this->Form->input('customer_comments', ['placeholder' => 'Enter any comments here for this order']);
-/* 	echo $this->Form->input('courier_id', ['options' => $couriers]); */
-	echo $this->Form->input('customer_id', ['options' => $customers]);
+    /* echo $this->Form->input('courier_id', ['options' => $couriers]); */
+    echo $this->request->session()->read('userRole') != 'user' ? $this->Form->input('customer_id', ['options' => $customers]) : '';
 	?>
 	<?= $this->Form->button(__('Submit'), ['class' => 'positive']) ?>
 	<?= $this->Form->end() ?>

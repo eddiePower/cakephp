@@ -1,6 +1,9 @@
-<h1 class="center">Admin Site Config Page.</h1>
+<div class="col-md-12">
+<h1 class="center page-title">Admin Site Config Page.</h1>
+</div>
 
-<div class="col-12 last panel">
+<div class="col-md-12">
+	<div class="panel">
 	<h3>
 	Logged in as <?= $username; ?>
 	</h3>
@@ -41,5 +44,5 @@
         <tr><td>MYOB SYNC Settings:</td><td>BUTTON HERE!</td></tr>
       </tbody>
     </table>
-    
+    </div>
 </div>

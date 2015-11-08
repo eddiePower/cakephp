@@ -328,6 +328,7 @@ return [
      * To use database sessions, load the SQL file located at config/Schema/sessions.sql
      */
     'Session' => [
-        'defaults' => 'php',
+    'defaults' => 'php',        
+    'timeout'=> 2 * 60   //hours * minutes = total session time before auto log out
     ],
 ];

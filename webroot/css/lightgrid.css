@@ -540,16 +540,17 @@ sub {
  * 
  * 12 col width is defined here
  * ---------------------------------------------------------------- */
-.row {
-  width: 1024px;
-  height: 1%;
-  margin: 0 auto;
+/*.row {
+	width: @row-width;
+	height: 1%;
+	margin: 0 auto;
 }
+
 .row:after {
-  clear: both;
-  content: '';
-  display: block;
-}
+	clear:both;
+	content:'';
+	display:block;
+}*/
 .col-1,
 .col-2,
 .col-3,
@@ -1081,6 +1082,42 @@ table.dataTable thead th {
 .header-nav-item:last-child {
   margin-right: 0;
 }
+.navbar-brand {
+  padding: 8px;
+  height: 64px;
+}
+.navbar-brand img {
+  width: auto;
+  height: 100%;
+}
+.navbar-toggle {
+  background-color: #FFF;
+  width: auto;
+  margin-top: 12px;
+}
+.navbar {
+  margin-bottom: 0;
+  background-color: transparent;
+  z-index: 10;
+}
+@media only screen and (max-device-width: 930px) {
+  .navbar-collapse {
+    background-color: #FFF;
+    box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.1);
+  }
+  .navbar-nav {
+    margin: 0;
+  }
+  .navbar-nav a {
+    display: block;
+    float: none;
+    margin: 8px!important;
+    text-align: right;
+    color: #FFF;
+    background-color: #0095dd;
+    border-radius: 3px;
+  }
+}
 /* ----------------------------------------------------------------
  * $main
  * ---------------------------------------------------------------- */
@@ -1094,9 +1131,27 @@ table.dataTable thead th {
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
   margin-bottom: 16px;
 }
+.page-title {
+  margin-bottom: 16px;
+}
 .page .main-inner img {
   width: auto;
+  height: 100%;
   margin: 0 auto;
+  text-align: center;
+  display: block;
+}
+.page--home .site-main {
+  background-color: #C59D62;
+  background-repeat: repeat;
+}
+.page--home .image-container-outer h1,
+.page--home .image-container-outer p {
+  color: #FFF;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+.page--home .preview-container {
+  border-color: #FFF;
 }
 .panel {
   padding: 16px;
@@ -1115,10 +1170,14 @@ table.dataTable thead th {
 }
 .image-container {
   position: relative;
-  min-height: 128px;
+  height: 128px;
   width: 100%;
-  margin-bottom: 16px;
   border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  background-color: #FFF;
+  box-sizing: border-box;
+  padding: 4px;
   box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.1);
   opacity: 0;
   -webkit-transition: all 200ms cubic-bezier(0.23, 1, 0.32, 1);
@@ -1268,6 +1327,19 @@ table.dataTable thead th {
 .spinner.active {
   opacity: 1;
 }
+.dataTables_length {
+  padding: 0 5px;
+}
+.dataTables_filter {
+  padding: 0 5px;
+}
+.dataTables_filter input {
+  margin-left: 0!important;
+  box-sizing: border-box;
+}
+.dataTables_wrapper {
+  overflow-x: auto;
+}
 /*
  * Christmas theme
  */
@@ -1334,17 +1406,17 @@ body.christmas .panel {
   .panel {
     margin-bottom: 16px;
   }
-  .row,
-  .header-nav {
-    width: 480px;
-  }
+  /*	.row,
+	.header-nav{
+		width: 480px;
+	}*/
   .site-footer h3 {
     margin-top: 16px;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
-  .row,
-  .header-nav {
-    width: 768px;
-  }
+  /*	.row,
+	.header-nav{
+		width: 768px;
+	}*/
 }

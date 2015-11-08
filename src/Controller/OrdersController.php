@@ -205,7 +205,22 @@ class OrdersController extends AppController
             //set gged in user id as the order user id property
             $loggedUser = $this->request->session()->read('user');
             $order->user_id = $loggedUser['id'];
-              
+            
+            if($this->request->session()->read('userRole') == 'user')
+            {
+                //grab the users customer ID to add to the order
+                $query = TableRegistry::get('Customers')->find();
+                $query->where(['user_id' => $order->user_id]);
+                
+                foreach($query as $orderCustomer)
+                {
+                    //set the ordering customer id as users ID
+                    $order->customer_id = $orderCustomer['id'];
+                }
+                
+            } //otherwise we show the drop down list and select the customer ID from there, allowing for 
+              //  customer selection on order creation for, 
+                          
             //if the order save process is a success
             if ($this->Orders->save($order)) 
             {
@@ -248,7 +263,41 @@ class OrdersController extends AppController
          //get all couriers and customers ready for linking to this new order 
          //(customer = orderie & courier = delivery choice by customer/user)
          $couriers = $this->Orders->Couriers->find('list', ['limit' => 200]);
-         $customers = $this->Orders->Customers->find('list', ['limit' => 200]);
+        
+         //check if the user is a salesRep then just show only his customers.
+        if($this->request->session()->read('userRole') == 'salesRep')
+        {
+             //grab all customers from the model
+            //$allCusts = $this->Customers->find("all");
+            
+           $query = TableRegistry::get('Customers')->find("all");
+            
+            //create space for just the logged in users customers
+            $repCustomers = array();
+            
+            //loop through all customers
+           foreach($query as $aCust)
+           {
+                //if the logged in user id matches the stored customer-user id 
+                if($this->Auth->user('id') == $aCust['user_id'])
+                {
+                   //debug($aCust);
+                   //push the specific contents onto the customers array for display on add order view page.
+                   array_push($repCustomers, array($aCust['id'] => $aCust['first_name'] . ' ' . $aCust['last_name']));
+                } 
+           }
+           
+           
+           //now set the view variable as the users customers only.
+           $customers = $repCustomers;
+          
+           
+        }
+        else if($this->request->session()->read('userRole') == 'admin')
+        {
+          $customers = $this->Orders->Customers->find('list', ['limit' => 200]);
+        } 
+         
          
          //set the ViewVars for the view page add.
          $this->set(compact('order', 'couriers', 'customers'));

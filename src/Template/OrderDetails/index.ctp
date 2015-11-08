@@ -1,4 +1,4 @@
-<h1 class="center">Order Details</h1>
+<h1 class="center">All Past Order Details</h1>
    
 <nav class="nav-container">
 	<?= $this->Html->link(__('New Order Detail'), ['action' => 'add'], ['class' => 'nav-item']) ?>
@@ -20,6 +20,7 @@ $this->Html->scriptEnd();
 	<table cellpadding="0" cellspacing="0" id="data-table">
 	<thead>
 	<tr style="height: 50px">
+	<th><?= __('Item image') ?></th>
 	<th><?= __('Item Name') ?></th>
 	<th><?= __('Ordered Date') ?></th>
 	<th><?= __('Quantity Ordered') ?></th>
@@ -35,6 +36,9 @@ $this->Html->scriptEnd();
 	            //discount % divide by 100 multiply by the item total (qty ordered * price pr unit)
 	         $percent = ($orderDetail->discount / '100' * ($orderDetail->quantity_ordered * $orderDetail->per_unit)); ?>
 	<tr>
+	<td>
+    		<?= $orderDetail->has('item') ? $this->Html->image('graphics/' . $orderDetail->item->photo, ['alt' => $orderDetail->item->item_name, 'fullbase' => true]) : '__("No Image")' ?>
+	</td>
 	<td>
 	<?= $orderDetail->has('item') ? $this->Html->link($orderDetail->item->item_name, ['controller' => 'Items', 'action' => 'view', $orderDetail->item->id]) : '' ?>
 	</td>

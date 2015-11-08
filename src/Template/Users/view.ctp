@@ -1,4 +1,4 @@
-<div class="col-12 last panel">
+<div class="col-md-8 col-md-offset-2 panel">
 	<h3>
 	<?= __('User Actions') ?>
 	</h3>
@@ -23,7 +23,7 @@
 	</table>
 </div>
 
-<div class="col-12 last panel">
+<div class="col-md-8 col-md-offset-2 panel">
 	<h3>
 	<?= h("User: " . $user->username . "'s account details.") ?>
 	</h3>

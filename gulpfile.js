@@ -9,7 +9,8 @@ var autoprefixer = require('gulp-autoprefixer');
 
 
 var paths = {
-	less : ['webroot/less/*.less']
+	less : ['webroot/less/*.less'],
+	bootstrap : ['webroot/bootstrap/*.less']
 };
 
 gulp.task('less', function() {
@@ -32,8 +33,29 @@ gulp.task('less', function() {
 		.pipe(notify('Compiled <%= file.relative %>'));
 });
 
+gulp.task('bootstrap', function() {
+	return gulp.src('webroot/bootstrap/bootstrap.less')
+		.pipe(plumber({
+			errorHandler: function (err) {
+				notify(err);
+				this.emit('end');
+			}
+		}))
+		.pipe(less())
+		.pipe(autoprefixer({
+			browsers: ['last 4 versions']
+		}))
+		.pipe(rename(function (path) {
+			path.basename = "bstrap";
+			path.extname = ".css"
+		}))
+		.pipe(gulp.dest('webroot/css'))
+		.pipe(notify('Compiled <%= file.relative %>'));
+});
+
 gulp.task('watch', function() {
 	gulp.watch(paths.less, ['less']);
+	gulp.watch(paths.bootstrap, ['bootstrap']);
 });
 
 gulp.task('default', ['watch']);

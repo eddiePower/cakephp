@@ -49,14 +49,14 @@
     
          $('#button').click(function(){
 
-         if($(this).html() == '⏎')
+         if($(this).html() == '+')
          {
-            $(this).html('☝');
+            $(this).html('-');
             $('.block').animate({'top': '+=425px'}, 'slow');  
          }
          else
          {  
-             $(this).html('⏎');
+             $(this).html('+');
              $('.block').animate({'top': '-=425px'}, 'slow');
          }
          $('#box').slideToggle();
@@ -112,8 +112,8 @@
 </table>
 </div>
 <div id="title_bar">
-Click To Show / Hide Emails:
-        <div id="button">☝</div>
+Click + To Show / - To Hide Emails:
+        <div id="button"> - </div>
     </div>
 </div>
 

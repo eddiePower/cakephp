@@ -1,8 +1,11 @@
-<h1 class="center">
+<div class="col-md-12">
+<h1 class="center page-title">
 	Signup
 </h1>
+</div>
 
-<div class="panel col-4 offset-4">
+<div class="col-md-4 col-md-offset-4">
+	<div class="panel">
        <?= $this->Flash->render(); ?>
        <?= $this->Form->create($user, [
     'horizontal' => true,
@@ -28,4 +31,5 @@
     ?>
     <?= $this->Form->button(__('Submit'), ['class' => 'positive']) ?>
     <?= $this->Form->end() ?>
+	</div>
 </div>

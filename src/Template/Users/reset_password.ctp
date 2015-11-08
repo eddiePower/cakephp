@@ -1,12 +1,12 @@
-<div class="col-12 last panel">
-	<h3>
+<div class="col-md-12">
+	<h2 class="center page-title">
 	<?= __('Forgot Password System.') ?>
-	</h3>
+	</h2>
 </div>
 
 <!-- if there is no password Reset random value in the url then  -->
 <?php if(!isset($_GET['pwr'])) { ?>
-<div class="col-12 last panel">
+<div class="col-md-8 col-md-offset-2 panel">
 	<?php 
 	        //if there is no email address variable then draw the reset form 
 	      if(!isset($selectedUser)) 
@@ -43,7 +43,7 @@
 ?>
         <!-- Display the Flash messages here if they are needed -->
         <?= $this->Flash->render(); ?>
-        <div class="col-12 last panel">
+        <div class="col-md-8 col-md-offset-2 panel">
         <?php 
             echo "Please enter a new password for your account";
             echo "<br />";

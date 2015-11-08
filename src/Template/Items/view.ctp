@@ -74,7 +74,7 @@
 	<div class="col-12 last panel">
 	<h3>Warehousing Information:</h3>
 	<p>Bale Size: <?= $item->matt_bale_count ?> Units,</p>
-	<p>Bale Cost: <?= $this->Number->currency($item->bale_cost, 'USD') ?>,</p>
+	<p>Bale Cost: <?= $this->Number->currency($item->bale_cost, 'USD') ?></p>
 	<p>Matt Weight: <?= $item->matt_weight ?> Kg.</p>
 	</div>
 	<?php
@@ -86,8 +86,7 @@
 	<table cellpadding="0" cellspacing="0">
 		<thead>
 			<tr>
-				<th><?= __('Details Id') ?></th>
-				<th><?= __('Order Id') ?></th>
+				<th><?= __('Order ID') ?></th>
 				<th><?= __('Quantity Ordered') ?></th>
 				<th><?= __('Per Unit') ?></th>
 				<th><?= __('Discount') ?></th>
@@ -97,7 +96,6 @@
 	<?php foreach ($item->order_details as $orderDetails): ?>
 	<tbody>
 		<tr>
-			<td><?= h($orderDetails->id) ?></td>
 		<td><?= h($orderDetails->order_id) ?></td>
         
 			<td><?= h($orderDetails->quantity_ordered) ?></td>
@@ -107,9 +105,9 @@
 			<td class="actions">
 			<?= $this->Html->link(__('View'), ['controller' => 'OrderDetails', 'action' => 'view', $orderDetails->id]) ?>
 
-			<?= $this->Html->link(__('Edit'), ['controller' => 'OrderDetails', 'action' => 'edit', $orderDetails->id]) ?>
+			<!-- <?= $this->Html->link(__('Edit'), ['controller' => 'OrderDetails', 'action' => 'edit', $orderDetails->id]) ?> -->
 
-			<?= $this->Form->postLink(__('Delete'), ['controller' => 'OrderDetails', 'action' => 'delete', $orderDetails->id], ['confirm' => __('Are you sure you want to delete # {0}?', $orderDetails->id)]) ?>
+<!-- 			<?= $this->Form->postLink(__('Delete'), ['controller' => 'OrderDetails', 'action' => 'delete', $orderDetails->id], ['confirm' => __('Are you sure you want to delete # {0}?', $orderDetails->id)]) ?> -->
 
 			</td>
 		</tr>
@@ -118,7 +116,8 @@
 	</table>
 	<?php endif; ?>
 
-	<h4 class="subheader"><?= __('Related PurchaseDetails') ?></h4>
+	<!--
+<h4 class="subheader"><?= __('Related PurchaseDetails') ?></h4>
 	<?php if (!empty($item->purchase_details)): ?>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
@@ -149,6 +148,7 @@
 
 	<?php endforeach; ?>
 	</table>
+-->
 	<?php endif; ?>
 	<?php } ?>
 </div>

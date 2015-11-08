@@ -21,11 +21,7 @@
 	
 	function template(data, klass) {
 		var str = '';
-		if(klass) {
-			str += '<div class="col-4 image-container ' + klass + '"><img src="' + data.url + '"><span class="image-info">' + data.info + '</span></div>';
-		} else {
-			str += '<div class="col-4 image-container"><img src="' + data.url + '"><span class="image-info">' + data.info + '</span></div>';
-		}
+		str += '<div class="col-md-4"><div class="image-container"><img src="' + data.url + '"><span class="image-info">' + data.info + '</span></div></div>';
 		return str;
 	}
 	
@@ -45,7 +41,7 @@
 	
 	function animateImages() {
 		setTimeout(function() {
-		$('.container').css('max-height','1000px');
+		$('.preview-container').css('max-height','1000px');
 		}, 500);
 		$('.image-container').each(function() {
 			var el = $(this);
@@ -59,7 +55,7 @@
 	}
 	
 	function renderImages() {
-		$('.container').css('max-height',0);
+		$('.preview-container').css('max-height',0);
 		var count = 0;
 		var str = '';
 		var obj = {};
@@ -69,17 +65,9 @@
 			
 			obj.url = 'img/graphics/' + image + '.jpg';
 			obj.info = image;
-			if(count%3 === 0) {
-				temp += template(obj, 'last');
-				temp += '</div>';
-			} else if(count%3 === 1) {
-				temp += '<div class="clearfix">';
-				temp += template(obj);
-			} else {
-				temp += template(obj);
-			}
+			temp += template(obj);
 		});
-		$('.container').append(temp);
+		$('.preview-container').append(temp);
 		
 		setTimeout(function() {
 			utils.deactivateSpinner();
@@ -89,7 +77,7 @@
 	}
 	
 	function init() {
-		utils.activateSpinner();
+		//utils.activateSpinner();
 		renderImages();
 	}
 	

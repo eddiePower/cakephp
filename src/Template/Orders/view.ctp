@@ -8,18 +8,24 @@ echo "$(document).ready(function(){
 $this->Html->scriptEnd();
 ?>
 <nav class="nav-container">
-	<?= $this->Html->link(__('Edit this Order'), ['action' => 'edit', $order->id], ['class' => 'nav-item']) ?>
+	
+	<?php if($this->request->session()->read('userRole') == 'admin'){ ?>
+	<?= $this->Html->link(__('Edit this Order'), ['action' => 'edit', $order->id], ['class' => 'nav-item', 'title' => 'Click here to edit the order your looking at now']) ?>
 	<?= $this->Form->postLink(__('Delete this Order'), ['action' => 'delete', $order->id], ['confirm' => __('Are you sure you want to delete # {0}?', $order->id), 'class' => 'nav-item']) ?>
-	<?= $this->Html->link(__('List all Orders'), ['action' => 'index'], ['class' => 'nav-item']) ?>
-	<?= $this->Html->link(__('New Order'), ['action' => 'add'], ['class' => 'nav-item']) ?>
+	<?php } ?>
+	
+	<?= $this->Html->link(__('List all Orders'), ['action' => 'index'], ['class' => 'nav-item', 'title' => 'Click here to view all your current and past orders, you may use this to re order stock you liked prior.']) ?>
+	<?php if($this->request->session()->read('userRole') == 'admin'){ ?>
+	<?= $this->Html->link(__('New Order'), ['action' => 'add'], ['class' => 'nav-item', 'title' => 'Click here to place a manual (non shopping cart) order, for admin use only.']) ?>
+	<?php } ?>
 	<!--
 <?= $this->Html->link(__('List Couriers'), ['controller' => 'Couriers', 'action' => 'index'], ['class' => 'nav-item']) ?>
 	<?= $this->Html->link(__('New Courier'), ['controller' => 'Couriers', 'action' => 'add'], ['class' => 'nav-item']) ?>
 -->
-	<?= $this->Html->link(__('List Customers'), ['controller' => 'Customers', 'action' => 'index'], ['class' => 'nav-item']) ?>
-	<?= $this->Html->link(__('New Customer'), ['controller' => 'Customers', 'action' => 'add'], ['class' => 'nav-item']) ?>
-	<?= $this->Html->link(__('List all Ordered items'), ['controller' => 'OrderDetails', 'action' => 'index'], ['class' => 'nav-item']) ?>
-	<?= $this->Html->link(__('New Order Detail'), ['controller' => 'OrderDetails', 'action' => 'add'], ['class' => 'nav-item']) ?>
+	<?= $this->Html->link(__('List Customers'), ['controller' => 'Customers', 'action' => 'index'], ['class' => 'nav-item', 'title' => 'click to show customer information']) ?>
+	<?= $this->Html->link(__('New Customer'), ['controller' => 'Customers', 'action' => 'add'], ['class' => 'nav-item', 'title' => 'Click to add new customer buisness information']) ?>
+	<?= $this->Html->link(__('List Ordered items'), ['controller' => 'OrderDetails', 'action' => 'index'], ['class' => 'nav-item', 'title' => 'Shows both current ordered items and past ordered items']) ?>
+	<?= $this->Html->link(__('Add Item to order'), ['controller' => 'OrderDetails', 'action' => 'add'], ['class' => 'nav-item', 'title' => 'This is used to manually add an item to a current order in the system, only shows for admins and may be used to alter a current order for helping a customer']) ?>
 </nav>
 
 <div class="col-12 last panel">
@@ -103,9 +109,11 @@ $this->Html->scriptEnd();
 	<td class="actions">
 	<?= $this->Html->link(__('View'), ['controller' => 'OrderDetails', 'action' => 'view', $orderDetails->id]) ?>
 
-	<?= $this->Html->link(__('Edit'), ['controller' => 'OrderDetails', 'action' => 'edit', $orderDetails->id]) ?>
+	<!--  //NOT NEEDED AS WERE LOOKING AT RECORDS HERE AND SHOULD NOT BE EDITED.
+<?= $this->Html->link(__('Edit'), ['controller' => 'OrderDetails', 'action' => 'edit', $orderDetails->id]) ?>
 
 	<?= $this->Form->postLink(__('Delete'), ['controller' => 'OrderDetails', 'action' => 'delete', $orderDetails->id], ['confirm' => __('Are you sure you want to delete # {0}?', $orderDetails->id)]) ?>
+-->
     <?php 
     //increase the count
     $count++; ?>

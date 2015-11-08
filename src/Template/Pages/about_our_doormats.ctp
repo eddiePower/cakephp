@@ -29,37 +29,19 @@ $cakeDescription = 'SoleMate DoorMats built on CakePHP v3';
 <!DOCTYPE html>
 <html>
 <head>
-    <?= $this->Html->charset() ?>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        <?= $cakeDescription ?>
-    </title>
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'>
-		
-<?= $this->Html->css(['lightgrid']) ?>
-
-<?= $this->Html->script('https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js') ?>
-<?= $this->Html->script('utils') ?>
-<?= $this->Html->script('index') ?>
+	<?php echo $this->element('head'); ?>
 </head>
 <body class="page">
-	<header class="site-header">
-   <nav class="header-nav">
-		 <h1 class="header-nav-title center">
-		 <?= $this->Html->image('http://www.ibaustralia.com/ibaustralia/custom/logo_custom.gif') ?>
-		 </h1>
-		</nav>
-	</header>
+	
+	<?php echo $this->element('header'); ?>
 	
   <main class="site-main">
-  	<div class="main-inner row">
-  		<h1 class="center">
+  	<div class="main-inner container">
+  		<div class="row">
+  		<h1 class="center col-md-12 page-title">
   			About our doormats
   		</h1>
-  		<div class="col-10 offset-1 last panel">
-  		<a class="button auto" href="../">
-  			Go back
-  		</a>
+  		<div class="col-md-12 panel">
 <p>Solemate coir doormats are handmade by locals in Kerala, the most Southwestern state in India. This is a vital cottage industry, providing a fair and steady source of income and supporting a sustainable community.</p>
 <?php echo $this->Html->image('pages/about-our-mats-1.jpg', array('alt' => 'about-our-mats-image')); ?>
 <?php echo $this->Html->image('pages/about-our-mats-2.jpg', array('alt' => 'about-our-mats-image')); ?>
@@ -113,52 +95,11 @@ $cakeDescription = 'SoleMate DoorMats built on CakePHP v3';
 <p><em>Bootscraper Collection</em></p>
 <p><strong>BR</strong> (Bootscraper) - These mats are made from a combination of recycled rubber and coir. They are very durable and are tough enough to be used as a bootscraper. They come in a variety of sizes and weights.</p>
   		</div>
-    
+    </div>
   	</div>
 	</main>
 	
-	<footer class="site-footer">
-			<div class="footer-inner row">
-				<div class="col-4">
-					<h3>
-						Contact us
-					</h3>
-
-						<b>Email: </b><span>rick@ibaustralia.com</span>
-						<br>
-						<b>Phone: </b><span><a href="tel: 0395831300">(03) 9583 1300</a></span>
-						<br>
-						<b>Address: </b>
-						<br><span><a href="https://www.google.com/maps/place/4+Shearson+Cres,+Mentone+VIC+3194,+Australia/@-37.976626,145.082834,17z/data=!3m1!4b1!4m2!3m1!1s0x6ad66c502c193f47:0xc1f944009f3a2274?hl=en" target="_blank">
-						4 Shearson Crescent<br>
-						Mentone, Vic 3194<br>
-						Australia
-					</a>
-					</span>
-				</div>
-				<div class="col-4 last">
-					<h3>
-						Connect with us
-					</h3>
-					<?= $this->Html->link('Find us on Facebook', 'https://www.facebook.com/Solematedoormats', ['class' => 'footer-link', 'target' => '_blank']) ?>
-					<?= $this->Html->link(__('Home'), ['controller' => 'users', 'action' => 'index'], array('class' => 'footer-link')) ?>
-					<?= $this->Html->link('Contact us', '/pages/contact-us', ['class' => 'footer-link']) ?>
-					<?= $this->Html->link('About us', '/pages/about-us', ['class' => 'footer-link']) ?>
-				</div>
-				<div class="col-4">
-					<h3>
-					Faqs
-					</h3>
-					<?= $this->Html->link('About our doormats', '/pages/about-our-doormats', ['class' => 'footer-link']) ?>
-					<?= $this->Html->link('Trading terms', '/pages/trading-terms', ['class' => 'footer-link']) ?>
-					<?= $this->Html->link('Our process', '/pages/our-process', ['class' => 'footer-link']) ?>
-				</div>
-				<div class="col-12 last">
-					<p class="center">
-						&copy; 2015 Solemate Doormats - IB Australia
-					</p>
-				</div>
-			</div>
-		</footer>
+	<?php echo $this->element('footer'); ?>
+	
 </body>
 </html>

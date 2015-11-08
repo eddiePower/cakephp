@@ -1,16 +1,25 @@
-<div class="actions columns large-2 medium-3">
-    <h3><?= __('Actions') ?></h3>
-    <ul class="side-nav">
-        <?php $cartID = ("10"); ?>
-        <li><?= $this->Html->link(__('New Shopcart Item'), ['action' => 'add', $cartID]) ?></li>
-        <li><?= $this->Html->link(__('List Shopcart'), ['controller' => 'Shopcart', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Shopcart'), ['controller' => 'Shopcart', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Items'), ['controller' => 'Items', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Item'), ['controller' => 'Items', 'action' => 'add']) ?></li>
-    </ul>
+
+<div class="col-md-12">
+
+	<h1 class="center page-title">
+		Shopping cart Items
+	</h1>
+
 </div>
-<div class="col-12 last panel">
-<div class="shopcartItems index large-10 medium-9 columns">
+
+<div class="col-md-12">
+    <nav class="nav-container">
+        <?php $cartID = ("10"); ?>
+        <?= $this->Html->link(__('New Shopcart Item'), ['action' => 'add', $cartID], ['class' => 'nav-item']) ?>
+        <?= $this->Html->link(__('List Shopcart'), ['controller' => 'Shopcart', 'action' => 'index'], ['class' => 'nav-item']) ?>
+        <?= $this->Html->link(__('New Shopcart'), ['controller' => 'Shopcart', 'action' => 'add'], ['class' => 'nav-item']) ?>
+        <?= $this->Html->link(__('List Items'), ['controller' => 'Items', 'action' => 'index'], ['class' => 'nav-item']) ?>
+        <?= $this->Html->link(__('New Item'), ['controller' => 'Items', 'action' => 'add'], ['class' => 'nav-item']) ?>
+    </nav>
+</div>
+
+<div class="col-md-12">
+<div class="shopcartItems index panel">
  <?= $this->Flash->render(); ?>
  <?=
 //enable the data-tables jQuery plugin for better table uttils.
@@ -49,13 +58,13 @@ $this->Html->scriptEnd();
     <?php endforeach; ?>
     </tbody>
     </table>
-    <div class="paginator">
+    <!--<div class="paginator">
         <ul class="pagination">
             <?= $this->Paginator->prev('< ' . __('previous')) ?>
             <?= $this->Paginator->numbers() ?>
             <?= $this->Paginator->next(__('next') . ' >') ?>
         </ul>
         <p><?= $this->Paginator->counter() ?></p>
-    </div>
+    </div>-->
 </div>
 </div>
