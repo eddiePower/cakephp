@@ -24,9 +24,7 @@ $cakeDescription = 'SoleMate Doormats';
 		<?= $cakeDescription ?>:
 		<?= $this->fetch('title') ?>
 		</title>
-		<link href='http://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'>
-		<?= $this->Html->meta('icon') ?>
-		<?= $this->Html->css(['dropit']) ?>
+        <?= $this->Html->css(['dropit']) ?>
 		<?= $this->Html->css(['http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css', 'jquery.dataTables.css', 'flashEmailDivControls.css']) ?>
 		<?php echo $this->element('head'); ?>
 		

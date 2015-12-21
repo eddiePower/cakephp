@@ -4,7 +4,7 @@
 <!--         <?= $this->Html->link(__('Edit Shopcart'), ['action' => 'edit', $shopcart->id], ['class' => 'nav-item']) ?> -->
 <!--         <?= $this->Form->postLink(__('Delete Shopcart'), ['action' => 'delete', $shopcart->id], ['class' => 'nav-item'], ['confirm' => __('Are you sure you want to delete # {0}?', $shopcart->id)]) ?> -->
 <!--         <?= $this->Html->link(__('List Shopcart'), ['action' => 'index'], ['class' => 'nav-item']) ?> -->
-        <?= $this->Html->link(__('Checkout'), ['action' => 'add'], ['class' => 'nav-item']) ?>
+        <?= $this->Html->link(__('Checkout'), ['action' => 'checkout', $shopcart->id], ['class' => 'nav-item']) ?>
         <?= $this->Html->link(__('My Account'), ['controller' => 'Users', 'action' => 'index'], ['class' => 'nav-item']) ?> 
 <!--    <?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add'], ['class' => 'nav-item']) ?> -->
         <?= $this->Html->link(__('Add more Items'), ['controller' => 'Items', 'action' => 'index'], ['class' => 'nav-item']) ?>

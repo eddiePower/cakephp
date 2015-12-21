@@ -1,9 +1,10 @@
 <?php
 namespace App\Controller;
-
 use App\Controller\AppController;
-//used for db table queries
-use Cake\ORM\TableRegistry;
+use Cake\ORM\TableRegistry;  //used for db table queries
+use Cake\Routing\Router;  //used to generate full urls
+use Cake\Core\Configure;  //used to store and retrieve global data.
+use Cake\Network\Email\Email;  //used for sending email
 /*
  *   ShopcartController.php by Eddie Power.
  *	 Team 18 - Heisenburg 
@@ -143,13 +144,18 @@ class ShopcartController extends AppController
         $shopcart = $this->Shopcart->get($id, [
             'contain' => ['Items']
         ]);
+        
         if ($this->request->is(['patch', 'post', 'put'])) 
         {
-            $shopcart = $this->Shopcart->patchEntity($shopcart, $this->request->data);
+           
+           // debug($id);
+           // debug($this->request->data['quantity']);
+           
+            $shopcart = $this->Shopcart->patchEntity($shopcart, $this->request->data);            
             
             if ($this->Shopcart->save($shopcart)) 
             {
-                $this->Flash->success(__('The shopcart has been saved.'));
+                $this->Flash->success(__('Your shopping Cart has been updated.'));
                 return $this->redirect(['action' => 'index']);
             } 
             else 
@@ -197,16 +203,143 @@ class ShopcartController extends AppController
         ]);
         
         //add items to an array
-        debug($shopcart['items']);
+        //debug($shopcart['items']);
         
+        if(isset($shopcart['items']))
+        {  
         
-        // calculate and show the cost for this order,
-        
-        //either send data to add order and add order items,
-        
-        // or create an order and orderDetails objects and populate them from here.
-        
-        //calculate the order total by adding up the item base prices and make note that 
+            if($this->request->is(array('post', 'put'))) 
+            {
+               
+               //either send data to add order and add order items,
+               //load order and orderDetails model for use here              
+               $this->loadmodel('Orders');
+               $this->loadmodel('OrderDetails');
+               
+               
+               $ordersTable = TableRegistry::get('Orders');
+               $order = $ordersTable->newEntity();
+               
+               //pre set the ordered_date and courier id as we are not including that this build.
+               $order->ordered_date = date("Y-m-d");   
+               $order->courier_id = ("1");
+            
+               //set gged in user id as the order user id property
+               $loggedUser = $this->request->session()->read('user');
+               $order->user_id = $loggedUser['id'];
+               
+               //get and set the customer id for the logged in user.
+               $query = TableRegistry::get('Customers')->find();
+               $query->where(['user_id' => $loggedUser['id']]); 
+               
+               //find the users cart and run the view cart func with the cart_id
+               foreach($query as $aCust)
+               {
+                  //debug($uCart);
+                  $custID = $aCust['id'];
+                  $OrderingCustomer = $aCust;     
+               }
+               
+               $order->customer_id = $custID;
+               $order->customer_comments = "Ordered by User: " . $loggedUser['username'] . " from the Solemate shopping cart system.";
+               $order->required_date = date("Y-m-d");
+               
+               if ($ordersTable->save($order)) 
+               {
+                   // The $article entity contains the id now
+                   $orderID = $order->id;
+               }
+               else
+               {
+                   //display error flash message for order did not save
+               }
+               
+               
+               $orderTotal = 0;
+               
+                //debug($orderID);
+                //now create order_Details for each item in the cart.
+                foreach($shopcart['items'] as $orderedItem)
+                {
+                    //debug($orderedItem);
+                    
+                    //create a orderDetail for each of the ordered Items
+                    $orderDetailsTable = TableRegistry::get('OrderDetails');
+                    $orderDetail = $orderDetailsTable->newEntity();
+                    
+                    //set the new entity's properties from our cart list
+                    $orderDetail->item_id = $orderedItem['id'];
+                    $orderDetail->order_id = $orderID;
+                    $orderDetail->quantity_ordered = $orderedItem['_joinData']['quantity'];
+                    $orderDetail->per_unit = $orderedItem['base_price'];
+                    $orderDetail->discount = 0.00;
+                    
+                    //set a orderTotal for use in email data.
+                    $orderTotal += ($orderDetail->per_unit * $orderDetail->quantity_ordered);
+                    //Add GST TO TOTAL
+                    $orderTotal += ($orderTotal / 10);
+                    
+                    //debug($orderDetail);
+                    
+                    //now save the orderDetail to the database
+                    if ($orderDetailsTable->save($orderDetail)) 
+                    {
+                       //do nothing
+                    }//end of if orderDetail saved ok check
+                    else
+                    {
+                        //display error flash message for order detail did not save
+                    }
+                    
+                }//end of for loop to store every item in the shop cart
+
+
+               //choose to send email for new orders from here as well. with item list, customer details,
+               //send an email to rick letting him know that an order was placed.
+               //Send email to customer with their new reset password hashed link/url
+               //create email object and set email config settings
+               ShopcartController::_generateEmails($loggedUser, $OrderingCustomer, $orderTotal, $order, $shopcart['items']);
+                
+               //empty the shopping cart via the dbase.
+               //run sql on shopcart to get user's carts
+               $query = TableRegistry::get('Shopcart')->find();
+               $query->where(['user_id' => $loggedUser['id']]);
+               
+               //now we will remove all items from this cart.
+               //find the users cart and run the view cart func with the cart_id
+               foreach($query as $uCart)
+               {
+                  // debug($uCart);
+                   $id = $uCart['id'];
+                   
+                   //save time delete cart
+                   $result = $this->Shopcart->delete($uCart);
+                   
+                   //create new cart for user as we did in login  
+                   //***NOTE TO DEV's This is bad practice as it runs a new db query every order and
+                   //    will run the id value for cart id's way up high very quickly, if possible work out
+                   // how to change this to remove each and every cart item.
+                  
+                   //create a new database entity 
+                   $cart = $this->Shopcart->newEntity();
+                  
+                   //store the userID into the shopping cart to tie it to 
+                   // logged in user.
+                   $cart->user_id = $loggedUser['id'];                 
+                  
+                   //now save this shopping cart to the database for later use.
+                   $this->Shopcart->save($cart);  
+
+               }
+               
+               //Now Set Flash message addition and redirect the users if need be this may happen from the order placement.
+               $this->Flash->success('Your order has been placed and we will contact you with payment process / invoice');
+               
+               //redirect the successfull users back to their order history page.... MAY CHANGE THIS TO OTHER PAGE
+              return $this->redirect(['controller' => 'Orders', 'action' => 'index']); 
+
+           } //end of is the request a post or put request.
+        }//end is there any items check
         
         //set some ViewVars for the checkout view page.
         $this->set('shopcart', $shopcart);
@@ -216,4 +349,78 @@ class ShopcartController extends AppController
     }
     
     
+    private function _generateEmails($loggedUser = null, $OrderingCustomer = null, $orderTotal = null, $order = null, $shopcart = null)
+    {
+                //choose to send email for new orders from here as well. with item list, customer details,
+               //send an email to rick letting him know that an order was placed.
+                //Send email to customer with their new reset password hashed link/url
+                //create email object and set email config settings
+                $orderEmail = new Email('default');
+                $orderEmail->transport('default');
+                
+                //set the type of email format and use our custom template.
+                $orderEmail->emailFormat('html');
+                $orderEmail->template('order_email');
+              
+                //Set the email headers.
+                $orderEmail->from(['solemateDoormats@doNotReply.com' => 'Solemate Doormats Web Orders']);
+                $orderEmail->sender(['solemate.doormats@gmail.com' => 'Solemate Doormats inc']);
+                $orderEmail->replyTo('solemate.doormats@gmail.com');
+                
+                $fullOrderUrl = Router::url(array('controller' => 'Orders', 'action' => 'view', $order->id), true);                    
+
+                
+                //send the administrator order created email with listing of items, weights, totals etc
+                //set the email to send to
+                $orderEmail->to(Configure::read('orderRecievedEmail'));
+                $orderEmail->subject('Solemate Order has been placed on ' . date("Y-m-d"));
+                
+                
+                $message = "<table id='orderEmailTable' style='border: 1'><tr><th>Item Name</th><th>Item Cost (per Unit)</th><th>Base Weight (per Unit)</th>";
+                $message .= "<th>Total Wieght Ordered</th><th>Number of Bales</th></tr>";
+
+                
+                foreach($shopcart as $item)
+                {
+                   $message .= "<tr><td>" . $item['item_name'] . "</td>"
+                    . "<td>" . $item['base_price'] . "</td><td>" . $item['matt_weight'];
+                   $message .= "</td><td>" . h(($item['matt_weight'] * $item['_joinData']['quantity'])) . "</td><td>" . h(($item['_joinData']['quantity'] / $item['matt_bale_count'])) . "</td>";
+                }
+                $message .= "</tr></table>";
+               
+                //send email with body message of
+                $orderEmail->send('Hi there Solemate Admin, this is an automated email to let you know a new order has been placed on the website ordering system,' 
+                  . ' the order id is ' . $order->id . '. The customer placing the order was ' . $OrderingCustomer['first_name'] . ' ' . $OrderingCustomer['last_name'] 
+                  . ', and was placed by the user: ' . $loggedUser['username'] . ' who has the role of ' . $this->request->session()->read('userRole') . ' user type. '
+                  . ' The url to view to this order is <a href="' . $fullOrderUrl . '">'. $OrderingCustomer['first_name'] . ' ' . $OrderingCustomer['last_name'] 
+                  .'\'s New Order</a> you will need to log in if you have not already done so recently. The invoice total will be (inc GST)$' . $orderTotal . '<br />'
+                  . $message);
+              
+                  
+                //set the email touser letting them know of their order items and total.
+                $orderEmail1 = new Email('default');
+                $orderEmail1->transport('default');
+                
+                //set the type of email format and use our custom template.
+                $orderEmail1->emailFormat('html');
+                $orderEmail1->template('order_email');
+              
+                //Set the email headers.
+                $orderEmail1->from(['solemateDoormats@doNotReply.com' => 'Solemate Doormats Web Orders']);
+                $orderEmail1->sender(['solemate.doormats@gmail.com' => 'Solemate Doormats inc']);
+                $orderEmail1->replyTo('solemate.doormats@gmail.com');
+                
+                $orderEmail1->to($loggedUser['email']);
+                $orderEmail1->subject('Your Solemate Order was placed on ' . date("Y-m-d"));
+                
+                //send email with body message of
+                $orderEmail1->send('Hi there ' . $loggedUser['username'] . ', this is an automated email to let you know your order has been placed on the Solemate ordering system and our sales team will be in touch with the invoice and payment details.' 
+                  . '<br />Order id is ' . $order->id . ', and was placed by the user: ' . $loggedUser['username'] . ' who has the role of ' . $this->request->session()->read('userRole') . ' user type. '
+                  . ' The url to view to view details of this order is <a href="' . $fullOrderUrl . '">'. $OrderingCustomer['first_name'] . ' ' . $OrderingCustomer['last_name'] 
+                  .'\'s New Order</a> you will need to log in if you have not already done so recently. The invoice total will be (inc GST)' . $orderTotal . '.');
+                  
+                  return true;
+                  
+    } //end of private function
+
 }

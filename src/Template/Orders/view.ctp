@@ -17,6 +17,8 @@ $this->Html->scriptEnd();
 	<?= $this->Html->link(__('List all Orders'), ['action' => 'index'], ['class' => 'nav-item', 'title' => 'Click here to view all your current and past orders, you may use this to re order stock you liked prior.']) ?>
 	<?php if($this->request->session()->read('userRole') == 'admin'){ ?>
 	<?= $this->Html->link(__('New Order'), ['action' => 'add'], ['class' => 'nav-item', 'title' => 'Click here to place a manual (non shopping cart) order, for admin use only.']) ?>
+	<?= $this->Html->link(__('Ordered Items History'), ['controller' => 'OrderDetails', 'action' => 'index'], ['class' => 'nav-item', 'title' => 'Shows both current ordered items and past ordered items']) ?>
+	<?= $this->Html->link(__('Add Item to order'), ['controller' => 'OrderDetails', 'action' => 'add'], ['class' => 'nav-item', 'title' => 'This is used to manually add an item to a current order in the system, only shows for admins and may be used to alter a current order for helping a customer']) ?>
 	<?php } ?>
 	<!--
 <?= $this->Html->link(__('List Couriers'), ['controller' => 'Couriers', 'action' => 'index'], ['class' => 'nav-item']) ?>
@@ -24,8 +26,6 @@ $this->Html->scriptEnd();
 -->
 	<?= $this->Html->link(__('List Customers'), ['controller' => 'Customers', 'action' => 'index'], ['class' => 'nav-item', 'title' => 'click to show customer information']) ?>
 	<?= $this->Html->link(__('New Customer'), ['controller' => 'Customers', 'action' => 'add'], ['class' => 'nav-item', 'title' => 'Click to add new customer buisness information']) ?>
-	<?= $this->Html->link(__('List Ordered items'), ['controller' => 'OrderDetails', 'action' => 'index'], ['class' => 'nav-item', 'title' => 'Shows both current ordered items and past ordered items']) ?>
-	<?= $this->Html->link(__('Add Item to order'), ['controller' => 'OrderDetails', 'action' => 'add'], ['class' => 'nav-item', 'title' => 'This is used to manually add an item to a current order in the system, only shows for admins and may be used to alter a current order for helping a customer']) ?>
 </nav>
 
 <div class="col-12 last panel">

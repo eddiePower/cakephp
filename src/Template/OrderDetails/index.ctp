@@ -1,17 +1,29 @@
 <h1 class="center">All Past Order Details</h1>
    
 <nav class="nav-container">
+	<?php if($this->request->session()->read('userRole') == 'admin') { ?>
 	<?= $this->Html->link(__('New Order Detail'), ['action' => 'add'], ['class' => 'nav-item']) ?>
-	<?= $this->Html->link(__('List Items'), ['controller' => 'Items', 'action' => 'index'], ['class' => 'nav-item']) ?>
 	<?= $this->Html->link(__('New Item'), ['controller' => 'Items', 'action' => 'add'], ['class' => 'nav-item']) ?>
+    <?= $this->Html->link(__('New Order'), ['controller' => 'Orders', 'action' => 'add'], ['class' => 'nav-item']) ?>
+    <?php } ?>
+	<?= $this->Html->link(__('List Items'), ['controller' => 'Items', 'action' => 'index'], ['class' => 'nav-item']) ?>
 	<?= $this->Html->link(__('List Orders'), ['controller' => 'Orders', 'action' => 'index'], ['class' => 'nav-item']) ?>
-	<?= $this->Html->link(__('New Order'), ['controller' => 'Orders', 'action' => 'add'], ['class' => 'nav-item']) ?>
 </nav>
 <?=
 //enable the data-tables jQuery plugin for better table uttils.
 $this->Html->scriptStart(['block' => true]);
 echo "$(document).ready(function(){
-    $('#data-table').DataTable();
+    $('#data-table').DataTable({
+    'order': [[ 0, 'desc' ]],
+    'pageLength': 25,
+    'columnDefs': [
+            {
+                'targets': [ 0 ],
+                'visible': false,
+                'searchable': false
+            }
+        ]
+    });
 });";
 $this->Html->scriptEnd();
 ?>
@@ -20,6 +32,7 @@ $this->Html->scriptEnd();
 	<table cellpadding="0" cellspacing="0" id="data-table">
 	<thead>
 	<tr style="height: 50px">
+	<th><?= __('ID') ?></th>  <!-- Used for accurate ordering or new things to the top since date sorting wasnt working -->
 	<th><?= __('Item image') ?></th>
 	<th><?= __('Item Name') ?></th>
 	<th><?= __('Ordered Date') ?></th>
@@ -36,6 +49,7 @@ $this->Html->scriptEnd();
 	            //discount % divide by 100 multiply by the item total (qty ordered * price pr unit)
 	         $percent = ($orderDetail->discount / '100' * ($orderDetail->quantity_ordered * $orderDetail->per_unit)); ?>
 	<tr>
+	<td><?= h($orderDetail->id) ?></td>
 	<td>
     		<?= $orderDetail->has('item') ? $this->Html->image('graphics/' . $orderDetail->item->photo, ['alt' => $orderDetail->item->item_name, 'fullbase' => true]) : '__("No Image")' ?>
 	</td>

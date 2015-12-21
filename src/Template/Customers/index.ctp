@@ -5,9 +5,16 @@
 $this->Html->scriptStart(['block' => true]);
 echo "$(document).ready(function(){
     $('#data-table').DataTable({
-    'order': [[ 0, 'asc' ]]
-    });
-});";
+          'order': [[ 0, 'desc' ]],
+          'pageLength': 25,
+          'columnDefs': 
+                  [{
+                    'targets': [ 0 ],
+                    'visible': false,
+                    'searchable': false
+                   }]
+     });
+  });";
 $this->Html->scriptEnd();
 ?>
 <div class="col-12 last panel">
@@ -45,6 +52,7 @@ $this->Html->scriptEnd();
 	<table class="table table-bordered table-striped" id="data-table" style="width: 87%;">
 		<thead>
 		<tr style="height: 50px">
+		        <th><?= __('ID') ?></th> <!-- Used for accurate ordering or new things to the top since date sorting wasnt working -->
 				<th><?= __('First Name') ?></th>
 				<th><?= __('Last Name') ?></th>
 				<th><?= __('Address') ?></th>
@@ -59,6 +67,7 @@ $this->Html->scriptEnd();
 		<tbody>
 			<?php foreach ($customers as $customer): ?>
 			<tr>
+			    <td><?= h($customer->id) ?></td>
 				<td><?= h($customer->first_name) ?></td>
 				<td><?= h($customer->last_name) ?></td>
 				<td><?= h($customer->address) ?></td>

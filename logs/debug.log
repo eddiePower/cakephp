@@ -1,0 +1,1712 @@
+2015-11-09 05:35:29 Notice: Notice (8): Undefined variable: debug in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 255]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+App\Controller\ShopcartController::checkout() - APP/Controller/ShopcartController.php, line 255
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 416
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 06:57:36 Notice: Notice (8): Undefined variable: aUser in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 349]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+App\Controller\ShopcartController::checkout() - APP/Controller/ShopcartController.php, line 349
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 416
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 06:58:16 Notice: Notice (8): Undefined variable: shopcart in [/Users/edster2007/Sites/testBuild/src/Template/Shopcart/index.ctp, line 35]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/Shopcart/index.ctp, line 35
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 07:00:42 Notice: Notice (8): Undefined variable: aUser in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 349]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+App\Controller\ShopcartController::checkout() - APP/Controller/ShopcartController.php, line 349
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 416
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 08:40:33 Notice: Notice (8): Undefined variable: orderID in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 398]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+App\Controller\ShopcartController::_generateEmails() - APP/Controller/ShopcartController.php, line 398
+App\Controller\ShopcartController::checkout() - APP/Controller/ShopcartController.php, line 325
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 416
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 08:40:33 Notice: Notice (8): Undefined variable: order in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 404]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+App\Controller\ShopcartController::_generateEmails() - APP/Controller/ShopcartController.php, line 404
+App\Controller\ShopcartController::checkout() - APP/Controller/ShopcartController.php, line 325
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 416
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 08:40:33 Notice: Notice (8): Trying to get property of non-object in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 404]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+App\Controller\ShopcartController::_generateEmails() - APP/Controller/ShopcartController.php, line 404
+App\Controller\ShopcartController::checkout() - APP/Controller/ShopcartController.php, line 325
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 416
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 08:40:33 Notice: Notice (8): Undefined variable: OrderingCustomer in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 404]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+App\Controller\ShopcartController::_generateEmails() - APP/Controller/ShopcartController.php, line 404
+App\Controller\ShopcartController::checkout() - APP/Controller/ShopcartController.php, line 325
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 416
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 08:40:33 Notice: Notice (8): Undefined variable: OrderingCustomer in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 404]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+App\Controller\ShopcartController::_generateEmails() - APP/Controller/ShopcartController.php, line 404
+App\Controller\ShopcartController::checkout() - APP/Controller/ShopcartController.php, line 325
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 416
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 08:40:33 Notice: Notice (8): Undefined variable: loggedUser in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 405]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+App\Controller\ShopcartController::_generateEmails() - APP/Controller/ShopcartController.php, line 405
+App\Controller\ShopcartController::checkout() - APP/Controller/ShopcartController.php, line 325
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 416
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 08:40:33 Notice: Notice (8): Undefined variable: OrderingCustomer in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 406]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+App\Controller\ShopcartController::_generateEmails() - APP/Controller/ShopcartController.php, line 406
+App\Controller\ShopcartController::checkout() - APP/Controller/ShopcartController.php, line 325
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 416
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 08:40:33 Notice: Notice (8): Undefined variable: OrderingCustomer in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 406]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+App\Controller\ShopcartController::_generateEmails() - APP/Controller/ShopcartController.php, line 406
+App\Controller\ShopcartController::checkout() - APP/Controller/ShopcartController.php, line 325
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 416
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 08:40:33 Notice: Notice (8): Undefined variable: orderTotal in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 407]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+App\Controller\ShopcartController::_generateEmails() - APP/Controller/ShopcartController.php, line 407
+App\Controller\ShopcartController::checkout() - APP/Controller/ShopcartController.php, line 325
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 416
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 08:53:49 Notice: Notice (8): Trying to get property of non-object in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 394]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+App\Controller\ShopcartController::_generateEmails() - APP/Controller/ShopcartController.php, line 394
+App\Controller\ShopcartController::checkout() - APP/Controller/ShopcartController.php, line 325
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 416
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 08:53:49 Notice: Notice (8): Trying to get property of non-object in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 404]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+App\Controller\ShopcartController::_generateEmails() - APP/Controller/ShopcartController.php, line 404
+App\Controller\ShopcartController::checkout() - APP/Controller/ShopcartController.php, line 325
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 416
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 08:53:55 Notice: Notice (8): Trying to get property of non-object in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 428]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+App\Controller\ShopcartController::_generateEmails() - APP/Controller/ShopcartController.php, line 428
+App\Controller\ShopcartController::checkout() - APP/Controller/ShopcartController.php, line 325
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 416
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 08:55:37 Notice: Notice (8): Undefined index: first_name in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 427]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+App\Controller\ShopcartController::_generateEmails() - APP/Controller/ShopcartController.php, line 427
+App\Controller\ShopcartController::checkout() - APP/Controller/ShopcartController.php, line 325
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 416
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 08:55:37 Notice: Notice (8): Undefined index: last_name in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 427]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+App\Controller\ShopcartController::_generateEmails() - APP/Controller/ShopcartController.php, line 427
+App\Controller\ShopcartController::checkout() - APP/Controller/ShopcartController.php, line 325
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 416
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 09:23:24 Notice: Notice (8): Undefined index: items in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 377]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+App\Controller\ShopcartController::_generateEmails() - APP/Controller/ShopcartController.php, line 377
+App\Controller\ShopcartController::checkout() - APP/Controller/ShopcartController.php, line 296
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 416
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 09:26:59 Notice: Notice (8): Undefined index: items in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 379]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+App\Controller\ShopcartController::_generateEmails() - APP/Controller/ShopcartController.php, line 379
+App\Controller\ShopcartController::checkout() - APP/Controller/ShopcartController.php, line 296
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 416
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 09:28:14 Notice: Notice (8): Undefined index: item in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 379]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+App\Controller\ShopcartController::_generateEmails() - APP/Controller/ShopcartController.php, line 379
+App\Controller\ShopcartController::checkout() - APP/Controller/ShopcartController.php, line 296
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 416
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:37:02 Notice: Notice (8): Undefined variable: shopcartItem in [/Users/edster2007/Sites/testBuild/src/Template/Shopcart/edit.ctp, line 26]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/Shopcart/edit.ctp, line 26
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:37:03 Notice: Notice (8): Undefined variable: shopcartItem in [/Users/edster2007/Sites/testBuild/src/Template/Shopcart/edit.ctp, line 26]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/Shopcart/edit.ctp, line 26
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:41:51 Notice: Notice (8): Undefined property: Cake\ORM\Query::$id in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 6]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 6
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:41:51 Notice: Notice (8): Undefined property: Cake\ORM\Query::$id in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 7]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 7
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:46:43 Notice: Notice (8): Undefined property: Cake\ORM\Query::$item_number in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 40]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 40
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:46:43 Notice: Notice (8): Undefined property: Cake\ORM\Query::$photo in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 41]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 41
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:46:43 Notice: Notice (8): Undefined property: Cake\ORM\Query::$base_price in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 42]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 42
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:46:43 Notice: Notice (8): Undefined property: Cake\ORM\Query::$base_price in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 43]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 43
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:46:47 Notice: Notice (8): Undefined property: Cake\ORM\Query::$item_number in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 40]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 40
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:46:47 Notice: Notice (8): Undefined property: Cake\ORM\Query::$photo in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 41]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 41
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:46:47 Notice: Notice (8): Undefined property: Cake\ORM\Query::$base_price in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 42]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 42
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:46:47 Notice: Notice (8): Undefined property: Cake\ORM\Query::$base_price in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 43]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 43
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:47:35 Notice: Notice (8): Undefined property: Cake\ORM\Query::$item_number in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 40]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 40
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:47:35 Notice: Notice (8): Undefined property: Cake\ORM\Query::$photo in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 41]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 41
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:50:29 Notice: Notice (8): Undefined property: Cake\ORM\Query::$item_number in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 40]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 40
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:50:29 Notice: Notice (8): Undefined property: Cake\ORM\Query::$photo in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 41]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 41
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:54:02 Notice: Notice (8): Undefined property: Cake\ORM\Query::$item_number in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 40]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 40
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:54:02 Notice: Notice (8): Undefined property: Cake\ORM\Query::$photo in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 41]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 41
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:57:05 Notice: Notice (8): Undefined index: item_name in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 38]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 38
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:57:05 Notice: Notice (8): Undefined index: item_number in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 40]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 40
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:57:05 Notice: Notice (8): Trying to get property of non-object in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 41]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 41
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:57:05 Notice: Notice (8): Undefined index: base_price in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 42]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 42
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:57:05 Notice: Notice (8): Undefined index: base_price in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 43]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 43
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:57:19 Notice: Notice (8): Undefined index: item_name in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 38]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 38
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:57:19 Notice: Notice (8): Undefined index: item_number in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 40]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 40
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:57:19 Notice: Notice (8): Trying to get property of non-object in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 41]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 41
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:57:19 Notice: Notice (8): Undefined index: base_price in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 42]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 42
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:57:19 Notice: Notice (8): Undefined index: base_price in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 43]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 43
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:57:49 Notice: Notice (8): Undefined index: item_name in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 38]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 38
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:57:49 Notice: Notice (8): Undefined index: item_number in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 40]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 40
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:57:49 Notice: Notice (8): Trying to get property of non-object in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 41]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 41
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:57:49 Notice: Notice (8): Undefined index: base_price in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 42]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 42
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:57:49 Notice: Notice (8): Undefined index: base_price in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 43]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 43
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:58:13 Notice: Notice (8): Trying to get property of non-object in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 35]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 35
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:58:14 Notice: Notice (8): Undefined index: item_name in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 38]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 38
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:58:14 Notice: Notice (8): Undefined index: item_number in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 40]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 40
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:58:14 Notice: Notice (8): Trying to get property of non-object in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 41]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 41
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:58:14 Notice: Notice (8): Undefined index: base_price in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 42]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 42
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:58:14 Notice: Notice (8): Undefined index: base_price in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 43]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 43
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:58:30 Notice: Notice (8): Undefined index: item_name in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 38]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 38
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:58:30 Notice: Notice (8): Undefined index: item_number in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 40]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 40
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:58:30 Notice: Notice (8): Trying to get property of non-object in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 41]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 41
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:58:31 Notice: Notice (8): Undefined index: base_price in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 42]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 42
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:58:31 Notice: Notice (8): Undefined index: base_price in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 43]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 43
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:59:03 Notice: Notice (8): Undefined index: item_name in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 35]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 35
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:59:03 Notice: Notice (8): Undefined index: item_name in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 38]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 38
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:59:03 Notice: Notice (8): Undefined index: item_number in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 40]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 40
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:59:03 Notice: Notice (8): Trying to get property of non-object in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 41]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 41
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:59:03 Notice: Notice (8): Undefined index: base_price in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 42]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 42
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:59:03 Notice: Notice (8): Undefined index: base_price in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 43]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 43
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:59:17 Notice: Notice (8): Undefined index: item_name in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 38]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 38
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:59:17 Notice: Notice (8): Undefined index: item_number in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 40]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 40
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:59:17 Notice: Notice (8): Trying to get property of non-object in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 41]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 41
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:59:17 Notice: Notice (8): Undefined index: base_price in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 42]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 42
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:59:17 Notice: Notice (8): Undefined index: base_price in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 43]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 43
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:59:38 Notice: Notice (8): Undefined index: item_name in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 38]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 38
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:59:38 Notice: Notice (8): Undefined index: item_number in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 40]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 40
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:59:38 Notice: Notice (8): Trying to get property of non-object in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 41]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 41
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:59:38 Notice: Notice (8): Undefined index: base_price in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 42]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 42
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:59:38 Notice: Notice (8): Undefined index: base_price in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 43]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 43
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 12:01:15 Notice: Notice (8): Undefined index: item_number in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 41]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 41
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 12:01:15 Notice: Notice (8): Trying to get property of non-object in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 42]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 42
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 12:01:15 Notice: Notice (8): Undefined index: base_price in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 43]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 43
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 12:01:15 Notice: Notice (8): Undefined index: base_price in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 44]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 44
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 12:04:39 Notice: Notice (8): Undefined variable: aItem in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 42]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 42
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 12:04:39 Notice: Notice (8): Undefined variable: aItem in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 46]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 46
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 12:05:45 Notice: Notice (8): Undefined variable: shopcartItem in [/Users/edster2007/Sites/testBuild/src/Template/Shopcart/edit.ctp, line 26]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/Shopcart/edit.ctp, line 26
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 12:07:17 Notice: Notice (8): Undefined variable: shopcartItem in [/Users/edster2007/Sites/testBuild/src/Template/Shopcart/edit.ctp, line 26]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/Shopcart/edit.ctp, line 26
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 12:07:26 Notice: Notice (8): Undefined variable: shopcartItem in [/Users/edster2007/Sites/testBuild/src/Template/Shopcart/edit.ctp, line 26]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/Shopcart/edit.ctp, line 26
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 12:07:31 Notice: Notice (8): Undefined variable: shopcartItem in [/Users/edster2007/Sites/testBuild/src/Template/Shopcart/edit.ctp, line 26]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/Shopcart/edit.ctp, line 26
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 12:07:40 Notice: Notice (8): Undefined variable: shopcartItem in [/Users/edster2007/Sites/testBuild/src/Template/Shopcart/edit.ctp, line 26]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/Shopcart/edit.ctp, line 26
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 12:08:22 Notice: Notice (8): Undefined variable: shopcartItem in [/Users/edster2007/Sites/testBuild/src/Template/Shopcart/edit.ctp, line 26]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/Shopcart/edit.ctp, line 26
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 12:08:25 Notice: Notice (8): Undefined variable: shopcartItem in [/Users/edster2007/Sites/testBuild/src/Template/Shopcart/edit.ctp, line 26]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/Shopcart/edit.ctp, line 26
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 12:09:57 Notice: Notice (8): Undefined property: Cake\ORM\Query::$id in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 6]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 6
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 12:09:57 Notice: Notice (8): Undefined property: Cake\ORM\Query::$id in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 8]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 8
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 12:10:03 Notice: Notice (8): Undefined property: Cake\ORM\Query::$id in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 6]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 6
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 12:10:03 Notice: Notice (8): Undefined property: Cake\ORM\Query::$id in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 8]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 8
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 12:10:23 Notice: Notice (8): Undefined property: Cake\ORM\Query::$id in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 6]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 6
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 12:10:23 Notice: Notice (8): Undefined property: Cake\ORM\Query::$id in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 8]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 8
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 12:11:01 Notice: Notice (8): Undefined property: Cake\ORM\Query::$id in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 6]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 6
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 12:11:01 Notice: Notice (8): Undefined property: Cake\ORM\Query::$id in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 8]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 8
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 12:11:03 Notice: Notice (8): Undefined property: Cake\ORM\Query::$id in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 6]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 6
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 12:11:03 Notice: Notice (8): Undefined property: Cake\ORM\Query::$id in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 8]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 8
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 12:11:13 Notice: Notice (8): Undefined property: Cake\ORM\Query::$id in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 6]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 6
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 12:11:13 Notice: Notice (8): Undefined property: Cake\ORM\Query::$id in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 8]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 8
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 12:11:27 Notice: Notice (8): Undefined property: Cake\ORM\Query::$id in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 6]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 6
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 12:11:27 Notice: Notice (8): Undefined property: Cake\ORM\Query::$id in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 8]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 8
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 12:11:32 Notice: Notice (8): Undefined property: Cake\ORM\Query::$id in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 6]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 6
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 12:11:32 Notice: Notice (8): Undefined property: Cake\ORM\Query::$id in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 8]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 8
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 12:12:49 Notice: Notice (8): Undefined property: Cake\ORM\Query::$id in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 6]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 6
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 12:12:49 Notice: Notice (8): Undefined property: Cake\ORM\Query::$id in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 8]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 8
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 12:12:55 Notice: Notice (8): Undefined property: Cake\ORM\Query::$id in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 6]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 6
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 12:12:55 Notice: Notice (8): Undefined property: Cake\ORM\Query::$id in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 8]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/ShopcartItems/edit.ctp, line 8
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 12:13:19 Notice: Notice (8): Undefined variable: shopcartItem in [/Users/edster2007/Sites/testBuild/src/Template/Shopcart/edit.ctp, line 26]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/Shopcart/edit.ctp, line 26
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 12:15:24 Notice: Notice (8): Undefined variable: shopcartItem in [/Users/edster2007/Sites/testBuild/src/Template/Shopcart/edit.ctp, line 26]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/Shopcart/edit.ctp, line 26
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 12:15:42 Notice: Notice (8): Undefined variable: shopcartItem in [/Users/edster2007/Sites/testBuild/src/Template/Shopcart/edit.ctp, line 26]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/Shopcart/edit.ctp, line 26
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 12:21:22 Notice: Notice (8): Indirect modification of overloaded property App\Model\Entity\Shopcart::$item has no effect in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 155]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+App\Controller\ShopcartController::edit() - APP/Controller/ShopcartController.php, line 155
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 416
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 12:23:36 Notice: Notice (8): Undefined variable: shopcartItem in [/Users/edster2007/Sites/testBuild/src/Template/Shopcart/edit.ctp, line 6]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/Shopcart/edit.ctp, line 6
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 12:23:36 Notice: Notice (8): Trying to get property of non-object in [/Users/edster2007/Sites/testBuild/src/Template/Shopcart/edit.ctp, line 6]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/Shopcart/edit.ctp, line 6
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 12:23:36 Notice: Notice (8): Undefined variable: shopcartItem in [/Users/edster2007/Sites/testBuild/src/Template/Shopcart/edit.ctp, line 7]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/Shopcart/edit.ctp, line 7
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 12:23:36 Notice: Notice (8): Trying to get property of non-object in [/Users/edster2007/Sites/testBuild/src/Template/Shopcart/edit.ctp, line 7]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/Shopcart/edit.ctp, line 7
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 12:23:36 Notice: Notice (8): Undefined variable: shopcartItem in [/Users/edster2007/Sites/testBuild/src/Template/Shopcart/edit.ctp, line 18]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/Shopcart/edit.ctp, line 18
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 12:24:51 Notice: Notice (8): Undefined variable: shopcartItem in [/Users/edster2007/Sites/testBuild/src/Template/Shopcart/edit.ctp, line 26]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/Shopcart/edit.ctp, line 26
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 13:17:50 Notice: Notice (8): Undefined variable: item in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartItemsController.php, line 303]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+App\Controller\ShopcartItemsController::delete() - APP/Controller/ShopcartItemsController.php, line 303
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 416
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 13:21:03 Notice: Notice (8): Undefined variable: item in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartItemsController.php, line 299]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+App\Controller\ShopcartItemsController::delete() - APP/Controller/ShopcartItemsController.php, line 299
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 416
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+

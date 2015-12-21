@@ -29,10 +29,17 @@ if(isset($_SESSION['username']))  {
                     //enable the data-tables jQuery plugin for better table uttils.
                    $this->Html->scriptStart(['block' => true]);
                    echo "$(document).ready(function(){
-                       $('#data-table').DataTable({
-                                'order': [[ 1, 'asc' ]]
-                       });
-                   });";
+                           $('#data-table').DataTable({
+                                'order': [[ 0, 'desc' ]],
+                                'pageLength': 25,
+                                'columnDefs': 
+                                        [{
+                                          'targets': [ 0 ],
+                                          'visible': false,
+                                          'searchable': false
+                                         }]
+                           });
+                        });";
                    $this->Html->scriptEnd();
 				
 					?>
@@ -40,6 +47,7 @@ if(isset($_SESSION['username']))  {
 						<table cellpadding="0" cellspacing="0" id="data-table">
 							<thead>
 		                       <tr style="height: 50px">
+		                       <th><?= __('ID') ?></th>  <!-- Used for accurate ordering or new things to the top since date sorting wasnt working -->
 								<th><?= __('Item Image') ?></th>
 								<th><?= __('Item name') ?></th>
 								<th><?= __('Quantity on hand') ?></th>
@@ -51,6 +59,7 @@ if(isset($_SESSION['username']))  {
 							<tbody>
 								<?php foreach ($items as $item): ?>
 								<tr>
+								<td><?= h($item->id) ?></td>
 								<td><?= $item->photo != NULL ? 
 								$this->Html->image('graphics/' . $item->photo, ['alt' => $item->item_name, 'fullBase' => true, 'class' => 'item_image']) : h('NO Image Yet'); ?></td>
 								<td><?= h($item->item_name) ?></td>

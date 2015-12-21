@@ -21,12 +21,15 @@
 </div>
 <div class="shopcart form col-md-12">
    <div class="panel">
+   
+   
     <?= $this->Form->create($shopcart) ?>
     <fieldset>
-        <legend><?= __('Edit Shopcart') ?></legend>
+        <legend><?= __('Edit Shopcart Item') ?></legend>
         <?php
-            echo $this->Form->input('user_id', ['options' => $users]);
-            echo $this->Form->input('items._ids', ['options' => $items]);
+            echo $this->Form->input('shopcart_id', ['options' => $shopcart]);
+            echo $this->Form->input('item_id', ['options' => $items]);
+            echo $this->Form->input('quantity');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

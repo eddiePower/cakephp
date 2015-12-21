@@ -223,16 +223,49 @@ class ShopcartItemsController extends AppController
         $shopcartItem = $this->ShopcartItems->get($id, [
             'contain' => []
         ]);
-        if ($this->request->is(['patch', 'post', 'put'])) {
+        
+        
+        //get the item details for this shop cart item
+        //pull out all item data for this item
+        $query = TableRegistry::get('Items')->find();
+        $query->where(['id' => $shopcartItem['item_id']]);
+        
+        //create an array to store data in
+        $itemDetail = array();
+        
+        //now loop through the one item found at this id
+        foreach($query as $aItem)
+        {
+            //debug($aItem);
+           //push the contents onto the item details array
+           array_push($itemDetail, $aItem);
+           
+           //debug($itemDetail);
+        }
+        
+        //set the viewVar of the itemDetail Array for use on edit page
+        $this->set('itemDetails', $itemDetail);
+        
+        
+        if ($this->request->is(['patch', 'post', 'put'])) 
+        {
             $shopcartItem = $this->ShopcartItems->patchEntity($shopcartItem, $this->request->data);
-            if ($this->ShopcartItems->save($shopcartItem)) {
+            
+            if ($this->ShopcartItems->save($shopcartItem)) 
+            {
                 $this->Flash->success(__('The shopcart item has been saved.'));
                 return $this->redirect(['action' => 'index']);
-            } else {
+            } 
+            else 
+            {
                 $this->Flash->error(__('The shopcart item could not be saved. Please, try again.'));
             }
         }
+        
         $shopcart = $this->ShopcartItems->Shopcart->find('list', ['limit' => 200]);
+        
+        $shopcartItem = $this->ShopcartItems->find('list', ['limit' => 200]);
+        
         $items = $this->ShopcartItems->Items->find('list', ['limit' => 200]);
         $this->set(compact('shopcartItem', 'shopcart', 'items'));
         $this->set('_serialize', ['shopcartItem']);
@@ -255,14 +288,26 @@ class ShopcartItemsController extends AppController
         
         //store cart id this item came from so we can go back
         // to the cart view.
-        $cartID = $shopcartItem['shopcart_id'];
-        $tmpName = $shopcartItem['item_name'];
         
-        //debug($cartID);
+        $query = TableRegistry::get('Items')->find();
+        $query->where(['id' => $shopcartItem['item_id']]);
+        
+        $item;
+        
+        foreach($query as $aItem)
+        {
+            //debug($aItem);
+            $item = $aItem;
+        }
+        
+        $cartID = $shopcartItem['shopcart_id'];
+        $tmpName = $item['item_name'];
+        
+        //debug($item);
         
         if ($this->ShopcartItems->delete($shopcartItem)) 
         {
-            $this->Flash->success(__('The shopcart item  has been deleted.'));
+            $this->Flash->success(__('The item: <b><i>'. $tmpName . '</b></i> has been removed from your cart.'));
         } 
         else 
         {

@@ -43,7 +43,7 @@ class AppController extends Controller
         //configure the date to australian format globally .
         Time::setToStringFormat('dd/MM/YYYY');
         
-        Configure::write('orderRecievedEmail', 'empow3@student.monash.edu');
+        Configure::write('orderRecievedEmail', 'solemate.doormats@gmail.com');
 
         
         //set up the AUTH componant to facilitate login.

@@ -11,7 +11,17 @@
 //enable the data-tables jQuery plugin for better table uttils.
 $this->Html->scriptStart(['block' => true]);
 echo "$(document).ready(function(){
-    $('#data-table').DataTable();
+    $('#data-table').DataTable({
+    'order': [[ 0, 'desc' ]],
+    'pageLength': 25,
+    'columnDefs': [
+            {
+                'targets': [ 0 ],
+                'visible': false,
+                'searchable': false
+            }
+        ]
+    });
 });";
 $this->Html->scriptEnd();
 ?>
@@ -22,7 +32,7 @@ $this->Html->scriptEnd();
     <table class="table table-bordered table-striped" id="data-table">
     <thead>
 	<tr style="height: 50px">
-
+        <th><?= __('ID') ?></th>  <!-- Used for accurate ordering or new things to the top since date sorting wasnt working -->
         <th><?= __('Title') ?></th>
         <th><?= __('Created') ?></th>
         <!-- Check to see if user has admin priviliges if so then show edit / delete controles -->
@@ -33,6 +43,7 @@ $this->Html->scriptEnd();
 <tbody>
   <?php foreach ($articles as $article): ?>
     <tr>
+    <td><?= h($article->id) ?></td>
         <td>
             <?= $this->Html->link($article->title, ['action' => 'view', $article->id], ['class' => 'btn normal']) ?>
         </td>

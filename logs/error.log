@@ -1,0 +1,2094 @@
+2015-11-08 16:41:35 Error: [Cake\Network\Exception\SocketException] Operation timed out
+Request URL: /testBuild/customers/buildEmails
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Mailer/Transport/SmtpTransport.php(206): Cake\Network\Socket->connect()
+#1 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Mailer/Transport/SmtpTransport.php(161): Cake\Mailer\Transport\SmtpTransport->_connect()
+#2 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Mailer/Email.php(1304): Cake\Mailer\Transport\SmtpTransport->send(Object(Cake\Mailer\Email))
+#3 /Users/edster2007/Sites/testBuild/src/Controller/CustomersController.php(405): Cake\Mailer\Email->send('<p>Here we go a...')
+#4 [internal function]: App\Controller\CustomersController->buildEmails()
+#5 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(416): call_user_func_array(Array, Array)
+#6 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#7 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\CustomersController))
+#8 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 {main}
+
+
+2015-11-08 17:06:30 Error: [Cake\Network\Exception\SocketException] Operation timed out
+Request URL: /testBuild/customers/buildEmails
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Mailer/Transport/SmtpTransport.php(206): Cake\Network\Socket->connect()
+#1 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Mailer/Transport/SmtpTransport.php(161): Cake\Mailer\Transport\SmtpTransport->_connect()
+#2 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Mailer/Email.php(1304): Cake\Mailer\Transport\SmtpTransport->send(Object(Cake\Mailer\Email))
+#3 /Users/edster2007/Sites/testBuild/src/Controller/CustomersController.php(405): Cake\Mailer\Email->send('<p>Here we go a...')
+#4 [internal function]: App\Controller\CustomersController->buildEmails()
+#5 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(416): call_user_func_array(Array, Array)
+#6 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#7 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\CustomersController))
+#8 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 {main}
+
+
+2015-11-09 03:02:43 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Apple-touch-icon-precomposed.png could not be found.
+Exception Attributes: array (
+  'class' => 'Apple-touch-icon-precomposed.png',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /testBuild/apple-touch-icon-precomposed.png
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2015-11-09 04:36:44 Error: Fatal Error (4): syntax error, unexpected '{' in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 205]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-11-09 04:36:44 Error: [Cake\Error\FatalErrorException] syntax error, unexpected '{'
+Request URL: /testBuild/shopcart/checkout/65
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/Users/edster20...', 205)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-11-09 05:00:51 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`fitie2015t18dev`.`orders`, CONSTRAINT `order_fk1` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+Request URL: /testBuild/shopcart/checkout/65
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Database/Statement/MysqlStatement.php(36): PDOStatement->execute(NULL)
+#1 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Database/Statement/StatementDecorator.php(169): Cake\Database\Statement\MysqlStatement->execute(NULL)
+#2 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Database/Log/LoggingStatement.php(55): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Database/Connection.php(270): Cake\Database\Log\LoggingStatement->execute()
+#4 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Database/Query.php(174): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#5 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/ORM/Table.php(1530): Cake\Database\Query->execute()
+#6 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/ORM/Table.php(1446): Cake\ORM\Table->_insert(Object(App\Model\Entity\Order), Array)
+#7 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/ORM/Table.php(1377): Cake\ORM\Table->_processSave(Object(App\Model\Entity\Order), Object(ArrayObject))
+#8 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Database/Connection.php(546): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#9 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/ORM/Table.php(1378): Cake\Database\Connection->transactional(Object(Closure))
+#10 /Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php(224): Cake\ORM\Table->save(Object(App\Model\Entity\Order))
+#11 [internal function]: App\Controller\ShopcartController->checkout('65')
+#12 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(416): call_user_func_array(Array, Array)
+#13 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#14 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\ShopcartController))
+#15 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#16 {main}
+
+
+2015-11-09 05:04:23 Error: Fatal Error (4): syntax error, unexpected '=' in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 238]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-11-09 05:04:23 Error: [Cake\Error\FatalErrorException] syntax error, unexpected '='
+Request URL: /testBuild/shopcart/checkout/65
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/Users/edster20...', 238)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-11-09 05:35:29 Error: Fatal Error (1): Function name must be a string in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 255]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-11-09 05:35:29 Error: [Cake\Error\FatalErrorException] Function name must be a string
+Request URL: /testBuild/shopcart/checkout/65
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Function name m...', '/Users/edster20...', 255)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-11-09 06:16:26 Error: Fatal Error (1): Class 'App\Controller\Email' not found in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 295]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-11-09 06:16:26 Error: [Cake\Error\FatalErrorException] Class 'App\Controller\Email' not found
+Request URL: /testBuild/shopcart/checkout/65
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Class 'App\\Cont...', '/Users/edster20...', 295)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-11-09 06:17:38 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "orders"
+Request URL: /testBuild/orders/view/65
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/ORM/Table.php(1187): Cake\ORM\Query->firstOrFail()
+#1 /Users/edster2007/Sites/testBuild/src/Controller/OrdersController.php(97): Cake\ORM\Table->get('65', Array)
+#2 [internal function]: App\Controller\OrdersController->view('65')
+#3 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(416): call_user_func_array(Array, Array)
+#4 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#5 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\OrdersController))
+#6 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#7 {main}
+
+
+2015-11-09 06:26:31 Error: Fatal Error (1): Call to a member function get() on boolean in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 342]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-11-09 06:26:31 Error: [Cake\Error\FatalErrorException] Call to a member function get() on boolean
+Request URL: /testBuild/shopcart/checkout/65
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', '/Users/edster20...', 342)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-11-09 06:26:51 Error: Fatal Error (4): syntax error, unexpected ']' in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 342]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-11-09 06:26:51 Error: [Cake\Error\FatalErrorException] syntax error, unexpected ']'
+Request URL: /testBuild/shopcart/checkout/65
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/Users/edster20...', 342)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-11-09 06:27:04 Error: Fatal Error (1): Call to a member function get() on boolean in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 342]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-11-09 06:27:04 Error: [Cake\Error\FatalErrorException] Call to a member function get() on boolean
+Request URL: /testBuild/shopcart/checkout/65
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', '/Users/edster20...', 342)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-11-09 06:27:56 Error: Fatal Error (1): Call to a member function get() on boolean in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 342]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-11-09 06:27:56 Error: [Cake\Error\FatalErrorException] Call to a member function get() on boolean
+Request URL: /testBuild/shopcart/checkout/65
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', '/Users/edster20...', 342)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-11-09 06:30:00 Error: Fatal Error (1): Call to a member function delete() on boolean in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 347]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-11-09 06:30:00 Error: [Cake\Error\FatalErrorException] Call to a member function delete() on boolean
+Request URL: /testBuild/shopcart/checkout/65
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', '/Users/edster20...', 347)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-11-09 06:34:33 Error: Fatal Error (1): Call to undefined method App\Controller\ShopcartController::deleteAll() in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 342]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-11-09 06:34:33 Error: [Cake\Error\FatalErrorException] Call to undefined method App\Controller\ShopcartController::deleteAll()
+Request URL: /testBuild/shopcart/checkout/65
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to undefin...', '/Users/edster20...', 342)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-11-09 06:35:08 Error: Fatal Error (1): Call to a member function deleteAll() on boolean in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 342]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-11-09 06:35:08 Error: [Cake\Error\FatalErrorException] Call to a member function deleteAll() on boolean
+Request URL: /testBuild/shopcart/checkout/65
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', '/Users/edster20...', 342)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-11-09 06:36:26 Error: Fatal Error (1): Call to a member function get() on boolean in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 342]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-11-09 06:36:26 Error: [Cake\Error\FatalErrorException] Call to a member function get() on boolean
+Request URL: /testBuild/shopcart/checkout/65
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', '/Users/edster20...', 342)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-11-09 06:39:01 Error: Fatal Error (1): Call to a member function query() on boolean in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 343]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-11-09 06:39:01 Error: [Cake\Error\FatalErrorException] Call to a member function query() on boolean
+Request URL: /testBuild/shopcart/checkout/65
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', '/Users/edster20...', 343)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-11-09 06:39:34 Error: Fatal Error (1): Call to a member function get() on boolean in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 342]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-11-09 06:39:34 Error: [Cake\Error\FatalErrorException] Call to a member function get() on boolean
+Request URL: /testBuild/shopcart/checkout/65
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', '/Users/edster20...', 342)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-11-09 06:41:18 Error: Fatal Error (1): Call to a member function find() on boolean in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 342]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-11-09 06:41:18 Error: [Cake\Error\FatalErrorException] Call to a member function find() on boolean
+Request URL: /testBuild/shopcart/checkout/65
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', '/Users/edster20...', 342)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-11-09 06:41:33 Error: Fatal Error (1): Call to a member function get() on boolean in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 342]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-11-09 06:41:33 Error: [Cake\Error\FatalErrorException] Call to a member function get() on boolean
+Request URL: /testBuild/shopcart/checkout/65
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', '/Users/edster20...', 342)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-11-09 06:42:52 Error: Fatal Error (1): Call to a member function get() on boolean in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 343]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-11-09 06:42:52 Error: [Cake\Error\FatalErrorException] Call to a member function get() on boolean
+Request URL: /testBuild/shopcart/checkout/65
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', '/Users/edster20...', 343)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-11-09 06:45:58 Error: Fatal Error (1): Call to a member function delete() on boolean in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 355]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-11-09 06:45:58 Error: [Cake\Error\FatalErrorException] Call to a member function delete() on boolean
+Request URL: /testBuild/shopcart/checkout/65
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', '/Users/edster20...', 355)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-11-09 06:46:23 Error: Fatal Error (1): Call to a member function delete() on boolean in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 355]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-11-09 06:46:23 Error: [Cake\Error\FatalErrorException] Call to a member function delete() on boolean
+Request URL: /testBuild/shopcart/checkout/65
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', '/Users/edster20...', 355)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-11-09 06:47:25 Error: Fatal Error (1): Call to a member function delete() on boolean in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 355]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-11-09 06:47:25 Error: [Cake\Error\FatalErrorException] Call to a member function delete() on boolean
+Request URL: /testBuild/shopcart/checkout/65
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', '/Users/edster20...', 355)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-11-09 06:48:26 Error: Fatal Error (1): Call to a member function delete() on boolean in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 352]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-11-09 06:48:26 Error: [Cake\Error\FatalErrorException] Call to a member function delete() on boolean
+Request URL: /testBuild/shopcart/checkout/65
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', '/Users/edster20...', 352)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-11-09 06:48:29 Error: Fatal Error (1): Call to a member function delete() on boolean in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 352]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-11-09 06:48:29 Error: [Cake\Error\FatalErrorException] Call to a member function delete() on boolean
+Request URL: /testBuild/shopcart/checkout/65
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', '/Users/edster20...', 352)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-11-09 06:50:54 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "shopcart"
+Request URL: /testBuild/shopcart/checkout/65
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/ORM/Table.php(1187): Cake\ORM\Query->firstOrFail()
+#1 /Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php(198): Cake\ORM\Table->get('65', Array)
+#2 [internal function]: App\Controller\ShopcartController->checkout('65')
+#3 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(416): call_user_func_array(Array, Array)
+#4 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#5 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\ShopcartController))
+#6 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#7 {main}
+
+
+2015-11-09 06:53:55 Error: Fatal Error (1): Call to a member function delete() on boolean in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 355]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-11-09 06:53:55 Error: [Cake\Error\FatalErrorException] Call to a member function delete() on boolean
+Request URL: /testBuild/shopcart/checkout/67
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', '/Users/edster20...', 355)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-11-09 06:54:00 Error: Fatal Error (1): Call to a member function delete() on boolean in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 355]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-11-09 06:54:00 Error: [Cake\Error\FatalErrorException] Call to a member function delete() on boolean
+Request URL: /testBuild/shopcart/checkout/67
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', '/Users/edster20...', 355)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-11-09 06:56:50 Error: Fatal Error (4): syntax error, unexpected '*' in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 387]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-11-09 06:56:50 Error: [Cake\Error\FatalErrorException] syntax error, unexpected '*'
+Request URL: /testBuild/shopcart/checkout/67
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/Users/edster20...', 387)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-11-09 06:57:02 Error: Fatal Error (4): syntax error, unexpected '$this' (T_VARIABLE), expecting function (T_FUNCTION) in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 402]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-11-09 06:57:02 Error: [Cake\Error\FatalErrorException] syntax error, unexpected '$this' (T_VARIABLE), expecting function (T_FUNCTION)
+Request URL: /testBuild/shopcart/checkout/67
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/Users/edster20...', 402)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-11-09 06:57:44 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "shopcart"
+Request URL: /testBuild/shopcart/checkout/67
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/ORM/Table.php(1187): Cake\ORM\Query->firstOrFail()
+#1 /Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php(198): Cake\ORM\Table->get('67', Array)
+#2 [internal function]: App\Controller\ShopcartController->checkout('67')
+#3 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(416): call_user_func_array(Array, Array)
+#4 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#5 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\ShopcartController))
+#6 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#7 {main}
+
+
+2015-11-09 06:58:16 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/edster2007/Sites/testBuild/src/Template/Shopcart/index.ctp, line 35]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/Shopcart/index.ctp, line 35
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 07:01:28 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "shopcart"
+Request URL: /testBuild/shopcart/checkout/68
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/ORM/Table.php(1187): Cake\ORM\Query->firstOrFail()
+#1 /Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php(198): Cake\ORM\Table->get('68', Array)
+#2 [internal function]: App\Controller\ShopcartController->checkout('68')
+#3 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(416): call_user_func_array(Array, Array)
+#4 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#5 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\ShopcartController))
+#6 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#7 {main}
+
+
+2015-11-09 07:01:32 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "shopcart"
+Request URL: /testBuild/shopcart/checkout/68
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/ORM/Table.php(1187): Cake\ORM\Query->firstOrFail()
+#1 /Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php(198): Cake\ORM\Table->get('68', Array)
+#2 [internal function]: App\Controller\ShopcartController->checkout('68')
+#3 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(416): call_user_func_array(Array, Array)
+#4 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#5 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\ShopcartController))
+#6 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#7 {main}
+
+
+2015-11-09 07:13:02 Error: [Cake\Controller\Exception\MissingActionException] Action UsersController::img() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'img',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /testBuild/users/img/graphics/19-7260.jpg
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\UsersController))
+#2 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2015-11-09 07:13:02 Error: [Cake\Controller\Exception\MissingActionException] Action UsersController::img() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'img',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /testBuild/users/img/graphics/23-916.jpg
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\UsersController))
+#2 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2015-11-09 07:13:02 Error: [Cake\Controller\Exception\MissingActionException] Action UsersController::img() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'img',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /testBuild/users/img/graphics/23-1101.jpg
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\UsersController))
+#2 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2015-11-09 07:13:02 Error: [Cake\Controller\Exception\MissingActionException] Action UsersController::img() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'img',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /testBuild/users/img/graphics/23-4008.jpg
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\UsersController))
+#2 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2015-11-09 07:13:02 Error: [Cake\Controller\Exception\MissingActionException] Action UsersController::img() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'img',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /testBuild/users/img/graphics/23-6005.jpg
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\UsersController))
+#2 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2015-11-09 07:13:02 Error: [Cake\Controller\Exception\MissingActionException] Action UsersController::img() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'img',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /testBuild/users/img/graphics/23-2110.jpg
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\UsersController))
+#2 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2015-11-09 07:13:02 Error: [Cake\Controller\Exception\MissingActionException] Action UsersController::img() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'img',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /testBuild/users/img/graphics/23-7051.jpg
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\UsersController))
+#2 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2015-11-09 07:13:02 Error: [Cake\Controller\Exception\MissingActionException] Action UsersController::img() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'img',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /testBuild/users/img/graphics/23-7093.jpg
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\UsersController))
+#2 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2015-11-09 07:13:03 Error: [Cake\Controller\Exception\MissingActionException] Action UsersController::img() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'img',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /testBuild/users/img/graphics/23-7007.jpg
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\UsersController))
+#2 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2015-11-09 08:32:53 Error: [Cake\Routing\Exception\MissingControllerException] Controller class OrderDetailss could not be found.
+Exception Attributes: array (
+  'class' => 'OrderDetailss',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /testBuild/orderDetailss
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2015-11-09 08:36:05 Error: Fatal Error (1): Call to undefined function App\Controller\generateEmails() in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 325]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-11-09 08:36:05 Error: [Cake\Error\FatalErrorException] Call to undefined function App\Controller\generateEmails()
+Request URL: /testBuild/shopcart/checkout/71
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to undefin...', '/Users/edster20...', 325)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-11-09 08:36:26 Error: Fatal Error (1): Class 'App\Controller\Shopcart' not found in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 325]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-11-09 08:36:26 Error: [Cake\Error\FatalErrorException] Class 'App\Controller\Shopcart' not found
+Request URL: /testBuild/shopcart/checkout/71
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Class 'App\\Cont...', '/Users/edster20...', 325)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-11-09 08:38:59 Error: Fatal Error (1): Call to undefined function App\Controller\_generateEmails() in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 325]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-11-09 08:38:59 Error: [Cake\Error\FatalErrorException] Call to undefined function App\Controller\_generateEmails()
+Request URL: /testBuild/shopcart/checkout/71
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to undefin...', '/Users/edster20...', 325)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-11-09 08:39:21 Error: Fatal Error (1): Call to undefined function App\Controller\_generateEmails() in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 325]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-11-09 08:39:21 Error: [Cake\Error\FatalErrorException] Call to undefined function App\Controller\_generateEmails()
+Request URL: /testBuild/shopcart/checkout/71
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to undefin...', '/Users/edster20...', 325)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-11-09 08:39:35 Error: Fatal Error (4): syntax error, unexpected '::' (T_PAAMAYIM_NEKUDOTAYIM) in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 325]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-11-09 08:39:35 Error: [Cake\Error\FatalErrorException] syntax error, unexpected '::' (T_PAAMAYIM_NEKUDOTAYIM)
+Request URL: /testBuild/shopcart/checkout/71
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/Users/edster20...', 325)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-11-09 08:39:43 Error: Fatal Error (4): syntax error, unexpected ':' in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 325]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-11-09 08:39:43 Error: [Cake\Error\FatalErrorException] syntax error, unexpected ':'
+Request URL: /testBuild/shopcart/checkout/71
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/Users/edster20...', 325)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-11-09 08:39:49 Error: Fatal Error (4): syntax error, unexpected '_generateEmails' (T_STRING) in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 325]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-11-09 08:39:49 Error: [Cake\Error\FatalErrorException] syntax error, unexpected '_generateEmails' (T_STRING)
+Request URL: /testBuild/shopcart/checkout/71
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/Users/edster20...', 325)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-11-09 08:40:13 Error: Fatal Error (1): Call to undefined method App\Controller\AppController::_generateEmails() in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 325]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-11-09 08:40:13 Error: [Cake\Error\FatalErrorException] Call to undefined method App\Controller\AppController::_generateEmails()
+Request URL: /testBuild/shopcart/checkout/71
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to undefin...', '/Users/edster20...', 325)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-11-09 08:51:55 Error: Fatal Error (4): syntax error, unexpected ')' in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 423]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-11-09 08:51:55 Error: [Cake\Error\FatalErrorException] syntax error, unexpected ')'
+Request URL: /testBuild/shopcart/checkout/71
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/Users/edster20...', 423)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-11-09 08:52:10 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "shopcart"
+Request URL: /testBuild/shopcart/checkout/71
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/ORM/Table.php(1187): Cake\ORM\Query->firstOrFail()
+#1 /Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php(198): Cake\ORM\Table->get('71', Array)
+#2 [internal function]: App\Controller\ShopcartController->checkout('71')
+#3 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(416): call_user_func_array(Array, Array)
+#4 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#5 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\ShopcartController))
+#6 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#7 {main}
+
+
+2015-11-09 08:52:49 Error: Fatal Error (4): syntax error, unexpected 'return' (T_RETURN), expecting function (T_FUNCTION) in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 433]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-11-09 08:52:49 Error: [Cake\Error\FatalErrorException] syntax error, unexpected 'return' (T_RETURN), expecting function (T_FUNCTION)
+Request URL: /testBuild/shopcart/view/72
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/Users/edster20...', 433)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-11-09 08:53:55 Error: Fatal Error (1): Call to a member function currency() on boolean in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 430]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-11-09 08:53:55 Error: [Cake\Error\FatalErrorException] Call to a member function currency() on boolean
+Request URL: /testBuild/shopcart/checkout/72
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', '/Users/edster20...', 430)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-11-09 08:55:37 Error: Fatal Error (1): Call to a member function currency() on boolean in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 430]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-11-09 08:55:37 Error: [Cake\Error\FatalErrorException] Call to a member function currency() on boolean
+Request URL: /testBuild/shopcart/checkout/72
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', '/Users/edster20...', 430)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-11-09 09:14:35 Error: Fatal Error (4): syntax error, unexpected '[', expecting ')' in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 347]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-11-09 09:14:35 Error: [Cake\Error\FatalErrorException] syntax error, unexpected '[', expecting ')'
+Request URL: /testBuild/shopcart
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/Users/edster20...', 347)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-11-09 09:15:08 Error: Fatal Error (4): syntax error, unexpected 'foreach' (T_FOREACH) in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 379]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-11-09 09:15:08 Error: [Cake\Error\FatalErrorException] syntax error, unexpected 'foreach' (T_FOREACH)
+Request URL: /testBuild/shopcart
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/Users/edster20...', 379)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-11-09 09:15:13 Error: Fatal Error (4): syntax error, unexpected 'foreach' (T_FOREACH) in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 379]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-11-09 09:15:13 Error: [Cake\Error\FatalErrorException] syntax error, unexpected 'foreach' (T_FOREACH)
+Request URL: /testBuild/shopcart
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/Users/edster20...', 379)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-11-09 09:15:31 Error: Fatal Error (4): syntax error, unexpected 'foreach' (T_FOREACH) in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 379]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-11-09 09:15:31 Error: [Cake\Error\FatalErrorException] syntax error, unexpected 'foreach' (T_FOREACH)
+Request URL: /testBuild/shopcart
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/Users/edster20...', 379)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-11-09 09:15:46 Error: Fatal Error (4): syntax error, unexpected 'foreach' (T_FOREACH) in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 379]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-11-09 09:15:46 Error: [Cake\Error\FatalErrorException] syntax error, unexpected 'foreach' (T_FOREACH)
+Request URL: /testBuild/shopcart
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/Users/edster20...', 379)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-11-09 09:20:31 Error: Fatal Error (4): syntax error, unexpected '$message' (T_VARIABLE) in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 375]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-11-09 09:20:31 Error: [Cake\Error\FatalErrorException] syntax error, unexpected '$message' (T_VARIABLE)
+Request URL: /testBuild/shopcart
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/Users/edster20...', 375)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-11-09 09:23:24 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 377]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+App\Controller\ShopcartController::_generateEmails() - APP/Controller/ShopcartController.php, line 377
+App\Controller\ShopcartController::checkout() - APP/Controller/ShopcartController.php, line 296
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 416
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 09:24:30 Error: Fatal Error (4): syntax error, unexpected '[', expecting ')' in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 347]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-11-09 09:24:30 Error: [Cake\Error\FatalErrorException] syntax error, unexpected '[', expecting ')'
+Request URL: /testBuild/shopcart/checkout/74
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/Users/edster20...', 347)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-11-09 09:25:48 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "shopcart"
+Request URL: /testBuild/shopcart/checkout/74
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/ORM/Table.php(1187): Cake\ORM\Query->firstOrFail()
+#1 /Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php(198): Cake\ORM\Table->get('74', Array)
+#2 [internal function]: App\Controller\ShopcartController->checkout('74')
+#3 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(416): call_user_func_array(Array, Array)
+#4 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#5 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\ShopcartController))
+#6 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#7 {main}
+
+
+2015-11-09 09:26:59 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 379]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+App\Controller\ShopcartController::_generateEmails() - APP/Controller/ShopcartController.php, line 379
+App\Controller\ShopcartController::checkout() - APP/Controller/ShopcartController.php, line 296
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 416
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 09:27:46 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "shopcart"
+Request URL: /testBuild/shopcart/checkout/75
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/ORM/Table.php(1187): Cake\ORM\Query->firstOrFail()
+#1 /Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php(198): Cake\ORM\Table->get('75', Array)
+#2 [internal function]: App\Controller\ShopcartController->checkout('75')
+#3 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(416): call_user_func_array(Array, Array)
+#4 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#5 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\ShopcartController))
+#6 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#7 {main}
+
+
+2015-11-09 09:27:48 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "shopcart"
+Request URL: /testBuild/shopcart/checkout/75
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/ORM/Table.php(1187): Cake\ORM\Query->firstOrFail()
+#1 /Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php(198): Cake\ORM\Table->get('75', Array)
+#2 [internal function]: App\Controller\ShopcartController->checkout('75')
+#3 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(416): call_user_func_array(Array, Array)
+#4 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#5 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\ShopcartController))
+#6 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#7 {main}
+
+
+2015-11-09 09:27:49 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "shopcart"
+Request URL: /testBuild/shopcart/view/75
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/ORM/Table.php(1187): Cake\ORM\Query->firstOrFail()
+#1 /Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php(70): Cake\ORM\Table->get('75', Array)
+#2 [internal function]: App\Controller\ShopcartController->view('75')
+#3 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(416): call_user_func_array(Array, Array)
+#4 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#5 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\ShopcartController))
+#6 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#7 {main}
+
+
+2015-11-09 09:28:14 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 379]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+App\Controller\ShopcartController::_generateEmails() - APP/Controller/ShopcartController.php, line 379
+App\Controller\ShopcartController::checkout() - APP/Controller/ShopcartController.php, line 296
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 416
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 09:29:12 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "shopcart"
+Request URL: /testBuild/shopcart/checkout/76
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/ORM/Table.php(1187): Cake\ORM\Query->firstOrFail()
+#1 /Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php(198): Cake\ORM\Table->get('76', Array)
+#2 [internal function]: App\Controller\ShopcartController->checkout('76')
+#3 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(416): call_user_func_array(Array, Array)
+#4 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#5 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\ShopcartController))
+#6 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#7 {main}
+
+
+2015-11-09 09:29:13 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "shopcart"
+Request URL: /testBuild/shopcart/checkout/76
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/ORM/Table.php(1187): Cake\ORM\Query->firstOrFail()
+#1 /Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php(198): Cake\ORM\Table->get('76', Array)
+#2 [internal function]: App\Controller\ShopcartController->checkout('76')
+#3 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(416): call_user_func_array(Array, Array)
+#4 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#5 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\ShopcartController))
+#6 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#7 {main}
+
+
+2015-11-09 09:29:14 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "shopcart"
+Request URL: /testBuild/shopcart/view/76
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/ORM/Table.php(1187): Cake\ORM\Query->firstOrFail()
+#1 /Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php(70): Cake\ORM\Table->get('76', Array)
+#2 [internal function]: App\Controller\ShopcartController->view('76')
+#3 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(416): call_user_func_array(Array, Array)
+#4 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#5 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\ShopcartController))
+#6 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#7 {main}
+
+
+2015-11-09 09:33:13 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "shopcart"
+Request URL: /testBuild/shopcart/checkout/77
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/ORM/Table.php(1187): Cake\ORM\Query->firstOrFail()
+#1 /Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php(198): Cake\ORM\Table->get('77', Array)
+#2 [internal function]: App\Controller\ShopcartController->checkout('77')
+#3 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(416): call_user_func_array(Array, Array)
+#4 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#5 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\ShopcartController))
+#6 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#7 {main}
+
+
+2015-11-09 09:33:14 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "shopcart"
+Request URL: /testBuild/shopcart/checkout/77
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/ORM/Table.php(1187): Cake\ORM\Query->firstOrFail()
+#1 /Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php(198): Cake\ORM\Table->get('77', Array)
+#2 [internal function]: App\Controller\ShopcartController->checkout('77')
+#3 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(416): call_user_func_array(Array, Array)
+#4 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#5 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\ShopcartController))
+#6 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#7 {main}
+
+
+2015-11-09 09:33:14 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "shopcart"
+Request URL: /testBuild/shopcart/view/77
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/ORM/Table.php(1187): Cake\ORM\Query->firstOrFail()
+#1 /Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php(70): Cake\ORM\Table->get('77', Array)
+#2 [internal function]: App\Controller\ShopcartController->view('77')
+#3 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(416): call_user_func_array(Array, Array)
+#4 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#5 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\ShopcartController))
+#6 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#7 {main}
+
+
+2015-11-09 09:36:07 Error: Fatal Error (1): Call to a member function image() on boolean in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 381]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-11-09 09:36:07 Error: [Cake\Error\FatalErrorException] Call to a member function image() on boolean
+Request URL: /testBuild/shopcart/checkout/79
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', '/Users/edster20...', 381)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-11-09 09:37:38 Error: Fatal Error (1): Call to a member function image() on boolean in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 381]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-11-09 09:37:38 Error: [Cake\Error\FatalErrorException] Call to a member function image() on boolean
+Request URL: /testBuild/shopcart/checkout/79
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', '/Users/edster20...', 381)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-11-09 09:37:40 Error: Fatal Error (1): Call to a member function image() on boolean in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 381]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-11-09 09:37:40 Error: [Cake\Error\FatalErrorException] Call to a member function image() on boolean
+Request URL: /testBuild/shopcart/checkout/79
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', '/Users/edster20...', 381)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-11-09 09:39:28 Error: Fatal Error (4): syntax error, unexpected '/' in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 382]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-11-09 09:39:28 Error: [Cake\Error\FatalErrorException] syntax error, unexpected '/'
+Request URL: /testBuild/shopcart/checkout/79
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/Users/edster20...', 382)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-11-09 09:45:07 Error: Fatal Error (4): syntax error, unexpected '<' in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 380]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-11-09 09:45:07 Error: [Cake\Error\FatalErrorException] syntax error, unexpected '<'
+Request URL: /testBuild/shopcart
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/Users/edster20...', 380)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-11-09 09:50:53 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Graphics could not be found.
+Exception Attributes: array (
+  'class' => 'Graphics',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /testBuild/graphics/mat3.jpg
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2015-11-09 09:51:22 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Graphics could not be found.
+Exception Attributes: array (
+  'class' => 'Graphics',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /testBuild/graphics/mat3.jpg
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2015-11-09 09:51:37 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Graphics could not be found.
+Exception Attributes: array (
+  'class' => 'Graphics',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /testBuild/graphics/mat3.jpg
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2015-11-09 09:52:42 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Graphics could not be found.
+Exception Attributes: array (
+  'class' => 'Graphics',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /testBuild/graphics/mat3.jpg
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2015-11-09 10:14:57 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Apple-touch-icon-precomposed.png could not be found.
+Exception Attributes: array (
+  'class' => 'Apple-touch-icon-precomposed.png',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /testBuild/apple-touch-icon-precomposed.png
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2015-11-09 11:23:53 Warning: Warning (2): explode() expects parameter 2 to be string, array given in [/Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/Helper/FormHelper.php, line 2371]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+explode - [internal], line ??
+Cake\View\Helper\FormHelper::_initInputField() - CORE/src/View/Helper/FormHelper.php, line 2371
+Cake\View\Helper\FormHelper::__call() - CORE/src/View/Helper/FormHelper.php, line 1506
+Cake\View\Helper\FormHelper::text() - APP/Template/Shopcart/edit.ctp, line 44
+include - APP/Template/Shopcart/edit.ctp, line 44
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:23:53 Warning: Warning (2): array_shift() expects parameter 1 to be array, null given in [/Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/Helper/FormHelper.php, line 2372]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+array_shift - [internal], line ??
+Cake\View\Helper\FormHelper::_initInputField() - CORE/src/View/Helper/FormHelper.php, line 2372
+Cake\View\Helper\FormHelper::__call() - CORE/src/View/Helper/FormHelper.php, line 1506
+Cake\View\Helper\FormHelper::text() - APP/Template/Shopcart/edit.ctp, line 44
+include - APP/Template/Shopcart/edit.ctp, line 44
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:23:53 Warning: Warning (2): explode() expects parameter 2 to be string, array given in [/Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/Form/EntityContext.php, line 215]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+explode - [internal], line ??
+Cake\View\Form\EntityContext::val() - CORE/src/View/Form/EntityContext.php, line 215
+Cake\View\Helper\FormHelper::_initInputField() - CORE/src/View/Helper/FormHelper.php, line 2381
+Cake\View\Helper\FormHelper::__call() - CORE/src/View/Helper/FormHelper.php, line 1506
+Cake\View\Helper\FormHelper::text() - APP/Template/Shopcart/edit.ctp, line 44
+include - APP/Template/Shopcart/edit.ctp, line 44
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:23:53 Warning: Warning (2): end() expects parameter 1 to be array, null given in [/Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/Form/EntityContext.php, line 218]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+end - [internal], line ??
+Cake\View\Form\EntityContext::val() - CORE/src/View/Form/EntityContext.php, line 218
+Cake\View\Helper\FormHelper::_initInputField() - CORE/src/View/Helper/FormHelper.php, line 2381
+Cake\View\Helper\FormHelper::__call() - CORE/src/View/Helper/FormHelper.php, line 1506
+Cake\View\Helper\FormHelper::text() - APP/Template/Shopcart/edit.ctp, line 44
+include - APP/Template/Shopcart/edit.ctp, line 44
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:23:53 Warning: Warning (2): array_pop() expects parameter 1 to be array, null given in [/Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/Form/EntityContext.php, line 223]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+array_pop - [internal], line ??
+Cake\View\Form\EntityContext::val() - CORE/src/View/Form/EntityContext.php, line 223
+Cake\View\Helper\FormHelper::_initInputField() - CORE/src/View/Helper/FormHelper.php, line 2381
+Cake\View\Helper\FormHelper::__call() - CORE/src/View/Helper/FormHelper.php, line 1506
+Cake\View\Helper\FormHelper::text() - APP/Template/Shopcart/edit.ctp, line 44
+include - APP/Template/Shopcart/edit.ctp, line 44
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 598
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 11:23:53 Error: [InvalidArgumentException] Cannot get an empty property
+Request URL: /testBuild/shopcart/edit/89
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/Form/EntityContext.php(223): Cake\ORM\Entity->get(NULL)
+#1 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/Helper/FormHelper.php(2381): Cake\View\Form\EntityContext->val(Array)
+#2 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/Helper/FormHelper.php(1506): Cake\View\Helper\FormHelper->_initInputField(Array, Array)
+#3 /Users/edster2007/Sites/testBuild/src/Template/Shopcart/edit.ctp(44): Cake\View\Helper\FormHelper->__call('text', Array)
+#4 /Users/edster2007/Sites/testBuild/src/Template/Shopcart/edit.ctp(44): Cake\View\Helper\FormHelper->text(Array)
+#5 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/View.php(970): include('/Users/edster20...')
+#6 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/View.php(930): Cake\View\View->_evaluate('/Users/edster20...', Array)
+#7 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/View.php(578): Cake\View\View->_render('/Users/edster20...')
+#8 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(598): Cake\View\View->render(NULL, NULL)
+#9 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(120): Cake\Controller\Controller->render()
+#10 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\ShopcartController))
+#11 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#12 {main}
+
+
+2015-11-09 11:27:50 Error: Fatal Error (1): Call to undefined method App\View\AppView::redirect() in [/Users/edster2007/Sites/testBuild/src/Template/Shopcart/edit.ctp, line 63]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-11-09 11:27:50 Error: [Cake\Error\FatalErrorException] Call to undefined method App\View\AppView::redirect()
+Request URL: /testBuild/shopcart/edit/89
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to undefin...', '/Users/edster20...', 63)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-11-09 11:28:59 Error: Fatal Error (1): Call to undefined method App\View\AppView::redirect() in [/Users/edster2007/Sites/testBuild/src/Template/Shopcart/edit.ctp, line 63]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-11-09 11:28:59 Error: [Cake\Error\FatalErrorException] Call to undefined method App\View\AppView::redirect()
+Request URL: /testBuild/shopcart/edit/89
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to undefin...', '/Users/edster20...', 63)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-11-09 11:31:28 Error: Fatal Error (4): syntax error, unexpected ')', expecting ']' in [/Users/edster2007/Sites/testBuild/src/Template/Shopcart/edit.ctp, line 63]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-11-09 11:31:28 Error: [Cake\Error\FatalErrorException] syntax error, unexpected ')', expecting ']'
+Request URL: /testBuild/shopcart/edit/89
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/Users/edster20...', 63)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-11-09 11:37:55 Error: [Cake\Routing\Exception\MissingControllerException] Controller class ShopcartItem could not be found.
+Exception Attributes: array (
+  'class' => 'ShopcartItem',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /testBuild/shopcartItem
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2015-11-09 11:44:42 Error: Fatal Error (1): Cannot use object of type Cake\ORM\Query as array in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 39]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-11-09 11:44:42 Error: [Cake\Error\FatalErrorException] Cannot use object of type Cake\ORM\Query as array
+Request URL: /testBuild/shopcart_items/edit/128
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Cannot use obje...', '/Users/edster20...', 39)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-11-09 11:45:08 Error: Fatal Error (1): Cannot use object of type Cake\ORM\Query as array in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 39]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-11-09 11:45:08 Error: [Cake\Error\FatalErrorException] Cannot use object of type Cake\ORM\Query as array
+Request URL: /testBuild/shopcart_items/edit/128
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Cannot use obje...', '/Users/edster20...', 39)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-11-09 11:45:20 Error: Fatal Error (1): Cannot use object of type Cake\ORM\Query as array in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 39]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-11-09 11:45:20 Error: [Cake\Error\FatalErrorException] Cannot use object of type Cake\ORM\Query as array
+Request URL: /testBuild/shopcart_items/edit/3
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Cannot use obje...', '/Users/edster20...', 39)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-11-09 11:46:15 Error: Fatal Error (1): Cannot use object of type Cake\ORM\Query as array in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 39]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-11-09 11:46:15 Error: [Cake\Error\FatalErrorException] Cannot use object of type Cake\ORM\Query as array
+Request URL: /testBuild/shopcart_items/edit/3
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Cannot use obje...', '/Users/edster20...', 39)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-11-09 11:46:43 Error: Fatal Error (1): Cannot use object of type Cake\ORM\Query as array in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 43]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-11-09 11:46:43 Error: [Cake\Error\FatalErrorException] Cannot use object of type Cake\ORM\Query as array
+Request URL: /testBuild/shopcart_items/edit/3
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Cannot use obje...', '/Users/edster20...', 43)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-11-09 11:46:47 Error: Fatal Error (1): Cannot use object of type Cake\ORM\Query as array in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 43]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-11-09 11:46:47 Error: [Cake\Error\FatalErrorException] Cannot use object of type Cake\ORM\Query as array
+Request URL: /testBuild/shopcart_items/edit/3
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Cannot use obje...', '/Users/edster20...', 43)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-11-09 12:03:33 Error: Fatal Error (4): syntax error, unexpected 'else' (T_ELSE) in [/Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp, line 63]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-11-09 12:03:33 Error: [Cake\Error\FatalErrorException] syntax error, unexpected 'else' (T_ELSE)
+Request URL: /testBuild/shopcart_items/edit/3
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/Users/edster20...', 63)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-11-09 12:09:08 Error: [Cake\Routing\Exception\MissingControllerException] Controller class ShopcartItem could not be found.
+Exception Attributes: array (
+  'class' => 'ShopcartItem',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /testBuild/shopcartItem
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2015-11-09 12:09:45 Error: [Cake\Routing\Exception\MissingControllerException] Controller class ShopcartItem could not be found.
+Exception Attributes: array (
+  'class' => 'ShopcartItem',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /testBuild/shopcartItem
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2015-11-09 12:09:51 Error: [Cake\Routing\Exception\MissingControllerException] Controller class ShopcartItem could not be found.
+Exception Attributes: array (
+  'class' => 'ShopcartItem',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /testBuild/shopcartItem
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2015-11-09 12:09:57 Error: [RuntimeException] Unable to find table class for current entity
+Request URL: /testBuild/shopcart_items/edit/3
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/Form/EntityContext.php(99): Cake\View\Form\EntityContext->_prepare()
+#1 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/Helper/FormHelper.php(265): Cake\View\Form\EntityContext->__construct(Object(Cake\Network\Request), Array)
+#2 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/Helper/FormHelper.php(2501): Cake\View\Helper\FormHelper->Cake\View\Helper\{closure}(Object(Cake\Network\Request), Array)
+#3 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/Helper/FormHelper.php(344): Cake\View\Helper\FormHelper->_getContext(Array)
+#4 /Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp(20): Cake\View\Helper\FormHelper->create(Object(Cake\ORM\Query), Array)
+#5 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/View.php(970): include('/Users/edster20...')
+#6 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/View.php(930): Cake\View\View->_evaluate('/Users/edster20...', Array)
+#7 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/View.php(578): Cake\View\View->_render('/Users/edster20...')
+#8 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(598): Cake\View\View->render(NULL, NULL)
+#9 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(120): Cake\Controller\Controller->render()
+#10 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\ShopcartItemsController))
+#11 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#12 {main}
+
+
+2015-11-09 12:10:03 Error: [RuntimeException] Unable to find table class for current entity
+Request URL: /testBuild/shopcart_items/edit/3
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/Form/EntityContext.php(99): Cake\View\Form\EntityContext->_prepare()
+#1 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/Helper/FormHelper.php(265): Cake\View\Form\EntityContext->__construct(Object(Cake\Network\Request), Array)
+#2 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/Helper/FormHelper.php(2501): Cake\View\Helper\FormHelper->Cake\View\Helper\{closure}(Object(Cake\Network\Request), Array)
+#3 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/Helper/FormHelper.php(344): Cake\View\Helper\FormHelper->_getContext(Array)
+#4 /Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp(20): Cake\View\Helper\FormHelper->create(Object(Cake\ORM\Query), Array)
+#5 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/View.php(970): include('/Users/edster20...')
+#6 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/View.php(930): Cake\View\View->_evaluate('/Users/edster20...', Array)
+#7 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/View.php(578): Cake\View\View->_render('/Users/edster20...')
+#8 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(598): Cake\View\View->render(NULL, NULL)
+#9 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(120): Cake\Controller\Controller->render()
+#10 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\ShopcartItemsController))
+#11 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#12 {main}
+
+
+2015-11-09 12:10:23 Error: [RuntimeException] Unable to find table class for current entity
+Request URL: /testBuild/shopcart_items/edit/3
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/Form/EntityContext.php(99): Cake\View\Form\EntityContext->_prepare()
+#1 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/Helper/FormHelper.php(265): Cake\View\Form\EntityContext->__construct(Object(Cake\Network\Request), Array)
+#2 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/Helper/FormHelper.php(2501): Cake\View\Helper\FormHelper->Cake\View\Helper\{closure}(Object(Cake\Network\Request), Array)
+#3 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/Helper/FormHelper.php(344): Cake\View\Helper\FormHelper->_getContext(Array)
+#4 /Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp(20): Cake\View\Helper\FormHelper->create(Object(Cake\ORM\Query), Array)
+#5 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/View.php(970): include('/Users/edster20...')
+#6 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/View.php(930): Cake\View\View->_evaluate('/Users/edster20...', Array)
+#7 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/View.php(578): Cake\View\View->_render('/Users/edster20...')
+#8 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(598): Cake\View\View->render(NULL, NULL)
+#9 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(120): Cake\Controller\Controller->render()
+#10 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\ShopcartItemsController))
+#11 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#12 {main}
+
+
+2015-11-09 12:11:01 Error: [RuntimeException] Unable to find table class for current entity
+Request URL: /testBuild/shopcart_items/edit/3
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/Form/EntityContext.php(99): Cake\View\Form\EntityContext->_prepare()
+#1 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/Helper/FormHelper.php(265): Cake\View\Form\EntityContext->__construct(Object(Cake\Network\Request), Array)
+#2 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/Helper/FormHelper.php(2501): Cake\View\Helper\FormHelper->Cake\View\Helper\{closure}(Object(Cake\Network\Request), Array)
+#3 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/Helper/FormHelper.php(344): Cake\View\Helper\FormHelper->_getContext(Array)
+#4 /Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp(20): Cake\View\Helper\FormHelper->create(Object(Cake\ORM\Query), Array)
+#5 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/View.php(970): include('/Users/edster20...')
+#6 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/View.php(930): Cake\View\View->_evaluate('/Users/edster20...', Array)
+#7 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/View.php(578): Cake\View\View->_render('/Users/edster20...')
+#8 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(598): Cake\View\View->render(NULL, NULL)
+#9 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(120): Cake\Controller\Controller->render()
+#10 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\ShopcartItemsController))
+#11 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#12 {main}
+
+
+2015-11-09 12:11:03 Error: [RuntimeException] Unable to find table class for current entity
+Request URL: /testBuild/shopcart_items/edit/3
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/Form/EntityContext.php(99): Cake\View\Form\EntityContext->_prepare()
+#1 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/Helper/FormHelper.php(265): Cake\View\Form\EntityContext->__construct(Object(Cake\Network\Request), Array)
+#2 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/Helper/FormHelper.php(2501): Cake\View\Helper\FormHelper->Cake\View\Helper\{closure}(Object(Cake\Network\Request), Array)
+#3 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/Helper/FormHelper.php(344): Cake\View\Helper\FormHelper->_getContext(Array)
+#4 /Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp(20): Cake\View\Helper\FormHelper->create(Object(Cake\ORM\Query), Array)
+#5 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/View.php(970): include('/Users/edster20...')
+#6 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/View.php(930): Cake\View\View->_evaluate('/Users/edster20...', Array)
+#7 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/View.php(578): Cake\View\View->_render('/Users/edster20...')
+#8 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(598): Cake\View\View->render(NULL, NULL)
+#9 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(120): Cake\Controller\Controller->render()
+#10 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\ShopcartItemsController))
+#11 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#12 {main}
+
+
+2015-11-09 12:11:13 Error: [RuntimeException] Unable to find table class for current entity
+Request URL: /testBuild/shopcart_items/edit/3
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/Form/EntityContext.php(99): Cake\View\Form\EntityContext->_prepare()
+#1 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/Helper/FormHelper.php(265): Cake\View\Form\EntityContext->__construct(Object(Cake\Network\Request), Array)
+#2 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/Helper/FormHelper.php(2501): Cake\View\Helper\FormHelper->Cake\View\Helper\{closure}(Object(Cake\Network\Request), Array)
+#3 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/Helper/FormHelper.php(344): Cake\View\Helper\FormHelper->_getContext(Array)
+#4 /Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp(20): Cake\View\Helper\FormHelper->create(Object(Cake\ORM\Query), Array)
+#5 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/View.php(970): include('/Users/edster20...')
+#6 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/View.php(930): Cake\View\View->_evaluate('/Users/edster20...', Array)
+#7 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/View.php(578): Cake\View\View->_render('/Users/edster20...')
+#8 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(598): Cake\View\View->render(NULL, NULL)
+#9 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(120): Cake\Controller\Controller->render()
+#10 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\ShopcartItemsController))
+#11 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#12 {main}
+
+
+2015-11-09 12:11:27 Error: [RuntimeException] Unable to find table class for current entity
+Request URL: /testBuild/shopcart_items/edit/3
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/Form/EntityContext.php(99): Cake\View\Form\EntityContext->_prepare()
+#1 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/Helper/FormHelper.php(265): Cake\View\Form\EntityContext->__construct(Object(Cake\Network\Request), Array)
+#2 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/Helper/FormHelper.php(2501): Cake\View\Helper\FormHelper->Cake\View\Helper\{closure}(Object(Cake\Network\Request), Array)
+#3 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/Helper/FormHelper.php(344): Cake\View\Helper\FormHelper->_getContext(Array)
+#4 /Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp(20): Cake\View\Helper\FormHelper->create(Object(Cake\ORM\Query), Array)
+#5 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/View.php(970): include('/Users/edster20...')
+#6 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/View.php(930): Cake\View\View->_evaluate('/Users/edster20...', Array)
+#7 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/View.php(578): Cake\View\View->_render('/Users/edster20...')
+#8 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(598): Cake\View\View->render(NULL, NULL)
+#9 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(120): Cake\Controller\Controller->render()
+#10 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\ShopcartItemsController))
+#11 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#12 {main}
+
+
+2015-11-09 12:11:32 Error: [RuntimeException] Unable to find table class for current entity
+Request URL: /testBuild/shopcartItems/edit/3
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/Form/EntityContext.php(99): Cake\View\Form\EntityContext->_prepare()
+#1 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/Helper/FormHelper.php(265): Cake\View\Form\EntityContext->__construct(Object(Cake\Network\Request), Array)
+#2 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/Helper/FormHelper.php(2501): Cake\View\Helper\FormHelper->Cake\View\Helper\{closure}(Object(Cake\Network\Request), Array)
+#3 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/Helper/FormHelper.php(344): Cake\View\Helper\FormHelper->_getContext(Array)
+#4 /Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp(20): Cake\View\Helper\FormHelper->create(Object(Cake\ORM\Query), Array)
+#5 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/View.php(970): include('/Users/edster20...')
+#6 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/View.php(930): Cake\View\View->_evaluate('/Users/edster20...', Array)
+#7 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/View.php(578): Cake\View\View->_render('/Users/edster20...')
+#8 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(598): Cake\View\View->render(NULL, NULL)
+#9 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(120): Cake\Controller\Controller->render()
+#10 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\ShopcartItemsController))
+#11 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#12 {main}
+
+
+2015-11-09 12:12:49 Error: [RuntimeException] Unable to find table class for current entity
+Request URL: /testBuild/shopcart_items/edit/3
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/Form/EntityContext.php(99): Cake\View\Form\EntityContext->_prepare()
+#1 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/Helper/FormHelper.php(265): Cake\View\Form\EntityContext->__construct(Object(Cake\Network\Request), Array)
+#2 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/Helper/FormHelper.php(2501): Cake\View\Helper\FormHelper->Cake\View\Helper\{closure}(Object(Cake\Network\Request), Array)
+#3 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/Helper/FormHelper.php(344): Cake\View\Helper\FormHelper->_getContext(Array)
+#4 /Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp(20): Cake\View\Helper\FormHelper->create(Object(Cake\ORM\Query), Array)
+#5 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/View.php(970): include('/Users/edster20...')
+#6 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/View.php(930): Cake\View\View->_evaluate('/Users/edster20...', Array)
+#7 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/View.php(578): Cake\View\View->_render('/Users/edster20...')
+#8 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(598): Cake\View\View->render(NULL, NULL)
+#9 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(120): Cake\Controller\Controller->render()
+#10 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\ShopcartItemsController))
+#11 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#12 {main}
+
+
+2015-11-09 12:12:56 Error: [RuntimeException] Unable to find table class for current entity
+Request URL: /testBuild/shopcartItems/edit/3
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/Form/EntityContext.php(99): Cake\View\Form\EntityContext->_prepare()
+#1 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/Helper/FormHelper.php(265): Cake\View\Form\EntityContext->__construct(Object(Cake\Network\Request), Array)
+#2 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/Helper/FormHelper.php(2501): Cake\View\Helper\FormHelper->Cake\View\Helper\{closure}(Object(Cake\Network\Request), Array)
+#3 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/Helper/FormHelper.php(344): Cake\View\Helper\FormHelper->_getContext(Array)
+#4 /Users/edster2007/Sites/testBuild/src/Template/ShopcartItems/edit.ctp(20): Cake\View\Helper\FormHelper->create(Object(Cake\ORM\Query), Array)
+#5 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/View.php(970): include('/Users/edster20...')
+#6 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/View.php(930): Cake\View\View->_evaluate('/Users/edster20...', Array)
+#7 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/View/View.php(578): Cake\View\View->_render('/Users/edster20...')
+#8 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(598): Cake\View\View->render(NULL, NULL)
+#9 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(120): Cake\Controller\Controller->render()
+#10 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\ShopcartItemsController))
+#11 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#12 {main}
+
+
+2015-11-09 12:12:59 Error: [Cake\Routing\Exception\MissingControllerException] Controller class ShopcartItem could not be found.
+Exception Attributes: array (
+  'class' => 'ShopcartItem',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /testBuild/shopcartItem/edit/3
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2015-11-09 12:13:06 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "shopcart"
+Request URL: /testBuild/shopcart/edit/3
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/ORM/Table.php(1187): Cake\ORM\Query->firstOrFail()
+#1 /Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php(146): Cake\ORM\Table->get('3', Array)
+#2 [internal function]: App\Controller\ShopcartController->edit('3')
+#3 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(416): call_user_func_array(Array, Array)
+#4 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#5 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\ShopcartController))
+#6 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#7 {main}
+
+
+2015-11-09 12:15:09 Error: Fatal Error (1): Call to a member function get() on boolean in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 177]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-11-09 12:15:09 Error: [Cake\Error\FatalErrorException] Call to a member function get() on boolean
+Request URL: /testBuild/shopcart/edit/89
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', '/Users/edster20...', 177)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-11-09 12:21:22 Warning: Warning (2): Creating default object from empty value in [/Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php, line 155]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+App\Controller\ShopcartController::edit() - APP/Controller/ShopcartController.php, line 155
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 416
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-11-09 13:14:39 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "shopcart_items"
+Request URL: /testBuild/shopcart_items/delete/130
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/ORM/Table.php(1187): Cake\ORM\Query->firstOrFail()
+#1 /Users/edster2007/Sites/testBuild/src/Controller/ShopcartItemsController.php(287): Cake\ORM\Table->get('130')
+#2 [internal function]: App\Controller\ShopcartItemsController->delete('130')
+#3 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(416): call_user_func_array(Array, Array)
+#4 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#5 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\ShopcartItemsController))
+#6 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#7 {main}
+
+
+2015-11-09 13:18:27 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "shopcart_items"
+Request URL: /testBuild/shopcart_items/delete/133
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/ORM/Table.php(1187): Cake\ORM\Query->firstOrFail()
+#1 /Users/edster2007/Sites/testBuild/src/Controller/ShopcartItemsController.php(287): Cake\ORM\Table->get('133')
+#2 [internal function]: App\Controller\ShopcartItemsController->delete('133')
+#3 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(416): call_user_func_array(Array, Array)
+#4 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#5 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\ShopcartItemsController))
+#6 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#7 {main}
+
+
+2015-11-09 13:19:42 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "shopcart_items"
+Request URL: /testBuild/shopcart_items/delete/134
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/ORM/Table.php(1187): Cake\ORM\Query->firstOrFail()
+#1 /Users/edster2007/Sites/testBuild/src/Controller/ShopcartItemsController.php(287): Cake\ORM\Table->get('134')
+#2 [internal function]: App\Controller\ShopcartItemsController->delete('134')
+#3 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(416): call_user_func_array(Array, Array)
+#4 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#5 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\ShopcartItemsController))
+#6 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#7 {main}
+
+
+2015-11-09 13:20:13 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "shopcart_items"
+Request URL: /testBuild/shopcart_items/delete/135
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/ORM/Table.php(1187): Cake\ORM\Query->firstOrFail()
+#1 /Users/edster2007/Sites/testBuild/src/Controller/ShopcartItemsController.php(287): Cake\ORM\Table->get('135')
+#2 [internal function]: App\Controller\ShopcartItemsController->delete('135')
+#3 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(416): call_user_func_array(Array, Array)
+#4 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#5 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\ShopcartItemsController))
+#6 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#7 {main}
+
+
+2015-11-09 13:21:18 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "shopcart_items"
+Request URL: /testBuild/shopcart_items/delete/137
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/ORM/Table.php(1187): Cake\ORM\Query->firstOrFail()
+#1 /Users/edster2007/Sites/testBuild/src/Controller/ShopcartItemsController.php(287): Cake\ORM\Table->get('137')
+#2 [internal function]: App\Controller\ShopcartItemsController->delete('137')
+#3 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(416): call_user_func_array(Array, Array)
+#4 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#5 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\ShopcartItemsController))
+#6 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#7 {main}
+
+
+2015-11-09 13:22:30 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "shopcart_items"
+Request URL: /testBuild/shopcart_items/delete/138
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/ORM/Table.php(1187): Cake\ORM\Query->firstOrFail()
+#1 /Users/edster2007/Sites/testBuild/src/Controller/ShopcartItemsController.php(287): Cake\ORM\Table->get('138')
+#2 [internal function]: App\Controller\ShopcartItemsController->delete('138')
+#3 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(416): call_user_func_array(Array, Array)
+#4 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#5 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\ShopcartItemsController))
+#6 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#7 {main}
+
+
+2015-11-10 04:07:12 Error: [Cake\Network\Exception\SocketException] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+Request URL: /testBuild/shopcart/checkout/89
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Mailer/Transport/SmtpTransport.php(206): Cake\Network\Socket->connect()
+#1 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Mailer/Transport/SmtpTransport.php(161): Cake\Mailer\Transport\SmtpTransport->_connect()
+#2 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Mailer/Email.php(1304): Cake\Mailer\Transport\SmtpTransport->send(Object(Cake\Mailer\Email))
+#3 /Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php(397): Cake\Mailer\Email->send('Hi there Solema...')
+#4 /Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php(301): App\Controller\ShopcartController->_generateEmails(Array, Object(App\Model\Entity\Customer), 557.755, Object(App\Model\Entity\Order), Array)
+#5 [internal function]: App\Controller\ShopcartController->checkout('89')
+#6 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(416): call_user_func_array(Array, Array)
+#7 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#8 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\ShopcartController))
+#9 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#10 {main}
+
+
+2015-11-10 04:07:26 Error: [Cake\Network\Exception\SocketException] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+Request URL: /testBuild/shopcart/checkout/89
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Mailer/Transport/SmtpTransport.php(206): Cake\Network\Socket->connect()
+#1 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Mailer/Transport/SmtpTransport.php(161): Cake\Mailer\Transport\SmtpTransport->_connect()
+#2 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Mailer/Email.php(1304): Cake\Mailer\Transport\SmtpTransport->send(Object(Cake\Mailer\Email))
+#3 /Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php(397): Cake\Mailer\Email->send('Hi there Solema...')
+#4 /Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php(301): App\Controller\ShopcartController->_generateEmails(Array, Object(App\Model\Entity\Customer), 557.755, Object(App\Model\Entity\Order), Array)
+#5 [internal function]: App\Controller\ShopcartController->checkout('89')
+#6 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(416): call_user_func_array(Array, Array)
+#7 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#8 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\ShopcartController))
+#9 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#10 {main}
+
+
+2015-11-10 05:37:46 Error: [Cake\Network\Exception\SocketException] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+Request URL: /testBuild/shopcart/checkout/90
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Mailer/Transport/SmtpTransport.php(206): Cake\Network\Socket->connect()
+#1 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Mailer/Transport/SmtpTransport.php(161): Cake\Mailer\Transport\SmtpTransport->_connect()
+#2 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Mailer/Email.php(1304): Cake\Mailer\Transport\SmtpTransport->send(Object(Cake\Mailer\Email))
+#3 /Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php(397): Cake\Mailer\Email->send('Hi there Solema...')
+#4 /Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php(301): App\Controller\ShopcartController->_generateEmails(Array, Object(App\Model\Entity\Customer), 137.5, Object(App\Model\Entity\Order), Array)
+#5 [internal function]: App\Controller\ShopcartController->checkout('90')
+#6 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(416): call_user_func_array(Array, Array)
+#7 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#8 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\ShopcartController))
+#9 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#10 {main}
+
+
+2015-11-10 05:38:24 Error: [Cake\Network\Exception\SocketException] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+Request URL: /testBuild/shopcart/checkout/90
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Mailer/Transport/SmtpTransport.php(206): Cake\Network\Socket->connect()
+#1 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Mailer/Transport/SmtpTransport.php(161): Cake\Mailer\Transport\SmtpTransport->_connect()
+#2 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Mailer/Email.php(1304): Cake\Mailer\Transport\SmtpTransport->send(Object(Cake\Mailer\Email))
+#3 /Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php(397): Cake\Mailer\Email->send('Hi there Solema...')
+#4 /Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php(301): App\Controller\ShopcartController->_generateEmails(Array, Object(App\Model\Entity\Customer), 137.5, Object(App\Model\Entity\Order), Array)
+#5 [internal function]: App\Controller\ShopcartController->checkout('90')
+#6 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(416): call_user_func_array(Array, Array)
+#7 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#8 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\ShopcartController))
+#9 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#10 {main}
+
+
+2015-11-10 05:39:09 Error: [Cake\Network\Exception\SocketException] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+Request URL: /testBuild/shopcart/checkout/90
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Mailer/Transport/SmtpTransport.php(206): Cake\Network\Socket->connect()
+#1 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Mailer/Transport/SmtpTransport.php(161): Cake\Mailer\Transport\SmtpTransport->_connect()
+#2 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Mailer/Email.php(1304): Cake\Mailer\Transport\SmtpTransport->send(Object(Cake\Mailer\Email))
+#3 /Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php(397): Cake\Mailer\Email->send('Hi there Solema...')
+#4 /Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php(301): App\Controller\ShopcartController->_generateEmails(Array, Object(App\Model\Entity\Customer), 137.5, Object(App\Model\Entity\Order), Array)
+#5 [internal function]: App\Controller\ShopcartController->checkout('90')
+#6 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(416): call_user_func_array(Array, Array)
+#7 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#8 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\ShopcartController))
+#9 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#10 {main}
+
+
+2015-11-10 05:39:30 Error: [Cake\Network\Exception\SocketException] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+Request URL: /testBuild/shopcart/checkout/90
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Mailer/Transport/SmtpTransport.php(206): Cake\Network\Socket->connect()
+#1 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Mailer/Transport/SmtpTransport.php(161): Cake\Mailer\Transport\SmtpTransport->_connect()
+#2 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Mailer/Email.php(1304): Cake\Mailer\Transport\SmtpTransport->send(Object(Cake\Mailer\Email))
+#3 /Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php(397): Cake\Mailer\Email->send('Hi there Solema...')
+#4 /Users/edster2007/Sites/testBuild/src/Controller/ShopcartController.php(301): App\Controller\ShopcartController->_generateEmails(Array, Object(App\Model\Entity\Customer), 137.5, Object(App\Model\Entity\Order), Array)
+#5 [internal function]: App\Controller\ShopcartController->checkout('90')
+#6 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(416): call_user_func_array(Array, Array)
+#7 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#8 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\ShopcartController))
+#9 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#10 {main}
+
+
+2015-11-10 05:49:35 Error: [Cake\Network\Exception\SocketException] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+Request URL: /testBuild/customers/buildEmails
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Mailer/Transport/SmtpTransport.php(206): Cake\Network\Socket->connect()
+#1 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Mailer/Transport/SmtpTransport.php(161): Cake\Mailer\Transport\SmtpTransport->_connect()
+#2 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Mailer/Email.php(1304): Cake\Mailer\Transport\SmtpTransport->send(Object(Cake\Mailer\Email))
+#3 /Users/edster2007/Sites/testBuild/src/Controller/CustomersController.php(405): Cake\Mailer\Email->send('<p>yhjvjuhbk</p...')
+#4 [internal function]: App\Controller\CustomersController->buildEmails()
+#5 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Controller/Controller.php(416): call_user_func_array(Array, Array)
+#6 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#7 /Users/edster2007/Sites/testBuild/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\CustomersController))
+#8 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 {main}
+
+
+2015-11-10 08:56:07 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Apple-touch-icon-precomposed.png could not be found.
+Exception Attributes: array (
+  'class' => 'Apple-touch-icon-precomposed.png',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /testBuild/apple-touch-icon-precomposed.png
+Stack Trace:
+#0 /Users/edster2007/Sites/testBuild/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+

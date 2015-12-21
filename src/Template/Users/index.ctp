@@ -6,7 +6,15 @@
 $this->Html->scriptStart(['block' => true]);
 echo "$(document).ready(function(){
     $('#data-table').DataTable({
-    'order': [[ 2, 'desc' ]]
+    'order': [[ 0, 'desc' ]],
+    'pageLength': 25,
+    'columnDefs': [
+            {
+                'targets': [ 0 ],
+                'visible': false,
+                'searchable': false
+            }
+        ]
     });
 });";
 $this->Html->scriptEnd();
@@ -28,7 +36,8 @@ $this->Html->scriptEnd();
     <div class="table-responsive">
 			<table class="table table-bordered table-striped" id="data-table">
 			<thead>
-					<tr>
+					<tr>    
+					        <th><?= __('id') ?></th>  <!-- Used for accurate ordering or new things to the top since date sorting wasnt working -->
 							<th><?= __('Username') ?></th>
 							<th><?= __('Email') ?></th>
 	<!--             <th><?= __('Password') ?></th> -->
@@ -40,6 +49,7 @@ $this->Html->scriptEnd();
 			<tbody>
 			<?php foreach ($users as $user): ?>
 					<tr>
+					        <td><?= h($user->id) ?></td>
 							<td style="text-align: left;"><?= h($user->username) ?></td>
 							<td style="text-align: left;"><?= h($user->email) ?></td>
 							<!-- Used a cake truncate method for somthing different, can also use tail for end of string -->

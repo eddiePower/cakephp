@@ -1,12 +1,11 @@
 <div class="actions columns large-2 medium-3">
     <h3><?= __('Actions') ?></h3>
-    <ul class="side-nav">
-        <li><?= $this->Html->link(__('List Shopcart Items'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('List Shopcart'), ['controller' => 'Shopcart', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Shopcart'), ['controller' => 'Shopcart', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Items'), ['controller' => 'Items', 'action' => 'index']) ?></li>
-<!--         <li><?= $this->Html->link(__('New Item'), ['controller' => 'Items', 'action' => 'add']) ?></li> -->
-    </ul>
+        <nav class="nav-container">
+        <?= $this->Html->link(__('List Shopcart Items'), ['action' => 'index'], ['class' => 'nav-item']) ?>
+        <?= $this->Html->link(__('List Shopcart'), ['controller' => 'Shopcart', 'action' => 'index'], ['class' => 'nav-item']) ?>
+        <?= $this->Html->link(__('New Shopcart'), ['controller' => 'Shopcart', 'action' => 'add'], ['class' => 'nav-item']) ?>
+        <?= $this->Html->link(__('List Items'), ['controller' => 'Items', 'action' => 'index'], ['class' => 'nav-item']) ?>
+        </nav>
 </div>
 <div class="col-12 last panel">
 <div class="shopcartItems form large-10 medium-9 columns">

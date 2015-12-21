@@ -32,12 +32,11 @@ class OrdersController extends AppController
     public function index()
     {
     
+       $this->paginate = [
+              'contain' => ['Couriers', 'Customers']];
+          
        if($this->request->session()->read('userRole') == 'admin')
        {
-          $this->paginate = [
-              'contain' => ['Couriers', 'Customers']
-          ];
-          
           //set viewVars for all orders.
           $this->set('orders', $this->paginate($this->Orders));
           $this->set('_serialize', ['orders']);
@@ -63,10 +62,6 @@ class OrdersController extends AppController
                 } 
            }
            //debug($userOrders);
-           
-            $this->paginate = [
-              'contain' => ['Couriers', 'Customers']
-          ];
           
           //set viewVars for all orders.
           $this->set('orders', $userOrders);

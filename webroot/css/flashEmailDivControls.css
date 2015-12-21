@@ -102,3 +102,9 @@
   position: relative;
 }
 
+.checkout_images
+{
+    max-width: 40%;
+    height: auto;
+    border: 0;
+}

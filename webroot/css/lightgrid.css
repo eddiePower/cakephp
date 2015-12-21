@@ -824,48 +824,12 @@ tbody tr:hover {
 /* ----------------------------------------------------------------
  * flash message
  * ---------------------------------------------------------------- */
-.message
-{
+.message {
   padding: 4px;
   background-color: yellow;
   font-weight: 500;
   width: 50%;
   text-shadow: none;
-}
-.alert {
-    border: 1px solid transparent;
-    border-radius: 4px;
-    margin-bottom: 20px;
-    padding: 15px;
-}
-
-.error_msg {
-    background-color: #f2dede;
-    border-color: #ebccd1;
-    color: #a94442;
-}
-
-.warning_msg {
-    background-color: #fcf8e3;
-    border-color: #faebcc;
-    color: #8a6d3b;
-}
-
-.info_msg {
-    background-color: #d9edf7;
-    border-color: #bce8f1;
-    color: #31708f;
-}
-
-.success_msg {
-    background-color: #dff0d8;
-    border-color: #d6e9c6;
-    color: #3c763d;
-}
-
-.close{
-   text-decoration :none;
-   float: right;
 }
 /* 
  *
