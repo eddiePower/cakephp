@@ -1,3 +1,9 @@
+#Most recent copy of working version:
+http://powerfamilyau.mine.nu:8899/testBuild/
+
+testUser: tester1<br />
+Password: Password<br />
+
 
 # Team Heisenburg Build 6 ------>shoppingCart Checkout, Edit, Add multiple same item, Order, Cart ACL for user / adminaccess, Any other issues in backend code, CSS issues accross all platforms Mobile, PC, Tablet.
 
